@@ -1,0 +1,479 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Le Rézo sous forme DUMP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+  <link rel="stylesheet" type="text/css" href="CSS/jdm.css"/>
+  <link rel="stylesheet" type="text/css" href="CSS/smoothbox.css"/>
+  <link rel="stylesheet" type="text/css" href="CSS/Roar.css"/>
+  <link rel="stylesheet" type="text/css" href="jsscripts/humanejs/themes/libnotifybottom.css"/>
+  <meta name="robots" content="nofollow, notranslate" />
+  <meta name="googlebot" content="nofollow, notranslate" />
+
+  <meta name="description" content="Jeu d'associations de termes, trés sympa et amusant. Mots à collectionner, capturer. Trouver les associations les plus pertinentes."/>
+  <meta name="keywords" lang="fr" content="jeu, mots, mot, expression, collection, associations, fonctions lexicales, jeuxdemots, amusant, fonction lexicale, réseau, réseau lexical, TAL, TALN, langue, langage, lexique, dictionnaire"/>
+  <META HTTP-EQUIV="Content-Language" content="fr"/>
+  <meta name="reply-to" content="jeuxdemeaux@gmail.com"/>
+  <meta name="category" content="Jeux"/>
+  <meta name="distribution" content="global"/>
+  <meta name="revisit-after" content="7 days"/><meta name="author" lang="fr" content="LIRMM, Mathieu Lafourcade"/>
+  <meta name="copyright" content="LIRMM, Mathieu Lafourcade"/>
+  <meta name="generator" content=""/>
+  <meta name="identifier-url" content="http://www.lirmm.fr/jeuxdemots"/>
+  <meta name="expires" content="never"/>
+  <meta name="Date-Creation-yyyymmdd" content="mai 2006"/>
+  <meta name="Date-Revision-yyyymmdd" content="septembre 2010"/>
+  <meta name="google-site-verification" content="FJvgiMAOHMfdRtqEbU1H23AG_fLYRdz7fIioDc_oOxE" /><meta property="og:image" content="logo-jdm/logo1.jpg"/>
+  <meta property="og:image" content="logo-jdm/Logo_JDMrect_fond noir.png"/>
+  <meta property="og:image" content="logo-jdm/Logo_JDMrect_fond_blanc.png"/>
+  <meta property="og:image" content="logo-jdm/Logo_JDMrect_fond_transp.png"/>
+  <meta property="og:image" content="pics/logoJDMcarrevarianteFondNoir.png"/>
+  <meta property="og:image" content="pics/logoJDMcarreFondBlanc.png"/>
+  <meta property="og:image" content="pics/favicon-Je-32-bis.ico"/>
+
+  <style>
+    @font-face {
+      font-family: "fontcandid";
+      src: url("fonts/TEMPSITC.TTF");
+    }
+  </style>
+
+  <noscript>
+
+    <div style="position:absolute;z-index:10000;font-size:32pt;">
+
+      <CENTER>Javascript doit fonctionner ! Activez-le et rechargez cette page.
+
+        <br>
+
+        <IMG src="pics/error.png">
+
+      </CENTER>
+
+      <div>
+
+        <meta HTTP-EQUIV="Refresh" content="1;URL=http://jeuxdemots.org/">
+
+  </noscript>
+
+
+  <script type="text/javascript" src="jsscripts/mootools.js"></script>
+  <script type="text/javascript" src="jsscripts/mootoolsmore.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_twik_script.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_duel_script.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_shake_script.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_beat_script.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_nbrel_script.js"></script>
+  <script type="text/javascript" src="jsscripts/jdm_playerstats_script.js"></script>
+  <script type="text/javascript" src="jsscripts/shortcuts.js"></script>
+  <script type="text/javascript" src="jsscripts/smoothbox.js"></script>
+  <script type="text/javascript" src="jsscripts/overlay.js"></script>
+  <script type="text/javascript" src="jsscripts/shake.js"></script>
+  <script type="text/javascript" src="jsscripts/Roar.js"></script>
+  <script type="text/javascript" src="jsscripts/humanejs/humane.js"></script>
+  <link rel="shortcut icon" href="pics/favicon-Je-32-bis.ico" type="image/x-icon" />
+
+  <link href='http://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>
+
+</head>
+<body STYLE="overflow:auto;
+overflow-x:auto;
+overflow-y:visible;overflow-x:hidden;
+padding: 0px; margin: 0px; border: 0px;">
+
+<div class="jdm-level1-block">
+
+  <div class="jdm-prompt-block">
+    <div class="jdm-prompt">
+      Le Rézo format DUMP    </div>
+  </div>
+
+</div>
+
+<div class="jdm-level2-block">
+  <div id="rezoform" style="position:relative;top:-43px;left:100px;">
+
+
+    Lien de cette page: <URL>http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=&rel=</URL>
+    <br>
+    <br>
+
+    <form id="gotermrel" name="gotermrel" method="get" action="rezo-dump.php" >
+      <input id="gotermsubmit" type="submit" name="gotermsubmit" value="Chercher">
+      le terme
+      <input id="gotermrel" type="text" name="gotermrel" value="" size=100>
+      <br><fieldset>
+      <legend> Options </legend>
+      Numéro de relation
+      <input id="rel" type="text" name="rel" value="" size=10>
+      <div>
+        <input type="checkbox" id="relout" name="relout" value="norelout" >
+        <label for="relout">Pas de relations sortantes</label>
+      </div>
+      <div>
+        <input type="checkbox" id="relin" name="relin" value="norelin" >
+        <label for="relin">Pas de relations entrantes</label>
+      </div>
+    </fieldset></form>
+    <br>
+    <br>FROM CACHE [11403513.txt] : size=11219 - date=September 27 2018 13:30:12. - 635 secondes ago - 0.007349537037037 days ago <br>
+
+    <br>
+
+    Code DUMP (cf source)<br>
+
+
+    <CODE>
+      // DUMP pour le terme '' (eid=11403513)
+
+      <def>
+        <br />
+        Le ou les clients hébergés sur une machine utilisent le protocole IP pour communiquer. Il importe peu de savoir où se trouvent physiquement les programmes, les couches basses du protocole se chargeant justement d'en masquer les détails. Le nom localhost est associé à l'adresse IPv6 ::1 et à la plage d'adresses IPv4 127.0.0.0/8 (toutes les adresses IPv4 comprises entre 127.0.0.1 et 127.255.255.255 dont la plus utilisée est 127.0.0.1).
+      </def>
+
+
+
+      // les types de noeuds (Nodes Types) : nt;ntid;'ntname'
+
+      nt;1;'n_term'
+      nt;36;'n_data_pot'
+      nt;444;'n_link'
+      nt;666;'n_AKI'
+      nt;777;'n_wikipedia'
+
+      // les noeuds/termes (Entries) : e;eid;'name';type;w;'formated name'
+
+      e;11403513;'::1';777;0
+      e;11403514;'127.0.0.0/8';777;0
+      e;239128;'_COM';36;50
+      e;11405391;'castrum Saint-Jean';777;0
+      e;190972;'îles Sandwich du Sud';1;50
+      e;187262;'lac Victoria';1;24
+      e;10753093;'canal Rhin-Main-Danube';777;0
+      e;173326;'océan Pacifique';1;116
+      e;173260;'mer Méditerranée';1;40
+      e;309585;'Yalou';777;50
+      e;140116;'Ostie';1;54
+      e;136356;'Grande-Bretagne';1;100
+      e;195193;'gorges d'Olduvai';1;50
+      e;10051694;'Chouchan';1;0
+      e;10003030;'Grands Lacs d'Amérique du Nord';777;0
+      e;428138;'Yalu';1;50
+      e;3573328;'Île Longue';777;0
+      e;4334540;'djebel Boukornine';777;0
+      e;4334541;'djebel Bou Kornine';777;0
+      e;309497;'mont Bou Kornine';777;50
+      e;290305;'baie Française';777;50
+      e;6000772;'Sabine D';777;0
+      e;7647074;'références utiles à sa vérifiabilité';777;0
+      e;309586;'Amnok';777;50
+      e;119583;'Hippone';1;52
+      e;114616;'Humber';1;50
+      e;11225893;'métro de Barcelone';777;0
+      e;73588;'Amérique du Nord';1;110
+      e;68395;'Escaut';1;54
+      e;197541;'Chilam Balam';1;50
+      e;57818;'Dodécanèse';1;50
+      e;39285;'Velay';1;52
+      e;35769;'Weser';1;50
+      e;31242;'Taal';1;50
+      e;11404313;'col de Menté';777;0
+      e;28792;'Volturno';1;50
+      e;9624;'Elbe';1;52
+      e;583;'Beauce';1;58
+      e;75641;'Suse';1;50
+      e;95044;'île du Sud';1;50
+      e;11403567;'lac 3.1416';777;0
+      e;11404312;'Orcières Merlette 1850';777;0
+      e;90849;'Véies';1;50
+      e;102656;'Collins';1;50
+      e;86023;'Tibre';1;64
+      e;80559;'Wall Street';1;74
+      e;77735;'Europe';1;830
+      e;77355;'baie de Fundy';1;50
+      e;276096;'_INFO-WIKI-YES';36;50
+      e;3228593;'wiki:@';444;0
+      e;10617431;'Transmission Control Protocol';777;0
+      e;2526191;'TCP';1;0
+      e;11008522;'Internet Control Message Protocol';777;0
+      e;10838429;'Hypertext Transfer Protocol';777;0
+      e;2523827;'loopback';1;0
+      e;2504141;'ICMP';1;0
+      e;176498;'ping';1;50
+      e;176468;'MySQL';1;2
+      e;152211;'Informatique';1;170
+      e;113743;'port';1;850
+      e;104993;'informatique';1;2880
+      e;94978;'ordinateur';1;3388
+      e;91576;'Unix';1;56
+      e;29785;'ports';1;58
+      e;65239;'IP';1;58
+      e;230207;'HTTP';666;4
+      e;2398340;'IPv4';1;0
+      e;566237;'client-serveur';777;50
+      e;419814;'Ordinateur';1;50
+      e;416383;'Ping';1;50
+      e;145520;'Port';1;50
+      e;277391;'adresse IPv6';1;50
+      e;277387;'Internet Protocol';1;52
+      e;235572;'IPv6';1;50
+      e;26781;'TCP/IP';1;50
+      e;9168351;'=mino=';1;0
+      e;217608;'Le Vaillant Petit Tailleur';1;156
+      e;280233;'American Standard Code for Information Interchange';777;50
+      e;77701;'ASCII';1;64
+      e;171765;'cachaça';1;58
+      e;5795561;'cachace';777;0
+      e;71303;'concaténation';1;66
+
+      // les types de relations (Relation Types) : rt;rtid;'trname';'trgpname';'rthelp'
+
+      rt;0;'r_associated';'idée associée';Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?
+      rt;15;'r_lieu';'chose>lieu';Il est demandé d'énumérer les LIEUX typiques où peut se trouver le terme/objet en question.
+      rt;28;'r_lieu-1';'lieu>chose';A partir d'un lieu, il est demandé d'énumérer ce qui peut typiquement s'y trouver.
+      rt;36;'r_infopot';'information potentielle';Information sémantique potentielle
+      rt;444;'r_link';'r_link';Lien vers une ressource externe (WordNet, RadLex, UMLS, Wikipedia, etc...)
+      rt;777;'r_wiki';'r_wiki';Associations issues de wikipedia...
+
+      // les relations sortantes : r;rid;node1;node2;type;w
+
+      r;292947657;11403513;11403514;0;25
+      r;292946850;11403513;239128;0;1000000
+      r;293018897;11403513;11405391;15;25
+      r;292964937;11403513;190972;15;25
+      r;292951085;11403513;187262;15;25
+      r;292970030;11403513;10753093;15;25
+      r;292948553;11403513;173326;15;25
+      r;293015189;11403513;173260;15;25
+      r;292961638;11403513;309585;15;25
+      r;293015200;11403513;140116;15;25
+      r;292968680;11403513;136356;15;25
+      r;292964017;11403513;195193;15;25
+      r;292953655;11403513;10051694;15;25
+      r;293015702;11403513;10003030;15;25
+      r;292961642;11403513;428138;15;25
+      r;293015822;11403513;3573328;15;25
+      r;292963677;11403513;4334540;15;25
+      r;292963673;11403513;4334541;15;25
+      r;292963669;11403513;309497;15;25
+      r;292965049;11403513;290305;15;25
+      r;292960180;11403513;6000772;15;25
+      r;292977438;11403513;7647074;15;25
+      r;292961634;11403513;309586;15;25
+      r;292994468;11403513;119583;15;25
+      r;293016066;11403513;114616;15;25
+      r;293013422;11403513;11225893;15;25
+      r;292951014;11403513;73588;15;25
+      r;293016059;11403513;68395;15;25
+      r;292962566;11403513;197541;15;25
+      r;293009958;11403513;57818;15;25
+      r;292977434;11403513;39285;15;25
+      r;293016053;11403513;35769;15;25
+      r;292959512;11403513;31242;15;25
+      r;292999878;11403513;11404313;15;25
+      r;292988395;11403513;28792;15;25
+      r;293016048;11403513;9624;15;25
+      r;292950312;11403513;583;15;25
+      r;292953659;11403513;75641;15;25
+      r;292960175;11403513;95044;15;25
+      r;292953009;11403513;11403567;15;25
+      r;292999854;11403513;11404312;15;25
+      r;292986423;11403513;90849;15;25
+      r;292960163;11403513;102656;15;25
+      r;292988375;11403513;86023;15;25
+      r;292953158;11403513;80559;15;25
+      r;292947204;11403513;77735;15;25
+      r;292965053;11403513;77355;15;25
+      r;293019312;11403513;276096;36;25
+      r;292991111;11403513;3228593;444;25
+      r;292946917;11403513;10617431;777;10
+      r;292946918;11403513;2526191;777;10
+      r;292946911;11403513;11008522;777;10
+      r;292946896;11403513;10838429;777;10
+      r;292946883;11403513;2523827;777;10
+      r;292946912;11403513;2504141;777;10
+      r;292946906;11403513;176498;777;10
+      r;292946901;11403513;176468;777;10
+      r;292946854;11403513;152211;777;10
+      r;292946892;11403513;113743;777;10
+      r;292946855;11403513;104993;777;10
+      r;292946870;11403513;94978;777;10
+      r;292946886;11403513;91576;777;10
+      r;292946864;11403513;29785;777;10
+      r;292946876;11403513;65239;777;10
+      r;292946897;11403513;230207;777;10
+      r;292946922;11403513;2398340;777;10
+      r;292946859;11403513;566237;777;10
+      r;292946869;11403513;419814;777;10
+      r;292946905;11403513;416383;777;10
+      r;292946863;11403513;145520;777;10
+      r;292946880;11403513;277391;777;10
+      r;292946875;11403513;277387;777;10
+      r;292946925;11403513;235572;777;10
+      r;292946889;11403513;26781;777;10
+
+      // les relations entrantes : r;rid;node1;node2;type;w
+
+      r;292963570;9168351;11403513;0;-125
+      r;292947201;77735;11403513;0;25
+      r;292947656;11403514;11403513;0;25
+      r;292948550;173326;11403513;0;25
+      r;292950309;583;11403513;0;25
+      r;292951011;73588;11403513;0;25
+      r;292951082;187262;11403513;0;25
+      r;292953006;11403567;11403513;0;25
+      r;292953155;80559;11403513;0;25
+      r;292953652;10051694;11403513;0;25
+      r;292953656;75641;11403513;0;25
+      r;292959509;31242;11403513;0;25
+      r;292960161;102656;11403513;0;25
+      r;292960172;95044;11403513;0;25
+      r;292960177;6000772;11403513;0;25
+      r;292961631;309586;11403513;0;25
+      r;292961635;309585;11403513;0;25
+      r;292961639;428138;11403513;0;25
+      r;292962563;197541;11403513;0;25
+      r;292963666;309497;11403513;0;25
+      r;292963670;4334541;11403513;0;25
+      r;292963674;4334540;11403513;0;25
+      r;292964014;195193;11403513;0;25
+      r;292964934;190972;11403513;0;25
+      r;292965046;290305;11403513;0;25
+      r;292965050;77355;11403513;0;25
+      r;292968677;136356;11403513;0;25
+      r;292970023;10753093;11403513;0;25
+      r;292999852;11404312;11403513;0;25
+      r;292977431;39285;11403513;0;25
+      r;292977435;7647074;11403513;0;25
+      r;292986421;90849;11403513;0;25
+      r;292988372;86023;11403513;0;25
+      r;292988392;28792;11403513;0;25
+      r;292994465;119583;11403513;0;25
+      r;292999875;11404313;11403513;0;25
+      r;293005200;217608;11403513;0;25
+      r;293009955;57818;11403513;0;25
+      r;293018895;11405391;11403513;0;25
+      r;293013419;11225893;11403513;0;25
+      r;293015186;173260;11403513;0;25
+      r;293015197;140116;11403513;0;25
+      r;293015699;10003030;11403513;0;25
+      r;293015820;3573328;11403513;0;25
+      r;293016045;9624;11403513;0;25
+      r;293016050;35769;11403513;0;25
+      r;293016056;68395;11403513;0;25
+      r;293016063;114616;11403513;0;25
+      r;292947202;77735;11403513;15;25
+      r;292948551;173326;11403513;15;25
+      r;292950310;583;11403513;15;25
+      r;292951012;73588;11403513;15;25
+      r;292951083;187262;11403513;15;25
+      r;292953007;11403567;11403513;15;25
+      r;292953156;80559;11403513;15;25
+      r;292953653;10051694;11403513;15;25
+      r;292953657;75641;11403513;15;25
+      r;292959514;31242;11403513;15;25
+      r;292960164;102656;11403513;15;25
+      r;292960173;95044;11403513;15;25
+      r;292960178;6000772;11403513;15;25
+      r;292961632;309586;11403513;15;25
+      r;292961636;309585;11403513;15;25
+      r;292961640;428138;11403513;15;25
+      r;292962564;197541;11403513;15;25
+      r;292963667;309497;11403513;15;25
+      r;292963671;4334541;11403513;15;25
+      r;292963675;4334540;11403513;15;25
+      r;292964015;195193;11403513;15;25
+      r;292964935;190972;11403513;15;25
+      r;292965047;290305;11403513;15;25
+      r;292965051;77355;11403513;15;25
+      r;292968678;136356;11403513;15;25
+      r;292970026;10753093;11403513;15;25
+      r;292977432;39285;11403513;15;25
+      r;292977436;7647074;11403513;15;25
+      r;292986424;90849;11403513;15;25
+      r;292988373;86023;11403513;15;25
+      r;292988393;28792;11403513;15;25
+      r;292994466;119583;11403513;15;25
+      r;292999876;11404313;11403513;15;25
+      r;293009956;57818;11403513;15;25
+      r;293013420;11225893;11403513;15;25
+      r;293015187;173260;11403513;15;25
+      r;293015198;140116;11403513;15;25
+      r;293015700;10003030;11403513;15;25
+      r;293015823;3573328;11403513;15;25
+      r;293016046;9624;11403513;15;25
+      r;293016051;35769;11403513;15;25
+      r;293016057;68395;11403513;15;25
+      r;293016064;114616;11403513;15;25
+      r;292947203;77735;11403513;28;25
+      r;292948552;173326;11403513;28;25
+      r;292950311;583;11403513;28;25
+      r;292951013;73588;11403513;28;25
+      r;292951084;187262;11403513;28;25
+      r;292953008;11403567;11403513;28;25
+      r;292953157;80559;11403513;28;25
+      r;292953654;10051694;11403513;28;25
+      r;292953658;75641;11403513;28;25
+      r;292959510;31242;11403513;28;25
+      r;292960162;102656;11403513;28;25
+      r;292960174;95044;11403513;28;25
+      r;292960179;6000772;11403513;28;25
+      r;292961633;309586;11403513;28;25
+      r;292961637;309585;11403513;28;25
+      r;292961641;428138;11403513;28;25
+      r;292962565;197541;11403513;28;25
+      r;292963668;309497;11403513;28;25
+      r;292963672;4334541;11403513;28;25
+      r;292963676;4334540;11403513;28;25
+      r;292964016;195193;11403513;28;25
+      r;292964936;190972;11403513;28;25
+      r;292965048;290305;11403513;28;25
+      r;292965052;77355;11403513;28;25
+      r;292968679;136356;11403513;28;25
+      r;292970029;10753093;11403513;28;25
+      r;292999853;11404312;11403513;28;25
+      r;292977433;39285;11403513;28;25
+      r;292977437;7647074;11403513;28;25
+      r;292986422;90849;11403513;28;25
+      r;292988374;86023;11403513;28;25
+      r;292988394;28792;11403513;28;25
+      r;292994467;119583;11403513;28;25
+      r;292999877;11404313;11403513;28;25
+      r;293009957;57818;11403513;28;25
+      r;293018896;11405391;11403513;28;25
+      r;293013421;11225893;11403513;28;25
+      r;293015188;173260;11403513;28;25
+      r;293015199;140116;11403513;28;25
+      r;293015701;10003030;11403513;28;25
+      r;293015821;3573328;11403513;28;25
+      r;293016047;9624;11403513;28;25
+      r;293016052;35769;11403513;28;25
+      r;293016058;68395;11403513;28;25
+      r;293016065;114616;11403513;28;25
+      r;292947295;280233;11403513;777;10
+      r;292947296;77701;11403513;777;10
+      r;292948339;171765;11403513;777;10
+      r;292948341;5795561;11403513;777;10
+      r;292951966;71303;11403513;777;10
+
+      // END
+    </CODE>
+
+
+  </div>
+</div>
+</body>
+</html>
