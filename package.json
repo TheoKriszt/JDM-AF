@@ -22,6 +22,10 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "cors": "^2.8.4",
+    "iconv": "^2.3.0",
+    "node-html-parser": "^1.1.10",
+    "request": "^2.88.0",
+    "request-json": "^0.6.3",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
