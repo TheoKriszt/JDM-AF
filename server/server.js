@@ -1,7 +1,7 @@
 const express = require('express');
 const app=express();
 // const bodyParser = require('body-parser');
-const cors = require("cors");
+const cors = require('cors');
 const ObjectID = require('mongodb').ObjectID;
 app.use(cors());
 app.use(express.json());
@@ -12,10 +12,6 @@ const async = require('async');
 // app.use(express.urlencoded({extended : true}))
 
 //creation client
-
-const mongoClient=require("mongodb").MongoClient;
-//creation var db
-const url="mongodb://localhost:27017/Covoit";
 
 const sendRes = function(res, json){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -31,64 +27,44 @@ app.all("/*", function(req, res, next){
   next();
 });
 
+// Search by word
+app.get("/search/word/:word",function(req,res){
 
+  let word = req.params.word;
+  console.log('word : ' + word);
 
-//connection db
-mongoClient.connect(url,function(err,db){
-  // const database = db; // ancienne version de express
-  const database = db.db('Covoit'); // accès nommé à la BD, car express ne reconnait plus simplement db.collection sur les nouvelles versions
+  sendRes(res, JSON.stringify(word));
+});
 
-  if (err){
-    throw err;
-  } else{
-    console.log("connected to " + url);
-  }
+// Search by relation
+app.get("/search/relation/:relation",function(req,res){
 
-  // Search by word
-  app.get("/search/word/:word",function(req,res){
+  var oid = new ObjectID(req.params.id);
+  console.log('id : ' + req.params.id);
+  database.collection("membres").find( {"_id": oid} )
+    .toArray(function(err,documents){
+      console.log("Recherche de membre par id : " + req.params.id);
+      delete documents[0].password;
+      console.log(documents);
+      var json = JSON.stringify(documents);
+      sendRes(res, json);
+    });
+});
 
-    var oid = new ObjectID(req.params.id);
-    console.log('id : ' + req.params.id);
-    database.collection("membres").find( {"_id": oid} )
-      .toArray(function(err,documents){
-        console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password;
-        console.log(documents);
-        var json = JSON.stringify(documents);
-        sendRes(res, json);
-      });
-  });
+// membre par id
+app.get("/membres/id/:id",function(req,res){
 
-  // Search by relation
-  app.get("/search/relation/:relation",function(req,res){
-
-    var oid = new ObjectID(req.params.id);
-    console.log('id : ' + req.params.id);
-    database.collection("membres").find( {"_id": oid} )
-      .toArray(function(err,documents){
-        console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password;
-        console.log(documents);
-        var json = JSON.stringify(documents);
-        sendRes(res, json);
-      });
-  });
-
-  // membre par id
-  app.get("/membres/id/:id",function(req,res){
-
-    var oid = new ObjectID(req.params.id);
-    console.log('id : ' + req.params.id);
-    database.collection("membres").find( {"_id": oid} )
-    // database.collection("membres").find( {"_id.$oid": req.params.id} )
-      .toArray(function(err,documents){
-        console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password; // ne pas renvoyer le mdp
-        console.log(documents);
-        var json = JSON.stringify(documents);
-        sendRes(res, json);
-      });
-  });
+  var oid = new ObjectID(req.params.id);
+  console.log('id : ' + req.params.id);
+  database.collection("membres").find( {"_id": oid} )
+  // database.collection("membres").find( {"_id.$oid": req.params.id} )
+    .toArray(function(err,documents){
+      console.log("Recherche de membre par id : " + req.params.id);
+      delete documents[0].password; // ne pas renvoyer le mdp
+      console.log(documents);
+      var json = JSON.stringify(documents);
+      sendRes(res, json);
+    });
 });
 
 
