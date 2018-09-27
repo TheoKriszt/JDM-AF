@@ -44,77 +44,30 @@ mongoClient.connect(url,function(err,db){
     console.log("connected to " + url);
   }
 
-//requête repartition age
-  app.get("/membres/agerepartition",function(req,res){
-    console.log("Recupération des membres");
-    database.collection("membres").find()
-      .toArray(function(err,documents){
-        var somme1825 = 0;
-        var somme2635 = 0;
-        var somme3650 = 0;
-        var somme50   = 0;
-
-        for (doc of documents){
-          if(parseInt(doc.age) < 26) somme1825 += 1;
-          else if ((parseInt(doc.age) > 25) && (parseInt(doc.age) < 36)) somme2635 += 1;
-          else if ((parseInt(doc.age) > 35) && (parseInt(doc.age) < 51)) somme3650 += 1;
-          else somme50 += 1;
-        }
-        var retour = {
-          'age1825' : somme1825,
-          'age2635' : somme2635,
-          'age3650' : somme3650,
-          'age50'   : somme50
-        };
-        var json=JSON.stringify(retour);
-
-        sendRes(res, json);
-
-      });
-  });
-
   // Search by word
   app.get("/search/word/:word",function(req,res){
 
     var oid = new ObjectID(req.params.id);
     console.log('id : ' + req.params.id);
     database.collection("membres").find( {"_id": oid} )
-    // database.collection("membres").find( {"_id.$oid": req.params.id} )
       .toArray(function(err,documents){
         console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password; // ne pas renvoyer le mdp
+        delete documents[0].password;
         console.log(documents);
         var json = JSON.stringify(documents);
         sendRes(res, json);
       });
   });
 
-  // Search by word
+  // Search by relation
   app.get("/search/relation/:relation",function(req,res){
 
     var oid = new ObjectID(req.params.id);
     console.log('id : ' + req.params.id);
     database.collection("membres").find( {"_id": oid} )
-    // database.collection("membres").find( {"_id.$oid": req.params.id} )
       .toArray(function(err,documents){
         console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password; // ne pas renvoyer le mdp
-        console.log(documents);
-        var json = JSON.stringify(documents);
-        sendRes(res, json);
-      });
-  });
-
-  // Search by word
-  app.get("/search/word/:word",function(req,res){
-
-    var oid = new ObjectID(req.params.id);
-    console.log('id : ' + req.params.id);
-    database.collection("membres").find( {"_id": oid} )
-    // database.collection("membres").find( {"_id.$oid": req.params.id} )
-      .toArray(function(err,documents){
-        console.log("Recherche de membre par id : " + req.params.id);
-        delete documents[0].password; // ne pas renvoyer le mdp
+        delete documents[0].password;
         console.log(documents);
         var json = JSON.stringify(documents);
         sendRes(res, json);
