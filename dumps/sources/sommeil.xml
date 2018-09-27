@@ -1,0 +1,2218 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Le Rézo sous forme XML</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  </head>
+  <body STYLE="overflow:auto;
+overflow-x:auto;
+overflow-y:visible;overflow-x:hidden;
+padding: 0px; margin: 0px; border: 0px;">
+
+    <div class="jdm-level1-block">
+
+      <div class="jdm-prompt-block">
+        <div class="jdm-prompt">
+          Le Rézo XML    </div>
+      </div>
+
+    </div>
+
+    <div class="jdm-level2-block">
+      <TABLE border="0" width="100%" cellspacing="0" cellpadding="0%"
+             summary="jeuxdemots" bgcolor="white" style="opacity:0.90;">
+        <TR><TH valign="top" width="200pts">
+        <TH  align="left">
+
+        <div id="rezoform" style="position:relative;top:-43px;">
+
+
+          Lien de cette page: <URL>?gotermsubmit=Chercher&gotermrel=sommeil&output=onlyxml</URL>
+          <br>
+          <br>
+
+          <br>computing nb relations...<br>NB Sortants = 942 (0.079088926315308 s.)<br>NB Sortants effectifs = 942<br>&nbsp; &nbsp; &nbsp; production Sortants = 0.92978000640869 s.<br>NB Entrants = 1168 (0.024000883102417 s.)<br>NB Entrants effectifs = 1168<br>&nbsp; &nbsp; &nbsp; production Entrants = 0.92027115821838 s.<br>TOWARD CACHE<br>Size=147234 char<br>
+          <br>
+
+          Code XML (cf source)<br>
+
+
+          <CODE>
+            <jdm>
+              <mot poids="1534" id="60829" type="1">sommeil</mot>
+              <mot-formate>sommeil</mot-formate>
+              <def><br />
+                1. (En particulier) (Zoologie) (Familier) Sorte d'engourdissement qui saisit certains animaux pendant l'hiver ; ou qui, dans les pays chauds, saisit d'autres animaux durant la saison sèche.<br />
+                2. (Par extension) Phase d'inactivité d'un appareil, d'une machine.<br />
+                Lorsqu'une machine en sommeil devient active, il convient de suivre l'état du stock.  <br />
+                3. (Figuré) Mort.<br />
+                Le sommeil de la tombe.  <br />
+                4. (Familier) Période durant laquelle on dort.<br />
+                Allez les enfants, venez faire votre sommeil.  <br />
+                5. État d'inactivité, d'inertie où se trouvent certaines choses.<br />
+                Le sommeil de la nature. ? Le sommeil de l'esprit. ? Le sommeil des sens.  <br />
+                6. (En particulier) (Botanique) (Familier) État dans lequel les plantes ont leurs feuilles et leurs fleurs pliées ou fermées, ordinairement durant la nuit, et qui est dû à l'absence de la chaleur et de la lumière.<br />
+                Sommeil des plantes.  <br />
+                7. État inconscient nécessaire à la vie.<br />
+                Dans la tiède torpeur du réveil le père Jourgeot savoura ce délicieux engourdissement qui est comme la prise de conscience des bons sommeils réparateurs et des nuits tranquilles?; [?].
+                (Louis Pergaud, La Vengeance du père Jourgeot, dans Les Rustiques, nouvelles villageoises, 1921)  <br />
+                J'avais les membres roidis et ressentais une si pénible lassitude, que je restai longtemps sans pouvoir trouver le sommeil.
+                (Jules Leclercq, La Terre de glace, Féroë, Islande, les geysers, le mont Hékla, Paris : E. Plon & Cie, 1883, p.94)  <br />
+                Et son ami Canalis dormait, lui, du sommeil des triomphateurs, le plus doux des sommeils après celui des justes.
+                (Honoré de Balzac, Modeste Mignon, 1844)  <br />
+                Il y eut encore entre ce moment de somnolence et le sommeil réel un intervalle pareil à celui du crépuscule, qui sépare le jour de la nuit, intervalle bizarre et indescriptible pendant lequel la réalité se confond avec le rêve, de manière qu'il n'y a ni rêve ni réalité.
+                (Alexandre Dumas, Othon l'archer, 1839)  <br />
+                8. Grande envie, un grand besoin de dormir.<br />
+                Et ils continuent de giberner, mais un tel sommeil s'était emparé de moi que je m'en allai dormir dans la grange.
+                (W?adys?aw Stanis?aw Reymont, Pèlerinage à Czestochowa, page 21, L'Âge d'Homme, 1984)  <br />
+                Le premier jour des vacances d'été, je me rendis à l'usine dès potron-minet. Le sommeil avait beau engourdir encore mes membres, j'étais résolu à ne pas décevoir mon père.
+                (Erich Loest, Les souris du Dr Ley: une fable d'Allemagne, traduit de l'allemand par Bernard Huchet, page 12, Gingko, 2006)  <br />
+                9. Le sommeil est un état naturel récurrent de perte de conscience (mais sans perte de la réception sensitive) du monde extérieur, accompagnée d'une diminution progressive du tonus musculaire, survenant à intervalles réguliers. L'alternance veille-sommeil correspond à l'un des cycles fondamentaux chez les animaux : le rythme circadien. Chez l'être humain, le sommeil occupe près d'un tiers de la vie en moyenne.</def>
+
+              <sortant>
+                <rel type="r_associated" poids="1000000" tid="239128">_COM</rel>
+                <rel type="r_carac" poids="1000000" tid="239128">_COM</rel>
+                <rel type="r_cooccurrence" poids="26172" tid="2983124">_SW</rel>
+                <rel type="r_infopot" poids="1270" tid="241794">_POL-NEUTRE</rel>
+                <rel type="r_anto" poids="730" tid="19980">éveil</rel>
+                <rel type="r_associated" poids="700" tid="71578">lit</rel>
+                <rel type="r_associated" poids="690" tid="43253">dormir</rel>
+                <rel type="r_anto" poids="630" tid="141176">réveil</rel>
+                <rel type="r_associated" poids="411" tid="48654">rêve</rel>
+                <rel type="r_infopot" poids="387" tid="223173">_POL-POS</rel>
+                <rel type="r_associated" poids="375" tid="39192">nuit</rel>
+                <rel type="r_anto" poids="370" tid="124517">veille</rel>
+                <rel type="r_associated" poids="361" tid="135985">sieste</rel>
+                <rel type="r_family" poids="350" tid="102152">sommeiller</rel>
+                <rel type="r_family" poids="330" tid="95625">ensommeillé</rel>
+                <rel type="r_flpot" poids="286" tid="151566">_FL:7</rel>
+                <rel type="r_associated" poids="282" tid="111776">repos</rel>
+                <rel type="r_family" poids="280" tid="143510">somme</rel>
+                <rel type="r_has_magn" poids="270" tid="129078">coma</rel>
+                <rel type="r_has_magn" poids="270" tid="122864">mort</rel>
+                <rel type="r_locution" poids="259" tid="124859">avoir sommeil</rel>
+                <rel type="r_locution" poids="249" tid="152832">sommeil profond</rel>
+                <rel type="r_associated" poids="230" tid="146295">fatigue</rel>
+                <rel type="r_locution" poids="229" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_flpot" poids="221" tid="151553">_FL:0</rel>
+                <rel type="r_locution" poids="218" tid="60418">sommeil léger</rel>
+                <rel type="r_locution" poids="218" tid="162724">tomber de sommeil</rel>
+                <rel type="r_associated" poids="210" tid="81637">oreiller</rel>
+                <rel type="r_anto" poids="210" tid="53688">activité</rel>
+                <rel type="r_has_magn" poids="210" tid="152832">sommeil profond</rel>
+                <rel type="r_locution" poids="209" tid="152943">sommeil de plomb</rel>
+                <rel type="r_locution" poids="209" tid="74424">sommeil éternel</rel>
+                <rel type="r_flpot" poids="201" tid="152011">_FL:20</rel>
+                <rel type="r_locution" poids="199" tid="154762">sommeil lourd</rel>
+                <rel type="r_locution" poids="199" tid="156315">sommeil réparateur</rel>
+                <rel type="r_has_magn" poids="190" tid="152943">sommeil de plomb</rel>
+                <rel type="r_locution" poids="188" tid="160378">manque de sommeil</rel>
+                <rel type="r_locution" poids="188" tid="164801">marchand de sommeil</rel>
+                <rel type="r_locution" poids="188" tid="162050">sommeil du juste</rel>
+                <rel type="r_conseq" poids="183" tid="111776">repos</rel>
+                <rel type="r_associated" poids="170" tid="107545">dodo</rel>
+                <rel type="r_sentiment" poids="168" tid="103405">indifférence</rel>
+                <rel type="r_locution" poids="165" tid="199518">engourdi de sommeil</rel>
+                <rel type="r_locution" poids="165" tid="201462">glisser dans le sommeil</rel>
+                <rel type="r_locution" poids="164" tid="197525">chercher le sommeil</rel>
+                <rel type="r_locution" poids="164" tid="199353">en plein sommeil</rel>
+                <rel type="r_locution" poids="164" tid="199411">en sommeil</rel>
+                <rel type="r_locution" poids="163" tid="297985">Les carences en sommeil</rel>
+                <rel type="r_locution" poids="163" tid="297986">Les excès de sommeil</rel>
+                <rel type="r_locution" poids="163" tid="121880">Moralité du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="265394">arythmie cardiaque du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="91903">dernier sommeil</rel>
+                <rel type="r_locution" poids="163" tid="289944">hormone du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="180235">maladie du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="46349">mettre en sommeil</rel>
+                <rel type="r_locution" poids="163" tid="205368">perdre le sommeil</rel>
+                <rel type="r_locution" poids="163" tid="205695">plongé dans le sommeil</rel>
+                <rel type="r_locution" poids="163" tid="206090">premier sommeil</rel>
+                <rel type="r_locution" poids="163" tid="264149">sommeil agité</rel>
+                <rel type="r_locution" poids="163" tid="184325">sommeil magnétique</rel>
+                <rel type="r_locution" poids="163" tid="303976">syndrome d'apnées du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="303977">syndrome d'apnées-hypopnées du sommeil</rel>
+                <rel type="r_locution" poids="163" tid="48937">tirer du sommeil</rel>
+                <rel type="r_locution" poids="162" tid="139887">L'Archéologie du sommeil</rel>
+                <rel type="r_locution" poids="162" tid="59111">cure de sommeil</rel>
+                <rel type="r_locution" poids="162" tid="204292">ne pas trouver le sommeil</rel>
+                <rel type="r_locution" poids="162" tid="207097">rester en sommeil</rel>
+                <rel type="r_locution" poids="162" tid="208286">sommeil artificiel</rel>
+                <rel type="r_locution" poids="162" tid="208287">sommeil cataleptique</rel>
+                <rel type="r_locution" poids="162" tid="208288">sommeil hiémal</rel>
+                <rel type="r_locution" poids="162" tid="208289">sommeil hypnotique</rel>
+                <rel type="r_locution" poids="162" tid="208290">sommeil lent</rel>
+                <rel type="r_locution" poids="162" tid="208291">sommeil pathologique</rel>
+                <rel type="r_locution" poids="161" tid="236412">apnée du sommeil</rel>
+                <rel type="r_locution" poids="161" tid="236456">hypopnée du sommeil</rel>
+                <rel type="r_locution" poids="161" tid="236458">hypopnée obstructive du sommeil</rel>
+                <rel type="r_locution" poids="161" tid="211731">s'abandonner au sommeil</rel>
+                <rel type="r_locution" poids="161" tid="211787">s'arracher du sommeil</rel>
+                <rel type="r_locution" poids="161" tid="263504">sans sommeil</rel>
+                <rel type="r_locution" poids="161" tid="250650">trouble du sommeil</rel>
+                <rel type="r_locution" poids="161" tid="236826">troubles du sommeil</rel>
+                <rel type="r_conseq" poids="161" tid="87681">se reposer</rel>
+                <rel type="r_locution" poids="160" tid="248124">manquer de sommeil</rel>
+                <rel type="r_family" poids="160" tid="22792">somnolence</rel>
+                <rel type="r_conseq" poids="152" tid="42931">rêver</rel>
+                <rel type="r_family" poids="150" tid="215512">ensommeillée</rel>
+                <rel type="r_family" poids="150" tid="1990">somnoler</rel>
+                <rel type="r_conseq" poids="150" tid="5435">ronfler</rel>
+                <rel type="r_conseq" poids="150" tid="141176">réveil</rel>
+                <rel type="r_conseq" poids="150" tid="27157">se réveiller</rel>
+                <rel type="r_flpot" poids="149" tid="152254">_FL:22</rel>
+                <rel type="r_conseq" poids="140" tid="145424">cauchemar</rel>
+                <rel type="r_conseq" poids="140" tid="54395">ronflement</rel>
+                <rel type="r_conseq" poids="140" tid="124051">récupération</rel>
+                <rel type="r_conseq" poids="140" tid="57139">récupérer</rel>
+                <rel type="r_conseq" poids="140" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="130" tid="90075">chambre</rel>
+                <rel type="r_family" poids="130" tid="133476">somnambulisme</rel>
+                <rel type="r_lieu" poids="128" tid="71578">lit</rel>
+                <rel type="r_flpot" poids="122" tid="152012">_FL:21</rel>
+                <rel type="r_hypo" poids="121" tid="73055">hypnose</rel>
+                <rel type="r_hypo" poids="121" tid="48654">rêve</rel>
+                <rel type="r_hypo" poids="121" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_hypo" poids="121" tid="152832">sommeil profond</rel>
+                <rel type="r_locution" poids="121" tid="92356">demi-sommeil</rel>
+                <rel type="r_locution" poids="121" tid="83219">veille-sommeil</rel>
+                <rel type="r_associated" poids="120" tid="101888">insomnie</rel>
+                <rel type="r_has_magn" poids="120" tid="154762">sommeil lourd</rel>
+                <rel type="r_family" poids="120" tid="106725">ensommeiller</rel>
+                <rel type="r_conseq" poids="120" tid="138507">s'endormir</rel>
+                <rel type="r_hypo" poids="113" tid="135985">sieste</rel>
+                <rel type="r_hypo" poids="111" tid="143510">somme</rel>
+                <rel type="r_associated" poids="110" tid="54226">couette</rel>
+                <rel type="r_locution" poids="110" tid="380293">sommeil léthargique</rel>
+                <rel type="r_has_magn" poids="110" tid="48654">rêve</rel>
+                <rel type="r_family" poids="110" tid="259">somnifère</rel>
+                <rel type="r_locution" poids="109" tid="346524">dans un demi-sommeil</rel>
+                <rel type="r_locution" poids="109" tid="380291">sommeil diurne</rel>
+                <rel type="r_anto" poids="108" tid="101888">insomnie</rel>
+                <rel type="r_locution" poids="108" tid="380290">sommeil de la nature</rel>
+                <rel type="r_locution" poids="107" tid="380297">sommeil somnambulique</rel>
+                <rel type="r_family" poids="107" tid="77775">somnambule</rel>
+                <rel type="r_locution" poids="106" tid="359916">ivre de sommeil</rel>
+                <rel type="r_locution" poids="106" tid="380294">sommeil nocturne</rel>
+                <rel type="r_locution" poids="106" tid="380296">sommeil rapide</rel>
+                <rel type="r_locution" poids="105" tid="372999">pris de sommeil</rel>
+                <rel type="r_family" poids="105" tid="41529">somnolent</rel>
+                <rel type="r_hypo" poids="104" tid="111776">repos</rel>
+                <rel type="r_locution" poids="104" tid="333041">abruti de sommeil</rel>
+                <rel type="r_locution" poids="104" tid="380298">sommeil provoqué</rel>
+                <rel type="r_anto" poids="103" tid="128495">vigilance</rel>
+                <rel type="r_locution" poids="103" tid="346559">dans un semi-sommeil</rel>
+                <rel type="r_locution" poids="102" tid="356566">grand sommeil</rel>
+                <rel type="r_locution" poids="102" tid="366734">nuit sans sommeil</rel>
+                <rel type="r_locution" poids="102" tid="380295">sommeil pesant</rel>
+                <rel type="r_hypo" poids="101" tid="55267">court</rel>
+                <rel type="r_hypo" poids="101" tid="133345">pause</rel>
+                <rel type="r_locution" poids="101" tid="364417">mise en sommeil</rel>
+                <rel type="r_locution" poids="101" tid="380292">sommeil hibernal</rel>
+                <rel type="r_lieu" poids="98" tid="35676">canapé</rel>
+                <rel type="r_lieu" poids="98" tid="90075">chambre</rel>
+                <rel type="r_associated" poids="90" tid="141176">réveil</rel>
+                <rel type="r_associated" poids="90" tid="102152">sommeiller</rel>
+                <rel type="r_associated" poids="90" tid="259">somnifère</rel>
+                <rel type="r_anto" poids="90" tid="98886">alerte</rel>
+                <rel type="r_anto" poids="90" tid="44007">attention</rel>
+                <rel type="r_syn" poids="84" tid="25139">inertie</rel>
+                <rel type="r_syn" poids="84" tid="143510">somme</rel>
+                <rel type="r_syn" poids="83" tid="66131">roupillon</rel>
+                <rel type="r_syn" poids="82" tid="107545">dodo</rel>
+                <rel type="r_syn" poids="81" tid="111776">repos</rel>
+                <rel type="r_syn" poids="80" tid="124425">assoupissement</rel>
+                <rel type="r_syn" poids="80" tid="135985">sieste</rel>
+                <rel type="r_anto" poids="80" tid="25161">qui-vive</rel>
+                <rel type="r_has_magn" poids="80" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_family" poids="80" tid="90177">sommeillant</rel>
+                <rel type="r_syn" poids="79" tid="53764">engourdissement</rel>
+                <rel type="r_syn" poids="79" tid="28190">narcose</rel>
+                <rel type="r_lieu" poids="78" tid="67449">auberge</rel>
+                <rel type="r_lieu" poids="78" tid="60866">cours</rel>
+                <rel type="r_lieu" poids="78" tid="65828">foin</rel>
+                <rel type="r_lieu" poids="78" tid="117679">hamac</rel>
+                <rel type="r_lieu" poids="78" tid="54899">réunion</rel>
+                <rel type="r_syn" poids="77" tid="134034">léthargie</rel>
+                <rel type="r_hypo" poids="77" tid="264149">sommeil agité</rel>
+                <rel type="r_syn" poids="76" tid="95282">hibernation</rel>
+                <rel type="r_associated" poids="75" tid="143510">somme</rel>
+                <rel type="r_infopot" poids="75" tid="254877">_POL-NEUTRE_PC</rel>
+                <rel type="r_associated" poids="71" tid="152832">sommeil profond</rel>
+                <rel type="r_pos" poids="71" tid="171870">Nom:</rel>
+                <rel type="r_sentiment" poids="71" tid="37298">amour</rel>
+                <rel type="r_associated" poids="70" tid="37413">rêves</rel>
+                <rel type="r_associated" poids="70" tid="117095">zoologie</rel>
+                <rel type="r_anto" poids="70" tid="25312">éveillé</rel>
+                <rel type="r_has_magn" poids="70" tid="74424">sommeil éternel</rel>
+                <rel type="r_locution" poids="69" tid="1841809">syndrome des pointes-ondes continues pendant le sommeil</rel>
+                <rel type="r_domain" poids="68" tid="117095">zoologie</rel>
+                <rel type="r_sentiment" poids="67" tid="57221">joie</rel>
+                <rel type="r_locution" poids="66" tid="1852237">syndromes d'apnée du sommeil</rel>
+                <rel type="r_carac" poids="65" tid="36922">profond</rel>
+                <rel type="r_syn" poids="64" tid="129078">coma</rel>
+                <rel type="r_locution" poids="63" tid="1844869">troubles du sommeil du petit enfant</rel>
+                <rel type="r_locution" poids="62" tid="1844871">privation de sommeil</rel>
+                <rel type="r_sentiment" poids="62" tid="28453">bonheur</rel>
+                <rel type="r_locution" poids="61" tid="1844868">troubles du sommeil de l'enfant d'âge scolaire</rel>
+                <rel type="r_has_magn" poids="61" tid="37160">nuit blanche</rel>
+                <rel type="r_has_magn" poids="61" tid="133476">somnambulisme</rel>
+                <rel type="r_conseq" poids="61" tid="236412">apnée du sommeil</rel>
+                <rel type="r_associated" poids="60" tid="35143">biologie</rel>
+                <rel type="r_associated" poids="60" tid="145424">cauchemar</rel>
+                <rel type="r_associated" poids="60" tid="152170">cauchemard</rel>
+                <rel type="r_associated" poids="60" tid="82414">drap</rel>
+                <rel type="r_associated" poids="60" tid="95625">ensommeillé</rel>
+                <rel type="r_associated" poids="60" tid="102206">médecine</rel>
+                <rel type="r_associated" poids="60" tid="42931">rêver</rel>
+                <rel type="r_associated" poids="60" tid="38344">sociologie</rel>
+                <rel type="r_associated" poids="60" tid="152943">sommeil de plomb</rel>
+                <rel type="r_domain" poids="60" tid="35143">biologie</rel>
+                <rel type="r_domain" poids="60" tid="102206">médecine</rel>
+                <rel type="r_syn" poids="60" tid="146480">anesthésie</rel>
+                <rel type="r_locution" poids="60" tid="2560121">bras du sommeil</rel>
+                <rel type="r_locution" poids="60" tid="5332167">nuit de sommeil</rel>
+                <rel type="r_locution" poids="60" tid="1800993">paralysie du sommeil</rel>
+                <rel type="r_has_magn" poids="60" tid="95282">hibernation</rel>
+                <rel type="r_has_magn" poids="60" tid="127047">évanouissement</rel>
+                <rel type="r_has_antimagn" poids="60" tid="22792">somnolence</rel>
+                <rel type="r_family" poids="60" tid="216538" te="somme>43253">somme  (dormir)</rel>
+                <rel type="r_family" poids="60" tid="262375">somnolente</rel>
+                <rel type="r_patient-1" poids="60" tid="220451">être interrompu</rel>
+                <rel type="r_conseq" poids="60" tid="238799" te="récupérer>87681">récupérer  (se reposer)</rel>
+                <rel type="r_associated" poids="59" tid="94053">soir</rel>
+                <rel type="r_syn" poids="59" tid="60437">méridienne</rel>
+                <rel type="r_syn" poids="59" tid="22792">somnolence</rel>
+                <rel type="r_syn" poids="59" tid="6068">torpeur</rel>
+                <rel type="r_locution" poids="59" tid="1782722">laisser en sommeil</rel>
+                <rel type="r_locution" poids="59" tid="2581452">s'endormir du sommeil du juste</rel>
+                <rel type="r_sentiment" poids="59" tid="146357">envie</rel>
+                <rel type="r_associated" poids="58" tid="66131">roupillon</rel>
+                <rel type="r_syn" poids="58" tid="135033">inactivité</rel>
+                <rel type="r_locution" poids="58" tid="593635">sommeil lent profond</rel>
+                <rel type="r_lemma" poids="58" tid="60829">sommeil</rel>
+                <rel type="r_infopot" poids="58" tid="163012">_INFO-NO-MORE-QUESTION</rel>
+                <rel type="r_associated" poids="57" tid="83454">fatigué</rel>
+                <rel type="r_associated" poids="57" tid="124051">récupération</rel>
+                <rel type="r_domain" poids="57" tid="38344">sociologie</rel>
+                <rel type="r_pos" poids="57" tid="146885">Nom:Mas+SG</rel>
+                <rel type="r_locution" poids="57" tid="1801003">bruxisme du sommeil</rel>
+                <rel type="r_locution" poids="57" tid="4389688">désordre du sommeil</rel>
+                <rel type="r_locution" poids="57" tid="4316205">feindre le sommeil</rel>
+                <rel type="r_family" poids="57" tid="241467">sommeillé</rel>
+                <rel type="r_anto" poids="56" tid="133120">excitation</rel>
+                <rel type="r_locution" poids="56" tid="2934022">semi-sommeil</rel>
+                <rel type="r_locution" poids="56" tid="4466939">sommeil excessif</rel>
+                <rel type="r_associated" poids="55" tid="8924">psychologie</rel>
+                <rel type="r_associated" poids="55" tid="5435">ronfler</rel>
+                <rel type="r_syn" poids="55" tid="92356">demi-sommeil</rel>
+                <rel type="r_anto" poids="55" tid="112929">action</rel>
+                <rel type="r_anto" poids="55" tid="45705">marche</rel>
+                <rel type="r_locution" poids="55" tid="7594555">problèmes de sommeil</rel>
+                <rel type="r_flpot" poids="55" tid="194998">_FL:41</rel>
+                <rel type="r_carac" poids="55" tid="96240">paradoxal</rel>
+                <rel type="r_associated" poids="54" tid="156315">sommeil réparateur</rel>
+                <rel type="r_isa" poids="54" tid="135190">lieu</rel>
+                <rel type="r_locution" poids="54" tid="1773638">qui a sommeil</rel>
+                <rel type="r_flpot" poids="54" tid="151568">_FL:11</rel>
+                <rel type="r_has_magn" poids="54" tid="160488">coma profond</rel>
+                <rel type="r_associated" poids="53" tid="165974">edredon</rel>
+                <rel type="r_domain" poids="53" tid="8924">psychologie</rel>
+                <rel type="r_syn" poids="53" tid="13029">inaction</rel>
+                <rel type="r_locution" poids="53" tid="1831303">cycle veille-sommeil</rel>
+                <rel type="r_locution" poids="53" tid="3230721">problème de sommeil</rel>
+                <rel type="r_locution" poids="53" tid="1844870">sommeil normal de l'adulte</rel>
+                <rel type="r_locution" poids="53" tid="2683998">sommeil partagé</rel>
+                <rel type="r_syn" poids="52" tid="146580">dormition</rel>
+                <rel type="r_locution" poids="52" tid="3766092">sommeil à mouvements oculaires rapides</rel>
+                <rel type="r_has_magn" poids="52" tid="315905" te="coma>102206">coma  (médecine)</rel>
+                <rel type="r_has_antimagn" poids="52" tid="143510">somme</rel>
+                <rel type="r_sentiment" poids="52" tid="9864">désir</rel>
+                <rel type="r_infopot" poids="52" tid="2585996">_INFO-CNRTL-YES</rel>
+                <rel type="r_associated" poids="51" tid="41459">narcotique</rel>
+                <rel type="r_associated" poids="51" tid="162724">tomber de sommeil</rel>
+                <rel type="r_syn" poids="51" tid="42992">calme</rel>
+                <rel type="r_syn" poids="51" tid="13610">éclipse</rel>
+                <rel type="r_anto" poids="51" tid="35457">vivacité</rel>
+                <rel type="r_locution" poids="51" tid="1782723">dormir du sommeil du juste</rel>
+                <rel type="r_has_magn" poids="51" tid="146480">anesthésie</rel>
+                <rel type="r_has_magn" poids="51" tid="152170">cauchemard</rel>
+                <rel type="r_has_magn" poids="51" tid="187585">coma dépassé</rel>
+                <rel type="r_has_magn" poids="51" tid="101888">insomnie</rel>
+                <rel type="r_has_magn" poids="51" tid="134034">léthargie</rel>
+                <rel type="r_has_magn" poids="51" tid="42493">mort cérébrale</rel>
+                <rel type="r_has_magn" poids="51" tid="93099">plomb</rel>
+                <rel type="r_has_magn" poids="51" tid="135985">sieste</rel>
+                <rel type="r_has_magn" poids="51" tid="77775">somnambule</rel>
+                <rel type="r_successeur-time" poids="51" tid="77493">apaisement</rel>
+                <rel type="r_successeur-time" poids="51" tid="236412">apnée du sommeil</rel>
+                <rel type="r_successeur-time" poids="51" tid="145424">cauchemar</rel>
+                <rel type="r_successeur-time" poids="51" tid="142000">forme</rel>
+                <rel type="r_successeur-time" poids="51" tid="5205">paix</rel>
+                <rel type="r_successeur-time" poids="51" tid="226398">pipi au lit</rel>
+                <rel type="r_successeur-time" poids="51" tid="153354">pleine forme</rel>
+                <rel type="r_successeur-time" poids="51" tid="134769">relâchement</rel>
+                <rel type="r_successeur-time" poids="51" tid="111776">repos</rel>
+                <rel type="r_successeur-time" poids="51" tid="54395">ronflement</rel>
+                <rel type="r_successeur-time" poids="51" tid="124051">récupération</rel>
+                <rel type="r_successeur-time" poids="51" tid="48654">rêve</rel>
+                <rel type="r_successeur-time" poids="51" tid="55045">songe</rel>
+                <rel type="r_successeur-time" poids="51" tid="85687">énurésie</rel>
+                <rel type="r_successeur-time" poids="51" tid="19980">éveil</rel>
+                <rel type="r_locution" poids="49" tid="7594554">absence de sommeil</rel>
+                <rel type="r_locution" poids="49" tid="6449281">bruxisme du sommeil de l'enfant</rel>
+                <rel type="r_locution" poids="49" tid="6450808">syndromes d'apnées du sommeil</rel>
+                <rel type="r_locution" poids="48" tid="1823964">syndrome des apnées du sommeil</rel>
+                <rel type="r_locution" poids="47" tid="1823921">syndrome d'apnée du sommeil</rel>
+                <rel type="r_locution" poids="47" tid="5973186">syndrome d'avance de phase du sommeil</rel>
+                <rel type="r_flpot" poids="47" tid="151550">_FL:8</rel>
+                <rel type="r_locution" poids="46" tid="6527085">sommeil et repos</rel>
+                <rel type="r_infopot" poids="46" tid="162759">_INFO-SEM-PLACE</rel>
+                <rel type="r_pos" poids="45" tid="2586627">Gender:Mas</rel>
+                <rel type="r_pos" poids="45" tid="2586629">Number:Sing</rel>
+                <rel type="r_locution" poids="45" tid="6448321">trouble du sommeil induit par l'alcool</rel>
+                <rel type="r_carac" poids="45" tid="143256">léger</rel>
+                <rel type="r_successeur-time" poids="45" tid="141176">réveil</rel>
+                <rel type="r_locution" poids="44" tid="5553502">cycle du sommeil</rel>
+                <rel type="r_locution" poids="44" tid="6450189">syndrome d'apnée obstructive du sommeil</rel>
+                <rel type="r_locution" poids="44" tid="6452001">syndromes d'apnées obstructives du sommeil</rel>
+                <rel type="r_locution" poids="44" tid="6526711">tests reliés aux troubles du sommeil</rel>
+                <rel type="r_associated" poids="43" tid="73636">barbiturique</rel>
+                <rel type="r_associated" poids="43" tid="42074">dortoir</rel>
+                <rel type="r_associated" poids="43" tid="72695">hypnotisme</rel>
+                <rel type="r_associated" poids="43" tid="2546">physiologie</rel>
+                <rel type="r_domain-1" poids="43" tid="107799">matelas</rel>
+                <rel type="r_associated" poids="42" tid="112848">berceuse</rel>
+                <rel type="r_locution" poids="42" tid="5973192">trouble dissociatif lié au sommeil</rel>
+                <rel type="r_locution" poids="41" tid="10461653">Meurtres en sommeil</rel>
+                <rel type="r_locution" poids="41" tid="10118906">Pendant ton sommeil</rel>
+                <rel type="r_locution" poids="41" tid="2454558">agent en sommeil</rel>
+                <rel type="r_locution" poids="41" tid="5973208">sursaut du sommeil</rel>
+                <rel type="r_anto" poids="40" tid="221714" te="réveil>19980">réveil  (éveil)</rel>
+                <rel type="r_locution" poids="40" tid="6431075">anomalie du sommeil paradoxal</rel>
+                <rel type="r_locution" poids="40" tid="2427736">sommeil de mort</rel>
+                <rel type="r_locution" poids="40" tid="6437342">trouble de l'initiation du sommeil</rel>
+                <rel type="r_locution" poids="40" tid="6443674">troubles de l'endormissement et du maintien du sommeil</rel>
+                <rel type="r_data" poids="40" tid="172435">Langage:familier</rel>
+                <rel type="r_infopot" poids="40" tid="214534">_INFO-MEANING-FIGURED</rel>
+                <rel type="r_infopot" poids="40" tid="191741">_INFO-VOC-COMMON</rel>
+                <rel type="r_conseq" poids="40" tid="43336">pandiculation</rel>
+                <rel type="r_locution" poids="39" tid="6451232">enregistrement de l'apnée du sommeil</rel>
+                <rel type="r_locution" poids="39" tid="6451662">trouble du sommeil par retard de l'heure du coucher</rel>
+                <rel type="r_locution" poids="39" tid="6451416">troubles du sommeil liés à l'environnement</rel>
+                <rel type="r_associated" poids="38" tid="50846">aliter</rel>
+                <rel type="r_associated" poids="38" tid="21222">dormeur</rel>
+                <rel type="r_domain" poids="38" tid="2546">physiologie</rel>
+                <rel type="r_locution" poids="38" tid="10421079">Le Grand sommeil</rel>
+                <rel type="r_locution" poids="38" tid="5973212">Meurtre en sommeil</rel>
+                <rel type="r_locution" poids="38" tid="6429342">chronothérapie sur les phases de sommeil</rel>
+                <rel type="r_locution" poids="38" tid="5973185">dette de sommeil</rel>
+                <rel type="r_lieu-1" poids="38" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="37" tid="208290">sommeil lent</rel>
+                <rel type="r_locution" poids="37" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_flpot" poids="37" tid="151663">_FL:15</rel>
+                <rel type="r_carac" poids="37" tid="64713">lourd</rel>
+                <rel type="r_patient-1" poids="37" tid="4316206" te="::>14:60829>29:71742">feindre  [objet]
+                  sommeil</rel>
+                <rel type="r_lieu_action" poids="37" tid="327873" te="::>13:59817>29:34025">savoir  [sujet]
+                  savant</rel>
+                <rel type="r_against" poids="37" tid="146295">fatigue</rel>
+                <rel type="r_locution" poids="36" tid="6444502">perturbations de l'endormissement et du maintien du sommeil</rel>
+                <rel type="r_locution" poids="36" tid="5973188">syndrome de retard de phase du sommeil</rel>
+                <rel type="r_associated" poids="35" tid="14315">anesthésier</rel>
+                <rel type="r_associated" poids="35" tid="78727">apaiser</rel>
+                <rel type="r_associated" poids="35" tid="48109">assoupissant</rel>
+                <rel type="r_associated" poids="35" tid="118093">ensommeillement</rel>
+                <rel type="r_associated" poids="35" tid="124391">hypnagogisme</rel>
+                <rel type="r_associated" poids="35" tid="73310">morphéique</rel>
+                <rel type="r_associated" poids="35" tid="60437">méridienne</rel>
+                <rel type="r_associated" poids="35" tid="216538" te="somme>43253">somme  (dormir)</rel>
+                <rel type="r_associated" poids="35" tid="33742">sommeillement</rel>
+                <rel type="r_hypo" poids="35" tid="380291">sommeil diurne</rel>
+                <rel type="r_hypo" poids="35" tid="593635">sommeil lent profond</rel>
+                <rel type="r_hypo" poids="35" tid="156315">sommeil réparateur</rel>
+                <rel type="r_locution" poids="35" tid="6429299">insomnie de maintien du sommeil</rel>
+                <rel type="r_locution" poids="35" tid="10829038">la maladie du sommeil</rel>
+                <rel type="r_locution" poids="35" tid="6431769">maladie du sommeil de l'afrique occidentale</rel>
+                <rel type="r_locution" poids="35" tid="6429327">sommeil à ondes rapides</rel>
+                <rel type="r_locution" poids="35" tid="6432087">syndrome d'apnée du sommeil central</rel>
+                <rel type="r_locution" poids="35" tid="6437352">trouble du sommeil induit par l'amphétamine</rel>
+                <rel type="r_locution" poids="35" tid="6435196">trouble transitoire d'initiation ou de maintien du sommeil</rel>
+                <rel type="r_carac" poids="35" tid="81384">lent</rel>
+                <rel type="r_data" poids="35" tid="3575927">Morpho:min</rel>
+                <rel type="r_has_antimagn" poids="35" tid="92356">demi-sommeil</rel>
+                <rel type="r_sentiment" poids="35" tid="111776">repos</rel>
+                <rel type="r_associated" poids="34" tid="138261">bâiller</rel>
+                <rel type="r_associated" poids="34" tid="6033">dormance</rel>
+                <rel type="r_associated" poids="34" tid="132516">délassement</rel>
+                <rel type="r_associated" poids="34" tid="4279">endormant</rel>
+                <rel type="r_associated" poids="34" tid="24652">loir</rel>
+                <rel type="r_associated" poids="34" tid="34111">onirique</rel>
+                <rel type="r_associated" poids="34" tid="19612">schloffer</rel>
+                <rel type="r_associated" poids="34" tid="116987">sommeilleux</rel>
+                <rel type="r_associated" poids="34" tid="2098288">sommeils</rel>
+                <rel type="r_associated" poids="34" tid="4031">torpide</rel>
+                <rel type="r_associated" poids="34" tid="59750">tranquillisant</rel>
+                <rel type="r_associated" poids="34" tid="43065">éthériser</rel>
+                <rel type="r_isa" poids="34" tid="269534">état naturel</rel>
+                <rel type="r_hypo" poids="34" tid="208291">sommeil pathologique</rel>
+                <rel type="r_locution" poids="34" tid="5973187">Classification internationale des troubles du sommeil</rel>
+                <rel type="r_locution" poids="34" tid="5973218">défaut de sommeil</rel>
+                <rel type="r_locution" poids="34" tid="1836710">inducteur de sommeil</rel>
+                <rel type="r_locution" poids="34" tid="11021366">retrouver le sommeil</rel>
+                <rel type="r_locution" poids="34" tid="6444336">évaluation de l'apnée du sommeil</rel>
+                <rel type="r_carac" poids="34" tid="155174">de plomb</rel>
+                <rel type="r_carac" poids="34" tid="92118">récupérateur</rel>
+                <rel type="r_link" poids="34" tid="3228593">wiki:@</rel>
+                <rel type="r_locution" poids="33" tid="1831295">cycle de sommeil</rel>
+                <rel type="r_locution" poids="33" tid="11081982">période de sommeil</rel>
+                <rel type="r_conseq" poids="33" tid="1823921">syndrome d'apnée du sommeil</rel>
+                <rel type="r_associated" poids="32" tid="42874">berceau</rel>
+                <rel type="r_associated" poids="32" tid="53710">bercer</rel>
+                <rel type="r_associated" poids="32" tid="6319419">comportement du sommeil</rel>
+                <rel type="r_associated" poids="32" tid="87064">dormeuse</rel>
+                <rel type="r_associated" poids="32" tid="16085">endormi</rel>
+                <rel type="r_associated" poids="32" tid="7225">litière</rel>
+                <rel type="r_associated" poids="32" tid="107897">noctambule</rel>
+                <rel type="r_associated" poids="32" tid="6386889">phase des mouvements oculaires lents du sommeil</rel>
+                <rel type="r_associated" poids="32" tid="247601" te="rêver>43253">rêver  (dormir)</rel>
+                <rel type="r_associated" poids="32" tid="6351028">sommeil calme</rel>
+                <rel type="r_associated" poids="32" tid="6298951">sommeil synchronisé</rel>
+                <rel type="r_associated" poids="32" tid="117293">somnigène</rel>
+                <rel type="r_associated" poids="32" tid="112431">écrouler</rel>
+                <rel type="r_hypo" poids="32" tid="184325">sommeil magnétique</rel>
+                <rel type="r_hypo" poids="32" tid="380295">sommeil pesant</rel>
+                <rel type="r_locution" poids="32" tid="6427117">insomnie avec apnée du sommeil</rel>
+                <rel type="r_locution" poids="32" tid="6427331">stade sommeil</rel>
+                <rel type="r_locution" poids="32" tid="6441634">syndrome d'apnées obstructives du sommeil</rel>
+                <rel type="r_locution" poids="32" tid="6446108">syndrome d'insuffisance de sommeil</rel>
+                <rel type="r_locution" poids="32" tid="6440188">trouble du sommeil associé à l'absence de structure</rel>
+                <rel type="r_locution" poids="32" tid="6431360">trouble du sommeil lié au travail par poste</rel>
+                <rel type="r_locution" poids="32" tid="6442536">troubles de l'initiation et du maintien du sommeil</rel>
+                <rel type="r_data" poids="32" tid="3576104">Morpho:nospace</rel>
+                <rel type="r_conseq" poids="32" tid="6807980">=sleep apnea=</rel>
+                <rel type="r_conseq" poids="32" tid="255234">rester au pieu</rel>
+                <rel type="r_link" poids="32" tid="6139182">umls:C0234448</rel>
+                <rel type="r_associated" poids="31" tid="3674">botanique</rel>
+                <rel type="r_associated" poids="31" tid="16191">chloroformer</rel>
+                <rel type="r_associated" poids="31" tid="92356">demi-sommeil</rel>
+                <rel type="r_associated" poids="31" tid="117679">hamac</rel>
+                <rel type="r_associated" poids="31" tid="74521">hypnopompique</rel>
+                <rel type="r_associated" poids="31" tid="105425">magnétiser</rel>
+                <rel type="r_associated" poids="31" tid="108025">magnétiseur</rel>
+                <rel type="r_associated" poids="31" tid="120567">narcolepsie</rel>
+                <rel type="r_associated" poids="31" tid="76237">nuiter</rel>
+                <rel type="r_associated" poids="31" tid="7326">roupilleur</rel>
+                <rel type="r_associated" poids="31" tid="221714" te="réveil>19980">réveil  (éveil)</rel>
+                <rel type="r_associated" poids="31" tid="2910">schloff</rel>
+                <rel type="r_hypo" poids="31" tid="208287">sommeil cataleptique</rel>
+                <rel type="r_locution" poids="31" tid="5828802">Un sommeil d'ours</rel>
+                <rel type="r_locution" poids="31" tid="6437210">bruxisme du sommeil de l'adulte</rel>
+                <rel type="r_locution" poids="31" tid="9980436">trouver le sommeil</rel>
+                <rel type="r_carac" poids="31" tid="59522">agité</rel>
+                <rel type="r_carac" poids="31" tid="36712">entrecoupé</rel>
+                <rel type="r_carac" poids="31" tid="47887">haché</rel>
+                <rel type="r_carac" poids="31" tid="49779">pathologique</rel>
+                <rel type="r_lieu-1" poids="31" tid="214369">animal imaginaire</rel>
+                <rel type="r_infopot" poids="31" tid="223172">_POL-NEG</rel>
+                <rel type="r_conseq" poids="31" tid="107799">matelas</rel>
+                <rel type="r_conseq" poids="31" tid="153354">pleine forme</rel>
+                <rel type="r_conseq" poids="31" tid="134769">relâchement</rel>
+                <rel type="r_causatif" poids="31" tid="124974">veiller</rel>
+                <rel type="r_associated" poids="30" tid="6807993">=somnolence=</rel>
+                <rel type="r_associated" poids="30" tid="35615">anesthésiant</rel>
+                <rel type="r_associated" poids="30" tid="51629">anesthésique</rel>
+                <rel type="r_associated" poids="30" tid="94251">assoupir</rel>
+                <rel type="r_associated" poids="30" tid="6918">calmer</rel>
+                <rel type="r_associated" poids="30" tid="47595">cauchemardesque</rel>
+                <rel type="r_associated" poids="30" tid="213884" te="dodo>43253">dodo  (dormir)</rel>
+                <rel type="r_associated" poids="30" tid="93324">dormette</rel>
+                <rel type="r_associated" poids="30" tid="85362">dormitif</rel>
+                <rel type="r_associated" poids="30" tid="146580">dormition</rel>
+                <rel type="r_associated" poids="30" tid="78602">hypnagogique</rel>
+                <rel type="r_associated" poids="30" tid="288789">hypnologie</rel>
+                <rel type="r_associated" poids="30" tid="8286">hypnoïde</rel>
+                <rel type="r_associated" poids="30" tid="85613">improduction</rel>
+                <rel type="r_associated" poids="30" tid="125284">inconscience</rel>
+                <rel type="r_associated" poids="30" tid="25139">inertie</rel>
+                <rel type="r_associated" poids="30" tid="246187" te="las>83454">las  (fatigué)</rel>
+                <rel type="r_associated" poids="30" tid="164801">marchand de sommeil</rel>
+                <rel type="r_associated" poids="30" tid="58741">marmotte</rel>
+                <rel type="r_associated" poids="30" tid="107799">matelas</rel>
+                <rel type="r_associated" poids="30" tid="139457">natte</rel>
+                <rel type="r_associated" poids="30" tid="96240">paradoxal</rel>
+                <rel type="r_associated" poids="30" tid="49089">ronfleur</rel>
+                <rel type="r_associated" poids="30" tid="125708">roupiller</rel>
+                <rel type="r_associated" poids="30" tid="115483">soirée</rel>
+                <rel type="r_associated" poids="30" tid="208291">sommeil pathologique</rel>
+                <rel type="r_associated" poids="30" tid="50350">sédatif</rel>
+                <rel type="r_hypo" poids="30" tid="154762">sommeil lourd</rel>
+                <rel type="r_hypo" poids="30" tid="380296">sommeil rapide</rel>
+                <rel type="r_locution" poids="30" tid="6432022">erreur d'hygiène de sommeil</rel>
+                <rel type="r_locution" poids="30" tid="6427046">peptide inducteur du sommeil lent</rel>
+                <rel type="r_locution" poids="30" tid="5574387">rythmies du sommeil</rel>
+                <rel type="r_locution" poids="30" tid="5574408">trouble du comportement en sommeil paradoxal</rel>
+                <rel type="r_has_magn" poids="30" tid="145424">cauchemar</rel>
+                <rel type="r_family" poids="30" tid="118093">ensommeillement</rel>
+                <rel type="r_agent-1" poids="30" tid="263290">faire dormir</rel>
+                <rel type="r_against-1" poids="30" tid="142966">caféine</rel>
+                <rel type="r_against-1" poids="30" tid="109778">théine</rel>
+                <rel type="r_link" poids="30" tid="6118154">umls:C0037313</rel>
+                <rel type="r_link" poids="30" tid="6118153">umls:C0234451</rel>
+                <rel type="r_associated" poids="29" tid="6827213">=narcosis=</rel>
+                <rel type="r_associated" poids="29" tid="152162">Sociologie</rel>
+                <rel type="r_associated" poids="29" tid="82435">assoupi</rel>
+                <rel type="r_associated" poids="29" tid="109143">dormoir</rel>
+                <rel type="r_associated" poids="29" tid="26023">hypnotique</rel>
+                <rel type="r_associated" poids="29" tid="122971">hypnotiseur</rel>
+                <rel type="r_associated" poids="29" tid="13029">inaction</rel>
+                <rel type="r_associated" poids="29" tid="134034">léthargie</rel>
+                <rel type="r_associated" poids="29" tid="75916">mesmérisme</rel>
+                <rel type="r_associated" poids="29" tid="80804">onirisme</rel>
+                <rel type="r_associated" poids="29" tid="22157">pioncer</rel>
+                <rel type="r_associated" poids="29" tid="35277">ronflette</rel>
+                <rel type="r_associated" poids="29" tid="237159" te="rêve>60829">rêve  (sommeil)</rel>
+                <rel type="r_associated" poids="29" tid="41529">somnolent</rel>
+                <rel type="r_hypo" poids="29" tid="380292">sommeil hibernal</rel>
+                <rel type="r_hypo" poids="29" tid="380293">sommeil léthargique</rel>
+                <rel type="r_hypo" poids="29" tid="1844870">sommeil normal de l'adulte</rel>
+                <rel type="r_hypo" poids="29" tid="380298">sommeil provoqué</rel>
+                <rel type="r_hypo" poids="29" tid="380297">sommeil somnambulique</rel>
+                <rel type="r_locution" poids="29" tid="10904258">J'ai pas sommeil</rel>
+                <rel type="r_locution" poids="29" tid="6435752">maladie du sommeil de l'afrique orientale</rel>
+                <rel type="r_locution" poids="29" tid="6429754">sommeil prolongé</rel>
+                <rel type="r_locution" poids="29" tid="6434901">syndrome d'apnée du sommeil centrale</rel>
+                <rel type="r_locution" poids="29" tid="6432241">syndrome d'apnées centrales du sommeil</rel>
+                <rel type="r_locution" poids="29" tid="9989045">trouble du sommeil non organique non précisé</rel>
+                <rel type="r_locution" poids="29" tid="9989047">trouble non organique du sommeil non précisé</rel>
+                <rel type="r_causatif" poids="29" tid="42992">calme</rel>
+                <rel type="r_associated" poids="28" tid="6826982">=sleepiness=</rel>
+                <rel type="r_associated" poids="28" tid="17503">anesthésiste</rel>
+                <rel type="r_associated" poids="28" tid="28452">couche-tôt</rel>
+                <rel type="r_associated" poids="28" tid="93680">détente</rel>
+                <rel type="r_associated" poids="28" tid="95282">hibernation</rel>
+                <rel type="r_associated" poids="28" tid="215509" te="lit>10994872">lit  (lieu où l'on peut se coucher)</rel>
+                <rel type="r_associated" poids="28" tid="28190">narcose</rel>
+                <rel type="r_associated" poids="28" tid="130523">papilloter</rel>
+                <rel type="r_associated" poids="28" tid="23263">relâche</rel>
+                <rel type="r_associated" poids="28" tid="11231">somnambulesque</rel>
+                <rel type="r_associated" poids="28" tid="65957">somnescence</rel>
+                <rel type="r_associated" poids="28" tid="55045">songe</rel>
+                <rel type="r_associated" poids="28" tid="111390">soporatif</rel>
+                <rel type="r_associated" poids="28" tid="71993">total</rel>
+                <rel type="r_domain" poids="28" tid="3674">botanique</rel>
+                <rel type="r_syn" poids="28" tid="213884" te="dodo>43253">dodo  (dormir)</rel>
+                <rel type="r_hypo" poids="28" tid="208286">sommeil artificiel</rel>
+                <rel type="r_hypo" poids="28" tid="380290">sommeil de la nature</rel>
+                <rel type="r_locution" poids="28" tid="6429399">autre apnée du sommeil non précisée</rel>
+                <rel type="r_locution" poids="28" tid="6425197">maladie du sommeil à trypanosoma rhodesiense</rel>
+                <rel type="r_locution" poids="28" tid="6438414">sommeil d'ivresse</rel>
+                <rel type="r_conseq" poids="28" tid="219796">échevelée</rel>
+                <rel type="r_causatif" poids="28" tid="41459">narcotique</rel>
+                <rel type="r_against-1" poids="28" tid="115374">amphétamine</rel>
+                <rel type="r_associated" poids="27" tid="63141">apaisant</rel>
+                <rel type="r_associated" poids="27" tid="124425">assoupissement</rel>
+                <rel type="r_associated" poids="27" tid="129078">coma</rel>
+                <rel type="r_associated" poids="27" tid="97869">dormant</rel>
+                <rel type="r_associated" poids="27" tid="65669">endormement</rel>
+                <rel type="r_associated" poids="27" tid="87528">faire</rel>
+                <rel type="r_associated" poids="27" tid="45761">hypnique</rel>
+                <rel type="r_associated" poids="27" tid="138712">paillasse</rel>
+                <rel type="r_associated" poids="27" tid="26381">répit</rel>
+                <rel type="r_associated" poids="27" tid="73337">schlof</rel>
+                <rel type="r_associated" poids="27" tid="264149">sommeil agité</rel>
+                <rel type="r_associated" poids="27" tid="87175">somnambulique</rel>
+                <rel type="r_associated" poids="27" tid="133476">somnambulisme</rel>
+                <rel type="r_associated" poids="27" tid="119865">somniloquie</rel>
+                <rel type="r_associated" poids="27" tid="22792">somnolence</rel>
+                <rel type="r_associated" poids="27" tid="6068">torpeur</rel>
+                <rel type="r_syn" poids="27" tid="2524985">anæsthésie</rel>
+                <rel type="r_locution" poids="27" tid="6425150">apnée centrale du sommeil primitive</rel>
+                <rel type="r_locution" poids="27" tid="6433834">monitorage de l'apnée du sommeil avec alarme</rel>
+                <rel type="r_locution" poids="27" tid="6432444">trouble persistant d'initiation ou de maintien du sommeil</rel>
+                <rel type="r_domain-1" poids="27" tid="124391">hypnagogisme</rel>
+                <rel type="r_successeur-time" poids="27" tid="221714" te="réveil>19980">réveil  (éveil)</rel>
+                <rel type="r_against-1" poids="27" tid="90895">psychostimulant</rel>
+                <rel type="r_against-1" poids="27" tid="46514">théobromine</rel>
+                <rel type="r_associated" poids="26" tid="58938">berçant</rel>
+                <rel type="r_associated" poids="26" tid="39919">calmant</rel>
+                <rel type="r_associated" poids="26" tid="64144">endormeur</rel>
+                <rel type="r_associated" poids="26" tid="120165">endormir</rel>
+                <rel type="r_associated" poids="26" tid="53764">engourdissement</rel>
+                <rel type="r_associated" poids="26" tid="106725">ensommeiller</rel>
+                <rel type="r_associated" poids="26" tid="45525">hypersomnie</rel>
+                <rel type="r_associated" poids="26" tid="5627">hypnotiser</rel>
+                <rel type="r_associated" poids="26" tid="56201">insensibilisation</rel>
+                <rel type="r_associated" poids="26" tid="91105">interruption</rel>
+                <rel type="r_associated" poids="26" tid="135190">lieu</rel>
+                <rel type="r_associated" poids="26" tid="49318">loisir</rel>
+                <rel type="r_associated" poids="26" tid="107123">lève-tard</rel>
+                <rel type="r_associated" poids="26" tid="34881">magnétisme</rel>
+                <rel type="r_associated" poids="26" tid="180235">maladie du sommeil</rel>
+                <rel type="r_associated" poids="26" tid="106663">reposer</rel>
+                <rel type="r_associated" poids="26" tid="6320266">sommeil orthodoxe</rel>
+                <rel type="r_associated" poids="26" tid="6396989">sommeil à ondes lentes</rel>
+                <rel type="r_associated" poids="26" tid="77775">somnambule</rel>
+                <rel type="r_associated" poids="26" tid="1990">somnoler</rel>
+                <rel type="r_associated" poids="26" tid="134025">soporifique</rel>
+                <rel type="r_associated" poids="26" tid="13610">éclipse</rel>
+                <rel type="r_hypo" poids="26" tid="152943">sommeil de plomb</rel>
+                <rel type="r_hypo" poids="26" tid="162050">sommeil du juste</rel>
+                <rel type="r_hypo" poids="26" tid="60418">sommeil léger</rel>
+                <rel type="r_hypo" poids="26" tid="380294">sommeil nocturne</rel>
+                <rel type="r_locution" poids="26" tid="6424449">troubles du sommeil par somnolence excessive</rel>
+                <rel type="r_locution" poids="26" tid="6426177">électroencéphalogramme ambulatoire de veille et de sommeil avec stimulation</rel>
+                <rel type="r_flpot" poids="26" tid="151567">_FL:3</rel>
+                <rel type="r_carac" poids="26" tid="266321">bon pour la santé</rel>
+                <rel type="r_carac" poids="26" tid="132006">perturbé</rel>
+                <rel type="r_conseq" poids="26" tid="226398">pipi au lit</rel>
+                <rel type="r_causatif" poids="26" tid="146295">fatigue</rel>
+                <rel type="r_causatif" poids="26" tid="261138">horloge circadienne</rel>
+                <rel type="r_syn" poids="25" tid="6853057">=anesthesia procedure=</rel>
+                <rel type="r_syn" poids="25" tid="6827213">=narcosis=</rel>
+                <rel type="r_syn" poids="25" tid="6826982">=sleepiness=</rel>
+                <rel type="r_syn" poids="25" tid="6807993">=somnolence=</rel>
+                <rel type="r_syn" poids="25" tid="41529">somnolent</rel>
+                <rel type="r_hypo" poids="25" tid="6438414">sommeil d'ivresse</rel>
+                <rel type="r_hypo" poids="25" tid="6527085">sommeil et repos</rel>
+                <rel type="r_hypo" poids="25" tid="4466939">sommeil excessif</rel>
+                <rel type="r_hypo" poids="25" tid="208288">sommeil hiémal</rel>
+                <rel type="r_hypo" poids="25" tid="208289">sommeil hypnotique</rel>
+                <rel type="r_hypo" poids="25" tid="208290">sommeil lent</rel>
+                <rel type="r_hypo" poids="25" tid="2683998">sommeil partagé</rel>
+                <rel type="r_hypo" poids="25" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_hypo" poids="25" tid="6429754">sommeil prolongé</rel>
+                <rel type="r_hypo" poids="25" tid="3766092">sommeil à mouvements oculaires rapides</rel>
+                <rel type="r_hypo" poids="25" tid="6429327">sommeil à ondes rapides</rel>
+                <rel type="r_infopot" poids="25" tid="276096">_INFO-WIKI-YES</rel>
+                <rel type="r_conseq" poids="25" tid="7177158">=pandiculation=</rel>
+                <rel type="r_associated" poids="24" tid="106081">arrêt</rel>
+                <rel type="r_associated" poids="23" tid="424675">Sommeil</rel>
+                <rel type="r_associated" poids="23" tid="152125">Zoologie</rel>
+                <rel type="r_associated" poids="23" tid="77493">apaisement</rel>
+                <rel type="r_hypo" poids="23" tid="2427736">sommeil de mort</rel>
+                <rel type="r_infopot" poids="23" tid="254876">_POL-POS_PC</rel>
+                <rel type="r_associated" poids="22" tid="146480">anesthésie</rel>
+                <rel type="r_associated" poids="22" tid="49888">endormissement</rel>
+                <rel type="r_flpot" poids="22" tid="151587">_FL:10</rel>
+                <rel type="r_flpot" poids="22" tid="152813">_FL:28</rel>
+                <rel type="r_flpot" poids="22" tid="153835">_FL:32</rel>
+                <rel type="r_carac" poids="22" tid="321577" te="troublé>132006">troublé  (perturbé)</rel>
+                <rel type="r_domain-1" poids="22" tid="288789">hypnologie</rel>
+                <rel type="r_associated" poids="21" tid="2524985">anæsthésie</rel>
+                <rel type="r_associated" poids="21" tid="42992">calme</rel>
+                <rel type="r_associated" poids="21" tid="25504">halte</rel>
+                <rel type="r_associated" poids="21" tid="135033">inactivité</rel>
+                <rel type="r_associated" poids="21" tid="136768">paupières</rel>
+                <rel type="r_flpot" poids="21" tid="153037">_FL:26</rel>
+                <rel type="r_domain-1" poids="21" tid="136768">paupières</rel>
+                <rel type="r_associated" poids="20" tid="6853057">=anesthesia procedure=</rel>
+                <rel type="r_infopot" poids="19" tid="248198">_SEX_NO</rel>
+                <rel type="r_isa" poids="18" tid="41459">narcotique</rel>
+                <rel type="r_inhib" poids="18" tid="213883" te="dodo>140176">dodo  (oiseau)</rel>
+                <rel type="r_flpot" poids="17" tid="151576">_FL:6</rel>
+                <rel type="r_associated" poids="16" tid="208286">sommeil artificiel</rel>
+                <rel type="r_associated" poids="16" tid="208287">sommeil cataleptique</rel>
+                <rel type="r_associated" poids="16" tid="380291">sommeil diurne</rel>
+                <rel type="r_infopot" poids="16" tid="317329">_POLIT_7NOPOL</rel>
+                <rel type="r_associated" poids="15" tid="593635">sommeil lent profond</rel>
+                <rel type="r_associated" poids="15" tid="1844870">sommeil normal de l'adulte</rel>
+                <rel type="r_flpot" poids="14" tid="151522">_FL:9</rel>
+                <rel type="r_associated" poids="13" tid="55267">court</rel>
+                <rel type="r_associated" poids="13" tid="73055">hypnose</rel>
+                <rel type="r_associated" poids="13" tid="133345">pause</rel>
+                <rel type="r_associated" poids="13" tid="184325">sommeil magnétique</rel>
+                <rel type="r_associated" poids="13" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_isa" poids="13" tid="111776">repos</rel>
+                <rel type="r_inhib" poids="12" tid="318940" te="bonnet de nuit>18557">bonnet de nuit  (couvre-chef)</rel>
+                <rel type="r_inhib" poids="12" tid="318943" te="bonnet de nuit>269189">bonnet de nuit  (verre d'alcool)</rel>
+                <rel type="r_inhib" poids="12" tid="318942" te="bonnet de nuit>318941">bonnet de nuit  (personne ennuyeuse)</rel>
+                <rel type="r_inhib" poids="12" tid="8806379" te="bonnet de nuit>53671">bonnet de nuit  (éteignoir)</rel>
+                <rel type="r_inhib" poids="12" tid="267534" te="piquer du nez>97756">piquer du nez  (avion)</rel>
+                <rel type="r_associated" poids="11" tid="380290">sommeil de la nature</rel>
+                <rel type="r_associated" poids="11" tid="162050">sommeil du juste</rel>
+                <rel type="r_associated" poids="11" tid="380292">sommeil hibernal</rel>
+                <rel type="r_associated" poids="11" tid="380293">sommeil léthargique</rel>
+                <rel type="r_associated" poids="11" tid="380294">sommeil nocturne</rel>
+                <rel type="r_associated" poids="11" tid="380295">sommeil pesant</rel>
+                <rel type="r_associated" poids="11" tid="380298">sommeil provoqué</rel>
+                <rel type="r_associated" poids="11" tid="380296">sommeil rapide</rel>
+                <rel type="r_associated" poids="11" tid="380297">sommeil somnambulique</rel>
+                <rel type="r_node2relnode" poids="11" tid="2591070" te=":r557227">:r557227 [sommeil --r_syn#5:111776--> repos]</rel>
+                <rel type="r_carac" poids="10" tid="126212">réparateur</rel>
+                <rel type="r_wiki" poids="10" tid="5520522">Accouchement</rel>
+                <rel type="r_wiki" poids="10" tid="78978">Alzheimer</rel>
+                <rel type="r_wiki" poids="10" tid="196131">Asiatique</rel>
+                <rel type="r_wiki" poids="10" tid="42313">Asie</rel>
+                <rel type="r_wiki" poids="10" tid="119768">Australie</rel>
+                <rel type="r_wiki" poids="10" tid="430942">Australiens</rel>
+                <rel type="r_wiki" poids="10" tid="139752">Blanc</rel>
+                <rel type="r_wiki" poids="10" tid="34709">Blancs</rel>
+                <rel type="r_wiki" poids="10" tid="403442">Books</rel>
+                <rel type="r_wiki" poids="10" tid="144315">CNRS</rel>
+                <rel type="r_wiki" poids="10" tid="10417">Cauchemar</rel>
+                <rel type="r_wiki" poids="10" tid="5936952">Centenaire</rel>
+                <rel type="r_wiki" poids="10" tid="121765">Centre national de la recherche scientifique</rel>
+                <rel type="r_wiki" poids="10" tid="411477">Cerveau</rel>
+                <rel type="r_wiki" poids="10" tid="142942">Chicago</rel>
+                <rel type="r_wiki" poids="10" tid="5973187">Classification internationale des troubles du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="4276982">Coma</rel>
+                <rel type="r_wiki" poids="10" tid="4">Conscience</rel>
+                <rel type="r_wiki" poids="10" tid="419651">Continent</rel>
+                <rel type="r_wiki" poids="10" tid="285728">DOI</rel>
+                <rel type="r_wiki" poids="10" tid="76651">Diogène Laërce</rel>
+                <rel type="r_wiki" poids="10" tid="405643">Division</rel>
+                <rel type="r_wiki" poids="10" tid="19655">Dormition</rel>
+                <rel type="r_wiki" poids="10" tid="11069015">Doxographe</rel>
+                <rel type="r_wiki" poids="10" tid="71081">EEG</rel>
+                <rel type="r_wiki" poids="10" tid="314815">EMG</rel>
+                <rel type="r_wiki" poids="10" tid="1833098">EOG</rel>
+                <rel type="r_wiki" poids="10" tid="405825">Enfant</rel>
+                <rel type="r_wiki" poids="10" tid="413329">Espace</rel>
+                <rel type="r_wiki" poids="10" tid="26653">Europe 1</rel>
+                <rel type="r_wiki" poids="10" tid="1890174">Girafe</rel>
+                <rel type="r_wiki" poids="10" tid="3322469">Glutamate</rel>
+                <rel type="r_wiki" poids="10" tid="5950946">Graisse</rel>
+                <rel type="r_wiki" poids="10" tid="10748122">Hallucinations</rel>
+                <rel type="r_wiki" poids="10" tid="144913">INSERM</rel>
+                <rel type="r_wiki" poids="10" tid="142939">ISBN</rel>
+                <rel type="r_wiki" poids="10" tid="115748">ISSN</rel>
+                <rel type="r_wiki" poids="10" tid="584684">Inconscient</rel>
+                <rel type="r_wiki" poids="10" tid="292126">International Standard Book Number</rel>
+                <rel type="r_wiki" poids="10" tid="302545">International Standard Serial Number</rel>
+                <rel type="r_wiki" poids="10" tid="5598633">La revue Prescrire</rel>
+                <rel type="r_wiki" poids="10" tid="139997">Los Angeles</rel>
+                <rel type="r_wiki" poids="10" tid="15399">Lyon</rel>
+                <rel type="r_wiki" poids="10" tid="10349380">Michel Jouvet</rel>
+                <rel type="r_wiki" poids="10" tid="212531">Minute</rel>
+                <rel type="r_wiki" poids="10" tid="331780">National Geographic</rel>
+                <rel type="r_wiki" poids="10" tid="60328">Nature</rel>
+                <rel type="r_wiki" poids="10" tid="140927">Noir</rel>
+                <rel type="r_wiki" poids="10" tid="726">Noirs</rel>
+                <rel type="r_wiki" poids="10" tid="18229">Oiseau</rel>
+                <rel type="r_wiki" poids="10" tid="175825">Ornithorynque</rel>
+                <rel type="r_wiki" poids="10" tid="10775527">Orque</rel>
+                <rel type="r_wiki" poids="10" tid="391759">PMID</rel>
+                <rel type="r_wiki" poids="10" tid="404125">Paradoxe</rel>
+                <rel type="r_wiki" poids="10" tid="7286">Platon</rel>
+                <rel type="r_wiki" poids="10" tid="425325">Psychanalyse</rel>
+                <rel type="r_wiki" poids="10" tid="142984">Psychose</rel>
+                <rel type="r_wiki" poids="10" tid="5880125">PubMed</rel>
+                <rel type="r_wiki" poids="10" tid="418465">Radical</rel>
+                <rel type="r_wiki" poids="10" tid="175925">Rat</rel>
+                <rel type="r_wiki" poids="10" tid="137971">Sens</rel>
+                <rel type="r_wiki" poids="10" tid="170754">Sigmund Freud</rel>
+                <rel type="r_wiki" poids="10" tid="419807">Synapse</rel>
+                <rel type="r_wiki" poids="10" tid="5978457">Tamia</rel>
+                <rel type="r_wiki" poids="10" tid="139048">Temps</rel>
+                <rel type="r_wiki" poids="10" tid="9530449">The Gallup Organization</rel>
+                <rel type="r_wiki" poids="10" tid="335">Virgile</rel>
+                <rel type="r_wiki" poids="10" tid="227255">accident du travail</rel>
+                <rel type="r_wiki" poids="10" tid="1645742">accidents de la route</rel>
+                <rel type="r_wiki" poids="10" tid="44224">accouchement</rel>
+                <rel type="r_wiki" poids="10" tid="1981880">accouchements</rel>
+                <rel type="r_wiki" poids="10" tid="66288">adénosine</rel>
+                <rel type="r_wiki" poids="10" tid="71539">animaux</rel>
+                <rel type="r_wiki" poids="10" tid="236412">apnée du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="1827965">aquaporine</rel>
+                <rel type="r_wiki" poids="10" tid="152098">arrêt de travail</rel>
+                <rel type="r_wiki" poids="10" tid="7734">bâillement</rel>
+                <rel type="r_wiki" poids="10" tid="231761">cancer colorectal</rel>
+                <rel type="r_wiki" poids="10" tid="156379">cancer du sein</rel>
+                <rel type="r_wiki" poids="10" tid="417928">cauchemars</rel>
+                <rel type="r_wiki" poids="10" tid="46701">centenaire</rel>
+                <rel type="r_wiki" poids="10" tid="271522">centenaires</rel>
+                <rel type="r_wiki" poids="10" tid="39031">cerveau</rel>
+                <rel type="r_wiki" poids="10" tid="77750">chauves-souris</rel>
+                <rel type="r_wiki" poids="10" tid="96718">chronobiologie</rel>
+                <rel type="r_wiki" poids="10" tid="68939">circadien</rel>
+                <rel type="r_wiki" poids="10" tid="129078">coma</rel>
+                <rel type="r_wiki" poids="10" tid="140246">conscience</rel>
+                <rel type="r_wiki" poids="10" tid="21107">continents</rel>
+                <rel type="r_wiki" poids="10" tid="129269">cortex cérébral</rel>
+                <rel type="r_wiki" poids="10" tid="37566">croissance</rel>
+                <rel type="r_wiki" poids="10" tid="311938">cycle circadien</rel>
+                <rel type="r_wiki" poids="10" tid="5973185">dette de sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="68345">diabète</rel>
+                <rel type="r_wiki" poids="10" tid="80698">division</rel>
+                <rel type="r_wiki" poids="10" tid="275258">divisions cellulaires</rel>
+                <rel type="r_wiki" poids="10" tid="272475">doxographe</rel>
+                <rel type="r_wiki" poids="10" tid="63812">dyssomnie</rel>
+                <rel type="r_wiki" poids="10" tid="35861">dépression</rel>
+                <rel type="r_wiki" poids="10" tid="124094">enfant</rel>
+                <rel type="r_wiki" poids="10" tid="141387">espace</rel>
+                <rel type="r_wiki" poids="10" tid="55433">girafe</rel>
+                <rel type="r_wiki" poids="10" tid="160402">globules blancs</rel>
+                <rel type="r_wiki" poids="10" tid="61651">glutamate</rel>
+                <rel type="r_wiki" poids="10" tid="124071">graisse</rel>
+                <rel type="r_wiki" poids="10" tid="108947">granulocyte</rel>
+                <rel type="r_wiki" poids="10" tid="290129">granulocytes</rel>
+                <rel type="r_wiki" poids="10" tid="124140">grec ancien</rel>
+                <rel type="r_wiki" poids="10" tid="14746">hallucination</rel>
+                <rel type="r_wiki" poids="10" tid="2043468">hibernants</rel>
+                <rel type="r_wiki" poids="10" tid="31571">histamine</rel>
+                <rel type="r_wiki" poids="10" tid="45030">homéostasie</rel>
+                <rel type="r_wiki" poids="10" tid="261138">horloge circadienne</rel>
+                <rel type="r_wiki" poids="10" tid="158404">hormone de croissance</rel>
+                <rel type="r_wiki" poids="10" tid="1156315">hormones de croissance</rel>
+                <rel type="r_wiki" poids="10" tid="45525">hypersomnie</rel>
+                <rel type="r_wiki" poids="10" tid="178405">hypersomnie idiopathique</rel>
+                <rel type="r_wiki" poids="10" tid="180220">hypertension artérielle</rel>
+                <rel type="r_wiki" poids="10" tid="78602">hypnagogique</rel>
+                <rel type="r_wiki" poids="10" tid="14192">hypoxie</rel>
+                <rel type="r_wiki" poids="10" tid="81251">inconscient</rel>
+                <rel type="r_wiki" poids="10" tid="2060912">insomnies</rel>
+                <rel type="r_wiki" poids="10" tid="146001">juin</rel>
+                <rel type="r_wiki" poids="10" tid="44589">longévité</rel>
+                <rel type="r_wiki" poids="10" tid="102828">luminosité</rel>
+                <rel type="r_wiki" poids="10" tid="17683">lymphocyte</rel>
+                <rel type="r_wiki" poids="10" tid="33165">lymphocytes</rel>
+                <rel type="r_wiki" poids="10" tid="272791">maladies cardio-vasculaires</rel>
+                <rel type="r_wiki" poids="10" tid="63235">mammifère</rel>
+                <rel type="r_wiki" poids="10" tid="32851">mammifères</rel>
+                <rel type="r_wiki" poids="10" tid="26741">menstruation</rel>
+                <rel type="r_wiki" poids="10" tid="124509">min</rel>
+                <rel type="r_wiki" poids="10" tid="44003">minutes</rel>
+                <rel type="r_wiki" poids="10" tid="24997">médicament</rel>
+                <rel type="r_wiki" poids="10" tid="103910">méditation</rel>
+                <rel type="r_wiki" poids="10" tid="49807">mélatonine</rel>
+                <rel type="r_wiki" poids="10" tid="120139">ménopause</rel>
+                <rel type="r_wiki" poids="10" tid="120567">narcolepsie</rel>
+                <rel type="r_wiki" poids="10" tid="34677">neurones</rel>
+                <rel type="r_wiki" poids="10" tid="23838">neurosciences</rel>
+                <rel type="r_wiki" poids="10" tid="62379">neurotransmetteur</rel>
+                <rel type="r_wiki" poids="10" tid="248442">nuisance sonore</rel>
+                <rel type="r_wiki" poids="10" tid="37160">nuit blanche</rel>
+                <rel type="r_wiki" poids="10" tid="6603">nuque</rel>
+                <rel type="r_wiki" poids="10" tid="72521">obésité</rel>
+                <rel type="r_wiki" poids="10" tid="46057">oiseaux</rel>
+                <rel type="r_wiki" poids="10" tid="6347361">organes pelviens</rel>
+                <rel type="r_wiki" poids="10" tid="118707">orque</rel>
+                <rel type="r_wiki" poids="10" tid="2073443">orques</rel>
+                <rel type="r_wiki" poids="10" tid="13328">oxymétrie</rel>
+                <rel type="r_wiki" poids="10" tid="96240">paradoxal</rel>
+                <rel type="r_wiki" poids="10" tid="40815">paradoxe</rel>
+                <rel type="r_wiki" poids="10" tid="265403">parasomnie</rel>
+                <rel type="r_wiki" poids="10" tid="58932">parasympathique</rel>
+                <rel type="r_wiki" poids="10" tid="41750">pelvis</rel>
+                <rel type="r_wiki" poids="10" tid="242863">peur du noir</rel>
+                <rel type="r_wiki" poids="10" tid="399741">plaies</rel>
+                <rel type="r_wiki" poids="10" tid="236413">polysomnographie</rel>
+                <rel type="r_wiki" poids="10" tid="25019">prédateur</rel>
+                <rel type="r_wiki" poids="10" tid="271117">prédateurs</rel>
+                <rel type="r_wiki" poids="10" tid="425405">psychanalyses</rel>
+                <rel type="r_wiki" poids="10" tid="262396">radicaux libres</rel>
+                <rel type="r_wiki" poids="10" tid="163171">rats</rel>
+                <rel type="r_wiki" poids="10" tid="213170">revue scientifique</rel>
+                <rel type="r_wiki" poids="10" tid="54395">ronflement</rel>
+                <rel type="r_wiki" poids="10" tid="71115">rongeur</rel>
+                <rel type="r_wiki" poids="10" tid="138801">rongeurs</rel>
+                <rel type="r_wiki" poids="10" tid="207345">rythme circadien</rel>
+                <rel type="r_wiki" poids="10" tid="261347">rythme nycthéméral</rel>
+                <rel type="r_wiki" poids="10" tid="95471">règles</rel>
+                <rel type="r_wiki" poids="10" tid="120157">règne animal</rel>
+                <rel type="r_wiki" poids="10" tid="90348">réflexe</rel>
+                <rel type="r_wiki" poids="10" tid="223006">rêve lucide</rel>
+                <rel type="r_wiki" poids="10" tid="70924">sensorialité</rel>
+                <rel type="r_wiki" poids="10" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_wiki" poids="10" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_wiki" poids="10" tid="133476">somnambulisme</rel>
+                <rel type="r_wiki" poids="10" tid="119865">somniloquie</rel>
+                <rel type="r_wiki" poids="10" tid="64006">stimuli</rel>
+                <rel type="r_wiki" poids="10" tid="129991">stimulus</rel>
+                <rel type="r_wiki" poids="10" tid="68447">sympathique</rel>
+                <rel type="r_wiki" poids="10" tid="154334">synapses</rel>
+                <rel type="r_wiki" poids="10" tid="176192">système nerveux parasympathique</rel>
+                <rel type="r_wiki" poids="10" tid="57892">sérotonine</rel>
+                <rel type="r_wiki" poids="10" tid="118434">tamia</rel>
+                <rel type="r_wiki" poids="10" tid="13861">temps</rel>
+                <rel type="r_wiki" poids="10" tid="251542">température corporelle</rel>
+                <rel type="r_wiki" poids="10" tid="258287">terreur nocturne</rel>
+                <rel type="r_wiki" poids="10" tid="1800996">terreurs nocturnes</rel>
+                <rel type="r_wiki" poids="10" tid="108791">tonus musculaire</rel>
+                <rel type="r_wiki" poids="10" tid="25080">transcription</rel>
+                <rel type="r_wiki" poids="10" tid="236826">troubles du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="46213">ultradien</rel>
+                <rel type="r_wiki" poids="10" tid="9761518">Électrocardiographie</rel>
+                <rel type="r_wiki" poids="10" tid="1814778">Éléphant</rel>
+                <rel type="r_wiki" poids="10" tid="120559">Énéide</rel>
+                <rel type="r_wiki" poids="10" tid="6273517">Érection</rel>
+                <rel type="r_wiki" poids="10" tid="109841">Évolution</rel>
+                <rel type="r_wiki" poids="10" tid="40625">échidné</rel>
+                <rel type="r_wiki" poids="10" tid="70631">éjaculation</rel>
+                <rel type="r_wiki" poids="10" tid="110829">électro-encéphalogramme</rel>
+                <rel type="r_wiki" poids="10" tid="15332">électro-encéphalographie</rel>
+                <rel type="r_wiki" poids="10" tid="1832830">électro-oculogramme</rel>
+                <rel type="r_wiki" poids="10" tid="126417">électrocardiographie</rel>
+                <rel type="r_wiki" poids="10" tid="223031">éléphants</rel>
+                <rel type="r_wiki" poids="10" tid="119244">érection</rel>
+                <rel type="r_associated" poids="9" tid="154762">sommeil lourd</rel>
+                <rel type="r_carac" poids="7" tid="2357774" te="troublé>161702">troublé  (Participe passé)</rel>
+                <rel type="r_inhib" poids="7" tid="251559" te="cauchemar>125543">cauchemar  (tourment)</rel>
+                <rel type="r_inhib" poids="7" tid="455083" te="ronfler>159267">ronfler  (bruit sourd)</rel>
+                <rel type="r_sentiment" poids="6" tid="14330">satisfaction</rel>
+                <rel type="r_sentiment" poids="6" tid="91691">surprise</rel>
+                <rel type="r_inhib" poids="6" tid="247604" te="rêver>121210">rêver  (délirer)</rel>
+                <rel type="r_inhib" poids="6" tid="247602" te="rêver>124752">rêver  (imaginer)</rel>
+                <rel type="r_inhib" poids="6" tid="247603" te="rêver>15099">rêver  (souhaiter)</rel>
+                <rel type="r_inhib" poids="6" tid="2951424" te="rêver>87769">rêver  (rêverie)</rel>
+                <rel type="r_inhib" poids="6" tid="1553946" te="épiphyse>74558">épiphyse  (os)</rel>
+                <rel type="r_carac" poids="5" tid="55267">court</rel>
+                <rel type="r_carac" poids="5" tid="33006">troublé</rel>
+                <rel type="r_make" poids="5" tid="145424">cauchemar</rel>
+                <rel type="r_against" poids="5" tid="217113" te="fatigue>2546>4139">fatigue  (physiologie, épuisement)</rel>
+                <rel type="r_wiki" poids="5" tid="127840">ornithorynque</rel>
+                <rel type="r_wiki" poids="5" tid="34638">électromyogramme</rel>
+                <rel type="r_inhib" poids="5" tid="221715" te="réveil>26346">réveil  (réveil-matin)</rel>
+                <rel type="r_inhib" poids="5" tid="221716" te="réveil>77049">réveil  (désillusion)</rel>
+                <rel type="r_inhib" poids="5" tid="322242" te="se réveiller>127047">se réveiller  (évanouissement)</rel>
+                <rel type="r_inhib" poids="5" tid="322243" te="se réveiller>29449">se réveiller  (se rendre compte)</rel>
+                <rel type="r_holo" poids="4" tid="111776">repos</rel>
+                <rel type="r_carac" poids="4" tid="604651" te="troublé>171869">troublé  (Adj)</rel>
+                <rel type="r_node2relnode" poids="4" tid="2591064" te=":r557208">:r557208 [repos --r_syn#5:60829--> sommeil]</rel>
+                <rel type="r_node2relnode" poids="4" tid="2586744" te=":r576341">:r576341 [somme --r_syn#5:60829--> sommeil]</rel>
+                <rel type="r_inhib" poids="4" tid="216539" te="somme>125391">somme  (arithmétique)</rel>
+                <rel type="r_inhib" poids="4" tid="216542" te="somme>216541">somme  (masse d'argent)</rel>
+                <rel type="r_inhib" poids="4" tid="216543" te="somme>26038">somme  (ouvrage)</rel>
+                <rel type="r_inhib" poids="4" tid="216540" te="somme>65064">somme  (ensemble)</rel>
+                <rel type="r_color" poids="3" tid="64238">noir</rel>
+                <rel type="r_node2relnode" poids="3" tid="2591071" te=":r1724513">:r1724513 [sommeil --r_syn#5:135985--> sieste]</rel>
+                <rel type="r_node2relnode" poids="3" tid="2592142" te=":r3195493">:r3195493 [sieste --r_syn#5:60829--> sommeil]</rel>
+                <rel type="r_infopot" poids="2" tid="254878">_POL-NEG_PC</rel>
+                <rel type="r_color" poids="2" tid="269561">sans couleur</rel>
+                <rel type="r_node2relnode" poids="2" tid="1705668" te=":r177745">:r177745 [sieste --r_isa#6:60829--> sommeil]</rel>
+                <rel type="r_node2relnode" poids="1" tid="2609097" te=":r116860">:r116860 [sommeil --r_lieu#15:65828--> foin]</rel>
+                <rel type="r_node2relnode" poids="1" tid="2612666" te=":r124128">:r124128 [sommeil --r_lieu#15:90075--> chambre]</rel>
+                <rel type="r_node2relnode" poids="1" tid="2614315" te=":r124129">:r124129 [sommeil --r_lieu#15:54899--> réunion]</rel>
+                <rel type="r_node2relnode" poids="1" tid="2609364" te=":r124131">:r124131 [sommeil --r_lieu#15:60866--> cours]</rel>
+                <rel type="r_node2relnode" poids="1" tid="3301374" te=":r30248826">:r30248826 [sommeil lent profond --r_isa#6:60829--> sommeil]</rel>
+                <rel type="r_node2relnode" poids="1" tid="1964604" te=":r9899265">:r9899265 [pause --r_isa#6:60829--> sommeil]</rel>
+                <rel type="r_link" poids="1" tid="3777454">dbnary:fra:__ws_1_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="3886833">dbnary:fra:__ws_2_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="3996016">dbnary:fra:__ws_3_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="4104104">dbnary:fra:__ws_4_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="4212468">dbnary:fra:__ws_5_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="3813886">dbnary:fra:__ws_6_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="3922841">dbnary:fra:__ws_7_sommeil__nom__1</rel>
+                <rel type="r_link" poids="1" tid="4031655">dbnary:fra:__ws_8_sommeil__nom__1</rel>
+                <rel type="r_aki" poids="1" tid="43253">dormir</rel>
+                <rel type="r_aki" poids="1" tid="146295">fatigue</rel>
+                <rel type="r_aki" poids="1" tid="39192">nuit</rel>
+                <rel type="r_aki" poids="1" tid="111776">repos</rel>
+                <rel type="r_aki" poids="1" tid="46045">se coucher</rel>
+                <rel type="r_aki" poids="1" tid="87681">se reposer</rel>
+                <rel type="r_aki" poids="1" tid="135985">sieste</rel>
+                <rel type="r_aki" poids="1" tid="137183">état</rel>
+                <rel type="r_inhib" poids="1" tid="1758468" te="fatigue>2546>1758467">fatigue  (physiologie, faiblesse physique)</rel>
+                <rel type="r_inhib" poids="1" tid="217113" te="fatigue>2546>4139">fatigue  (physiologie, épuisement)</rel>
+                <rel type="r_domain" poids="-20" tid="152162">Sociologie</rel>
+                <rel type="r_domain" poids="-20" tid="152125">Zoologie</rel>
+                <rel type="r_carac-1" poids="-20" tid="82777">dimanche</rel>
+                <rel type="r_hypo" poids="-21" tid="141920">retraite</rel>
+                <rel type="r_holo" poids="-23" tid="71578">lit</rel>
+                <rel type="r_isa" poids="-25" tid="157284" te="lieu>68467">lieu  (poisson)</rel>
+                <rel type="r_anto" poids="-50" tid="84338">réveillé</rel>
+                <rel type="r_sentiment" poids="-62" tid="102345">plaisir</rel>
+                <rel type="r_hypo" poids="-111" tid="39192">nuit</rel>
+              </sortant>
+
+              <entrant>
+                <rel type="r_isa" poids="1000" tid="133345">pause</rel>
+                <rel type="r_isa" poids="857" tid="135985">sieste</rel>
+                <rel type="r_associated" poids="689" tid="111776">repos</rel>
+                <rel type="r_associated" poids="445" tid="43253">dormir</rel>
+                <rel type="r_associated" poids="411" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="390" tid="71578">lit</rel>
+                <rel type="r_associated" poids="356" tid="39192">nuit</rel>
+                <rel type="r_associated" poids="311" tid="107545">dodo</rel>
+                <rel type="r_meaning" poids="276" tid="43253">dormir</rel>
+                <rel type="r_domain-1" poids="267" tid="8924">psychologie</rel>
+                <rel type="r_domain-1" poids="265" tid="7183580">=psychology=</rel>
+                <rel type="r_associated" poids="261" tid="8924">psychologie</rel>
+                <rel type="r_associated" poids="260" tid="7183580">=psychology=</rel>
+                <rel type="r_associated" poids="255" tid="6807980">=sleep apnea=</rel>
+                <rel type="r_associated" poids="253" tid="1823921">syndrome d'apnée du sommeil</rel>
+                <rel type="r_associated" poids="218" tid="135985">sieste</rel>
+                <rel type="r_associated" poids="210" tid="165089">heure d'hiver</rel>
+                <rel type="r_associated" poids="210" tid="101888">insomnie</rel>
+                <rel type="r_associated" poids="200" tid="81637">oreiller</rel>
+                <rel type="r_associated" poids="192" tid="46349">mettre en sommeil</rel>
+                <rel type="r_conseq" poids="192" tid="41459">narcotique</rel>
+                <rel type="r_associated" poids="191" tid="264149">sommeil agité</rel>
+                <rel type="r_associated" poids="187" tid="152832">sommeil profond</rel>
+                <rel type="r_associated" poids="183" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_associated" poids="165" tid="236456">hypopnée du sommeil</rel>
+                <rel type="r_associated" poids="162" tid="3933138">somnanbule</rel>
+                <rel type="r_associated" poids="160" tid="77775">somnambule</rel>
+                <rel type="r_associated" poids="157" tid="236826">troubles du sommeil</rel>
+                <rel type="r_associated" poids="155" tid="236412">apnée du sommeil</rel>
+                <rel type="r_associated" poids="155" tid="314874">hibernothérapie</rel>
+                <rel type="r_associated" poids="155" tid="64185">mouche tsé-tsé</rel>
+                <rel type="r_associated" poids="147" tid="297985">Les carences en sommeil</rel>
+                <rel type="r_associated" poids="147" tid="297986">Les excès de sommeil</rel>
+                <rel type="r_associated" poids="147" tid="265394">arythmie cardiaque du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="197525">chercher le sommeil</rel>
+                <rel type="r_associated" poids="147" tid="199353">en plein sommeil</rel>
+                <rel type="r_associated" poids="147" tid="199411">en sommeil</rel>
+                <rel type="r_associated" poids="147" tid="199518">engourdi de sommeil</rel>
+                <rel type="r_associated" poids="147" tid="201462">glisser dans le sommeil</rel>
+                <rel type="r_associated" poids="147" tid="289944">hormone du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="236458">hypopnée obstructive du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="248124">manquer de sommeil</rel>
+                <rel type="r_associated" poids="147" tid="204292">ne pas trouver le sommeil</rel>
+                <rel type="r_associated" poids="147" tid="205368">perdre le sommeil</rel>
+                <rel type="r_associated" poids="147" tid="205695">plongé dans le sommeil</rel>
+                <rel type="r_associated" poids="147" tid="206090">premier sommeil</rel>
+                <rel type="r_associated" poids="147" tid="207097">rester en sommeil</rel>
+                <rel type="r_associated" poids="147" tid="211731">s'abandonner au sommeil</rel>
+                <rel type="r_associated" poids="147" tid="211787">s'arracher du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="263504">sans sommeil</rel>
+                <rel type="r_associated" poids="147" tid="208286">sommeil artificiel</rel>
+                <rel type="r_associated" poids="147" tid="208287">sommeil cataleptique</rel>
+                <rel type="r_associated" poids="147" tid="208288">sommeil hiémal</rel>
+                <rel type="r_associated" poids="147" tid="208289">sommeil hypnotique</rel>
+                <rel type="r_associated" poids="147" tid="208290">sommeil lent</rel>
+                <rel type="r_associated" poids="147" tid="208291">sommeil pathologique</rel>
+                <rel type="r_associated" poids="147" tid="303976">syndrome d'apnées du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="303977">syndrome d'apnées-hypopnées du sommeil</rel>
+                <rel type="r_associated" poids="147" tid="250650">trouble du sommeil</rel>
+                <rel type="r_associated" poids="146" tid="180235">maladie du sommeil</rel>
+                <rel type="r_associated" poids="146" tid="184325">sommeil magnétique</rel>
+                <rel type="r_causatif" poids="145" tid="6807980">=sleep apnea=</rel>
+                <rel type="r_associated" poids="145" tid="139887">L'Archéologie du sommeil</rel>
+                <rel type="r_associated" poids="145" tid="160378">manque de sommeil</rel>
+                <rel type="r_associated" poids="145" tid="164801">marchand de sommeil</rel>
+                <rel type="r_meaning" poids="145" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="145" tid="152943">sommeil de plomb</rel>
+                <rel type="r_associated" poids="145" tid="162050">sommeil du juste</rel>
+                <rel type="r_associated" poids="145" tid="154762">sommeil lourd</rel>
+                <rel type="r_associated" poids="145" tid="156315">sommeil réparateur</rel>
+                <rel type="r_associated" poids="145" tid="162724">tomber de sommeil</rel>
+                <rel type="r_associated" poids="144" tid="121880">Moralité du sommeil</rel>
+                <rel type="r_associated" poids="144" tid="124859">avoir sommeil</rel>
+                <rel type="r_associated" poids="144" tid="91903">dernier sommeil</rel>
+                <rel type="r_associated" poids="144" tid="74424">sommeil éternel</rel>
+                <rel type="r_associated" poids="143" tid="59111">cure de sommeil</rel>
+                <rel type="r_associated" poids="143" tid="60418">sommeil léger</rel>
+                <rel type="r_associated" poids="143" tid="48937">tirer du sommeil</rel>
+                <rel type="r_causatif" poids="142" tid="1823921">syndrome d'apnée du sommeil</rel>
+                <rel type="r_associated" poids="140" tid="138261">bâiller</rel>
+                <rel type="r_associated" poids="135" tid="181566">clé des songes</rel>
+                <rel type="r_syn" poids="135" tid="213884" te="dodo>43253">dodo  (dormir)</rel>
+                <rel type="r_associated" poids="135" tid="157970">faire la sieste</rel>
+                <rel type="r_associated" poids="132" tid="3711713">dormir en bavant</rel>
+                <rel type="r_associated" poids="130" tid="141176">réveil</rel>
+                <rel type="r_associated" poids="127" tid="92356">demi-sommeil</rel>
+                <rel type="r_associated" poids="127" tid="143510">somme</rel>
+                <rel type="r_associated" poids="125" tid="6807974">=insomnia=</rel>
+                <rel type="r_associated" poids="125" tid="9001829">=sleeplessness=</rel>
+                <rel type="r_associated" poids="125" tid="152361">marchand de sable</rel>
+                <rel type="r_associated" poids="125" tid="247601" te="rêver>43253">rêver  (dormir)</rel>
+                <rel type="r_hypo" poids="121" tid="111776">repos</rel>
+                <rel type="r_associated" poids="120" tid="10830">insomniaque</rel>
+                <rel type="r_associated" poids="120" tid="205424">perte de conscience</rel>
+                <rel type="r_associated" poids="119" tid="5435">ronfler</rel>
+                <rel type="r_associated" poids="117" tid="6807933">=loss of consciousness=</rel>
+                <rel type="r_associated" poids="117" tid="27681">perte de connaissance</rel>
+                <rel type="r_associated" poids="115" tid="6807917">=blackout - symptom=</rel>
+                <rel type="r_meaning" poids="115" tid="5435">ronfler</rel>
+                <rel type="r_associated" poids="113" tid="1830102">choc cardiogénique</rel>
+                <rel type="r_associated" poids="111" tid="5078">pyjama</rel>
+                <rel type="r_associated" poids="110" tid="6821738">=cardiogenic shock=</rel>
+                <rel type="r_associated" poids="110" tid="146295">fatigue</rel>
+                <rel type="r_associated" poids="110" tid="6784">glossine</rel>
+                <rel type="r_associated" poids="110" tid="104795">réveiller</rel>
+                <rel type="r_associated" poids="110" tid="138507">s'endormir</rel>
+                <rel type="r_associated" poids="110" tid="133476">somnambulisme</rel>
+                <rel type="r_associated" poids="109" tid="346524">dans un demi-sommeil</rel>
+                <rel type="r_associated" poids="109" tid="372999">pris de sommeil</rel>
+                <rel type="r_associated" poids="107" tid="346559">dans un semi-sommeil</rel>
+                <rel type="r_associated" poids="107" tid="218421">fées marraines</rel>
+                <rel type="r_associated" poids="107" tid="366734">nuit sans sommeil</rel>
+                <rel type="r_associated" poids="106" tid="356566">grand sommeil</rel>
+                <rel type="r_associated" poids="106" tid="380291">sommeil diurne</rel>
+                <rel type="r_associated" poids="106" tid="380292">sommeil hibernal</rel>
+                <rel type="r_associated" poids="105" tid="215477">La Belle au bois dormant</rel>
+                <rel type="r_associated" poids="105" tid="25379">la Belle au bois dormant</rel>
+                <rel type="r_associated" poids="105" tid="380294">sommeil nocturne</rel>
+                <rel type="r_associated" poids="104" tid="333041">abruti de sommeil</rel>
+                <rel type="r_associated" poids="104" tid="380293">sommeil léthargique</rel>
+                <rel type="r_associated" poids="104" tid="380296">sommeil rapide</rel>
+                <rel type="r_associated" poids="103" tid="380290">sommeil de la nature</rel>
+                <rel type="r_associated" poids="103" tid="83219">veille-sommeil</rel>
+                <rel type="r_conseq" poids="102" tid="42992">calme</rel>
+                <rel type="r_associated" poids="102" tid="359916">ivre de sommeil</rel>
+                <rel type="r_hypo" poids="102" tid="41459">narcotique</rel>
+                <rel type="r_associated" poids="102" tid="380295">sommeil pesant</rel>
+                <rel type="r_associated" poids="102" tid="380298">sommeil provoqué</rel>
+                <rel type="r_associated" poids="101" tid="364417">mise en sommeil</rel>
+                <rel type="r_associated" poids="101" tid="151825">se rendormir</rel>
+                <rel type="r_associated" poids="101" tid="380297">sommeil somnambulique</rel>
+                <rel type="r_patient" poids="100" tid="4316206" te="::>14:60829>29:71742">feindre  [objet]
+                  sommeil</rel>
+                <rel type="r_associated" poids="100" tid="250966">mouche tsé tsé</rel>
+                <rel type="r_meaning" poids="100" tid="27157">se réveiller</rel>
+                <rel type="r_isa" poids="99" tid="152943">sommeil de plomb</rel>
+                <rel type="r_isa" poids="98" tid="156315">sommeil réparateur</rel>
+                <rel type="r_anto" poids="95" tid="128495">vigilance</rel>
+                <rel type="r_anto" poids="94" tid="7183473">=vigilance=</rel>
+                <rel type="r_conseq" poids="91" tid="124974">veiller</rel>
+                <rel type="r_associated" poids="90" tid="28452">couche-tôt</rel>
+                <rel type="r_associated" poids="90" tid="252511" te="dodo>71578">dodo  (lit)</rel>
+                <rel type="r_associated" poids="90" tid="1349309">en boule</rel>
+                <rel type="r_associated" poids="90" tid="106725">ensommeiller</rel>
+                <rel type="r_meaning" poids="90" tid="111776">repos</rel>
+                <rel type="r_associated" poids="90" tid="27157">se réveiller</rel>
+                <rel type="r_associated" poids="85" tid="7012169">=anesthetic agent=</rel>
+                <rel type="r_associated" poids="84" tid="51629">anesthésique</rel>
+                <rel type="r_syn" poids="84" tid="53764">engourdissement</rel>
+                <rel type="r_syn" poids="84" tid="28190">narcose</rel>
+                <rel type="r_associated" poids="84" tid="8741767">produit anesthésiant</rel>
+                <rel type="r_syn" poids="83" tid="124425">assoupissement</rel>
+                <rel type="r_associated" poids="81" tid="264515" te="::>66:39192>17:165536">nuit [carac]
+                  agitée</rel>
+                <rel type="r_syn" poids="81" tid="95282">hibernation</rel>
+                <rel type="r_associated" poids="81" tid="73055">hypnose</rel>
+                <rel type="r_syn" poids="81" tid="25139">inertie</rel>
+                <rel type="r_associated" poids="81" tid="3706240">ne pas pouvoir dormir à cause de ses ronflements</rel>
+                <rel type="r_syn" poids="81" tid="111776">repos</rel>
+                <rel type="r_against" poids="80" tid="6807980">=sleep apnea=</rel>
+                <rel type="r_associated" poids="80" tid="120165">endormir</rel>
+                <rel type="r_associated" poids="80" tid="58741">marmotte</rel>
+                <rel type="r_associated" poids="80" tid="66131">roupillon</rel>
+                <rel type="r_syn" poids="80" tid="66131">roupillon</rel>
+                <rel type="r_anto" poids="80" tid="141176">réveil</rel>
+                <rel type="r_associated" poids="80" tid="241500">se coucher tôt</rel>
+                <rel type="r_syn" poids="80" tid="135985">sieste</rel>
+                <rel type="r_associated" poids="80" tid="155519">tsé tsé</rel>
+                <rel type="r_associated" poids="79" tid="5382408">beaux rêves</rel>
+                <rel type="r_lieu" poids="78" tid="48654">rêve</rel>
+                <rel type="r_syn" poids="77" tid="107545">dodo</rel>
+                <rel type="r_syn" poids="76" tid="134034">léthargie</rel>
+                <rel type="r_against" poids="76" tid="1823921">syndrome d'apnée du sommeil</rel>
+                <rel type="r_associated" poids="75" tid="218312">dormir à poings fermés</rel>
+                <rel type="r_associated" poids="75" tid="107799">matelas</rel>
+                <rel type="r_syn" poids="75" tid="143510">somme</rel>
+                <rel type="r_anto" poids="71" tid="140246">conscience</rel>
+                <rel type="r_associated" poids="71" tid="133345">pause</rel>
+                <rel type="r_associated" poids="71" tid="255234">rester au pieu</rel>
+                <rel type="r_associated" poids="70" tid="37160">nuit blanche</rel>
+                <rel type="r_associated" poids="70" tid="1800993">paralysie du sommeil</rel>
+                <rel type="r_causatif" poids="70" tid="141176">réveil</rel>
+                <rel type="r_associated" poids="70" tid="153807">réver</rel>
+                <rel type="r_associated" poids="70" tid="42931">rêver</rel>
+                <rel type="r_has_magn" poids="70" tid="135985">sieste</rel>
+                <rel type="r_associated" poids="70" tid="101924">succube</rel>
+                <rel type="r_associated" poids="70" tid="38057">traversin</rel>
+                <rel type="r_associated" poids="70" tid="83403">tsé-tsé</rel>
+                <rel type="r_associated" poids="70" tid="162424">tsétsé</rel>
+                <rel type="r_anto" poids="70" tid="124517">veille</rel>
+                <rel type="r_time" poids="66" tid="6821477">=bruxism=</rel>
+                <rel type="r_associated" poids="66" tid="1437600">se coucher avec les poules</rel>
+                <rel type="r_syn" poids="65" tid="6807993">=somnolence=</rel>
+                <rel type="r_associated" poids="65" tid="21152">en écraser</rel>
+                <rel type="r_associated" poids="64" tid="2446196">anæsthésique</rel>
+                <rel type="r_associated" poids="64" tid="53710">bercer</rel>
+                <rel type="r_time" poids="64" tid="28594">bruxomanie</rel>
+                <rel type="r_associated" poids="64" tid="1844871">privation de sommeil</rel>
+                <rel type="r_time" poids="63" tid="113199">bruxisme</rel>
+                <rel type="r_has_part" poids="63" tid="111776">repos</rel>
+                <rel type="r_isa" poids="63" tid="208291">sommeil pathologique</rel>
+                <rel type="r_syn" poids="62" tid="22792">somnolence</rel>
+                <rel type="r_associated" poids="62" tid="1844869">troubles du sommeil du petit enfant</rel>
+                <rel type="r_associated" poids="61" tid="40359">Morphée</rel>
+                <rel type="r_lieu" poids="61" tid="214369">animal imaginaire</rel>
+                <rel type="r_product_of" poids="61" tid="321758">appel manqué</rel>
+                <rel type="r_associated" poids="61" tid="264150">bien dormir</rel>
+                <rel type="r_associated" poids="61" tid="1831303">cycle veille-sommeil</rel>
+                <rel type="r_associated" poids="61" tid="329632">dormir par terre</rel>
+                <rel type="r_associated" poids="61" tid="254734">douleur chronique</rel>
+                <rel type="r_associated" poids="61" tid="52454">déphasage</rel>
+                <rel type="r_associated" poids="61" tid="3706373">exciter les enfants juste avant d'aller dormir</rel>
+                <rel type="r_associated" poids="61" tid="323130">faire un mauvais rêve</rel>
+                <rel type="r_associated" poids="61" tid="5246461">grosse flemme</rel>
+                <rel type="r_associated" poids="61" tid="3706394">parler en dormant</rel>
+                <rel type="r_associated" poids="61" tid="3704576">piquer un somme</rel>
+                <rel type="r_associated" poids="61" tid="5350260">poche sous les yeux</rel>
+                <rel type="r_isa" poids="61" tid="111776">repos</rel>
+                <rel type="r_causatif" poids="61" tid="255234">rester au pieu</rel>
+                <rel type="r_accomp" poids="61" tid="255234">rester au pieu</rel>
+                <rel type="r_associated" poids="61" tid="87681">se reposer</rel>
+                <rel type="r_associated" poids="60" tid="217599">La Princesse au petit pois</rel>
+                <rel type="r_associated" poids="60" tid="124425">assoupissement</rel>
+                <rel type="r_associated" poids="60" tid="16330">bonne nuit</rel>
+                <rel type="r_associated" poids="60" tid="7734">bâillement</rel>
+                <rel type="r_associated" poids="60" tid="251558" te="cauchemar>48654">cauchemar  (rêve)</rel>
+                <rel type="r_associated" poids="60" tid="82331">couche-tard</rel>
+                <rel type="r_associated" poids="60" tid="82414">drap</rel>
+                <rel type="r_successeur-time" poids="60" tid="13925">dîner</rel>
+                <rel type="r_associated" poids="60" tid="45525">hypersomnie</rel>
+                <rel type="r_associated" poids="60" tid="236457">hypopnée</rel>
+                <rel type="r_associated" poids="60" tid="61092">literie</rel>
+                <rel type="r_associated" poids="60" tid="239594">ne dormir que d'un oeil</rel>
+                <rel type="r_associated" poids="60" tid="54874">paresse</rel>
+                <rel type="r_associated" poids="60" tid="136768">paupières</rel>
+                <rel type="r_associated" poids="60" tid="229388">problème de conscience</rel>
+                <rel type="r_associated" poids="60" tid="1844870">sommeil normal de l'adulte</rel>
+                <rel type="r_associated" poids="60" tid="3766092">sommeil à mouvements oculaires rapides</rel>
+                <rel type="r_associated" poids="60" tid="259">somnifère</rel>
+                <rel type="r_associated" poids="60" tid="119865">somniloquie</rel>
+                <rel type="r_syn" poids="60" tid="13610">éclipse</rel>
+                <rel type="r_associated" poids="59" tid="4316205">feindre le sommeil</rel>
+                <rel type="r_syn" poids="59" tid="13029">inaction</rel>
+                <rel type="r_meaning" poids="59" tid="143510">somme</rel>
+                <rel type="r_associated" poids="59" tid="1841809">syndrome des pointes-ondes continues pendant le sommeil</rel>
+                <rel type="r_associated" poids="59" tid="1844868">troubles du sommeil de l'enfant d'âge scolaire</rel>
+                <rel type="r_associated" poids="58" tid="125548">Muse endormie</rel>
+                <rel type="r_associated" poids="58" tid="238764">Nicolas et Pimprenelle</rel>
+                <rel type="r_domain" poids="58" tid="107799">matelas</rel>
+                <rel type="r_associated" poids="58" tid="3706457">oublier d'éteindre le réveil</rel>
+                <rel type="r_associated" poids="58" tid="3230721">problème de sommeil</rel>
+                <rel type="r_has_antimagn" poids="58" tid="135985">sieste</rel>
+                <rel type="r_lemma" poids="58" tid="60829">sommeil</rel>
+                <rel type="r_isa" poids="58" tid="208286">sommeil artificiel</rel>
+                <rel type="r_associated" poids="58" tid="593635">sommeil lent profond</rel>
+                <rel type="r_associated" poids="57" tid="233185">Xanax</rel>
+                <rel type="r_associated" poids="57" tid="1782723">dormir du sommeil du juste</rel>
+                <rel type="r_associated" poids="57" tid="3705727">faire semblant de dormir</rel>
+                <rel type="r_isa" poids="57" tid="143510">somme</rel>
+                <rel type="r_associated" poids="57" tid="55045">songe</rel>
+                <rel type="r_associated" poids="57" tid="1852237">syndromes d'apnée du sommeil</rel>
+                <rel type="r_associated" poids="57" tid="19980">éveil</rel>
+                <rel type="r_associated" poids="56" tid="1801003">bruxisme du sommeil</rel>
+                <rel type="r_syn" poids="56" tid="42992">calme</rel>
+                <rel type="r_associated" poids="56" tid="117679">hamac</rel>
+                <rel type="r_associated" poids="56" tid="24652">loir</rel>
+                <rel type="r_associated" poids="56" tid="127000">mouche</rel>
+                <rel type="r_associated" poids="56" tid="41459">narcotique</rel>
+                <rel type="r_domain" poids="56" tid="136768">paupières</rel>
+                <rel type="r_associated" poids="56" tid="1773638">qui a sommeil</rel>
+                <rel type="r_associated" poids="56" tid="320985">se coucher comme les poules</rel>
+                <rel type="r_associated" poids="56" tid="2934022">semi-sommeil</rel>
+                <rel type="r_lemma" poids="56" tid="2098288">sommeils</rel>
+                <rel type="r_associated" poids="55" tid="6807993">=somnolence=</rel>
+                <rel type="r_associated" poids="55" tid="223089">aller dormir</rel>
+                <rel type="r_successeur-time" poids="55" tid="16330">bonne nuit</rel>
+                <rel type="r_associated" poids="55" tid="4389688">désordre du sommeil</rel>
+                <rel type="r_associated" poids="55" tid="115385">détendre</rel>
+                <rel type="r_associated" poids="55" tid="205587">piquer du nez</rel>
+                <rel type="r_associated" poids="54" tid="95991">bonnet de nuit</rel>
+                <rel type="r_isa" poids="54" tid="55267">court</rel>
+                <rel type="r_associated" poids="54" tid="3705285">flemmarder au lit</rel>
+                <rel type="r_associated" poids="54" tid="1782722">laisser en sommeil</rel>
+                <rel type="r_associated" poids="54" tid="135190">lieu</rel>
+                <rel type="r_associated" poids="54" tid="221714" te="réveil>19980">réveil  (éveil)</rel>
+                <rel type="r_associated" poids="54" tid="2581452">s'endormir du sommeil du juste</rel>
+                <rel type="r_successeur-time" poids="54" tid="46045">se coucher</rel>
+                <rel type="r_associated" poids="53" tid="4316243">avoir les yeux fermés</rel>
+                <rel type="r_has_magn" poids="53" tid="146295">fatigue</rel>
+                <rel type="r_isa" poids="53" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="53" tid="22792">somnolence</rel>
+                <rel type="r_syn" poids="53" tid="6068">torpeur</rel>
+                <rel type="r_syn" poids="52" tid="146480">anesthésie</rel>
+                <rel type="r_syn" poids="52" tid="2524985">anæsthésie</rel>
+                <rel type="r_associated" poids="52" tid="2560121">bras du sommeil</rel>
+                <rel type="r_syn" poids="52" tid="129078">coma</rel>
+                <rel type="r_syn" poids="52" tid="92356">demi-sommeil</rel>
+                <rel type="r_syn" poids="52" tid="146580">dormition</rel>
+                <rel type="r_syn" poids="52" tid="135033">inactivité</rel>
+                <rel type="r_associated" poids="52" tid="5332167">nuit de sommeil</rel>
+                <rel type="r_meaning" poids="52" tid="205587">piquer du nez</rel>
+                <rel type="r_associated" poids="52" tid="2683998">sommeil partagé</rel>
+                <rel type="r_associated" poids="51" tid="218120">Dormeur</rel>
+                <rel type="r_associated" poids="51" tid="90075">chambre</rel>
+                <rel type="r_associated" poids="51" tid="197675">cocktail lytique</rel>
+                <rel type="r_associated" poids="51" tid="197859">compter les moutons</rel>
+                <rel type="r_associated" poids="51" tid="55267">court</rel>
+                <rel type="r_associated" poids="51" tid="236708">dormir comme une souche</rel>
+                <rel type="r_associated" poids="51" tid="248453">dormir en chien de fusil</rel>
+                <rel type="r_meaning" poids="51" tid="115385">détendre</rel>
+                <rel type="r_agent" poids="51" tid="263290">faire dormir</rel>
+                <rel type="r_conseq" poids="51" tid="146295">fatigue</rel>
+                <rel type="r_associated" poids="51" tid="210899">fruit de l'imagination</rel>
+                <rel type="r_causatif" poids="51" tid="107799">matelas</rel>
+                <rel type="r_associated" poids="51" tid="317988">perturbateurs endocriniens</rel>
+                <rel type="r_causatif" poids="51" tid="226398">pipi au lit</rel>
+                <rel type="r_associated" poids="51" tid="237182">se coucher à l'heure des poules</rel>
+                <rel type="r_associated" poids="51" tid="258387">se réveiller tôt</rel>
+                <rel type="r_associated" poids="51" tid="3706558">se réveiller épuisé</rel>
+                <rel type="r_associated" poids="51" tid="4466939">sommeil excessif</rel>
+                <rel type="r_associated" poids="51" tid="258287">terreur nocturne</rel>
+                <rel type="r_associated" poids="51" tid="18709">tranquille</rel>
+                <rel type="r_syn" poids="50" tid="6853057">=anesthesia procedure=</rel>
+                <rel type="r_associated" poids="50" tid="3705300">avoir la flemme de se lever</rel>
+                <rel type="r_associated" poids="50" tid="249781">se lever tôt</rel>
+                <rel type="r_associated" poids="50" tid="3706395">siffler pour que son conjoint cesse de ronfler</rel>
+                <rel type="r_syn" poids="48" tid="6827213">=narcosis=</rel>
+                <rel type="r_action_lieu" poids="46" tid="327873" te="::>13:59817>29:34025">savoir  [sujet]
+                  savant</rel>
+                <rel type="r_successeur-time" poids="46" tid="198022">coucher avec qqn</rel>
+                <rel type="r_successeur-time" poids="46" tid="1966043">coucher avec quelqu'un</rel>
+                <rel type="r_isa" poids="46" tid="593635">sommeil lent profond</rel>
+                <rel type="r_associated" poids="45" tid="6853057">=anesthesia procedure=</rel>
+                <rel type="r_associated" poids="45" tid="6826982">=sleepiness=</rel>
+                <rel type="r_associated" poids="45" tid="82435">assoupi</rel>
+                <rel type="r_associated" poids="45" tid="6306380">asthénie neuro-circulatoire</rel>
+                <rel type="r_associated" poids="45" tid="1828257">asthénie neurocirculatoire</rel>
+                <rel type="r_associated" poids="45" tid="236413">polysomnographie</rel>
+                <rel type="r_associated" poids="45" tid="41529">somnolent</rel>
+                <rel type="r_associated" poids="45" tid="6364801">syncope psychogène</rel>
+                <rel type="r_associated" poids="44" tid="6807992">=narcolepsy=</rel>
+                <rel type="r_associated" poids="44" tid="146480">anesthésie</rel>
+                <rel type="r_associated" poids="43" tid="6827213">=narcosis=</rel>
+                <rel type="r_associated" poids="43" tid="49888">endormissement</rel>
+                <rel type="r_associated" poids="43" tid="322241" te="se réveiller>60829">se réveiller  (sommeil)</rel>
+                <rel type="r_associated" poids="43" tid="1852223">syndrome du sinus carotidien</rel>
+                <rel type="r_associated" poids="43" tid="387425">voile noir</rel>
+                <rel type="r_associated" poids="42" tid="6913260">=epithalamus=</rel>
+                <rel type="r_syn" poids="42" tid="60437">méridienne</rel>
+                <rel type="r_associated" poids="42" tid="1553309">épithalamus</rel>
+                <rel type="r_isa" poids="41" tid="208287">sommeil cataleptique</rel>
+                <rel type="r_isa" poids="41" tid="380291">sommeil diurne</rel>
+                <rel type="r_isa" poids="41" tid="1844870">sommeil normal de l'adulte</rel>
+                <rel type="r_associated" poids="41" tid="6366886">syncope due à la chaleur</rel>
+                <rel type="r_causatif" poids="40" tid="7177158">=pandiculation=</rel>
+                <rel type="r_associated" poids="40" tid="50846">aliter</rel>
+                <rel type="r_associated" poids="40" tid="17503">anesthésiste</rel>
+                <rel type="r_successeur-time" poids="40" tid="2607795">coucher avec</rel>
+                <rel type="r_associated" poids="40" tid="42074">dortoir</rel>
+                <rel type="r_associated" poids="40" tid="78602">hypnagogique</rel>
+                <rel type="r_associated" poids="40" tid="281577">hypotension orthostatique</rel>
+                <rel type="r_associated" poids="40" tid="120567">narcolepsie</rel>
+                <rel type="r_associated" poids="40" tid="28190">narcose</rel>
+                <rel type="r_causatif" poids="40" tid="54395">ronflement</rel>
+                <rel type="r_causatif" poids="40" tid="238799" te="récupérer>87681">récupérer  (se reposer)</rel>
+                <rel type="r_associated" poids="40" tid="1553980" te="épiphyse>275978">épiphyse  (glande pinéale)</rel>
+                <rel type="r_associated" poids="39" tid="6812450">=polysomnography=</rel>
+                <rel type="r_lieu-1" poids="39" tid="71578">lit</rel>
+                <rel type="r_isa" poids="39" tid="184325">sommeil magnétique</rel>
+                <rel type="r_associated" poids="39" tid="6450808">syndromes d'apnées du sommeil</rel>
+                <rel type="r_associated" poids="38" tid="6934261">=serotonin=</rel>
+                <rel type="r_lieu-1" poids="38" tid="67449">auberge</rel>
+                <rel type="r_successeur-time" poids="38" tid="2607796">avoir des relations sexuelles avec</rel>
+                <rel type="r_lieu-1" poids="38" tid="35676">canapé</rel>
+                <rel type="r_lieu-1" poids="38" tid="90075">chambre</rel>
+                <rel type="r_lieu-1" poids="38" tid="60866">cours</rel>
+                <rel type="r_lieu-1" poids="38" tid="65828">foin</rel>
+                <rel type="r_lieu-1" poids="38" tid="117679">hamac</rel>
+                <rel type="r_lieu-1" poids="38" tid="54899">réunion</rel>
+                <rel type="r_associated" poids="37" tid="354249">fin de soirée</rel>
+                <rel type="r_causatif" poids="37" tid="43336">pandiculation</rel>
+                <rel type="r_causatif" poids="37" tid="48654">rêve</rel>
+                <rel type="r_isa" poids="37" tid="380290">sommeil de la nature</rel>
+                <rel type="r_isa" poids="37" tid="162050">sommeil du juste</rel>
+                <rel type="r_isa" poids="37" tid="380292">sommeil hibernal</rel>
+                <rel type="r_isa" poids="37" tid="380293">sommeil léthargique</rel>
+                <rel type="r_isa" poids="37" tid="380294">sommeil nocturne</rel>
+                <rel type="r_isa" poids="37" tid="380295">sommeil pesant</rel>
+                <rel type="r_isa" poids="37" tid="380298">sommeil provoqué</rel>
+                <rel type="r_isa" poids="37" tid="380296">sommeil rapide</rel>
+                <rel type="r_isa" poids="37" tid="380297">sommeil somnambulique</rel>
+                <rel type="r_associated" poids="36" tid="161687">envie de dormir</rel>
+                <rel type="r_hypo" poids="36" tid="135190">lieu</rel>
+                <rel type="r_associated" poids="36" tid="115483">soirée</rel>
+                <rel type="r_isa" poids="36" tid="6429754">sommeil prolongé</rel>
+                <rel type="r_associated" poids="35" tid="9407772">=glossina palpalis=</rel>
+                <rel type="r_associated" poids="35" tid="261940">Glossina palpalis</rel>
+                <rel type="r_against" poids="35" tid="236412">apnée du sommeil</rel>
+                <rel type="r_associated" poids="35" tid="118093">ensommeillement</rel>
+                <rel type="r_associated" poids="35" tid="251023">mort subite du nouveau-né</rel>
+                <rel type="r_associated" poids="35" tid="455082" te="ronfler>60829">ronfler  (sommeil)</rel>
+                <rel type="r_causatif" poids="35" tid="138507">s'endormir</rel>
+                <rel type="r_associated" poids="35" tid="216538" te="somme>43253">somme  (dormir)</rel>
+                <rel type="r_isa" poids="35" tid="154762">sommeil lourd</rel>
+                <rel type="r_associated" poids="35" tid="6320266">sommeil orthodoxe</rel>
+                <rel type="r_associated" poids="35" tid="2098288">sommeils</rel>
+                <rel type="r_associated" poids="35" tid="6360131">syncope et collapsus</rel>
+                <rel type="r_carac-1" poids="35" tid="321577" te="troublé>132006">troublé  (perturbé)</rel>
+                <rel type="r_associated" poids="35" tid="248392">être assoupi</rel>
+                <rel type="r_associated" poids="34" tid="213884" te="dodo>43253">dodo  (dormir)</rel>
+                <rel type="r_associated" poids="34" tid="125284">inconscience</rel>
+                <rel type="r_associated" poids="34" tid="315026">onde delta</rel>
+                <rel type="r_family" poids="34" tid="236413">polysomnographie</rel>
+                <rel type="r_causatif" poids="34" tid="87681">se reposer</rel>
+                <rel type="r_associated" poids="34" tid="2603930">somnolence post-prandiale</rel>
+                <rel type="r_associated" poids="34" tid="57892">sérotonine</rel>
+                <rel type="r_carac-1" poids="34" tid="2357774" te="troublé>161702">troublé  (Participe passé)</rel>
+                <rel type="r_associated" poids="33" tid="6452001">syndromes d'apnées obstructives du sommeil</rel>
+                <rel type="r_associated" poids="32" tid="215000">Les Griffes de la nuit</rel>
+                <rel type="r_causatif" poids="32" tid="145424">cauchemar</rel>
+                <rel type="r_associated" poids="32" tid="56201">insensibilisation</rel>
+                <rel type="r_causatif" poids="32" tid="5435">ronfler</rel>
+                <rel type="r_associated" poids="32" tid="252937">rêve érotique</rel>
+                <rel type="r_associated" poids="32" tid="46045">se coucher</rel>
+                <rel type="r_isa" poids="32" tid="3766092">sommeil à mouvements oculaires rapides</rel>
+                <rel type="r_associated" poids="32" tid="6396989">sommeil à ondes lentes</rel>
+                <rel type="r_associated" poids="31" tid="42992">calme</rel>
+                <rel type="r_meaning" poids="31" tid="107545">dodo</rel>
+                <rel type="r_causatif" poids="31" tid="27157">se réveiller</rel>
+                <rel type="r_associated" poids="31" tid="6351028">sommeil calme</rel>
+                <rel type="r_isa" poids="31" tid="4466939">sommeil excessif</rel>
+                <rel type="r_domain-1" poids="30" tid="152162">Sociologie</rel>
+                <rel type="r_associated" poids="30" tid="424675">Sommeil</rel>
+                <rel type="r_sentiment-1" poids="30" tid="37298">amour</rel>
+                <rel type="r_associated" poids="30" tid="35615">anesthésiant</rel>
+                <rel type="r_associated" poids="30" tid="14315">anesthésier</rel>
+                <rel type="r_associated" poids="30" tid="63141">apaisant</rel>
+                <rel type="r_associated" poids="30" tid="78727">apaiser</rel>
+                <rel type="r_associated" poids="30" tid="3951946">appaiser</rel>
+                <rel type="r_associated" poids="30" tid="94251">assoupir</rel>
+                <rel type="r_associated" poids="30" tid="48109">assoupissant</rel>
+                <rel type="r_associated" poids="30" tid="73636">barbiturique</rel>
+                <rel type="r_associated" poids="30" tid="42874">berceau</rel>
+                <rel type="r_associated" poids="30" tid="112848">berceuse</rel>
+                <rel type="r_associated" poids="30" tid="58938">berçant</rel>
+                <rel type="r_carac-1" poids="30" tid="266321">bon pour la santé</rel>
+                <rel type="r_sentiment-1" poids="30" tid="28453">bonheur</rel>
+                <rel type="r_associated" poids="30" tid="318939" te="bonnet de nuit>28452">bonnet de nuit  (couche-tôt)</rel>
+                <rel type="r_associated" poids="30" tid="39919">calmant</rel>
+                <rel type="r_associated" poids="30" tid="6918">calmer</rel>
+                <rel type="r_associated" poids="30" tid="145424">cauchemar</rel>
+                <rel type="r_associated" poids="30" tid="47595">cauchemardesque</rel>
+                <rel type="r_associated" poids="30" tid="16191">chloroformer</rel>
+                <rel type="r_associated" poids="30" tid="6033">dormance</rel>
+                <rel type="r_associated" poids="30" tid="97869">dormant</rel>
+                <rel type="r_associated" poids="30" tid="93324">dormette</rel>
+                <rel type="r_associated" poids="30" tid="21222">dormeur</rel>
+                <rel type="r_associated" poids="30" tid="87064">dormeuse</rel>
+                <rel type="r_associated" poids="30" tid="85362">dormitif</rel>
+                <rel type="r_associated" poids="30" tid="109143">dormoir</rel>
+                <rel type="r_sentiment-1" poids="30" tid="9864">désir</rel>
+                <rel type="r_associated" poids="30" tid="4279">endormant</rel>
+                <rel type="r_associated" poids="30" tid="64144">endormeur</rel>
+                <rel type="r_associated" poids="30" tid="16085">endormi</rel>
+                <rel type="r_associated" poids="30" tid="95625">ensommeillé</rel>
+                <rel type="r_sentiment-1" poids="30" tid="146357">envie</rel>
+                <rel type="r_associated" poids="30" tid="87528">faire</rel>
+                <rel type="r_associated" poids="30" tid="95282">hibernation</rel>
+                <rel type="r_conseq" poids="30" tid="261138">horloge circadienne</rel>
+                <rel type="r_associated" poids="30" tid="124391">hypnagogisme</rel>
+                <rel type="r_associated" poids="30" tid="45761">hypnique</rel>
+                <rel type="r_associated" poids="30" tid="288789">hypnologie</rel>
+                <rel type="r_associated" poids="30" tid="74521">hypnopompique</rel>
+                <rel type="r_associated" poids="30" tid="26023">hypnotique</rel>
+                <rel type="r_associated" poids="30" tid="5627">hypnotiser</rel>
+                <rel type="r_associated" poids="30" tid="122971">hypnotiseur</rel>
+                <rel type="r_associated" poids="30" tid="72695">hypnotisme</rel>
+                <rel type="r_associated" poids="30" tid="8286">hypnoïde</rel>
+                <rel type="r_associated" poids="30" tid="13029">inaction</rel>
+                <rel type="r_family" poids="30" tid="10830">insomniaque</rel>
+                <rel type="r_sentiment-1" poids="30" tid="57221">joie</rel>
+                <rel type="r_associated" poids="30" tid="7225">litière</rel>
+                <rel type="r_associated" poids="30" tid="107123">lève-tard</rel>
+                <rel type="r_associated" poids="30" tid="134034">léthargie</rel>
+                <rel type="r_associated" poids="30" tid="105425">magnétiser</rel>
+                <rel type="r_associated" poids="30" tid="108025">magnétiseur</rel>
+                <rel type="r_associated" poids="30" tid="34881">magnétisme</rel>
+                <rel type="r_associated" poids="30" tid="75916">mesmérisme</rel>
+                <rel type="r_associated" poids="30" tid="73310">morphéique</rel>
+                <rel type="r_associated" poids="30" tid="60437">méridienne</rel>
+                <rel type="r_associated" poids="30" tid="139457">natte</rel>
+                <rel type="r_associated" poids="30" tid="107897">noctambule</rel>
+                <rel type="r_associated" poids="30" tid="76237">nuiter</rel>
+                <rel type="r_associated" poids="30" tid="34111">onirique</rel>
+                <rel type="r_associated" poids="30" tid="80804">onirisme</rel>
+                <rel type="r_associated" poids="30" tid="138712">paillasse</rel>
+                <rel type="r_associated" poids="30" tid="130523">papilloter</rel>
+                <rel type="r_associated" poids="30" tid="96240">paradoxal</rel>
+                <rel type="r_associated" poids="30" tid="22157">pioncer</rel>
+                <rel type="r_associated" poids="30" tid="267533" te="piquer du nez>60829">piquer du nez  (sommeil)</rel>
+                <rel type="r_sentiment-1" poids="30" tid="102345">plaisir</rel>
+                <rel type="r_associated" poids="30" tid="7594555">problèmes de sommeil</rel>
+                <rel type="r_sentiment-1" poids="30" tid="111776">repos</rel>
+                <rel type="r_associated" poids="30" tid="106663">reposer</rel>
+                <rel type="r_associated" poids="30" tid="35277">ronflette</rel>
+                <rel type="r_associated" poids="30" tid="49089">ronfleur</rel>
+                <rel type="r_associated" poids="30" tid="125708">roupiller</rel>
+                <rel type="r_associated" poids="30" tid="7326">roupilleur</rel>
+                <rel type="r_causatif" poids="30" tid="42931">rêver</rel>
+                <rel type="r_associated" poids="30" tid="73337">schlof</rel>
+                <rel type="r_associated" poids="30" tid="2910">schloff</rel>
+                <rel type="r_associated" poids="30" tid="19612">schloffer</rel>
+                <rel type="r_associated" poids="30" tid="38344">sociologie</rel>
+                <rel type="r_isa" poids="30" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_associated" poids="30" tid="33742">sommeillement</rel>
+                <rel type="r_associated" poids="30" tid="102152">sommeiller</rel>
+                <rel type="r_associated" poids="30" tid="116987">sommeilleux</rel>
+                <rel type="r_associated" poids="30" tid="11231">somnambulesque</rel>
+                <rel type="r_associated" poids="30" tid="87175">somnambulique</rel>
+                <rel type="r_associated" poids="30" tid="65957">somnescence</rel>
+                <rel type="r_associated" poids="30" tid="117293">somnigène</rel>
+                <rel type="r_associated" poids="30" tid="1990">somnoler</rel>
+                <rel type="r_associated" poids="30" tid="111390">soporatif</rel>
+                <rel type="r_associated" poids="30" tid="134025">soporifique</rel>
+                <rel type="r_associated" poids="30" tid="50350">sédatif</rel>
+                <rel type="r_associated" poids="30" tid="6068">torpeur</rel>
+                <rel type="r_associated" poids="30" tid="4031">torpide</rel>
+                <rel type="r_associated" poids="30" tid="59750">tranquillisant</rel>
+                <rel type="r_associated" poids="30" tid="112431">écrouler</rel>
+                <rel type="r_associated" poids="30" tid="43065">éthériser</rel>
+                <rel type="r_patient" poids="30" tid="220451">être interrompu</rel>
+                <rel type="r_domain-1" poids="29" tid="152125">Zoologie</rel>
+                <rel type="r_carac-1" poids="29" tid="59522">agité</rel>
+                <rel type="r_domain-1" poids="29" tid="35143">biologie</rel>
+                <rel type="r_associated" poids="29" tid="261138">horloge circadienne</rel>
+                <rel type="r_causatif" poids="29" tid="124051">récupération</rel>
+                <rel type="r_associated" poids="29" tid="118517">se pieuter</rel>
+                <rel type="r_isa" poids="29" tid="6527085">sommeil et repos</rel>
+                <rel type="r_associated" poids="29" tid="1841482">syndrome de Pickwick</rel>
+                <rel type="r_associated" poids="29" tid="6533517">Épithalamus</rel>
+                <rel type="r_associated" poids="28" tid="152125">Zoologie</rel>
+                <rel type="r_associated" poids="28" tid="129078">coma</rel>
+                <rel type="r_associated" poids="28" tid="1668053" te="dormir>60829">dormir  (sommeil)</rel>
+                <rel type="r_associated" poids="28" tid="93680">détente</rel>
+                <rel type="r_associated" poids="28" tid="65669">endormement</rel>
+                <rel type="r_associated" poids="28" tid="53764">engourdissement</rel>
+                <rel type="r_domain" poids="28" tid="124391">hypnagogisme</rel>
+                <rel type="r_associated" poids="28" tid="91105">interruption</rel>
+                <rel type="r_against" poids="28" tid="70527">musique</rel>
+                <rel type="r_associated" poids="28" tid="102206">médecine</rel>
+                <rel type="r_associated" poids="28" tid="6386889">phase des mouvements oculaires lents du sommeil</rel>
+                <rel type="r_carac-1" poids="28" tid="36922">profond</rel>
+                <rel type="r_associated" poids="28" tid="237159" te="rêve>60829">rêve  (sommeil)</rel>
+                <rel type="r_isa" poids="28" tid="6438414">sommeil d'ivresse</rel>
+                <rel type="r_associated" poids="28" tid="6298951">sommeil synchronisé</rel>
+                <rel type="r_isa" poids="28" tid="6429327">sommeil à ondes rapides</rel>
+                <rel type="r_domain-1" poids="28" tid="117095">zoologie</rel>
+                <rel type="r_associated" poids="28" tid="118425">zzz</rel>
+                <rel type="r_causatif" poids="28" tid="219796">échevelée</rel>
+                <rel type="r_associated" poids="27" tid="7487195">=interruption=</rel>
+                <rel type="r_associated" poids="27" tid="152162">Sociologie</rel>
+                <rel type="r_against" poids="27" tid="66324">café</rel>
+                <rel type="r_associated" poids="27" tid="146580">dormition</rel>
+                <rel type="r_associated" poids="27" tid="237278">décubitus dorsal</rel>
+                <rel type="r_carac-1" poids="27" tid="47887">haché</rel>
+                <rel type="r_carac-1" poids="27" tid="143256">léger</rel>
+                <rel type="r_domain-1" poids="27" tid="102206">médecine</rel>
+                <rel type="r_carac-1" poids="27" tid="96240">paradoxal</rel>
+                <rel type="r_causatif" poids="27" tid="153354">pleine forme</rel>
+                <rel type="r_carac-1" poids="27" tid="92118">récupérateur</rel>
+                <rel type="r_domain-1" poids="27" tid="38344">sociologie</rel>
+                <rel type="r_isa" poids="27" tid="264149">sommeil agité</rel>
+                <rel type="r_associated" poids="27" tid="13610">éclipse</rel>
+                <rel type="r_associated" poids="26" tid="77493">apaisement</rel>
+                <rel type="r_causatif" poids="26" tid="236412">apnée du sommeil</rel>
+                <rel type="r_associated" poids="26" tid="6319419">comportement du sommeil</rel>
+                <rel type="r_associated" poids="26" tid="132516">délassement</rel>
+                <rel type="r_domain" poids="26" tid="288789">hypnologie</rel>
+                <rel type="r_associated" poids="26" tid="85613">improduction</rel>
+                <rel type="r_causatif" poids="26" tid="134769">relâchement</rel>
+                <rel type="r_causatif" poids="26" tid="111776">repos</rel>
+                <rel type="r_causatif" poids="26" tid="57139">récupérer</rel>
+                <rel type="r_isa" poids="26" tid="2427736">sommeil de mort</rel>
+                <rel type="r_isa" poids="26" tid="208288">sommeil hiémal</rel>
+                <rel type="r_isa" poids="26" tid="208289">sommeil hypnotique</rel>
+                <rel type="r_isa" poids="26" tid="208290">sommeil lent</rel>
+                <rel type="r_isa" poids="26" tid="60418">sommeil léger</rel>
+                <rel type="r_isa" poids="26" tid="2683998">sommeil partagé</rel>
+                <rel type="r_associated" poids="26" tid="9008">épiphyse</rel>
+                <rel type="r_associated" poids="26" tid="1871669" te="éveiller>104795">éveiller  (réveiller)</rel>
+                <rel type="r_associated" poids="26" tid="256048">être endormi</rel>
+                <rel type="r_associated" poids="26" tid="245701">être vaseux</rel>
+                <rel type="r_syn" poids="25" tid="6826982">=sleepiness=</rel>
+                <rel type="r_syn" poids="25" tid="41529">somnolent</rel>
+                <rel type="r_associated" poids="25" tid="1823964">syndrome des apnées du sommeil</rel>
+                <rel type="r_hypo" poids="25" tid="269534">état naturel</rel>
+                <rel type="r_associated" poids="24" tid="2453446">alte</rel>
+                <rel type="r_associated" poids="24" tid="2524985">anæsthésie</rel>
+                <rel type="r_carac-1" poids="24" tid="155174">de plomb</rel>
+                <rel type="r_associated" poids="24" tid="25504">halte</rel>
+                <rel type="r_associated" poids="24" tid="135033">inactivité</rel>
+                <rel type="r_associated" poids="24" tid="26381">répit</rel>
+                <rel type="r_associated" poids="24" tid="6447416">syndrome d'apnée</rel>
+                <rel type="r_associated" poids="24" tid="6288616">syndrome des apnées obstructives du sommeil</rel>
+                <rel type="r_carac-1" poids="24" tid="604651" te="troublé>171869">troublé  (Adj)</rel>
+                <rel type="r_associated" poids="24" tid="117095">zoologie</rel>
+                <rel type="r_associated" poids="23" tid="25139">inertie</rel>
+                <rel type="r_associated" poids="23" tid="6348762">syndromes des apnées obstructives du sommeil</rel>
+                <rel type="r_associated" poids="22" tid="7594554">absence de sommeil</rel>
+                <rel type="r_associated" poids="22" tid="106081">arrêt</rel>
+                <rel type="r_associated" poids="22" tid="35143">biologie</rel>
+                <rel type="r_carac-1" poids="22" tid="36712">entrecoupé</rel>
+                <rel type="r_carac-1" poids="22" tid="81384">lent</rel>
+                <rel type="r_associated" poids="22" tid="49318">loisir</rel>
+                <rel type="r_carac-1" poids="22" tid="132006">perturbé</rel>
+                <rel type="r_associated" poids="22" tid="6441634">syndrome d'apnées obstructives du sommeil</rel>
+                <rel type="r_carac-1" poids="21" tid="64713">lourd</rel>
+                <rel type="r_carac-1" poids="21" tid="49779">pathologique</rel>
+                <rel type="r_associated" poids="21" tid="23263">relâche</rel>
+                <rel type="r_associated" poids="21" tid="599255" te="somme>146885"> un/le somme </rel>
+                <rel type="r_carac-1" poids="21" tid="33006">troublé</rel>
+                <rel type="r_associated" poids="17" tid="10461653">Meurtres en sommeil</rel>
+                <rel type="r_associated" poids="17" tid="10118906">Pendant ton sommeil</rel>
+                <rel type="r_associated" poids="17" tid="72706">éveiller</rel>
+                <rel type="r_associated" poids="16" tid="127337">sommier</rel>
+                <rel type="r_associated" poids="15" tid="123577">Saos</rel>
+                <rel type="r_associated" poids="15" tid="195851">aller au dodo</rel>
+                <rel type="r_associated" poids="15" tid="195852">aller au lit</rel>
+                <rel type="r_associated" poids="15" tid="195878">aller se coucher</rel>
+                <rel type="r_associated" poids="15" tid="196644">avoir les yeux qui se ferment</rel>
+                <rel type="r_associated" poids="15" tid="7134">cauchemarder</rel>
+                <rel type="r_associated" poids="15" tid="210508">comme une toupie d'Allemagne</rel>
+                <rel type="r_associated" poids="15" tid="199233">en dormant</rel>
+                <rel type="r_associated" poids="15" tid="200408">faire dodo</rel>
+                <rel type="r_associated" poids="15" tid="186208">faire la grasse matinée</rel>
+                <rel type="r_associated" poids="15" tid="28949">faire le tour du cadran</rel>
+                <rel type="r_associated" poids="15" tid="200627">faire schlof</rel>
+                <rel type="r_associated" poids="15" tid="200704">faire un somme</rel>
+                <rel type="r_associated" poids="15" tid="202761">le marchand de sable est passé</rel>
+                <rel type="r_associated" poids="15" tid="203777">mettre la viande dans les bâches</rel>
+                <rel type="r_associated" poids="15" tid="211330">ne faire qu'un somme</rel>
+                <rel type="r_associated" poids="15" tid="204286">ne pas tenir debout</rel>
+                <rel type="r_associated" poids="15" tid="205591">piquer un roupillon</rel>
+                <rel type="r_associated" poids="15" tid="206436">profondément endormi</rel>
+                <rel type="r_associated" poids="15" tid="207285">ronfler comme une toupie</rel>
+                <rel type="r_associated" poids="15" tid="139361">s'aliter</rel>
+                <rel type="r_associated" poids="15" tid="139396">s'assoupir</rel>
+                <rel type="r_associated" poids="15" tid="145086">s'ensommeiller</rel>
+                <rel type="r_associated" poids="15" tid="141060">s'écrouler</rel>
+                <rel type="r_associated" poids="15" tid="114522">se bâcher</rel>
+                <rel type="r_associated" poids="15" tid="207797">se glisser dans les draps</rel>
+                <rel type="r_associated" poids="15" tid="103843">se mettre au paddock</rel>
+                <rel type="r_associated" poids="15" tid="90374">se pageoter</rel>
+                <rel type="r_associated" poids="15" tid="16897">se pager</rel>
+                <rel type="r_associated" poids="15" tid="17978">se pagnoter</rel>
+                <rel type="r_associated" poids="15" tid="131981">se plumarder</rel>
+                <rel type="r_associated" poids="15" tid="87306">se plumer</rel>
+                <rel type="r_associated" poids="15" tid="2427736">sommeil de mort</rel>
+                <rel type="r_associated" poids="15" tid="141730">tomber dans les bras de l'orfèvre</rel>
+                <rel type="r_associated" poids="15" tid="74532">être dans les bras de Morphée</rel>
+                <rel type="r_associated" poids="14" tid="10421079">Le Grand sommeil</rel>
+                <rel type="r_associated" poids="13" tid="2454558">agent en sommeil</rel>
+                <rel type="r_associated" poids="13" tid="5553502">cycle du sommeil</rel>
+                <rel type="r_isa" poids="13" tid="73055">hypnose</rel>
+                <rel type="r_isa" poids="13" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_isa" poids="13" tid="152832">sommeil profond</rel>
+                <rel type="r_domain-1" poids="12" tid="3674">botanique</rel>
+                <rel type="r_associated" poids="12" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_associated" poids="11" tid="1856339">baillement</rel>
+                <rel type="r_associated" poids="11" tid="10829038">la maladie du sommeil</rel>
+                <rel type="r_associated" poids="11" tid="6527085">sommeil et repos</rel>
+                <rel type="r_associated" poids="11" tid="6526711">tests reliés aux troubles du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="291059">3 × 8</rel>
+                <rel type="r_wiki" poids="10" tid="254119">3x8</rel>
+                <rel type="r_wiki" poids="10" tid="297428">5-HT</rel>
+                <rel type="r_wiki" poids="10" tid="297427">5-hydroxytryptamine</rel>
+                <rel type="r_wiki" poids="10" tid="5679389">Alcméon de Crotone</rel>
+                <rel type="r_wiki" poids="10" tid="448">Annibal</rel>
+                <rel type="r_wiki" poids="10" tid="10991568">Antoine Charma</rel>
+                <rel type="r_wiki" poids="10" tid="310467">Aspalathus linearis</rel>
+                <rel type="r_wiki" poids="10" tid="3178732">Au niveau du bulbe</rel>
+                <rel type="r_wiki" poids="10" tid="3178733">Au niveau du pont et du mésencéphale</rel>
+                <rel type="r_wiki" poids="10" tid="2502611">Autruche</rel>
+                <rel type="r_wiki" poids="10" tid="283531">Azarolier</rel>
+                <rel type="r_wiki" poids="10" tid="124612">Bain turc</rel>
+                <rel type="r_wiki" poids="10" tid="139325">Berceau</rel>
+                <rel type="r_wiki" poids="10" tid="1382558">CA1</rel>
+                <rel type="r_wiki" poids="10" tid="1829285">CA2</rel>
+                <rel type="r_wiki" poids="10" tid="1831073">CPAP</rel>
+                <rel type="r_wiki" poids="10" tid="2925118">Ca2</rel>
+                <rel type="r_wiki" poids="10" tid="10417">Cauchemar</rel>
+                <rel type="r_wiki" poids="10" tid="411477">Cerveau</rel>
+                <rel type="r_wiki" poids="10" tid="432781">Colporteur</rel>
+                <rel type="r_wiki" poids="10" tid="582002">Crataegus azarolus</rel>
+                <rel type="r_wiki" poids="10" tid="10863921">Digimon World</rel>
+                <rel type="r_wiki" poids="10" tid="418414">Dodo</rel>
+                <rel type="r_wiki" poids="10" tid="417682">Douleur</rel>
+                <rel type="r_wiki" poids="10" tid="138805">Désir</rel>
+                <rel type="r_wiki" poids="10" tid="3327596">Escargot</rel>
+                <rel type="r_wiki" poids="10" tid="2395067">Favières</rel>
+                <rel type="r_wiki" poids="10" tid="5807443">Felis silvestris catus - Chat domestique</rel>
+                <rel type="r_wiki" poids="10" tid="190520">Fernand Dumont</rel>
+                <rel type="r_wiki" poids="10" tid="10831357">Habib Essid</rel>
+                <rel type="r_wiki" poids="10" tid="117869">Hannibal</rel>
+                <rel type="r_wiki" poids="10" tid="236142">Hannibal Barca</rel>
+                <rel type="r_wiki" poids="10" tid="5679486">Henri-Étienne Beaunis</rel>
+                <rel type="r_wiki" poids="10" tid="11105077">Henry Gustav Molaison</rel>
+                <rel type="r_wiki" poids="10" tid="86365">Hypnos</rel>
+                <rel type="r_wiki" poids="10" tid="5973191">Isabelle Arnulf</rel>
+                <rel type="r_wiki" poids="10" tid="5917878">Jack Shephard</rel>
+                <rel type="r_wiki" poids="10" tid="2960332">Krystal</rel>
+                <rel type="r_wiki" poids="10" tid="297985">Les carences en sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="297986">Les excès de sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="297987">Les troubles du rythme circadien</rel>
+                <rel type="r_wiki" poids="10" tid="2952654">Liste détaillée</rel>
+                <rel type="r_wiki" poids="10" tid="7997305">MDPV</rel>
+                <rel type="r_wiki" poids="10" tid="3800860">MIN</rel>
+                <rel type="r_wiki" poids="10" tid="278880">MSIN</rel>
+                <rel type="r_wiki" poids="10" tid="153014">MSN</rel>
+                <rel type="r_wiki" poids="10" tid="423060">Maimonide</rel>
+                <rel type="r_wiki" poids="10" tid="78544">Maïmonide</rel>
+                <rel type="r_wiki" poids="10" tid="10349380">Michel Jouvet</rel>
+                <rel type="r_wiki" poids="10" tid="5534862">Mise en garde médicale</rel>
+                <rel type="r_wiki" poids="10" tid="51">Moshe Ben Maimon</rel>
+                <rel type="r_wiki" poids="10" tid="4499619">Moshe ben Maïmon</rel>
+                <rel type="r_wiki" poids="10" tid="106846">Moïse Maïmonide</rel>
+                <rel type="r_wiki" poids="10" tid="414869">Méditation</rel>
+                <rel type="r_wiki" poids="10" tid="18313">NaCl</rel>
+                <rel type="r_wiki" poids="10" tid="8930232">Narcose</rel>
+                <rel type="r_wiki" poids="10" tid="8930191">Narcose à l'azote</rel>
+                <rel type="r_wiki" poids="10" tid="397267">Nuit</rel>
+                <rel type="r_wiki" poids="10" tid="276324">Numéro</rel>
+                <rel type="r_wiki" poids="10" tid="425616">Oubli</rel>
+                <rel type="r_wiki" poids="10" tid="288205">Pour le film de</rel>
+                <rel type="r_wiki" poids="10" tid="2872080">Préoccupation mineure</rel>
+                <rel type="r_wiki" poids="10" tid="5837109">Rapid Eye Mouvement</rel>
+                <rel type="r_wiki" poids="10" tid="11353879">Rapid Eye Movement</rel>
+                <rel type="r_wiki" poids="10" tid="592811">Red Bull GmbH</rel>
+                <rel type="r_wiki" poids="10" tid="427812">Repas</rel>
+                <rel type="r_wiki" poids="10" tid="5973189">Robert Armstrong-Jones</rel>
+                <rel type="r_wiki" poids="10" tid="145376">Résurrection</rel>
+                <rel type="r_wiki" poids="10" tid="425261">Rêve</rel>
+                <rel type="r_wiki" poids="10" tid="462264">SAHS</rel>
+                <rel type="r_wiki" poids="10" tid="3321603">SAOS</rel>
+                <rel type="r_wiki" poids="10" tid="249265">SAS</rel>
+                <rel type="r_wiki" poids="10" tid="255571">SFC</rel>
+                <rel type="r_wiki" poids="10" tid="5870958">Salomon Hermann Reinach</rel>
+                <rel type="r_wiki" poids="10" tid="3741243">Salvia divinorum</rel>
+                <rel type="r_wiki" poids="10" tid="10831355">Samira Merai</rel>
+                <rel type="r_wiki" poids="10" tid="10831356">Samira Merai Friaa</rel>
+                <rel type="r_wiki" poids="10" tid="64614">Sleep</rel>
+                <rel type="r_wiki" poids="10" tid="431585">Solitude</rel>
+                <rel type="r_wiki" poids="10" tid="4002">Somme</rel>
+                <rel type="r_wiki" poids="10" tid="9934707">Somnus</rel>
+                <rel type="r_wiki" poids="10" tid="406240">Struthio</rel>
+                <rel type="r_wiki" poids="10" tid="11301260">Thalia Édition</rel>
+                <rel type="r_wiki" poids="10" tid="176205">Trp</rel>
+                <rel type="r_wiki" poids="10" tid="305812">Valeriana officinalis</rel>
+                <rel type="r_wiki" poids="10" tid="305810">Valériane des collines</rel>
+                <rel type="r_wiki" poids="10" tid="305811">Valériane à petites feuilles</rel>
+                <rel type="r_wiki" poids="10" tid="11342438">Virgile Novarina</rel>
+                <rel type="r_wiki" poids="10" tid="10831353">Youssef Chahed</rel>
+                <rel type="r_wiki" poids="10" tid="2952500">Zzz</rel>
+                <rel type="r_wiki" poids="10" tid="2487473">actimétrie</rel>
+                <rel type="r_wiki" poids="10" tid="10507">acupuncture</rel>
+                <rel type="r_wiki" poids="10" tid="6001336">adaptation humaine à l'espace</rel>
+                <rel type="r_wiki" poids="10" tid="17388">agrypnie</rel>
+                <rel type="r_wiki" poids="10" tid="152847">amphétamines</rel>
+                <rel type="r_wiki" poids="10" tid="1827259">amphétaminique</rel>
+                <rel type="r_wiki" poids="10" tid="23114">anxiété</rel>
+                <rel type="r_wiki" poids="10" tid="17934">anéjaculation</rel>
+                <rel type="r_syn" poids="10" tid="82435">assoupi</rel>
+                <rel type="r_wiki" poids="10" tid="39290">atonie</rel>
+                <rel type="r_wiki" poids="10" tid="461468">au niveau du bulbe</rel>
+                <rel type="r_wiki" poids="10" tid="461469">au niveau du pont et du mésencéphale</rel>
+                <rel type="r_wiki" poids="10" tid="1993922">autruches</rel>
+                <rel type="r_wiki" poids="10" tid="273420">aves</rel>
+                <rel type="r_wiki" poids="10" tid="2483002">azarolier</rel>
+                <rel type="r_wiki" poids="10" tid="106793">azerole</rel>
+                <rel type="r_wiki" poids="10" tid="141860">azerolier</rel>
+                <rel type="r_wiki" poids="10" tid="72189">azérolier</rel>
+                <rel type="r_wiki" poids="10" tid="338166">bain chaud</rel>
+                <rel type="r_wiki" poids="10" tid="196771">bain de vapeur</rel>
+                <rel type="r_wiki" poids="10" tid="338184">bain maure</rel>
+                <rel type="r_wiki" poids="10" tid="196774">bain turc</rel>
+                <rel type="r_associated" poids="10" tid="3674">botanique</rel>
+                <rel type="r_wiki" poids="10" tid="5598153">brotizolam</rel>
+                <rel type="r_wiki" poids="10" tid="95060">canicule</rel>
+                <rel type="r_wiki" poids="10" tid="120079">catégorisation</rel>
+                <rel type="r_wiki" poids="10" tid="152170">cauchemard</rel>
+                <rel type="r_wiki" poids="10" tid="2398111">cauchemards</rel>
+                <rel type="r_wiki" poids="10" tid="417928">cauchemars</rel>
+                <rel type="r_wiki" poids="10" tid="156506">cavité nasale</rel>
+                <rel type="r_wiki" poids="10" tid="292960">cavités nasales</rel>
+                <rel type="r_wiki" poids="10" tid="39031">cerveau</rel>
+                <rel type="r_wiki" poids="10" tid="308224">cerveau humain</rel>
+                <rel type="r_wiki" poids="10" tid="45079">cervelle</rel>
+                <rel type="r_wiki" poids="10" tid="285922">cetacea</rel>
+                <rel type="r_wiki" poids="10" tid="5838951">cftmea</rel>
+                <rel type="r_wiki" poids="10" tid="152217">chambre à coucher</rel>
+                <rel type="r_wiki" poids="10" tid="25037">chassie</rel>
+                <rel type="r_wiki" poids="10" tid="2621671">chat d'argent</rel>
+                <rel type="r_wiki" poids="10" tid="72472">ciboulot</rel>
+                <rel type="r_wiki" poids="10" tid="68939">circadien</rel>
+                <rel type="r_wiki" poids="10" tid="5838950">classification française des troubles mentaux de l'enfant et de l'adolescent</rel>
+                <rel type="r_wiki" poids="10" tid="2150528">colimaçons</rel>
+                <rel type="r_wiki" poids="10" tid="48351">colportage</rel>
+                <rel type="r_wiki" poids="10" tid="125251">colporteur</rel>
+                <rel type="r_wiki" poids="10" tid="92139">comitialité</rel>
+                <rel type="r_wiki" poids="10" tid="272180">comportement de reproduction</rel>
+                <rel type="r_wiki" poids="10" tid="197859">compter les moutons</rel>
+                <rel type="r_wiki" poids="10" tid="54974">confort</rel>
+                <rel type="r_wiki" poids="10" tid="294185">cortex olfactif</rel>
+                <rel type="r_wiki" poids="10" tid="41810">cortisol</rel>
+                <rel type="r_wiki" poids="10" tid="314748">cortisolémie</rel>
+                <rel type="r_wiki" poids="10" tid="276356">couche optique</rel>
+                <rel type="r_wiki" poids="10" tid="10138020">course en sentier</rel>
+                <rel type="r_wiki" poids="10" tid="10138019">course nature</rel>
+                <rel type="r_wiki" poids="10" tid="110012">couverte</rel>
+                <rel type="r_wiki" poids="10" tid="49928">couverture</rel>
+                <rel type="r_wiki" poids="10" tid="311307">cpap</rel>
+                <rel type="r_wiki" poids="10" tid="224929">crise d'épilepsie</rel>
+                <rel type="r_wiki" poids="10" tid="51040">culture physique</rel>
+                <rel type="r_wiki" poids="10" tid="311938">cycle circadien</rel>
+                <rel type="r_wiki" poids="10" tid="20083">cérébral</rel>
+                <rel type="r_wiki" poids="10" tid="164591">cérébrale</rel>
+                <rel type="r_wiki" poids="10" tid="404160">cérébraux</rel>
+                <rel type="r_wiki" poids="10" tid="57611">cétacé</rel>
+                <rel type="r_wiki" poids="10" tid="92459">cétacés</rel>
+                <rel type="r_wiki" poids="10" tid="245857">de chevet</rel>
+                <rel type="r_wiki" poids="10" tid="5973185">dette de sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="347292">diagnostic infirmier</rel>
+                <rel type="r_wiki" poids="10" tid="9934708">dieu des rêves</rel>
+                <rel type="r_wiki" poids="10" tid="5801667">doctrine adventiste de la santé</rel>
+                <rel type="r_wiki" poids="10" tid="122852">douleur</rel>
+                <rel type="r_wiki" poids="10" tid="254734">douleur chronique</rel>
+                <rel type="r_wiki" poids="10" tid="2384688">douleur neuropathique</rel>
+                <rel type="r_wiki" poids="10" tid="254735">douleurs chroniques</rel>
+                <rel type="r_wiki" poids="10" tid="91481">douloureux</rel>
+                <rel type="r_wiki" poids="10" tid="63812">dyssomnie</rel>
+                <rel type="r_wiki" poids="10" tid="297984">dyssomnies</rel>
+                <rel type="r_wiki" poids="10" tid="102616">dystonie</rel>
+                <rel type="r_wiki" poids="10" tid="5974850">dystonie chez l'enfant</rel>
+                <rel type="r_wiki" poids="10" tid="154427">désirs</rel>
+                <rel type="r_wiki" poids="10" tid="131617">en-cas</rel>
+                <rel type="r_wiki" poids="10" tid="134904">encéphalogramme</rel>
+                <rel type="r_wiki" poids="10" tid="3174557">encéphalomyélite myalgique</rel>
+                <rel type="r_wiki" poids="10" tid="231906">encéphalopathie myalgique</rel>
+                <rel type="r_associated" poids="10" tid="6451232">enregistrement de l'apnée du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="1857300">epilepsie</rel>
+                <rel type="r_wiki" poids="10" tid="64107">escargot</rel>
+                <rel type="r_wiki" poids="10" tid="255570">fatigue chronique</rel>
+                <rel type="r_wiki" poids="10" tid="1885719">film lacrymal</rel>
+                <rel type="r_wiki" poids="10" tid="226317">fosse nasale</rel>
+                <rel type="r_wiki" poids="10" tid="130702">fosses nasales</rel>
+                <rel type="r_wiki" poids="10" tid="1833170">foyer épileptogène</rel>
+                <rel type="r_wiki" poids="10" tid="355539">fréquence respiratoire</rel>
+                <rel type="r_wiki" poids="10" tid="53612">gardénal</rel>
+                <rel type="r_wiki" poids="10" tid="78365">gaz</rel>
+                <rel type="r_wiki" poids="10" tid="201385">gaz intestinal</rel>
+                <rel type="r_wiki" poids="10" tid="2593848">grand mal</rel>
+                <rel type="r_wiki" poids="10" tid="14746">hallucination</rel>
+                <rel type="r_wiki" poids="10" tid="276481">hallucination auditive</rel>
+                <rel type="r_wiki" poids="10" tid="57659">hallucinations</rel>
+                <rel type="r_wiki" poids="10" tid="13951">hallucinose</rel>
+                <rel type="r_wiki" poids="10" tid="98636">hammam</rel>
+                <rel type="r_wiki" poids="10" tid="92499">haut mal</rel>
+                <rel type="r_wiki" poids="10" tid="460150">hippocampe propre</rel>
+                <rel type="r_wiki" poids="10" tid="288768">hydro-cortisone</rel>
+                <rel type="r_wiki" poids="10" tid="41639">hydrocortisone</rel>
+                <rel type="r_wiki" poids="10" tid="12605">hygiène</rel>
+                <rel type="r_wiki" poids="10" tid="234708">hygiène de vie</rel>
+                <rel type="r_wiki" poids="10" tid="148568">hyperalgésie</rel>
+                <rel type="r_wiki" poids="10" tid="178405">hypersomnie idiopathique</rel>
+                <rel type="r_wiki" poids="10" tid="1646520">hypnagogie</rel>
+                <rel type="r_wiki" poids="10" tid="111100">hypnogramme</rel>
+                <rel type="r_wiki" poids="10" tid="10317325">hypnopédie</rel>
+                <rel type="r_wiki" poids="10" tid="595969">hypnotiques</rel>
+                <rel type="r_wiki" poids="10" tid="298121">hypnotis</rel>
+                <rel type="r_wiki" poids="10" tid="65502">hypnotisé</rel>
+                <rel type="r_wiki" poids="10" tid="121704">hypoesthésie</rel>
+                <rel type="r_wiki" poids="10" tid="80735">hébergement</rel>
+                <rel type="r_wiki" poids="10" tid="10854875">hôpital Antoine-Béclère</rel>
+                <rel type="r_wiki" poids="10" tid="130554">inconfort</rel>
+                <rel type="r_wiki" poids="10" tid="27007">inconfortable</rel>
+                <rel type="r_wiki" poids="10" tid="10262">indolore</rel>
+                <rel type="r_associated" poids="10" tid="1836710">inducteur de sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="4552">inquiétude</rel>
+                <rel type="r_wiki" poids="10" tid="359875">isolement social</rel>
+                <rel type="r_wiki" poids="10" tid="249780">jet lag</rel>
+                <rel type="r_wiki" poids="10" tid="311685">jetlag</rel>
+                <rel type="r_wiki" poids="10" tid="2579851">journée internationale</rel>
+                <rel type="r_wiki" poids="10" tid="2383550">journée mondiale</rel>
+                <rel type="r_wiki" poids="10" tid="174082">liquide lacrymal</rel>
+                <rel type="r_wiki" poids="10" tid="329732">loprazolam</rel>
+                <rel type="r_wiki" poids="10" tid="222208">loup garou</rel>
+                <rel type="r_wiki" poids="10" tid="42275">loup-garou</rel>
+                <rel type="r_wiki" poids="10" tid="1858348">luminal</rel>
+                <rel type="r_wiki" poids="10" tid="234425">luminothérapie</rel>
+                <rel type="r_wiki" poids="10" tid="60285">lycanthrope</rel>
+                <rel type="r_wiki" poids="10" tid="363736">mal comitial</rel>
+                <rel type="r_wiki" poids="10" tid="223005">maladie de Gélineau</rel>
+                <rel type="r_wiki" poids="10" tid="180232">maladie de Parkinson</rel>
+                <rel type="r_wiki" poids="10" tid="2621672">mandragot</rel>
+                <rel type="r_wiki" poids="10" tid="2477720">matagot</rel>
+                <rel type="r_wiki" poids="10" tid="5830620">mdpv</rel>
+                <rel type="r_wiki" poids="10" tid="5973198">micro-fragmentation</rel>
+                <rel type="r_wiki" poids="10" tid="267259">milieu extérieur</rel>
+                <rel type="r_wiki" poids="10" tid="124509">min</rel>
+                <rel type="r_wiki" poids="10" tid="4314765">moniteur d'activité</rel>
+                <rel type="r_wiki" poids="10" tid="4314764">moniteur d'activité physique</rel>
+                <rel type="r_wiki" poids="10" tid="364856">moniteur sportif</rel>
+                <rel type="r_wiki" poids="10" tid="278881">mort inattendue du nourrisson</rel>
+                <rel type="r_wiki" poids="10" tid="9038">mort subite du nourrisson</rel>
+                <rel type="r_wiki" poids="10" tid="278879">mort subite inexpliquée du nourrisson</rel>
+                <rel type="r_wiki" poids="10" tid="9963572">mulan</rel>
+                <rel type="r_wiki" poids="10" tid="246684">mur anti-bruit</rel>
+                <rel type="r_wiki" poids="10" tid="166974">mur antibruit</rel>
+                <rel type="r_wiki" poids="10" tid="165138">muscu</rel>
+                <rel type="r_wiki" poids="10" tid="70242">musculation</rel>
+                <rel type="r_wiki" poids="10" tid="5568597">mythe de l'utilisation incomplète du cerveau</rel>
+                <rel type="r_wiki" poids="10" tid="103910">méditation</rel>
+                <rel type="r_wiki" poids="10" tid="139857">médium</rel>
+                <rel type="r_wiki" poids="10" tid="266705">mémoire épisodique</rel>
+                <rel type="r_wiki" poids="10" tid="5830619">méthylènedioxypyrovalérone</rel>
+                <rel type="r_wiki" poids="10" tid="153957">métro boulot dodo</rel>
+                <rel type="r_wiki" poids="10" tid="2448564">métro-boulot-dodo</rel>
+                <rel type="r_wiki" poids="10" tid="265202">nanisme psycho-social</rel>
+                <rel type="r_wiki" poids="10" tid="290317">nanisme psychosocial</rel>
+                <rel type="r_wiki" poids="10" tid="68512">narcoleptique</rel>
+                <rel type="r_wiki" poids="10" tid="46737">narcotiques</rel>
+                <rel type="r_wiki" poids="10" tid="108177">neurobiologie</rel>
+                <rel type="r_wiki" poids="10" tid="23838">neurosciences</rel>
+                <rel type="r_wiki" poids="10" tid="168358">noix de muscade</rel>
+                <rel type="r_wiki" poids="10" tid="302402">noix muscade</rel>
+                <rel type="r_wiki" poids="10" tid="1189884">norépinéphrine</rel>
+                <rel type="r_wiki" poids="10" tid="292800">noyaux du raphé</rel>
+                <rel type="r_wiki" poids="10" tid="315217">noyaux gris centraux</rel>
+                <rel type="r_wiki" poids="10" tid="24183">obèse</rel>
+                <rel type="r_wiki" poids="10" tid="72521">obésité</rel>
+                <rel type="r_wiki" poids="10" tid="3307842">obésité morbide</rel>
+                <rel type="r_wiki" poids="10" tid="2373098">oculométrie</rel>
+                <rel type="r_wiki" poids="10" tid="46057">oiseaux</rel>
+                <rel type="r_wiki" poids="10" tid="5598544">ololiuqui</rel>
+                <rel type="r_wiki" poids="10" tid="5828371">oléamide</rel>
+                <rel type="r_wiki" poids="10" tid="367329">onde cérébrale</rel>
+                <rel type="r_wiki" poids="10" tid="149398">onirologie</rel>
+                <rel type="r_wiki" poids="10" tid="15646">orgasme</rel>
+                <rel type="r_wiki" poids="10" tid="159937">orgasmes</rel>
+                <rel type="r_wiki" poids="10" tid="567438">oscillation neurale</rel>
+                <rel type="r_wiki" poids="10" tid="29389">oubli</rel>
+                <rel type="r_wiki" poids="10" tid="79712">palpébral</rel>
+                <rel type="r_wiki" poids="10" tid="309854">parasomnies</rel>
+                <rel type="r_wiki" poids="10" tid="1817850">parkinsonisme</rel>
+                <rel type="r_wiki" poids="10" tid="136630">paupière</rel>
+                <rel type="r_wiki" poids="10" tid="1780217">paupière supérieure</rel>
+                <rel type="r_wiki" poids="10" tid="136768">paupières</rel>
+                <rel type="r_wiki" poids="10" tid="232316">perturbateur endocrinien</rel>
+                <rel type="r_wiki" poids="10" tid="1128597">perturbation hormonale</rel>
+                <rel type="r_wiki" poids="10" tid="44887">pet</rel>
+                <rel type="r_wiki" poids="10" tid="159943">petite mort</rel>
+                <rel type="r_wiki" poids="10" tid="89850">phénobarbital</rel>
+                <rel type="r_wiki" poids="10" tid="191650">plaisir sexuel</rel>
+                <rel type="r_wiki" poids="10" tid="154339">pleine lune</rel>
+                <rel type="r_wiki" poids="10" tid="285906">pollution du ciel nocturne</rel>
+                <rel type="r_wiki" poids="10" tid="285905">pollution lumineuse</rel>
+                <rel type="r_wiki" poids="10" tid="8914943">psychologie de l'adolescent</rel>
+                <rel type="r_wiki" poids="10" tid="259848">psychologie de l'enfant</rel>
+                <rel type="r_wiki" poids="10" tid="10178486">psychologie interculturelle du développement</rel>
+                <rel type="r_wiki" poids="10" tid="5078">pyjama</rel>
+                <rel type="r_wiki" poids="10" tid="221355">pyramide des besoins</rel>
+                <rel type="r_wiki" poids="10" tid="2437804">quétiapine</rel>
+                <rel type="r_wiki" poids="10" tid="223273">red bull</rel>
+                <rel type="r_wiki" poids="10" tid="207068">respiration de Cheyne-Stokes</rel>
+                <rel type="r_associated" poids="10" tid="11021366">retrouver le sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="17116">rhinencéphale</rel>
+                <rel type="r_wiki" poids="10" tid="3291868">rhinite vasomotrice</rel>
+                <rel type="r_wiki" poids="10" tid="224636">rooibos</rel>
+                <rel type="r_wiki" poids="10" tid="311941">rythme biologique</rel>
+                <rel type="r_wiki" poids="10" tid="207345">rythme circadien</rel>
+                <rel type="r_wiki" poids="10" tid="567437">rythme cérébral</rel>
+                <rel type="r_wiki" poids="10" tid="37654">rythmes biologiques</rel>
+                <rel type="r_wiki" poids="10" tid="5574387">rythmies du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="5679292">règle dite des trois révocations</rel>
+                <rel type="r_wiki" poids="10" tid="164562">sacs</rel>
+                <rel type="r_wiki" poids="10" tid="2785706">salvia divinorum</rel>
+                <rel type="r_wiki" poids="10" tid="2785708">sauge des devins</rel>
+                <rel type="r_wiki" poids="10" tid="140114">saumure</rel>
+                <rel type="r_wiki" poids="10" tid="52445">sauveteur</rel>
+                <rel type="r_wiki" poids="10" tid="2526327">sexsomnie</rel>
+                <rel type="r_wiki" poids="10" tid="255217">sieste éclair</rel>
+                <rel type="r_wiki" poids="10" tid="23229">soif</rel>
+                <rel type="r_wiki" poids="10" tid="236517">soirée pyjama</rel>
+                <rel type="r_wiki" poids="10" tid="104681">solitude</rel>
+                <rel type="r_wiki" poids="10" tid="380211">solitude morale</rel>
+                <rel type="r_wiki" poids="10" tid="86061">somesthésie</rel>
+                <rel type="r_wiki" poids="10" tid="156471">sommeil paradoxal</rel>
+                <rel type="r_wiki" poids="10" tid="6003376">sommeil polyphasique</rel>
+                <rel type="r_wiki" poids="10" tid="595970">somnifères</rel>
+                <rel type="r_wiki" poids="10" tid="265069">somnipathie</rel>
+                <rel type="r_wiki" poids="10" tid="28771">spasmophilie</rel>
+                <rel type="r_wiki" poids="10" tid="294861">struthio</rel>
+                <rel type="r_wiki" poids="10" tid="2432151">succubat</rel>
+                <rel type="r_wiki" poids="10" tid="15320">suette</rel>
+                <rel type="r_wiki" poids="10" tid="280413">suette anglaise</rel>
+                <rel type="r_wiki" poids="10" tid="280414">suette miliaire</rel>
+                <rel type="r_wiki" poids="10" tid="11013286">suette picarde</rel>
+                <rel type="r_wiki" poids="10" tid="208621">surcharge pondérale</rel>
+                <rel type="r_wiki" poids="10" tid="5883304">surprescription</rel>
+                <rel type="r_wiki" poids="10" tid="76482">synchronisation</rel>
+                <rel type="r_associated" poids="10" tid="6450189">syndrome d'apnée obstructive du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="303976">syndrome d'apnées du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="303977">syndrome d'apnées-hypopnées du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="5973186">syndrome d'avance de phase du sommeil</rel>
+                <rel type="r_wiki" poids="10" tid="295288">syndrome d'hyperventilation</rel>
+                <rel type="r_wiki" poids="10" tid="180250">syndrome de fatigue chronique</rel>
+                <rel type="r_wiki" poids="10" tid="5973190">syndrome de la tête qui explose</rel>
+                <rel type="r_wiki" poids="10" tid="311684">syndrome du décalage horaire</rel>
+                <rel type="r_wiki" poids="10" tid="6066702">système de détection incendie</rel>
+                <rel type="r_wiki" poids="10" tid="5685651">système des ganglions de la base</rel>
+                <rel type="r_wiki" poids="10" tid="421277">sérotoninergique</rel>
+                <rel type="r_wiki" poids="10" tid="153296">table de chevet</rel>
+                <rel type="r_wiki" poids="10" tid="159836">table de nuit</rel>
+                <rel type="r_wiki" poids="10" tid="5973199">temps de transit du pouls</rel>
+                <rel type="r_wiki" poids="10" tid="152416">temps libre</rel>
+                <rel type="r_wiki" poids="10" tid="12160">territorialité</rel>
+                <rel type="r_wiki" poids="10" tid="5574405">test itératif de latence à l'endormissement</rel>
+                <rel type="r_wiki" poids="10" tid="99557">thalamique</rel>
+                <rel type="r_wiki" poids="10" tid="76281">thalamus</rel>
+                <rel type="r_wiki" poids="10" tid="5898447">théorie du cerveau triunique</rel>
+                <rel type="r_wiki" poids="10" tid="5554570">thérapie rationnelle-émotive</rel>
+                <rel type="r_wiki" poids="10" tid="38152">trail</rel>
+                <rel type="r_wiki" poids="10" tid="33566">triazolam</rel>
+                <rel type="r_wiki" poids="10" tid="5598739">trimipramine</rel>
+                <rel type="r_wiki" poids="10" tid="1567739">trois huit</rel>
+                <rel type="r_wiki" poids="10" tid="38462">trois-huit</rel>
+                <rel type="r_wiki" poids="10" tid="5574408">trouble du comportement en sommeil paradoxal</rel>
+                <rel type="r_associated" poids="10" tid="6451662">trouble du sommeil par retard de l'heure du coucher</rel>
+                <rel type="r_associated" poids="10" tid="6451416">troubles du sommeil liés à l'environnement</rel>
+                <rel type="r_wiki" poids="10" tid="151136">tryptophane</rel>
+                <rel type="r_wiki" poids="10" tid="71467">télévision</rel>
+                <rel type="r_wiki" poids="10" tid="66931">ulcère</rel>
+                <rel type="r_wiki" poids="10" tid="170682">valériane officinale</rel>
+                <rel type="r_wiki" poids="10" tid="124517">veille</rel>
+                <rel type="r_wiki" poids="10" tid="124974">veiller</rel>
+                <rel type="r_wiki" poids="10" tid="236843">ventilation en pression positive continue</rel>
+                <rel type="r_wiki" poids="10" tid="128495">vigilance</rel>
+                <rel type="r_wiki" poids="10" tid="212768">vêtement de nuit</rel>
+                <rel type="r_wiki" poids="10" tid="310192">vêtements d'intérieur</rel>
+                <rel type="r_wiki" poids="10" tid="310193">vêtements de nuit</rel>
+                <rel type="r_wiki" poids="10" tid="1848600">xénoestrogène</rel>
+                <rel type="r_wiki" poids="10" tid="1848598">xénohormone</rel>
+                <rel type="r_wiki" poids="10" tid="10068826">yoga nidra</rel>
+                <rel type="r_wiki" poids="10" tid="98688">zoopsie</rel>
+                <rel type="r_wiki" poids="10" tid="283532">Épine d'Espagne</rel>
+                <rel type="r_wiki" poids="10" tid="182226">écran acoustique</rel>
+                <rel type="r_wiki" poids="10" tid="305441">écran anti-bruit</rel>
+                <rel type="r_wiki" poids="10" tid="25201">édredon</rel>
+                <rel type="r_wiki" poids="10" tid="15332">électro-encéphalographie</rel>
+                <rel type="r_wiki" poids="10" tid="121108">électroencéphalographie</rel>
+                <rel type="r_wiki" poids="10" tid="37028">épilepsie</rel>
+                <rel type="r_wiki" poids="10" tid="30181">épileptique</rel>
+                <rel type="r_wiki" poids="10" tid="1553309">épithalamus</rel>
+                <rel type="r_wiki" poids="10" tid="1646521">état hypnagogique</rel>
+                <rel type="r_wiki" poids="9" tid="24758">autruche</rel>
+                <rel type="r_associated" poids="9" tid="6449281">bruxisme du sommeil de l'enfant</rel>
+                <rel type="r_wiki" poids="9" tid="54226">couette</rel>
+                <rel type="r_associated" poids="9" tid="1831295">cycle de sommeil</rel>
+                <rel type="r_wiki" poids="9" tid="9864">désir</rel>
+                <rel type="r_wiki" poids="9" tid="317988">perturbateurs endocriniens</rel>
+                <rel type="r_associated" poids="9" tid="11081982">période de sommeil</rel>
+                <rel type="r_wiki" poids="9" tid="74736">repas</rel>
+                <rel type="r_associated" poids="8" tid="5973187">Classification internationale des troubles du sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973212">Meurtre en sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973185">dette de sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973218">défaut de sommeil</rel>
+                <rel type="r_wiki" poids="8" tid="59638">hippocampe</rel>
+                <rel type="r_associated" poids="8" tid="5973208">sursaut du sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973186">syndrome d'avance de phase du sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973188">syndrome de retard de phase du sommeil</rel>
+                <rel type="r_associated" poids="8" tid="5973192">trouble dissociatif lié au sommeil</rel>
+                <rel type="r_associated" poids="8" tid="6448321">trouble du sommeil induit par l'alcool</rel>
+                <rel type="r_associated" poids="7" tid="5828802">Un sommeil d'ours</rel>
+                <rel type="r_associated" poids="7" tid="9980436">trouver le sommeil</rel>
+                <rel type="r_wiki" poids="6" tid="130958">noradrénaline</rel>
+                <rel type="r_associated" poids="6" tid="6444502">perturbations de l'endormissement et du maintien du sommeil</rel>
+                <rel type="r_associated" poids="6" tid="5574387">rythmies du sommeil</rel>
+                <rel type="r_associated" poids="6" tid="6446108">syndrome d'insuffisance de sommeil</rel>
+                <rel type="r_associated" poids="6" tid="5574408">trouble du comportement en sommeil paradoxal</rel>
+                <rel type="r_action_lieu" poids="5" tid="161230" te="::>13:59817>29:34025>15">Où un savant pourrait savoir ?</rel>
+                <rel type="r_associated" poids="5" tid="10904258">J'ai pas sommeil</rel>
+                <rel type="r_syn" poids="5" tid="49888">endormissement</rel>
+                <rel type="r_family" poids="5" tid="101888">insomnie</rel>
+                <rel type="r_causatif" poids="5" tid="6447416">syndrome d'apnée</rel>
+                <rel type="r_against" poids="5" tid="6447416">syndrome d'apnée</rel>
+                <rel type="r_causatif" poids="5" tid="6441634">syndrome d'apnées obstructives du sommeil</rel>
+                <rel type="r_against" poids="5" tid="6441634">syndrome d'apnées obstructives du sommeil</rel>
+                <rel type="r_causatif" poids="5" tid="1841482">syndrome de Pickwick</rel>
+                <rel type="r_against" poids="5" tid="1841482">syndrome de Pickwick</rel>
+                <rel type="r_causatif" poids="5" tid="6288616">syndrome des apnées obstructives du sommeil</rel>
+                <rel type="r_against" poids="5" tid="6288616">syndrome des apnées obstructives du sommeil</rel>
+                <rel type="r_causatif" poids="5" tid="6450808">syndromes d'apnées du sommeil</rel>
+                <rel type="r_against" poids="5" tid="6450808">syndromes d'apnées du sommeil</rel>
+                <rel type="r_causatif" poids="5" tid="6452001">syndromes d'apnées obstructives du sommeil</rel>
+                <rel type="r_against" poids="5" tid="6452001">syndromes d'apnées obstructives du sommeil</rel>
+                <rel type="r_causatif" poids="5" tid="6348762">syndromes des apnées obstructives du sommeil</rel>
+                <rel type="r_against" poids="5" tid="6348762">syndromes des apnées obstructives du sommeil</rel>
+                <rel type="r_associated" poids="5" tid="9989045">trouble du sommeil non organique non précisé</rel>
+                <rel type="r_associated" poids="5" tid="9989047">trouble non organique du sommeil non précisé</rel>
+                <rel type="r_associated" poids="5" tid="245774">vêtement d'intérieur</rel>
+                <rel type="r_associated" poids="5" tid="6448583">état d'assoupissement</rel>
+                <rel type="r_associated" poids="5" tid="6444336">évaluation de l'apnée du sommeil</rel>
+                <rel type="r_aki" poids="4" tid="152361">marchand de sable</rel>
+                <rel type="r_aki" poids="3" tid="43253">dormir</rel>
+                <rel type="r_associated" poids="3" tid="6443674">troubles de l'endormissement et du maintien du sommeil</rel>
+                <rel type="r_associated" poids="3" tid="6442536">troubles de l'initiation et du maintien du sommeil</rel>
+                <rel type="r_associated" poids="2" tid="6437210">bruxisme du sommeil de l'adulte</rel>
+                <rel type="r_associated" poids="2" tid="6435752">maladie du sommeil de l'afrique orientale</rel>
+                <rel type="r_aki" poids="2" tid="39192">nuit</rel>
+                <rel type="r_associated" poids="2" tid="6438414">sommeil d'ivresse</rel>
+                <rel type="r_aki" poids="2" tid="134025">soporifique</rel>
+                <rel type="r_associated" poids="2" tid="6434901">syndrome d'apnée du sommeil centrale</rel>
+                <rel type="r_associated" poids="2" tid="6437342">trouble de l'initiation du sommeil</rel>
+                <rel type="r_associated" poids="2" tid="6440188">trouble du sommeil associé à l'absence de structure</rel>
+                <rel type="r_associated" poids="2" tid="6437352">trouble du sommeil induit par l'amphétamine</rel>
+                <rel type="r_associated" poids="2" tid="6435196">trouble transitoire d'initiation ou de maintien du sommeil</rel>
+                <rel type="r_aki" poids="1" tid="188284">Enki Bilal</rel>
+                <rel type="r_wiki" poids="1" tid="107004">acuponcture</rel>
+                <rel type="r_associated" poids="1" tid="6431075">anomalie du sommeil paradoxal</rel>
+                <rel type="r_associated" poids="1" tid="6425150">apnée centrale du sommeil primitive</rel>
+                <rel type="r_associated" poids="1" tid="6429399">autre apnée du sommeil non précisée</rel>
+                <rel type="r_associated" poids="1" tid="6429342">chronothérapie sur les phases de sommeil</rel>
+                <rel type="r_associated" poids="1" tid="6432022">erreur d'hygiène de sommeil</rel>
+                <rel type="r_aki" poids="1" tid="95282">hibernation</rel>
+                <rel type="r_aki" poids="1" tid="26023">hypnotique</rel>
+                <rel type="r_associated" poids="1" tid="6427117">insomnie avec apnée du sommeil</rel>
+                <rel type="r_associated" poids="1" tid="6429299">insomnie de maintien du sommeil</rel>
+                <rel type="r_aki" poids="1" tid="71578">lit</rel>
+                <rel type="r_associated" poids="1" tid="66604">loger</rel>
+                <rel type="r_aki" poids="1" tid="223005">maladie de Gélineau</rel>
+                <rel type="r_associated" poids="1" tid="6431769">maladie du sommeil de l'afrique occidentale</rel>
+                <rel type="r_associated" poids="1" tid="6425197">maladie du sommeil à trypanosoma rhodesiense</rel>
+                <rel type="r_associated" poids="1" tid="6433834">monitorage de l'apnée du sommeil avec alarme</rel>
+                <rel type="r_associated" poids="1" tid="6427046">peptide inducteur du sommeil lent</rel>
+                <rel type="r_associated" poids="1" tid="2546">physiologie</rel>
+                <rel type="r_domain-1" poids="1" tid="2546">physiologie</rel>
+                <rel type="r_aki" poids="1" tid="5078">pyjama</rel>
+                <rel type="r_wiki" poids="1" tid="160124">pète</rel>
+                <rel type="r_aki" poids="1" tid="5435">ronfler</rel>
+                <rel type="r_aki" poids="1" tid="48654">rêve</rel>
+                <rel type="r_associated" poids="1" tid="6429754">sommeil prolongé</rel>
+                <rel type="r_associated" poids="1" tid="6429327">sommeil à ondes rapides</rel>
+                <rel type="r_aki" poids="1" tid="77775">somnambule</rel>
+                <rel type="r_associated" poids="1" tid="6427331">stade sommeil</rel>
+                <rel type="r_associated" poids="1" tid="6432087">syndrome d'apnée du sommeil central</rel>
+                <rel type="r_associated" poids="1" tid="6432241">syndrome d'apnées centrales du sommeil</rel>
+                <rel type="r_associated" poids="1" tid="6431360">trouble du sommeil lié au travail par poste</rel>
+                <rel type="r_associated" poids="1" tid="6432444">trouble persistant d'initiation ou de maintien du sommeil</rel>
+                <rel type="r_associated" poids="1" tid="6424449">troubles du sommeil par somnolence excessive</rel>
+                <rel type="r_wiki" poids="1" tid="110829">électro-encéphalogramme</rel>
+                <rel type="r_wiki" poids="1" tid="102975">électroencéphalogramme</rel>
+                <rel type="r_associated" poids="1" tid="6426177">électroencéphalogramme ambulatoire de veille et de sommeil avec stimulation</rel>
+                <rel type="r_hypo" poids="0" tid="135985">sieste</rel>
+                <rel type="r_has_part" poids="-1" tid="145624">pêche</rel>
+                <rel type="r_hypo" poids="-2" tid="145624">pêche</rel>
+                <rel type="r_isa" poids="-5" tid="227366">pause pipi</rel>
+                <rel type="r_causatif" poids="-5" tid="135985">sieste</rel>
+                <rel type="r_isa" poids="-25" tid="74424">sommeil éternel</rel>
+                <rel type="r_isa" poids="-50" tid="81637">oreiller</rel>
+                <rel type="r_carac" poids="-51" tid="82777">dimanche</rel>
+                <rel type="r_isa" poids="-163" tid="39192">nuit</rel>
+
+              </entrant>
+
+            </jdm></CODE>
+
+
+        </div>
+        <TH>
+
+
+
+
+      </TABLE>
+    </div>
+  </body>
+</html>
