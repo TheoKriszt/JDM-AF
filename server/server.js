@@ -33,18 +33,27 @@ app.get("/search/word/:word",function(req,res){
   var iconv = new Iconv('UTF-8','LATIN1');
   var encodedWord = iconv.convert(word).toString();
 
-  let url = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
+  let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
-  console.log(url);
+  console.log(formatedURL);
 
-  request(url, function (error, response, body) {
+  request(formatedURL, function (error, response, body) {
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
 
-    let root = HTMLParser.parse(body);
+    let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
+    let root = HTMLParser.parse(tagCode);
 
-    sendRes(res, JSON.stringify(root));
+    let searchResult = {
+      "word": root.querySelector('mot'),
+      "formatedWord": root.querySelector('mot-formate'),
+      "definition": root.querySelector('def'),
+      "relationOut" : root.querySelector('sortant'),
+      "relationIn" : root.querySelector('entrant'),
+    };
+
+    sendRes(res, JSON.stringify(searchResult));
   });
 });
 
