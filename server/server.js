@@ -7,6 +7,9 @@ const Iconv  = require('iconv').Iconv;
 const cors = require('cors');
 app.use(cors());
 
+const NodeCache = require( "node-cache" );
+const myCache = new NodeCache();
+
 const request = require('request');
 
 const HTMLParser = require('node-html-parser');
@@ -30,30 +33,75 @@ app.get("/search/word/:word",function(req,res){
 
   let word = req.params.word;
 
-  var iconv = new Iconv('UTF-8','LATIN1');
-  var encodedWord = iconv.convert(word).toString();
+  myCache.get(word, function(err, searchResult){
+    if( !err ){
+      if(searchResult === undefined){
+        console.log(word, 'not found in cache');
 
-  let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
+        var iconv = new Iconv('UTF-8','LATIN1');
+        var encodedWord = iconv.convert(word).toString();
 
-  console.log(formatedURL);
+        let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
-  request(formatedURL, function (error, response, body) {
-    console.log('error:', error);
-    console.log('statusCode:', response && response.statusCode);
+        console.log(formatedURL);
 
-    let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+        request(formatedURL, function (error, response, body) {
+          console.log('error:', error);
+          console.log('statusCode:', response && response.statusCode);
 
-    let root = HTMLParser.parse(tagCode);
+          let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-    let searchResult = {
-      "word": root.querySelector('mot'),
-      "formatedWord": root.querySelector('mot-formate'),
-      "definition": root.querySelector('def'),
-      "relationOut" : root.querySelector('sortant'),
-      "relationIn" : root.querySelector('entrant'),
-    };
+          let root = HTMLParser.parse(tagCode);
 
-    sendRes(res, JSON.stringify(searchResult));
+          let searchResult = {
+            'word': '',
+            'formatedWord': '',
+            'definition': '',
+            'relationOut' : '',
+            'relationIn' : '',
+          };
+
+          if(root.querySelector('mot') != null)
+            searchResult.word = root.querySelector('mot').toString();
+
+          if(root.querySelector('mot-formate') != null)
+            searchResult.formatedWord = root.querySelector('mot').toString();
+
+          if(root.querySelector('def') != null)
+            searchResult.definition = root.querySelector('mot').toString();
+
+          if(root.querySelector('sortant') != null)
+            searchResult.relationOut = root.querySelector('mot').toString();
+
+          if(root.querySelector('entrant') != null)
+            searchResult.relationIn = root.querySelector('mot').toString();
+
+          myCache.set(word, searchResult, 604800); //1 week
+
+          sendRes(res, JSON.stringify(searchResult));
+        });
+      }else{
+        console.log(word, 'found in cache');
+
+        sendRes(res, JSON.stringify(searchResult));
+      }
+    }
+  });
+});
+
+// Search by word, only in the cache
+app.get("/search/cache/word/:word",function(req,res){
+
+  let word = req.params.word;
+
+  myCache.get(word, function(err, searchResult ){
+    if( !err ){
+      if(searchResult === undefined){
+        sendRes(res, word + ' not found in cache');
+      }else{
+        sendRes(res, JSON.stringify(searchResult));
+      }
+    }
   });
 });
 
