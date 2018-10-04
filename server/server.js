@@ -8,11 +8,11 @@ const cors = require('cors');
 app.use(cors());
 
 const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
+const cache = new NodeCache();
 
 const request = require('request');
 
-const HTMLParser = require('node-html-parser');
+const SearchResultHelper = require('./search/search_result_helper');
 
 const sendRes = function(res, json){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -33,13 +33,15 @@ app.get("/search/word/:word",function(req,res){
 
   let word = req.params.word;
 
-  myCache.get(word, function(err, searchResult){
-    if( !err ){
+  console.log('search', word);
+
+  cache.get(word, function(err, searchResult){
+    if(!err ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
-        var iconv = new Iconv('UTF-8','LATIN1');
-        var encodedWord = iconv.convert(word).toString();
+        let iconv = new Iconv('UTF-8','LATIN1');
+        let encodedWord = iconv.convert(word).toString();
 
         let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
@@ -51,37 +53,14 @@ app.get("/search/word/:word",function(req,res){
 
           let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-          let root = HTMLParser.parse(tagCode);
+          let searchResult = SearchResultHelper.extractSearchResult(tagCode);
 
-          let searchResult = {
-            'word': '',
-            'formatedWord': '',
-            'definition': '',
-            'relationOut' : '',
-            'relationIn' : '',
-          };
-
-          if(root.querySelector('mot') != null)
-            searchResult.word = root.querySelector('mot').toString();
-
-          if(root.querySelector('mot-formate') != null)
-            searchResult.formatedWord = root.querySelector('mot').toString();
-
-          if(root.querySelector('def') != null)
-            searchResult.definition = root.querySelector('mot').toString();
-
-          if(root.querySelector('sortant') != null)
-            searchResult.relationOut = root.querySelector('mot').toString();
-
-          if(root.querySelector('entrant') != null)
-            searchResult.relationIn = root.querySelector('mot').toString();
-
-          myCache.set(word, searchResult, 604800); //1 week
+          cache.set(searchResult.formatedWord, searchResult, 604800);
 
           sendRes(res, JSON.stringify(searchResult));
         });
       }else{
-        console.log(word, 'found in cache');
+        console.log(word, 'founded in cache');
 
         sendRes(res, JSON.stringify(searchResult));
       }
@@ -94,7 +73,9 @@ app.get("/search/cache/word/:word",function(req,res){
 
   let word = req.params.word;
 
-  myCache.get(word, function(err, searchResult ){
+  console.log('search in cache', word);
+
+  cache.get(word, function(err, searchResult ){
     if( !err ){
       if(searchResult === undefined){
         sendRes(res, word + ' not found in cache');
@@ -103,6 +84,17 @@ app.get("/search/cache/word/:word",function(req,res){
       }
     }
   });
+});
+
+// Return all current entries in cache, usefull for autocompletion
+app.get("/cache/entries",function(req,res){
+  console.log('cache entries');
+
+  console.log(cache.entries);
+
+  console.log(cache.getEntries());
+
+  sendRes(res, JSON.stringify(cache.entries));
 });
 
 app.listen(8888);
