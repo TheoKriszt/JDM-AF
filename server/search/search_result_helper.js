@@ -41,16 +41,25 @@ const clone = require('clone');
     if(definitionTag != null)
       searchResult.definition = definitionTag.text;
 
-    let relationOutEntries = root.querySelector('sortant').toString().split('\n');
+    let tagRelationOut = root.querySelector('sortant');
 
-    for (let index = 0; index < relationOutEntries.length; index++) {
-      searchResult.relationsOut.push(clone(RelationHelper.extractRelation(relationOutEntries[index])));
+    if(tagRelationOut != null)
+    {
+      let relationOutEntries = tagRelationOut.toString().split('\n');
+
+      for (let index = 0; index < relationOutEntries.length; index++) {
+        searchResult.relationsOut.push(clone(RelationHelper.extractRelation(relationOutEntries[index])));
+      }
     }
 
-    let relationInEntries = root.querySelector('entrant').toString().split('\n');
+    let tagRelationIn = root.querySelector('entrant');
 
-    for (let index = 0; index < relationInEntries.length; index++)
-      searchResult.relationsIn.push(clone(RelationHelper.extractRelation(relationInEntries[index])));
+    if(tagRelationIn != null) {
+      let relationInEntries = tagRelationIn.toString().split('\n');
+
+      for (let index = 0; index < relationInEntries.length; index++)
+        searchResult.relationsIn.push(clone(RelationHelper.extractRelation(relationInEntries[index])));
+    }
 
     return searchResult;
   }

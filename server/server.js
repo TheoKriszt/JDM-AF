@@ -51,13 +51,17 @@ app.get("/search/word/:word",function(req,res){
           console.log('error:', error);
           console.log('statusCode:', response && response.statusCode);
 
-          let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+          if (response.statusCode === 200) {
+            let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-          let searchResult = SearchResultHelper.extractSearchResult(tagCode);
+            let searchResult = SearchResultHelper.extractSearchResult(tagCode);
 
-          cache.set(searchResult.formatedWord, searchResult, 604800);
+            cache.set(searchResult.formatedWord, searchResult, 604800);
 
-          sendRes(res, JSON.stringify(searchResult));
+            sendRes(res, JSON.stringify(searchResult));
+          }
+          else
+            sendRes(res, "error " + response.statusCode);
         });
       }else{
         console.log(word, 'founded in cache');
