@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const Iconv  = require('iconv').Iconv;
+// const Iconv  = require('iconv').Iconv; // removed : incompilable sous Windows
+const iconv  = require('iconv-lite');
 
 const cors = require('cors');
 app.use(cors());
@@ -40,8 +41,9 @@ app.get("/search/word/:word",function(req,res){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
-        let iconv = new Iconv('UTF-8','LATIN1');
-        let encodedWord = iconv.convert(word).toString();
+        // let iconv = new Iconv('UTF-8','LATIN1');
+        // let encodedWord = iconv.convert(word).toString();
+        let encodedWord = iconv.encode(word, 'ISO-8859-1'); // ISO-8859-1 == LATIN1
 
         let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
@@ -101,4 +103,5 @@ app.get("/cache/entries",function(req,res){
   sendRes(res, JSON.stringify(cache.entries));
 });
 
+console.log('JDM-AF Server started');
 app.listen(8888);
