@@ -6,6 +6,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 const routes: Routes = [
@@ -19,7 +24,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule, HttpClientModule, RouterModule.forChild(routes),
-    FormsModule, ReactiveFormsModule, MatButtonModule
+    FormsModule, ReactiveFormsModule, MatButtonModule, MatAutocompleteModule,
+    MatFormFieldModule, MatInputModule, MatProgressSpinnerModule
   ],
   exports: [WordsComponent, WordsSearchComponent, RouterModule],
   declarations: [WordsComponent, WordsSearchComponent],

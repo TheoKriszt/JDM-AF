@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-words',
@@ -8,20 +9,26 @@ import {Router} from '@angular/router';
 })
 export class WordsComponent implements OnInit {
   loading = false;
-  formModel: any = {
-    name: ''
-  };
+
+  formModel = new FormGroup({
+    name: new FormControl(''),
+  });
+
+  autocomplete_options = [];
+
   orderByOptions: [
     {name: 'Nom', code: 'name'},
     {name: 'Poids', code: 'weight'}
   ];
+
   selectedOrderByOption: any;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     // pré-remplir le formulaire
-    this.formModel.name = 'chien';
+    //this.formModel.setValue({name: 'chien'});
+    this.autocomplete_options = ['Chat', 'Chien', 'Arbre', 'Singe', 'Cookie'];
   }
 
   submitWordSearch() {
@@ -32,12 +39,10 @@ export class WordsComponent implements OnInit {
       // console.log('setting selectedOrderByOption to \'\'');
     }
 
-    if (this.formModel.name) {
-      console.log('name  : ' + this.formModel.name);
+    if (this.formModel.get('name').value) {
+      console.log('name  : ' + this.formModel.get('name').value);
       this.loading = false;
-
-
-      this.router.navigate(['/words', 'words-search', this.formModel.name]);
+      this.router.navigate(['/words', 'words-search', this.formModel.get('name').value]);
 
       // this.router.navigate(
       //   ['/words', 'words-search', this.formModel.name]
@@ -45,8 +50,6 @@ export class WordsComponent implements OnInit {
       //   // { queryParams: {orderBy: this.selectedOrderByOption}}
       // );
     }
-
-
   }
 
 }

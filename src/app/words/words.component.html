@@ -1,3 +1,26 @@
+<div class="container">
+  <div class="row">
+    <mat-form-field class="col-xs-9" name="searchForm" appearance="outline" color="primary" [formGroup]='formModel' (ngSubmit)="searchForm.form.valid && submitWordSearch() " #searchForm="ngForm">
+
+      <mat-label>Enter your search here</mat-label>
+      <input type="text"  placeholder="Ex: Chat" matInput formControlName="name" [matAutocomplete]="auto">
+      <mat-error *ngIf="searchForm.submitted && !formModel.get('name').value.valid"> Champ Manquant !</mat-error>
+
+    </mat-form-field>
+
+    <div class="form-group col-xs-3">
+      <button mat-raised-button color="warn" [disabled]="loading" class="btn btn-primary">Recherche</button>
+      <div *ngIf="loading">
+        <mat-progress-spinner mode="indeterminate" color="warn"></mat-progress-spinner>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let option of autocomplete_options" [value]="option">{{option}}</mat-option>
+</mat-autocomplete>
+
+<!--
 <form name="searchForm" (ngSubmit)="searchForm.form.valid && submitWordSearch() " #searchForm="ngForm" novalidate>
   <div class="form-group" [ngClass]="{ 'has-error': searchForm.submitted && !name.valid }">
     <label>Mot a rechercher</label>
@@ -9,4 +32,4 @@
     <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
   </div>
 </form>
-
+-->
