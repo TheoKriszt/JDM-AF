@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost',
+  apiUrl: 'http://theo.kriszt.fr',
   apiPort: '8888'
 };
