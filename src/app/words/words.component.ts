@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+import {WordsService} from './words.service';
 
 @Component({
   selector: 'app-words',
@@ -10,46 +13,55 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class WordsComponent implements OnInit {
   loading = false;
 
-  formModel = new FormGroup({
-    name: new FormControl(''),
-  });
+  model: any;
 
-  autocomplete_options = [];
-
-  orderByOptions: [
-    {name: 'Nom', code: 'name'},
-    {name: 'Poids', code: 'weight'}
+  nameControl = new FormControl();
+  options: string[] = [
+    'Martin',
+    'Mary',
+    'Shelley',
+    'Igor'
   ];
+  filteredOptions: Observable<string[]>;
 
-  selectedOrderByOption: any;
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private wordService: WordsService) { }
 
   ngOnInit() {
-    // pré-remplir le formulaire
-    //this.formModel.setValue({name: 'chien'});
-    this.autocomplete_options = ['Chat', 'Chien', 'Arbre', 'Singe', 'Cookie'];
+    this.nameControl.valueChanges.subscribe(name => {
+      if (name.length > 0) {
+
+        this.filteredOptions = this.wordService.autocomplete(name);
+      } else {
+        this.loading  = false;
+      }
+    });
   }
 
   submitWordSearch() {
+    // console.log('submit word to search : ');
+    // console.log(this.nameControl.value)
     this.loading = true;
 
-    if (!this.selectedOrderByOption) {
-      this.selectedOrderByOption = {'code': ''};
-      // console.log('setting selectedOrderByOption to \'\'');
-    }
+    // if (!this.selectedOrderByOption) {
+    //   this.selectedOrderByOption = {'code': ''};
+    //   // console.log('setting selectedOrderByOption to \'\'');
+    // }
 
-    if (this.formModel.get('name').value) {
-      console.log('name  : ' + this.formModel.get('name').value);
-      this.loading = false;
-      this.router.navigate(['/words', 'words-search', this.formModel.get('name').value]);
-
-      // this.router.navigate(
-      //   ['/words', 'words-search', this.formModel.name]
-      //   // { queryParams: {orderBy: this.selectedOrderByOption}}
-      //   // { queryParams: {orderBy: this.selectedOrderByOption}}
-      // );
+    if (this.nameControl.value) {
+      this.router.navigate(['/words', 'words-search', this.nameControl.value]);
+    //
+    //   // this.router.navigate(
+    //   //   ['/words', 'words-search', this.formModel.name]
+    //   //   // { queryParams: {orderBy: this.selectedOrderByOption}}
+    //   //   // { queryParams: {orderBy: this.selectedOrderByOption}}
+    //   // );
     }
+    this.loading = false;
+
   }
 
+  private _filter(name: string): string[] {
+    return this.options;
+    // return [];
+  }
 }

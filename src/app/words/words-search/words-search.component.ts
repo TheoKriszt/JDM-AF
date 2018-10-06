@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
+import {WordsService} from '../words.service';
 
 @Component({
   selector: 'app-words-search',
@@ -8,28 +10,25 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class WordsSearchComponent implements OnInit {
   private orderByParam = '';
+  loading: boolean;
+  searchedWord = '';
   words: any = {};
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
   ngOnInit() {
-    console.log('words-search :: ngInit');
-    // this.route.params.subscribe(routeParams => {
-    //   this.route.queryParams
-    //     .subscribe(params => {
-    //       this.orderByParam = params.orderBy;
-    //
-    //
-    //       // this.trajetsService.getTrajetsRecherche(searchOptions).subscribe(mongoRes => {
-    //       //   this.trajets = mongoRes;
-    //       // });
-    //
-    //     });
-    // });
-  }
+    this.loading = true;
 
-  gotResults(): boolean {
-    return (this.words[0] !== undefined);
+   this.searchedWord = this.route.snapshot.params['word'];
+
+   if (this.searchedWord) {
+     console.log('recherche du terme ' + this.searchedWord)
+     this.wordService.searchWord(this.searchedWord).subscribe(result => {
+       console.log('DONE');
+       this.words  = result;
+       this.loading = false;
+     });
+   }
   }
 
 }

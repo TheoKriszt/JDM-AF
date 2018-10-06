@@ -66,7 +66,7 @@ app.get("/search/word/:word",function(req,res){
             sendRes(res, "error " + response.statusCode);
         });
       }else{
-        console.log(word, 'founded in cache');
+        console.log(word, 'found in cache');
 
         sendRes(res, JSON.stringify(searchResult));
       }
@@ -96,11 +96,34 @@ app.get("/search/cache/word/:word",function(req,res){
 app.get("/cache/entries",function(req,res){
   console.log('cache entries');
 
-  console.log(cache.entries);
+  // console.log(cache.entries);
+  console.log(cache.keys());
 
-  console.log(cache.getEntries());
+  // console.log(cache.getEntries());
 
-  sendRes(res, JSON.stringify(cache.entries));
+  // sendRes(res, JSON.stringify(cache.entries));
+  sendRes(res, JSON.stringify(cache.keys()));
+});
+
+// Quick search only
+// Should handle autocompletion from an exhaustive preloaded list
+// Should handle a joker caracter such as '*', '?', '%' etc.
+// TODO : this is just a dummy/stub that needs to be properly implemented
+app.get("/autocomplete/:searchedWord",function(req,res){
+
+  const searchedWord =  req.params.searchedWord;
+  // TODO : en attendant, on liste juste les entrées en cache
+  const exhaustiveTermsList = cache.keys();
+
+  let matches = [];
+
+  for( let match of exhaustiveTermsList ){
+    if (match.startsWith(searchedWord)){
+      matches.push(match);
+    }
+  }
+
+  sendRes(res, JSON.stringify(matches));
 });
 
 console.log('JDM-AF Server started');

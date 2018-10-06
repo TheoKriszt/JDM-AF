@@ -1,3 +1,5 @@
-<p>
-  words-search works!
-</p>
+
+  <div *ngIf="loading">
+    <mat-spinner color="warn"></mat-spinner>
+  </div>
+  {{words | json}}
