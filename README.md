@@ -10,12 +10,12 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
 ## ToDo 
 
 Serveur : 
-  - Autocompletion (lecture du fichier, caractère joker (sufix))
-  - fixe l'encodage 
+  + Autocompletion (lecture du fichier, caractère joker (sufix))
+  + fixe l'encodage 
   
   
 Composants angular : 
-  -Listes des résultats (retirer l'ambiguité)
-  -Updates du composant recherche (recherche avec paramètres spéciaux : filtre, tri et type relation)
-  -Affichage d'un resultat. 
+  + Listes des résultats (retirer l'ambiguité)
+  + Updates du composant recherche (recherche avec paramètres spéciaux : filtre, tri et type relation)
+  + Affichage d'un resultat. 
   
