@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-// const Iconv  = require('iconv').Iconv; // removed : incompilable sous Windows
 const iconv  = require('iconv-lite');
 
 const cors = require('cors');
@@ -14,6 +13,10 @@ const cache = new NodeCache();
 const request = require('request');
 
 const SearchResultHelper = require('./search/search_result_helper');
+
+const FileHelper = require('./file/file_helper');
+
+const TIME_WEEK = 604800;
 
 const sendRes = function(res, json){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -36,35 +39,51 @@ app.get("/search/word/:word",function(req,res){
 
   console.log('search', word);
 
-  cache.get(word, function(err, searchResult){
-    if(!err ){
+  cache.get(word, function(error, searchResult){
+    if(!error ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
-        // let iconv = new Iconv('UTF-8','LATIN1');
-        // let encodedWord = iconv.convert(word).toString();
-        let encodedWord = iconv.encode(word, 'ISO-8859-1'); // ISO-8859-1 == LATIN1
+        searchResult = FileHelper.fileToJSONObject(word);
 
-        let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
+        if(searchResult !== null) {
+          console.log(word, 'found in data');
 
-        console.log(formatedURL);
+          cache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-        request(formatedURL, function (error, response, body) {
-          console.log('error:', error);
-          console.log('statusCode:', response && response.statusCode);
+          sendRes(res, JSON.stringify(searchResult));
+        }
+        else
+        {
+          console.log(word, 'not found in data');
 
-          if (response.statusCode === 200) {
-            let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+          let encodedWord = iconv.encode(word, 'ISO-8859-1'); // ISO-8859-1 == LATIN1
 
-            let searchResult = SearchResultHelper.extractSearchResult(tagCode);
+          let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
-            cache.set(searchResult.formatedWord, searchResult, 604800);
+          console.log(formatedURL);
 
-            sendRes(res, JSON.stringify(searchResult));
-          }
-          else
-            sendRes(res, "error " + response.statusCode);
-        });
+          request(formatedURL, function (error, response, body)
+          {
+            console.log('statusCode :', response && response.statusCode);
+
+            if(error !== null)
+              console.log('error :', error);
+
+            if (response.statusCode === 200) {
+              let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+              let searchResult = SearchResultHelper.extractSearchResult(tagCode);
+
+              cache.set(searchResult.formatedWord, searchResult, 604800);
+
+              FileHelper.JSONObjectTofile(word, searchResult);
+
+              sendRes(res, JSON.stringify(searchResult));
+            }
+            else
+              sendRes(res, "error " + response.statusCode);
+          });
+        }
       }else{
         console.log(word, 'found in cache');
 
@@ -83,7 +102,7 @@ app.get("/search/cache/word/:word",function(req,res){
 
   cache.get(word, function(err, searchResult ){
     if( !err ){
-      if(searchResult === undefined){
+      if(searchResult === null){
         sendRes(res, word + ' not found in cache');
       }else{
         sendRes(res, JSON.stringify(searchResult));
@@ -92,16 +111,28 @@ app.get("/search/cache/word/:word",function(req,res){
   });
 });
 
-// Return all current entries in cache, usefull for autocompletion
+// Search by word, only in the data files
+app.get("/search/file/word/:word",function(req,res){
+  let word = req.params.word;
+
+  var content = FileHelper.fileToJSONObject(word);
+
+  if(content === null)
+    console.log(word, 'not found in data');
+  else
+  {
+    console.log(word, 'found in data');
+
+    sendRes(res, JSON.stringify(content));
+  }
+});
+
+// Return all current keys in cache, usefull for autocompletion
 app.get("/cache/entries",function(req,res){
   console.log('cache entries');
 
-  // console.log(cache.entries);
   console.log(cache.keys());
 
-  // console.log(cache.getEntries());
-
-  // sendRes(res, JSON.stringify(cache.entries));
   sendRes(res, JSON.stringify(cache.keys()));
 });
 
