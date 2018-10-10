@@ -19,16 +19,16 @@ export class WordsSearchComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
 
-   this.searchedWord = this.route.snapshot.params['word'];
+    this.route.params.subscribe(routeParams => {
+      console.log('Params : ', routeParams);
+      this.searchedWord = routeParams.word;
 
-   if (this.searchedWord) {
-     console.log('recherche du terme ' + this.searchedWord)
-     this.wordService.searchWord(this.searchedWord).subscribe(result => {
-       console.log('DONE');
-       this.words  = result;
-       this.loading = false;
-     });
-   }
+      this.wordService.searchWord(this.searchedWord).subscribe(result => {
+        this.words  = result;
+        this.loading = false;
+      });
+
+    });
   }
 
 }
