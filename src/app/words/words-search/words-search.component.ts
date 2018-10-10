@@ -10,17 +10,16 @@ import {WordsService} from '../words.service';
 })
 export class WordsSearchComponent implements OnInit {
   private orderByParam = '';
-  loading: boolean;
+  loading = true;
   searchedWord = '';
   words: any = {};
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
   ngOnInit() {
-    this.loading = true;
 
     this.route.params.subscribe(routeParams => {
-      console.log('Params : ', routeParams);
+      // console.log('Params : ', routeParams);
       this.searchedWord = routeParams.word;
 
       this.wordService.searchWord(this.searchedWord).subscribe(result => {
