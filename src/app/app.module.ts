@@ -9,6 +9,8 @@ import { MatCardModule} from '@angular/material/card';
 import { MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list'; // usefull later, to organise printing of search result
 
+
+
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -23,4 +25,6 @@ import {AppRoutingModule} from './app-routing.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

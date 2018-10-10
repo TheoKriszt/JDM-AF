@@ -1,0 +1,31 @@
+<mat-form-field class="example-chip-list">
+  <input
+    placeholder="Types de relations.. "
+    #relationInput
+    [formControl]="relationCtrl"
+    [matAutocomplete]="auto"
+    [matChipInputFor]="chipList"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    [matChipInputAddOnBlur]="addOnBlur"
+    (matChipInputTokenEnd)="add($event)">
+
+  <mat-chip-list #chipList>
+    <mat-chip
+      *ngFor="let relation of relations"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(relation)">
+      {{relation}}
+      <mat-icon matChipRemove svgIcon="cancel" *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let relation of filteredRelations | async" [value]="relation">
+      {{relation}}
+    </mat-option>
+  </mat-autocomplete>
+
+</mat-form-field>
+
+

@@ -5,24 +5,22 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {WordsService} from './words.service';
 
+
 @Component({
   selector: 'app-words',
   templateUrl: './words.component.html',
   styleUrls: ['./words.component.css']
 })
 export class WordsComponent implements OnInit {
+
+  // Search Params
   loading = false;
-
   model: any;
-
   nameControl = new FormControl();
-  options: string[] = [
-    'Martin',
-    'Mary',
-    'Shelley',
-    'Igor'
-  ];
+  options: string[] = ['Martin', 'Mary', 'Shelley', 'Igor'];
   filteredOptions: Observable<string[]>;
+
+
 
   constructor(private router: Router, private wordService: WordsService) { }
 
@@ -64,4 +62,6 @@ export class WordsComponent implements OnInit {
     return this.options;
     // return [];
   }
+
+
 }

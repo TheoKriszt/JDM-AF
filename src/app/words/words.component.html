@@ -1,35 +1,42 @@
 <div class="container">
-  <form #searchForm="ngForm" class="row"(ngSubmit)="searchForm.valid && submitWordSearch()">
-    <mat-form-field class="col-xs-9" appearance="outline" color="primary" >
-      <mat-label>Recherchez un mot</mat-label>
-      <input type="text" placeholder="Ex: Chat" aria-label="Word" matInput [formControl]="nameControl" [matAutocomplete]="auto" required>
-      <mat-error *ngIf="searchForm.submitted && searchForm.valid"> Champ Manquant !</mat-error>
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+  <form #searchForm="ngForm" (ngSubmit)="searchForm.valid && submitWordSearch()">
+    <div class="row">
+      <mat-form-field class="col-xs-3" appearance="outline" color="primary" >
+        <mat-label>Recherchez un mot</mat-label>
+        <input type="text" placeholder="Ex: Chat" aria-label="Word" matInput [formControl]="nameControl" [matAutocomplete]="auto" required>
+        <mat-error *ngIf="searchForm.submitted && searchForm.valid"> Champ Manquant !</mat-error>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="col-xs-6">
+        <app-relations-search></app-relations-search>
+      </div>
       <div class="form-group col-xs-3">
         <button mat-raised-button color="warn" [disabled]="loading" class="btn btn-primary">Recherche</button>
         <div *ngIf="loading">
           <mat-spinner color="warn"></mat-spinner>
         </div>
       </div>
-    <!--<mat-form-field class="col-xs-9" name="searchForm" appearance="outline" color="primary" [formGroup]="formModel" (ngSubmit)="searchForm.form.valid && submitWordSearch() " #searchForm="ngForm">-->
-
-      <!--<mat-label>Cherchez un mot</mat-label>-->
-      <!--<input type="text"  placeholder="Ex: Chat" matInput [nameControl]="nameControl" [matAutocomplete]="auto">-->
-      <!--<mat-error *ngIf="searchForm.submitted && !formModel.get('name').value.valid"> Champ Manquant !</mat-error>-->
-
-      <!--<mat-autocomplete #auto="matAutocomplete">-->
-        <!--<mat-option *ngFor="let option of autocomplete_options" [value]="option">{{option}}</mat-option>-->
-      <!--</mat-autocomplete>-->
-    <!--</mat-form-field>-->
-
-
+    </div>
   </form>
 </div>
+
+
+
+<!--<mat-form-field class="col-xs-9" name="searchForm" appearance="outline" color="primary" [formGroup]="formModel" (ngSubmit)="searchForm.form.valid && submitWordSearch() " #searchForm="ngForm">-->
+
+<!--<mat-label>Cherchez un mot</mat-label>-->
+<!--<input type="text"  placeholder="Ex: Chat" matInput [nameControl]="nameControl" [matAutocomplete]="auto">-->
+<!--<mat-error *ngIf="searchForm.submitted && !formModel.get('name').value.valid"> Champ Manquant !</mat-error>-->
+
+<!--<mat-autocomplete #auto="matAutocomplete">-->
+<!--<mat-option *ngFor="let option of autocomplete_options" [value]="option">{{option}}</mat-option>-->
+<!--</mat-autocomplete>-->
+<!--</mat-form-field>-->
+
 <!--
 <form name="searchForm" (ngSubmit)="searchForm.form.valid && submitWordSearch() " #searchForm="ngForm" novalidate>
   <div class="form-group" [ngClass]="{ 'has-error': searchForm.submitted && !name.valid }">
