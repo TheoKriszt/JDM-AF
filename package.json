@@ -29,6 +29,7 @@
     "cors": "^2.8.4",
     "csvtojson": "^2.0.8",
     "iconv-lite": "^0.4.24",
+    "merkle-patricia-tree": "^2.3.2",
     "node-cache": "^4.2.0",
     "node-html-parser": "^1.1.10",
     "python2": "0.0.1",

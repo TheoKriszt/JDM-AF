@@ -16,6 +16,8 @@ const SearchResultHelper = require('./search/search_result_helper');
 
 const FileHelper = require('./file/file_helper');
 
+const EntriesHelper = require('./entries/entries_helper');
+
 const TIME_WEEK = 604800;
 
 const sendRes = function(res, json){
@@ -134,6 +136,15 @@ app.get("/cache/entries",function(req,res){
   console.log(cache.keys());
 
   sendRes(res, JSON.stringify(cache.keys()));
+});
+
+// Read csv
+app.get("/readcsv", function(req,res){
+  let entries = EntriesHelper.readJDMEntries();
+
+  console.log('entries : ', entries);
+
+  sendRes(res, entries);
 });
 
 // Quick search only

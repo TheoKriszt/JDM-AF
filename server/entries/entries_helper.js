@@ -1,21 +1,12 @@
-const csvtojsonV2=require("csvtojson");
-const csvtojsonV2=require("csvtojson/v2");
+const csv=require('csvtojson');
 
 
 (function() {
 
-  module.exports.readJDMEntries = function()
+  module.exports.readJDMEntries = async function()
   {
-    try {
-      var entries = fs.readFileSync('data/jdm_entries/jdm_entries.json', 'utf8');
-
-      var splitedEntries = entries.toString().split(' ');
-
-      console.log(entries);
-    }
-    catch(error)
-    {
-      return null;
-    }
+    return csv().fromFile('./data/jdm_entries/jdm_entries.csv');
   };
 }());
+
+
