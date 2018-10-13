@@ -16,9 +16,8 @@ var fs = require('fs');
 
       let word = data[lineIndex].substring(separatorIndex + 1, data[lineIndex].length - 1);
 
-      for(let caractereIndex = 1; caractereIndex < word.length; caractereIndex++) {
+      for(let caractereIndex = 1; caractereIndex < word.length; caractereIndex++)
         trie.addWord(word.substring(0, caractereIndex), word);
-      }
     }
 
     console.log('Entries generated');

@@ -167,7 +167,7 @@ app.get("/autocomplete/:searchedWord",function(req,res){
 
   let data = JDM_Entries.findData(searchedWord);
 
-  if(data !== undefined) {
+  if(data !== undefined || data !== null) {
 
     let entries = [];
 
