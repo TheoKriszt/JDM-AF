@@ -20,6 +20,10 @@ const EntriesHelper = require('./entries/entries_helper');
 
 const TIME_WEEK = 604800;
 
+const clone = require('clone');
+
+let JDM_Entries = EntriesHelper.readJDMEntries();
+
 const sendRes = function(res, json){
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-type","application/json");
@@ -138,15 +142,6 @@ app.get("/cache/entries",function(req,res){
   sendRes(res, JSON.stringify(cache.keys()));
 });
 
-// Read csv
-app.get("/readcsv", function(req,res){
-  let entries = EntriesHelper.readJDMEntries();
-
-  console.log('entries : ', entries);
-
-  sendRes(res, entries);
-});
-
 // Quick search only
 // Should handle autocompletion from an exhaustive preloaded list
 // Should handle a joker caracter such as '*', '?', '%' etc.
@@ -154,6 +149,8 @@ app.get("/readcsv", function(req,res){
 app.get("/autocomplete/:searchedWord",function(req,res){
 
   const searchedWord =  req.params.searchedWord;
+
+  /*
   // TODO : en attendant, on liste juste les entrées en cache
   const exhaustiveTermsList = cache.keys();
 
@@ -164,8 +161,31 @@ app.get("/autocomplete/:searchedWord",function(req,res){
       matches.push(match);
     }
   }
+  */
 
-  sendRes(res, JSON.stringify(matches));
+  console.log(searchedWord);
+
+  let data = JDM_Entries.findData(searchedWord);
+
+  if(data !== undefined) {
+
+    let entries = [];
+
+    let listSize = 0;
+
+    if (data.length > 10)
+      listSize = 10;
+    else
+      listSize = data.length;
+
+    for (let index = 0; index < listSize; index++)
+      if(data[index] !== undefined)
+        entries.push(clone(data[index]['data']));
+
+    sendRes(res, JSON.stringify(entries));
+  }
+  else
+    sendRes(res, JSON.stringify([]))
 });
 
 console.log('JDM-AF Server started');
