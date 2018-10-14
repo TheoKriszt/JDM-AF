@@ -6,7 +6,7 @@ var fs = require('fs');
 
   module.exports.readJDMEntries = function()
   {
-    var data = fs.readFileSync('./data/jdm_entries/jdm_entries_light.txt').toString().split("\n");
+    var data = fs.readFileSync('../data/jdm_entries/jdm_entries_light.txt').toString().split("\n");
 
     let trie = new RadixTrie();
 

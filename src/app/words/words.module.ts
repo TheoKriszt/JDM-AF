@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
+import { MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RelationsSearchComponent } from './relations-search/relations-search.component';
@@ -17,10 +18,13 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 const routes: Routes = [
+
   {
     path: 'words-search/:word',
-    component: WordsSearchComponent
-  }
+    component: WordsSearchComponent,
+  },
+
+
 ];
 
 
@@ -28,7 +32,8 @@ const routes: Routes = [
   imports: [
     CommonModule, HttpClientModule, RouterModule.forChild(routes),
     FormsModule, ReactiveFormsModule, MatButtonModule, MatAutocompleteModule,
-    MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule
+    MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule,
+    MatDividerModule
   ],
   exports: [WordsComponent, WordsSearchComponent, RouterModule],
   declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent],

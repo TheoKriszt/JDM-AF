@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
-import {WordsService} from '../words.service';
+import {Word, WordsService} from '../words.service';
 
 @Component({
   selector: 'app-words-search',
@@ -22,8 +22,9 @@ export class WordsSearchComponent implements OnInit {
       // console.log('Params : ', routeParams);
       this.searchedWord = routeParams.word;
 
-      this.wordService.searchWord(this.searchedWord).subscribe(result => {
+      this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
         this.words  = result;
+        console.log(this.words);
         this.loading = false;
       });
 

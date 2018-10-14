@@ -1,19 +1,50 @@
 <div class="container">
+
   <form #searchForm="ngForm" (ngSubmit)="searchForm.valid && submitWordSearch()">
     <div class="row">
       <mat-form-field class="col-xs-3" appearance="outline" color="primary" >
         <mat-label>Recherchez un mot</mat-label>
-        <input type="text" placeholder="Ex: Chat" aria-label="Word" matInput [formControl]="nameControl" [matAutocomplete]="auto" required>
+        <input type="text" placeholder="Ex: Chat" aria-label="Word" matInput [formControl]="nameControl" [matAutocomplete]="wordAuto" required>
         <mat-error *ngIf="searchForm.submitted && searchForm.valid"> Champ Manquant !</mat-error>
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #wordAuto="matAutocomplete">
           <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
             {{option}}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
+
       <div class="col-xs-6">
-        <app-relations-search></app-relations-search>
+        <mat-form-field class="example-chip-list">
+          <input
+            placeholder="Types de relations.. "
+            #relationInput
+            [formControl]="relationCtrl"
+            [matAutocomplete]="relationAuto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)">
+
+          <mat-chip-list #chipList>
+            <mat-chip
+              *ngFor="let relation of relations"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(relation)">
+              {{relation}}
+              <mat-icon matChipRemove svgIcon="cancel" *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+
+          <mat-autocomplete #relationAuto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let relation of filteredRelations | async" [value]="relation">
+              {{relation}}
+            </mat-option>
+          </mat-autocomplete>
+
+        </mat-form-field>
       </div>
+
       <div class="form-group col-xs-3">
         <button mat-raised-button color="warn" [disabled]="loading" class="btn btn-primary">Recherche</button>
         <div *ngIf="loading">
@@ -22,6 +53,14 @@
       </div>
     </div>
   </form>
+
+  <mat-divider></mat-divider>
+  <div class="spacer"></div>
+
+  <div class="row">
+    <!--<alert></alert>-->
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 
