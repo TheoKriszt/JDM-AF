@@ -1,7 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {Headers} from '@angular/http';
 import { environment } from '../../environments/environment';
 import {of} from 'rxjs';
 
@@ -10,12 +9,12 @@ import {of} from 'rxjs';
 })
 export class WordsService {
 
-  private readonly JSON_HEADER = new Headers({'Content-Type':'application/json'});
+
+  private _options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
   constructor(private http: HttpClient) { }
 
   baseUrl = environment.apiUrl + ':' + environment.apiPort;
-  resultRelations: Relation[] = [];
   /**
    * Demande l'autocompletion d'un terme de recherche
    * @param query String de recherche, possible d'y insérer des caractères joker (?,* etc)
@@ -31,36 +30,14 @@ export class WordsService {
   }
 
   getAllRelations(wordId: string, types: string[], rIn: boolean, rOut: boolean): Observable<any> {
-    
-    let params = {
+    const params = {
       relationTypes: types,
       wantIn : rIn,
-      wantOut : rOut,  
-    }
-    
-    return this.http.post(this.baseUrl + 'searc/relation/' + wordId, params , this.JSON_HEADER);
+      wantOut : rOut,
+    };
+
+    return this.http.post(this.baseUrl + '/search/relation/' + wordId, params , this._options);
   }
-
-  /**
-  searchRelations(word: any, relationTypes: any[]): Observable<any> {
-    console.log('On passe la: searchRelations');
-    for (const type in relationTypes) {
-      for (const rIn in word.relationIn) {
-        console.log('rIn : ' + rIn);
-          if (type === rIn) {
-            this.resultRelations.push(rIn);
-          }
-      }
-      for (const rOut in word.relationOut) {
-        if (type === rOut) {
-          this.resultRelations.push(rOut);
-        }
-      }
-    }
-    return of(this.resultRelations);
-
- }
-   **/
 }
 
 

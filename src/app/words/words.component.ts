@@ -76,13 +76,13 @@ export class WordsComponent implements OnInit {
 
     if (this.nameControl.value) {
       if (this.relations.length !== 0) {
-        let params = {
+        const params = {
             types : this.relations,
             rIn : this.rIn,
             rOut : this.rOut
 
         }
-        this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
+        this.router.navigate(['/words', 'relation', this.nameControl.value], {queryParams: params});
       } else {
         this.router.navigate(['/words', 'words-search', this.nameControl.value]);
       }

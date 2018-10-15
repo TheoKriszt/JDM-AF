@@ -1,13 +1,26 @@
 <div class="container">
- <ul>
-   <li *ngFor="let relation of relations">
-     type : {{relation.type}},
-     weight : {{relation.weight}},
-     tid : {{relation.tid}},
-     ted : {{relation.ted}},
-     text : {{relation.text}}
-   </li>
- </ul>
+  <div class="row" *ngIf="rIn == true">
+    <ul>
+      <li *ngFor="let relationIn of relations.relationIn">
+        type : {{relationIn.type}},
+        weight : {{relationIn.weight}},
+        tid : {{relationIn.tid}},
+        ted : {{relationIn.ted}},
+        text : {{relationIn.text}}
+      </li>
+    </ul>
+  </div>
+  <div class="row" *ngIf="rOut == true">
+    <ul>
+      <li *ngFor="let relationOut of relations.relationOut">
+        type : {{relationOut.type}},
+        weight : {{relationOut.weight}},
+        tid : {{relationOut.tid}},
+        ted : {{relationOut.ted}},
+        text : {{relationOut.text}}
+      </li>
+    </ul>
+  </div>
 </div>
 
 

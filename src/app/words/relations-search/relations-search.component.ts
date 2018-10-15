@@ -15,14 +15,13 @@ export class RelationsSearchComponent implements OnInit {
   searchedRelation: any = [];
   rIn: boolean;
   rOut: boolean;
-  relations : any;
+  relations: any;
 
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) {
   }
 
   ngOnInit() {
-
     this.route.params.subscribe(routeParams => {
       this.searchedWord = routeParams.word;
       this.searchedRelation = routeParams.queryParams.params.types;
@@ -31,28 +30,8 @@ export class RelationsSearchComponent implements OnInit {
 
       this.wordService.getAllRelations(this.searchedWord, this.searchedRelation, this.rIn, this.rOut).subscribe(result => {
         this.relations = result;
-      })
-      
-    })
-    /**
-    this.route.params.subscribe(routeParams => {
-      console.log('Params : ', routeParams);
-      this.searchedWord = routeParams.word;
-      this.searchedRelation = routeParams.types;
-
-      this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
-        this.wordData = result;
-        console.log('wordData : ' + this.wordData);
-        this.wordService.getAllRelations(this.wordData).subscribe(result => {
-
-          this.relations = result;
-          console.log('relations : ' + this.relations);
-
-          });
       });
-
     });
-     **/
   }
 
 }

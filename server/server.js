@@ -106,9 +106,10 @@ app.post("/search/relation/:word", function(req, res) {
   let word = req.params.word;
   let types = req.body.relationTypes;
   let rIn = req.body.wantIn;
-  let roUT = req.body.wantOut;
+  let rOut = req.body.wantOut;
   let relationIn = [];
   let relationOut = [];
+
   console.log(types);
 
   cache.get(word, function(err, searchResult){
@@ -140,9 +141,10 @@ app.post("/search/relation/:word", function(req, res) {
               }              
             }
 
+
             relations = {
-              relationI = relationIn,
-              relationO = relationOut,
+               relationI : relationIn,
+               relationO : relationOut,
             }
   
             sendRes(res, JSON.stringify(relations));
@@ -172,10 +174,11 @@ app.post("/search/relation/:word", function(req, res) {
               }
             }
           }
-          
-          relations = {
-            relationI = relationIn,
-            relationO = relationOut,
+
+
+        relations = {
+            relationI : relationIn,
+            relationO : relationOut,
           }
 
           sendRes(res, JSON.stringify(relations));

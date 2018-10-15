@@ -18,7 +18,11 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 const routes: Routes = [
-
+  {
+    path: 'relation/:word',
+    component: RelationsSearchComponent,
+    outlet: 'relations',
+  },
   {
     path: 'words-search/:word',
     component: WordsSearchComponent,
@@ -34,7 +38,7 @@ const routes: Routes = [
     MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule,
     MatDividerModule
   ],
-  exports: [WordsComponent, WordsSearchComponent, RouterModule],
+  exports: [WordsComponent, WordsSearchComponent, RelationsSearchComponent, RouterModule],
   declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent],
   providers: []
 })
