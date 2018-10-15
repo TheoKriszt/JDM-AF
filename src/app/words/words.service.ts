@@ -10,6 +10,8 @@ import {of} from 'rxjs';
 })
 export class WordsService {
 
+  private readonly JSON_HEADER = new Headers({'Content-Type':'application/json'});
+
   constructor(private http: HttpClient) { }
 
   baseUrl = environment.apiUrl + ':' + environment.apiPort;
@@ -28,18 +30,15 @@ export class WordsService {
     return this.http.get<Word>(uri);
   }
 
-  getAllRelations(word: Word): Observable<any> {
-    let r;
-      for (const relationIn in word.relationsIn) {
-        r = JSON.parse(relationIn);
-        this.resultRelations.push(r);
-      }
-      for (const relationOut in word.relationsOut) {
-        r = JSON.parse(relationOut);
-        this.resultRelations.push(r);
-      }
-
-      return of(this.resultRelations);
+  getAllRelations(wordId: string, types: string[], rIn: boolean, rOut: boolean): Observable<any> {
+    
+    let params = {
+      relationTypes: types,
+      wantIn : rIn,
+      wantOut : rOut,  
+    }
+    
+    return this.http.post(this.baseUrl + 'searc/relation/' + wordId, params , this.JSON_HEADER);
   }
 
   /**

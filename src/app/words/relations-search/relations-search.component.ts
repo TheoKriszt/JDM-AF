@@ -13,13 +13,27 @@ export class RelationsSearchComponent implements OnInit {
 
   searchedWord: any = [];
   searchedRelation: any = [];
-  wordData: any;
-  relations: Relation[];
+  rIn: boolean;
+  rOut: boolean;
+  relations : any;
+
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) {
   }
 
   ngOnInit() {
+
+    this.route.params.subscribe(routeParams => {
+      this.searchedWord = routeParams.word;
+      this.searchedRelation = routeParams.queryParams.params.types;
+      this.rIn = routeParams.queryParams.params.rIn;
+      this.rOut = routeParams.queryParams.params.rOut;
+
+      this.wordService.getAllRelations(this.searchedWord, this.searchedRelation, this.rIn, this.rOut).subscribe(result => {
+        this.relations = result;
+      })
+      
+    })
     /**
     this.route.params.subscribe(routeParams => {
       console.log('Params : ', routeParams);

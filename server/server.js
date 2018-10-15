@@ -99,6 +99,90 @@ app.get("/search/word/:word",function(req,res){
   });
 });
 
+
+// return relations for a word and for some type relations
+app.post("/search/relation/:word", function(req, res) {
+
+  let word = req.params.word;
+  let types = req.body.relationTypes;
+  let rIn = req.body.wantIn;
+  let roUT = req.body.wantOut;
+  let relationIn = [];
+  let relationOut = [];
+  console.log(types);
+
+  cache.get(word, function(err, searchResult){
+    if(!error ){
+      if(searchResult === undefined){
+        console.log(word, 'not found in cache');
+
+        searchResult = FileHelper.fileToJSONObject(word);
+
+          if(searchResult !== null) {
+            console.log(word, 'found in data');
+
+            cache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+
+            for(t in types){
+              if(rIn){
+                for(relation in searchResult.relationIn){
+                  if(t === relation.type){
+                      relationIn.push(relation);
+                  }
+                }
+              }
+              if(rOut){
+                for(relation in searchResult.relationOut){
+                  if(t === relation.type){
+                    relationOut.push(relation);
+                  }
+                }
+              }              
+            }
+
+            relations = {
+              relationI = relationIn,
+              relationO = relationOut,
+            }
+  
+            sendRes(res, JSON.stringify(relations));
+
+          } 
+          else
+          {
+            console.log(word, 'not found in data');
+          }
+        }
+        else{
+
+          console.log(word, 'found in cache');
+          for(t in types){
+            if(rIn){
+              for(relation in searchResult.relationIn){
+                if(t === relation.type){
+                    relationIn.push(relation);
+                }
+              }
+            }
+            if(rOut){
+              for(relation in searchResult.relationOut){
+                if(t === relation.type){
+                  relationOut.push(relation);
+                }
+              }
+            }
+          }
+          
+          relations = {
+            relationI = relationIn,
+            relationO = relationOut,
+          }
+
+          sendRes(res, JSON.stringify(relations));
+        }
+      }
+  });
+});
 // Search by word, only in the cache
 app.get("/search/cache/word/:word",function(req,res){
 

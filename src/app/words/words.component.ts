@@ -35,6 +35,9 @@ export class WordsComponent implements OnInit {
   relations: string[] = [];
   allRelations: string[] = ['r_isa', 'r_aff', 'r_nota', 'r_test'];
 
+  rIn: boolean;
+  rOut:boolean;
+
   @ViewChild('relationInput') fruitInput: ElementRef<HTMLInputElement>;
 
   constructor(private router: Router, private wordService: WordsService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
@@ -73,7 +76,13 @@ export class WordsComponent implements OnInit {
 
     if (this.nameControl.value) {
       if (this.relations.length !== 0) {
-        this.router.navigate(['/words', 'words-search', this.nameControl.value, '/',  this.relations]);
+        let params = {
+            types : this.relations,
+            rIn : this.rIn,
+            rOut : this.rOut
+
+        }
+        this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
       } else {
         this.router.navigate(['/words', 'words-search', this.nameControl.value]);
       }
