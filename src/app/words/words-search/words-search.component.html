@@ -2,7 +2,7 @@
   <div *ngIf="loading">
     <mat-spinner color="warn"></mat-spinner>
   </div>
-  <p>
+  <p *ngIf="!loading">
     <!--{{words | json}}-->
     Mot formaté : {{words.formatedWord}} <br/>
     {{words.relationsIn.length}} relations entrantes <br/>
@@ -11,3 +11,6 @@
     Poids : {{words.word.weight}} <br/>
   </p>
 
+
+
+  <router-outlet></router-outlet>

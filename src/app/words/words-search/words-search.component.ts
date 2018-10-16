@@ -21,8 +21,10 @@ export class WordsSearchComponent implements OnInit {
     this.route.params.subscribe(routeParams => {
       // console.log('Params : ', routeParams);
       this.searchedWord = routeParams.word;
+      this.loading = true;
 
       this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
+
         this.words  = result;
         console.log(this.words);
         this.loading = false;
