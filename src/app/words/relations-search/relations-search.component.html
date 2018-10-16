@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="row" *ngIf="rIn == true">
+  <h4 *ngIf="!(relations.length || relations.relationOut.length)"> La recherche n'a retourné aucune relation </h4>
+  <div class="row" *ngIf="rIn">
+
     <ul>
       <li *ngFor="let relationIn of relations.relationIn">
         type : {{relationIn.type}},
@@ -10,7 +12,7 @@
       </li>
     </ul>
   </div>
-  <div class="row" *ngIf="rOut == true">
+  <div class="row" *ngIf="rOut">
     <ul>
       <li *ngFor="let relationOut of relations.relationOut">
         type : {{relationOut.type}},

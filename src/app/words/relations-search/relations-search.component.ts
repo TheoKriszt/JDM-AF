@@ -1,7 +1,7 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {ActivatedRoute} from '@angular/router';
-import {Relation, Word, WordsService} from '../words.service';
+import {WordsService} from '../words.service';
 
 
 @Component({
@@ -11,27 +11,38 @@ import {Relation, Word, WordsService} from '../words.service';
 })
 export class RelationsSearchComponent implements OnInit {
 
-  searchedWord: any = [];
-  searchedRelation: any = [];
+  // Le décorateur Input injecte le parametre dans l'attribut à la construction du composant
+  // ex ;<app-relations-search [searchedWord] = word ></app-relations-search>
+  @Input()
+    params: any;
+  searchedWord: string;
+  searchedRelationsTypes: any = [];
   rIn: boolean;
   rOut: boolean;
-  relations: any;
-
+  relations: any = {
+    relationOut : [],
+    relationIn : []
+  };
+  // private loading: boolean;
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(routeParams => {
-      this.searchedWord = routeParams.word;
-      this.searchedRelation = routeParams.queryParams.params.types;
-      this.rIn = routeParams.queryParams.params.rIn;
-      this.rOut = routeParams.queryParams.params.rOut;
+    // this.loading = true;
+    this.searchedWord = this.params.searchedWord;
+    this.rIn = this.params.rIn || true;
+    this.rOut = this.params.rOut || true;
+    this.searchedRelationsTypes = this.params.searchedRelationsTypes;
 
-      this.wordService.getAllRelations(this.searchedWord, this.searchedRelation, this.rIn, this.rOut).subscribe(result => {
+    if (this.searchedWord) {
+      // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');
+      this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut).subscribe(result => {
         this.relations = result;
-      });
-    });
-  }
+        // console.log('Relations trouvées : ', this.relations);
+        // this.loading = false;
 
+      });
+    }
+  }
 }

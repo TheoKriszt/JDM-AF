@@ -26,12 +26,13 @@ const routes: Routes = [
   {
     path: 'words-search/:word',
     component: WordsSearchComponent,
-    children: [
-      {
-        path : 'relation',
-        component : RelationsSearchComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path : 'relation',
+    //     component : RelationsSearchComponent,
+    //     // outlet: 'relations'
+    //   }
+    // ]
   },
 
 ];

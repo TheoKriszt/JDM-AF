@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
 import {Word, WordsService} from '../words.service';
 
 @Component({
@@ -9,28 +8,47 @@ import {Word, WordsService} from '../words.service';
   styleUrls: ['./words-search.component.css']
 })
 export class WordsSearchComponent implements OnInit {
-  private orderByParam = '';
   loading = true;
   searchedWord = '';
   words: any = {};
+  searchedRelationsTypes: string[] = [];
+  rIn: boolean;
+  rOut: boolean;
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
   ngOnInit() {
 
     this.route.params.subscribe(routeParams => {
-      // console.log('Params : ', routeParams);
-      this.searchedWord = routeParams.word;
       this.loading = true;
 
-      this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
+      this.searchedWord = routeParams.word;
 
-        this.words  = result;
-        console.log(this.words);
-        this.loading = false;
-      });
+      this.route.queryParams
+        .subscribe( params => {
+          this.searchedRelationsTypes = params.types;
+          this.rIn = params.rIn || true;
+          this.rOut = params.rOut || true;
+
+          this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
+            this.words  = result;
+            // console.log('Résultat de la recherche de mot: ', this.words);
+            this.loading = false;
+          });
+        } );
 
     });
   }
 
+  /**
+   * Génère les paramètres pour créer le sous-composant relations-search
+   */
+  relationsParams(): any {
+    return {
+      searchedWord : this.searchedWord,
+      searchedRelationsTypes : this.searchedRelationsTypes,
+      rIn : this.rIn,
+      rOut : this.rOut
+    };
+  }
 }

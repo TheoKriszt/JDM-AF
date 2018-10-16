@@ -117,7 +117,7 @@ app.post("/search/relation/:word", function(req, res) {
   console.log(types);
 
   wordCache.get(word, function(err, searchResult){
-    if(!error ){
+    if(!err ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
@@ -147,9 +147,9 @@ app.post("/search/relation/:word", function(req, res) {
 
 
             relations = {
-               relationI : relationIn,
-               relationO : relationOut,
-            }
+               relationIn : relationIn,
+               relationOut : relationOut,
+            };
   
             sendRes(res, JSON.stringify(relations));
 
@@ -181,9 +181,9 @@ app.post("/search/relation/:word", function(req, res) {
 
 
         relations = {
-            relationI : relationIn,
-            relationO : relationOut,
-          }
+            relationIn : relationIn,
+            relationOut : relationOut,
+          };
 
           sendRes(res, JSON.stringify(relations));
         }
@@ -259,7 +259,7 @@ app.get("/autocomplete/:searchedWord",function(req,res){
 
   let data = JDM_Entries.findData(searchedWord);
 
-  if(data !== undefined || data !== null) {
+  if(data !== undefined && data !== null) {
 
     let entries = [];
 

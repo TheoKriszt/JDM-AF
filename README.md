@@ -9,6 +9,9 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
 
 ### Serveur : 
   + Autocompletion (lecture du fichier, caractère joker (sufix))
+    + Implémenter un __Patricia Tree__ (Arbre radix) pour la recherche
+      + (ou juste trouver un package NodeJS qui le fait)
+  
   + fixe l'encodage 
   + Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
     + Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
@@ -19,12 +22,15 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + Autocompletion des types de relations (r_isa, r_aff, ...)
+  + [opt.] Donnerun timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
   
 ### Composants angular : 
   + Listes des résultats (retirer l'ambiguité)
     + cf  [Autocomplete chips](https://material.angular.io/components/chips/overview) pour filtrer les types de relations
       + [opt.] donner un [Tooltip](https://material.angular.io/components/tooltip/overview) pour expliquer le rôle de la relation
+      + Retirer une chip quand elle est déjà sélectionnée (pas 2 fois le même choix)
+      + Ajouter un choix **Toutes les relations** qui désactive les autres choix
     + Activer / Désactiver indépendamment relations entrantes et sortantes via [bouton toggle](https://material.angular.io/components/button-toggle/overview)
     + [opt.] Afficher les options de filtre avancées (s'il y en a), planquées dans un [accordéon](https://material.angular.io/components/expansion/examples)
      

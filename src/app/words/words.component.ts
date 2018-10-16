@@ -36,7 +36,7 @@ export class WordsComponent implements OnInit {
   allRelations: string[] = ['r_isa', 'r_aff', 'r_nota', 'r_test'];
 
   rIn: boolean;
-  rOut:boolean;
+  rOut: boolean;
 
   @ViewChild('relationInput') fruitInput: ElementRef<HTMLInputElement>;
 
@@ -75,17 +75,20 @@ export class WordsComponent implements OnInit {
     // }
 
     if (this.nameControl.value) {
-      if (this.relations.length !== 0) {
-        const params = {
-            types : this.relations,
-            rIn : this.rIn,
-            rOut : this.rOut
-        };
-
-        this.router.navigate(['/words', 'word-search', this.nameControl.value , 'relation'], {queryParams: params});
-      } else {
-        this.router.navigate(['/words', 'words-search', this.nameControl.value]);
-      }
+      // if (this.relations.length !== 0) {
+      //
+      //   // this.router.navigate(['/words', 'word-search', this.nameControl.value , 'relation', {types: this.relations}]);
+      //   this.router.navigate(['/words', 'word-search', this.nameControl.value , 'relation'], {queryParams: params});
+      // }
+      // else {
+      //
+      // }
+      const params = {
+        types : this.relations,
+        rIn : this.rIn,
+        rOut : this.rOut
+      };
+      this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
       //
     //   // this.router.navigate(
     //   //   ['/words', 'words-search', this.formModel.name]
