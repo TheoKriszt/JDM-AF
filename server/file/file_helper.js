@@ -5,7 +5,7 @@ const fs = require('fs');
   module.exports.fileToJSONObject = function(word)
   {
     try {
-      return JSON.parse(fs.readFileSync('./data/search_result/' + word + '.json', 'utf8'));
+      return JSON.parse(fs.readFileSync('./data/search_result/' + word + '.json', 'utf-8'));
     }
     catch(error)
     {

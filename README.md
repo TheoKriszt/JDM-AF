@@ -3,6 +3,9 @@
 ## URL
 http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=onlyxml
 
+<!---
+  Check for detect encoding : https://code.google.com/archive/p/juniversalchardet/
+-->
 
 ### Serveur : 
   + Autocompletion (lecture du fichier, caractère joker (sufix))

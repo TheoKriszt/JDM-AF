@@ -63,7 +63,7 @@ app.get("/search/word/:word",function(req,res){
         {
           console.log(word, 'not found in data');
 
-          let encodedWord = iconv.encode(word, 'win1252');
+          let encodedWord = iconv.encode(word, 'win1251');
 
           let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
@@ -80,7 +80,7 @@ app.get("/search/word/:word",function(req,res){
 
               let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-              let encodedTagCode = iconv.decode(tagCode, 'win1252');
+              let encodedTagCode = iconv.decode(new Buffer(tagCode, 'utf-8'), 'win1252');
 
               let searchResult = SearchResultHelper.extractSearchResult(encodedTagCode);
 
