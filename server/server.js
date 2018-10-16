@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(cors());
 
 const NodeCache = require( "node-cache" );
-const cache = new NodeCache();
+const wordCache = new NodeCache();
 
 const request = require('request');
 
@@ -45,7 +45,7 @@ app.get("/search/word/:word",function(req,res){
 
   console.log('search', word);
 
-  cache.get(word, function(error, searchResult){
+  wordCache.get(word, function(error, searchResult){
     if(!error ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
@@ -55,7 +55,7 @@ app.get("/search/word/:word",function(req,res){
         if(searchResult !== null) {
           console.log(word, 'found in data');
 
-          cache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
           sendRes(res, JSON.stringify(searchResult));
         }
@@ -63,7 +63,7 @@ app.get("/search/word/:word",function(req,res){
         {
           console.log(word, 'not found in data');
 
-          let encodedWord = iconv.encode(word, 'ISO-8859-1'); // ISO-8859-1 == LATIN1
+          let encodedWord = iconv.encode(word, 'win1252');
 
           let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
@@ -77,10 +77,14 @@ app.get("/search/word/:word",function(req,res){
               console.log('error :', error);
 
             if (response.statusCode === 200) {
-              let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
-              let searchResult = SearchResultHelper.extractSearchResult(tagCode);
 
-              cache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+              let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+
+              let encodedTagCode = iconv.decode(tagCode, 'win1252');
+
+              let searchResult = SearchResultHelper.extractSearchResult(encodedTagCode);
+
+              wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
               FileHelper.JSONObjectTofile(word, searchResult);
 
@@ -91,7 +95,7 @@ app.get("/search/word/:word",function(req,res){
           });
         }
       }else{
-        console.log(word, 'found in cache');
+        console.log(word, 'found in wordCache');
 
         sendRes(res, JSON.stringify(searchResult));
       }
@@ -112,7 +116,7 @@ app.post("/search/relation/:word", function(req, res) {
 
   console.log(types);
 
-  cache.get(word, function(err, searchResult){
+  wordCache.get(word, function(err, searchResult){
     if(!error ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
@@ -122,7 +126,7 @@ app.post("/search/relation/:word", function(req, res) {
           if(searchResult !== null) {
             console.log(word, 'found in data');
 
-            cache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+            wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
             for(t in types){
               if(rIn){
@@ -157,7 +161,7 @@ app.post("/search/relation/:word", function(req, res) {
         }
         else{
 
-          console.log(word, 'found in cache');
+          console.log(word, 'found in wordCache');
           for(t in types){
             if(rIn){
               for(relation in searchResult.relationIn){
@@ -186,14 +190,15 @@ app.post("/search/relation/:word", function(req, res) {
       }
   });
 });
-// Search by word, only in the cache
+
+// Search by word, only in the wordCache
 app.get("/search/cache/word/:word",function(req,res){
 
   let word = req.params.word;
 
   console.log('search in cache', word);
 
-  cache.get(word, function(err, searchResult ){
+  wordCache.get(word, function(err, searchResult ){
     if( !err ){
       if(searchResult === null){
         sendRes(res, word + ' not found in cache');
@@ -220,13 +225,13 @@ app.get("/search/file/word/:word",function(req,res){
   }
 });
 
-// Return all current keys in cache, usefull for autocompletion
+// Return all current keys in wordCache, usefull for autocompletion
 app.get("/cache/entries",function(req,res){
-  console.log('cache entries');
+  console.log('wordCache entries');
 
-  console.log(cache.keys());
+  console.log(wordCache.keys());
 
-  sendRes(res, JSON.stringify(cache.keys()));
+  sendRes(res, JSON.stringify(wordCache.keys()));
 });
 
 // Quick search only
@@ -238,8 +243,8 @@ app.get("/autocomplete/:searchedWord",function(req,res){
   const searchedWord =  req.params.searchedWord;
 
   /*
-  // TODO : en attendant, on liste juste les entrées en cache
-  const exhaustiveTermsList = cache.keys();
+  // TODO : en attendant, on liste juste les entrées en wordCache
+  const exhaustiveTermsList = wordCache.keys();
 
   let matches = [];
 
