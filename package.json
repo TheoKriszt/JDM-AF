@@ -34,10 +34,10 @@
     "node-html-parser": "^1.1.10",
     "python2": "0.0.1",
     "radix-trie": "^1.0.8",
-    "request": "^2.88.0",
     "request-json": "^0.6.3",
     "rxjs": "~6.2.0",
     "rxjs-compat": "^6.3.3",
+    "utf8": "^3.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

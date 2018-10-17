@@ -8,9 +8,8 @@ const cors = require('cors');
 app.use(cors());
 
 const NodeCache = require( "node-cache" );
-const wordCache = new NodeCache();
-
-const request = require('request');
+const wordCache = new NodeCache(); //word -> json
+const idWordCache = new NodeCache(); //idWord -> word
 
 const SearchResultHelper = require('./search/search_result_helper');
 
@@ -23,6 +22,10 @@ const TIME_WEEK = 604800;
 const clone = require('clone');
 
 let JDM_Entries = EntriesHelper.readJDMEntries();
+
+const legacy = require('legacy-encoding');
+
+const http = require('http');
 
 const sendRes = function(res, json){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -63,35 +66,37 @@ app.get("/search/word/:word",function(req,res){
         {
           console.log(word, 'not found in data');
 
-          let encodedWord = iconv.encode(word, 'win1251');
+          let encodedWord = iconv.encode(word, 'win1252');
 
           let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
           console.log(formatedURL);
 
-          request(formatedURL, function (error, response, body)
+          http.get(formatedURL, function(httpResult)
           {
-            console.log('statusCode :', response && response.statusCode);
+            var data = [];
+            httpResult.on('data', function(chunk) {
+              data.push(chunk);
+            });
 
-            if(error !== null)
-              console.log('error :', error);
+            httpResult.on('end', function() {
+              var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
-            if (response.statusCode === 200) {
+              var encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
-              let tagCode = body.substring(body.indexOf('<CODE>'), body.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+              let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-              let encodedTagCode = iconv.decode(new Buffer(tagCode, 'utf-8'), 'win1252');
-
-              let searchResult = SearchResultHelper.extractSearchResult(encodedTagCode);
+              let searchResult = SearchResultHelper.extractSearchResult(tagCode);
 
               wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
               FileHelper.JSONObjectTofile(word, searchResult);
 
               sendRes(res, JSON.stringify(searchResult));
-            }
-            else
-              sendRes(res, "error " + response.statusCode);
+            })
+
+          }).on("error", (error) => {
+            console.log("Error : " + error.message);
           });
         }
       }else{
@@ -123,50 +128,16 @@ app.post("/search/relation/:word", function(req, res) {
 
         searchResult = FileHelper.fileToJSONObject(word);
 
-          if(searchResult !== null) {
-            console.log(word, 'found in data');
+        if(searchResult !== null) {
+          console.log(word, 'found in data');
 
-            wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-            for(t in types){
-              if(rIn){
-                for(relation in searchResult.relationIn){
-                  if(t === relation.type){
-                      relationIn.push(relation);
-                  }
-                }
-              }
-              if(rOut){
-                for(relation in searchResult.relationOut){
-                  if(t === relation.type){
-                    relationOut.push(relation);
-                  }
-                }
-              }              
-            }
-
-
-            relations = {
-               relationIn : relationIn,
-               relationOut : relationOut,
-            };
-  
-            sendRes(res, JSON.stringify(relations));
-
-          } 
-          else
-          {
-            console.log(word, 'not found in data');
-          }
-        }
-        else{
-
-          console.log(word, 'found in wordCache');
           for(t in types){
             if(rIn){
               for(relation in searchResult.relationIn){
                 if(t === relation.type){
-                    relationIn.push(relation);
+                  relationIn.push(relation);
                 }
               }
             }
@@ -180,14 +151,48 @@ app.post("/search/relation/:word", function(req, res) {
           }
 
 
-        relations = {
+          relations = {
             relationIn : relationIn,
             relationOut : relationOut,
           };
 
           sendRes(res, JSON.stringify(relations));
+
+        }
+        else
+        {
+          console.log(word, 'not found in data');
         }
       }
+      else{
+
+        console.log(word, 'found in wordCache');
+        for(t in types){
+          if(rIn){
+            for(relation in searchResult.relationIn){
+              if(t === relation.type){
+                relationIn.push(relation);
+              }
+            }
+          }
+          if(rOut){
+            for(relation in searchResult.relationOut){
+              if(t === relation.type){
+                relationOut.push(relation);
+              }
+            }
+          }
+        }
+
+
+        relations = {
+          relationIn : relationIn,
+          relationOut : relationOut,
+        };
+
+        sendRes(res, JSON.stringify(relations));
+      }
+    }
   });
 });
 
