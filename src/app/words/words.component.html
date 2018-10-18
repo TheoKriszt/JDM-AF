@@ -37,7 +37,7 @@
           </mat-chip-list>
 
           <mat-autocomplete #relationAuto="matAutocomplete" (optionSelected)="selected($event)">
-            <mat-option *ngFor="let relation of filteredRelations | async" [value]="relation">
+            <mat-option *ngFor="let relation of filteredRelations" [value]="relation">
               {{relation}}
             </mat-option>
           </mat-autocomplete>

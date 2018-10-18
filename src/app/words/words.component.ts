@@ -31,9 +31,9 @@ export class WordsComponent implements OnInit {
   addOnBlur = false;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   relationCtrl = new FormControl();
-  filteredRelations: Observable<string[]>;
   relations: string[] = [];
   allRelations: string[] = ['r_isa', 'r_aff', 'r_nota', 'r_test'];
+  filteredRelations: string[] = this.allRelations;
 
   rIn: boolean;
   rOut: boolean;
@@ -41,10 +41,17 @@ export class WordsComponent implements OnInit {
   @ViewChild('relationInput') fruitInput: ElementRef<HTMLInputElement>;
 
   constructor(private router: Router, private wordService: WordsService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    this.filteredRelations = this.relationCtrl.valueChanges.pipe(
-      startWith(null),
-      map((relations: string | null) => relations ? this._filter(relations) : this.allRelations.slice())
-    );
+
+    this.relationCtrl.valueChanges.subscribe(value => {
+      if (value) {
+        this.filteredRelations = this.allRelations.filter(term => {
+          return term.indexOf(value) >= 0;
+        });
+      } else {
+        this.filteredRelations = this.allRelations;
+      }
+
+    });
 
     iconRegistry.addSvgIcon(
       'cancel',
@@ -65,36 +72,15 @@ export class WordsComponent implements OnInit {
   }
 
   submitWordSearch() {
-    // console.log('submit word to search : ');
-    // console.log(this.nameControl.value)
     this.loading = true;
 
-    // if (!this.selectedOrderByOption) {
-    //   this.selectedOrderByOption = {'code': ''};
-    //   // console.log('setting selectedOrderByOption to \'\'');
-    // }
-
     if (this.nameControl.value) {
-      // if (this.relations.length !== 0) {
-      //
-      //   // this.router.navigate(['/words', 'word-search', this.nameControl.value , 'relation', {types: this.relations}]);
-      //   this.router.navigate(['/words', 'word-search', this.nameControl.value , 'relation'], {queryParams: params});
-      // }
-      // else {
-      //
-      // }
       const params = {
         types : this.relations,
         rIn : this.rIn,
         rOut : this.rOut
       };
       this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
-      //
-    //   // this.router.navigate(
-    //   //   ['/words', 'words-search', this.formModel.name]
-    //   //   // { queryParams: {orderBy: this.selectedOrderByOption}}
-    //   //   // { queryParams: {orderBy: this.selectedOrderByOption}}
-    //   // );
     }
     this.loading = false;
 
@@ -105,36 +91,51 @@ export class WordsComponent implements OnInit {
     const value = event.value;
 
     // Add our relation
-    if ((value || '').trim()) {
-      this.relations.push(value.trim());
-    }
+    // if ((value || '').trim()) {
+    //   this.relations.push(value.trim());
+    // }
 
     // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+    // if (input) {
+    //   input.value = '';
+    // }
 
     this.relationCtrl.setValue(null);
   }
 
   remove(relation: string): void {
-
     const index = this.relations.indexOf(relation);
     if (index >= 0) {
       this.relations.splice(index, 1);
+      this.allRelations.push(relation);
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.relations.push(event.option.viewValue);
+    const value: string = event.option.viewValue;
+    // if ( this.allRelations.indexOf(value) >= 0 ) { // N'ajouter que les résultats proposés
+    //
+    // }
+    this.relations.push(value);
+    this.allRelations.splice(this.allRelations.indexOf(value), 1);
+
+
     this.fruitInput.nativeElement.value = '';
     this.relationCtrl.setValue(null);
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.allRelations.filter(relation => relation.toLowerCase().indexOf(filterValue) === 0);
-  }
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+  //
+  //   // console.log('Relation selectionnée : ', value);
+  //   // console.log('Selection actuelle: ', this.relations);
+  //
+  //   const filtered = this.allRelations.filter(relation => relation.toLowerCase().indexOf(filterValue) === 0);
+  //   // this.allRelations.splice(this.allRelations.indexOf(filterValue), 1);
+  //
+  //   // console.log('retour de relations : ', filtered);
+  //
+  //   return filtered;
+  // }
 
 }
