@@ -1,3 +1,5 @@
+console.time("serverStart");
+
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -300,5 +302,6 @@ app.get("/autocomplete/:searchedWord",function(req,res){
     sendRes(res, JSON.stringify([]))
 });
 
-console.log('JDM-AF Server started');
+console.timeEnd("serverStart");
+
 app.listen(8888);

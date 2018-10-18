@@ -10,6 +10,8 @@ var fs = require('fs');
 
     let trie = new RadixTrie();
 
+    console.time("entriesGeneration");
+
     for(let lineIndex = 0; lineIndex < data.length; lineIndex++)
     {
       let separatorIndex = data[lineIndex].indexOf(';');
@@ -20,7 +22,7 @@ var fs = require('fs');
         trie.addWord(word.substring(0, caractereIndex), word);
     }
 
-    console.log('Entries generated');
+    console.timeEnd("entriesGeneration");
 
     return trie;
   };
