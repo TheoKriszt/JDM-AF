@@ -60,6 +60,8 @@ app.get("/search/word/:word",function(req,res){
 
           wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
+          iwordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
           sendRes(res, JSON.stringify(searchResult));
         }
         else
@@ -90,6 +92,8 @@ app.get("/search/word/:word",function(req,res){
 
               wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
+              iwordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
               FileHelper.JSONObjectTofile(word, searchResult);
 
               sendRes(res, JSON.stringify(searchResult));
@@ -108,6 +112,17 @@ app.get("/search/word/:word",function(req,res){
   });
 });
 
+app.get("/search/word/id/:wordId",function(req,res){
+  wordCache.get(word, function(error, searchResult)
+  {
+    if (!error)
+    {
+      if (searchResult === undefined)
+      {
+      }
+    }
+  });
+});
 
 // return relations for a word and for some type relations
 app.post("/search/relation/:word", function(req, res) {
