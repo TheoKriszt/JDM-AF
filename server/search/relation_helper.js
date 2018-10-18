@@ -36,6 +36,5 @@ const HTMLParser = require('node-html-parser');
     }
 
     return null;
-  }
-
+  };
 }());

@@ -24,8 +24,7 @@ const TIME_WEEK = 604800;
 const clone = require('clone');
 
 let JDM_Entries = EntriesHelper.readJDMEntries();
-
-const legacy = require('legacy-encoding');
+let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
 
 const http = require('http');
 
@@ -55,7 +54,7 @@ app.get("/search/word/:word",function(req,res){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
-        searchResult = FileHelper.fileToJSONObject(word);
+        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
         if(searchResult !== null) {
           console.log(word, 'found in data');
@@ -126,6 +125,10 @@ app.get("/search/word/id/:wordId",function(req,res){
   });
 });
 
+app.get("/relations/",function(req,res){
+  sendRes(res, JSON.stringify(JDM_Relations));
+});
+
 // return relations for a word and for some type relations
 app.post("/search/relation/:word", function(req, res) {
 
@@ -143,7 +146,7 @@ app.post("/search/relation/:word", function(req, res) {
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
 
-        searchResult = FileHelper.fileToJSONObject(word);
+        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
         if(searchResult !== null) {
           console.log(word, 'found in data');
@@ -235,7 +238,7 @@ app.get("/search/cache/word/:word",function(req,res){
 app.get("/search/file/word/:word",function(req,res){
   let word = req.params.word;
 
-  var content = FileHelper.fileToJSONObject(word);
+  var content = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
   if(content === null)
     console.log(word, 'not found in data');

@@ -2,10 +2,10 @@ const fs = require('fs');
 
 (function() {
 
-  module.exports.fileToJSONObject = function(word)
+  module.exports.fileToJSONObject = function(file)
   {
     try {
-      return JSON.parse(fs.readFileSync('./data/search_result/' + word + '.json', 'utf8'));
+      return JSON.parse(fs.readFileSync(file, 'utf8'));
     }
     catch(error)
     {
