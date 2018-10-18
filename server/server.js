@@ -62,7 +62,7 @@ app.get("/search/word/:word",function(req,res){
 
           wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-          iwordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+          idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
 
           sendRes(res, JSON.stringify(searchResult));
         }
@@ -94,7 +94,7 @@ app.get("/search/word/:word",function(req,res){
 
               wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-              iwordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+              idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
 
               FileHelper.JSONObjectTofile(word, searchResult);
 
