@@ -24,7 +24,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + Autocompletion des types de relations (r_isa, r_aff, ...)
-  + [opt.] Donnerun timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
+  + [opt.] Donnerun timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) : OK 
   
   
 ### Composants angular : 
