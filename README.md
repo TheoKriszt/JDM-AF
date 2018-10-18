@@ -15,7 +15,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?) : OK
   + [x] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
     + Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
-  + Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
+  + [x] Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
   
      
   + Scripts de batch 
@@ -25,7 +25,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     
   + [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
     + Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
-  + [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
+  + [x] [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
   
 ### Composants angular : 
