@@ -14,7 +14,7 @@ const clone = require('clone');
       'text' : ''
     },
     'formatedWord': '',
-    'definition': '',
+    'definitions': [],
     'relationsOut' : [],
     'relationsIn' : [],
   };
@@ -39,7 +39,12 @@ const clone = require('clone');
     let definitionTag = root.querySelector('def');
 
     if(definitionTag != null)
-      searchResult.definition = definitionTag.text;
+    {
+      let definitions = definitionTag.text.toString().split('\n');
+
+      for (let index = 1; index < definitions.length; index++)
+        searchResult.definitions.push(clone(definitions[index]));
+    }
 
     let tagRelationOut = root.querySelector('sortant');
 
