@@ -9,10 +9,10 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
 
 ### Serveur : 
   + Autocompletion (lecture du fichier, caractère joker (sufix))
-    + Implémenter un __Patricia Tree__ (Arbre radix) pour la recherche
-      + (ou juste trouver un package NodeJS qui le fait)
+    + [x] Implémenter un __Patricia Tree__ (Arbre radix) pour la recherche
+      + [x] (ou juste trouver un package NodeJS qui le fait)
   
-  + fixe l'encodage ( retester pour le json, encodage  CP1252 ?) : OK
+  + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?) : OK
   + Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
     + Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
   + Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
@@ -24,7 +24,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + Autocompletion des types de relations (r_isa, r_aff, ...)
-  + [opt.] Donnerun timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) : OK 
+  + [x] [opt.] Donnerun timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes)
   
   
 ### Composants angular : 
