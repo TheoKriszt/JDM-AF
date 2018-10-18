@@ -23,7 +23,7 @@ const TIME_WEEK = 604800;
 
 const clone = require('clone');
 
-let JDM_Entries = EntriesHelper.readJDMEntries();
+let JDM_Entries = EntriesHelper.readWikipediaEntries(); //EntriesHelper.readJDMEntries();
 let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
 
 const http = require('http');
