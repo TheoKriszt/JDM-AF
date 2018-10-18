@@ -42,7 +42,20 @@
             </mat-option>
           </mat-autocomplete>
 
+
         </mat-form-field>
+      </div>
+      <div class="form-group col-xs-3">
+      <mat-button-toggle-group multiple="true" #relationsTypesgroup="matButtonToggleGroup">
+        <mat-button-toggle value="rIn" (change)="rIn = $event.source.checked">
+          Relations Entrantes
+        </mat-button-toggle>
+        <mat-button-toggle value="rOut" (change)="rOut = $event.source.checked">
+          Relations sortantes
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+        {{relationsTypesgroup.value}}
       </div>
 
       <div class="form-group col-xs-3">

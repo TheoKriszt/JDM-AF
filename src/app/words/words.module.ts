@@ -14,6 +14,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RelationsSearchComponent } from './relations-search/relations-search.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -43,7 +44,7 @@ const routes: Routes = [
     CommonModule, HttpClientModule, RouterModule.forChild(routes),
     FormsModule, ReactiveFormsModule, MatButtonModule, MatAutocompleteModule,
     MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule,
-    MatDividerModule
+    MatDividerModule, MatButtonToggleModule
   ],
   exports: [WordsComponent, WordsSearchComponent, RelationsSearchComponent, RouterModule],
   declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent],

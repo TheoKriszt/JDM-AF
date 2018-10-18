@@ -31,9 +31,11 @@ export class RelationsSearchComponent implements OnInit {
   ngOnInit() {
     // this.loading = true;
     this.searchedWord = this.params.searchedWord;
-    this.rIn = this.params.rIn || true;
-    this.rOut = this.params.rOut || true;
+    this.rIn = this.params.rIn;
+    this.rOut = this.params.rOut;
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
+
+    console.log('from relations ::: ', 'rIn', this.rIn, 'rOut', this.rOut);
 
     if (this.searchedWord) {
       // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');

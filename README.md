@@ -19,19 +19,20 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
      
   + Scripts de batch 
-    + Màj du cache (entrées expirées)
+    + Màj du cache (entrées expirées, Lafourcade vide ~= 1 mois de TTL)
     + DL des mots les plus fréquents du français
     + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
-  + Autocompletion des types de relations (r_isa, r_aff, ...)
+  + [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
+    + Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
   + [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
   
 ### Composants angular : 
   + Listes des résultats (retirer l'ambiguité)
-    + cf  [Autocomplete chips](https://material.angular.io/components/chips/overview) pour filtrer les types de relations
+    + [x]  [Autocomplete chips](https://material.angular.io/components/chips/overview) pour filtrer les types de relations
       + [opt.] donner un [Tooltip](https://material.angular.io/components/tooltip/overview) pour expliquer le rôle de la relation
-      + Retirer une chip quand elle est déjà sélectionnée (pas 2 fois le même choix)
+      + [x] Retirer une chip quand elle est déjà sélectionnée (pas 2 fois le même choix)
       + Ajouter un choix **Toutes les relations** qui désactive les autres choix
     + Activer / Désactiver indépendamment relations entrantes et sortantes via [bouton toggle](https://material.angular.io/components/button-toggle/overview)
     + [opt.] Afficher les options de filtre avancées (s'il y en a), planquées dans un [accordéon](https://material.angular.io/components/expansion/examples)
@@ -40,7 +41,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
   + Affichage d'un resultat.
     + Afficher les raffinements possibles s'il y en a
-    + Présenter le résultat de la recherche comme me fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
+    + Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
     + Afficher les relations, mais en lazy-loaded pour pas surcharger, comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
     
   

@@ -1,13 +1,13 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import {WordsService} from './words.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent, MatIconRegistry} from '@angular/material';
 import {MatAutocompleteSelectedEvent} from '@angular/material/typings/autocomplete';
 import {DomSanitizer} from '@angular/platform-browser';
+import {MatButtonToggle} from '@angular/material';
 
 
 @Component({
@@ -19,9 +19,9 @@ export class WordsComponent implements OnInit {
 
   // Search Params
   loading = false;
-  model: any;
+  // model: any;
   nameControl = new FormControl();
-  options: string[] = ['Martin', 'Mary', 'Shelley', 'Igor'];
+  options: string[] = [/*'Martin', 'Mary', 'Shelley', 'Igor'*/];
   filteredOptions: Observable<string[]>;
 
 // Relations params
@@ -37,6 +37,7 @@ export class WordsComponent implements OnInit {
 
   rIn: boolean;
   rOut: boolean;
+
 
   @ViewChild('relationInput') fruitInput: ElementRef<HTMLInputElement>;
 
