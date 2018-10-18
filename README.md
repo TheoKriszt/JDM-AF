@@ -13,7 +13,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
       + [x] (ou juste trouver un package NodeJS qui le fait)
   
   + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?) : OK
-  + Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
+  + [x] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
     + Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
   + Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
   
