@@ -23,7 +23,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + DL des mots les plus fréquents du français
     + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
-  + [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
+  + [x] [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
     + Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
   + [x] [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
