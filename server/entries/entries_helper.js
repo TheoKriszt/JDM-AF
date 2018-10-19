@@ -12,7 +12,7 @@ const FileHelper = require('../file/file_helper');
 
     let trie = new RadixTrie();
 
-    console.time("entriesGeneration");
+    console.time("wordEntriesGeneration");
 
     for(let lineIndex = 0; lineIndex < data.length; lineIndex++)
     {
@@ -24,7 +24,7 @@ const FileHelper = require('../file/file_helper');
         trie.addWord(word.substring(0, caractereIndex), word);
     }
 
-    console.timeEnd("entriesGeneration");
+    console.timeEnd("wordEntriesGeneration");
 
     return trie;
   };
@@ -35,16 +35,12 @@ const FileHelper = require('../file/file_helper');
 
     let trie = new RadixTrie();
 
-    console.time("entriesGeneration");
+    console.time("wordEntriesGeneration");
 
     for(let wordIndex = 0; wordIndex < words.length; wordIndex++)
-    {
-      let word = words[wordIndex];
+      trie.addWord(words[wordIndex], words[wordIndex]);
 
-      trie.addWord(word, word);
-    }
-
-    console.timeEnd("entriesGeneration");
+    console.timeEnd("wordEntriesGeneration");
 
     return trie;
   };
@@ -55,16 +51,12 @@ const FileHelper = require('../file/file_helper');
 
     let trie = new RadixTrie();
 
-    console.time("entriesGeneration");
+    console.time("relationsEntriesGeneration");
 
     for(let wordIndex = 0; wordIndex < relations.length; wordIndex++)
-    {
-      let word = relations[wordIndex].name;
+      trie.addWord(relations[wordIndex].name, relations[wordIndex].name);
 
-      trie.addWord(word, word);
-    }
-
-    console.timeEnd("entriesGeneration");
+    console.timeEnd("relationsEntriesGeneration");
 
     return trie;
   };

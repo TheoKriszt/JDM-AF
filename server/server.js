@@ -48,7 +48,7 @@ app.get("/search/word/:word",function(req,res){
 
   let word = req.params.word;
 
-  console.log('search', word);
+  console.log('/search/word/', word);
 
   wordCache.get(word, function(error, searchResult){
     if(!error ){
@@ -73,8 +73,6 @@ app.get("/search/word/:word",function(req,res){
           let encodedWord = iconv.encode(word, 'win1252');
 
           let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
-
-          console.log(formatedURL);
 
           http.get(formatedURL, function(httpResult)
           {
@@ -119,6 +117,8 @@ app.get("/search/word/id/:wordId",function(req,res){
 
   let wordId = req.params.wordId;
 
+  console.log('/search/word/id/', wordId);
+
   idWordCache.get(wordId, function(error, word)
   {
     if (!error)
@@ -144,6 +144,8 @@ app.get("/search/word/id/:wordId",function(req,res){
 
 // return all relations
 app.get("/relations/",function(req,res){
+  console.log('/relations/');
+
   sendRes(res, JSON.stringify(JDM_Relations));
 });
 
@@ -239,7 +241,7 @@ app.get("/search/cache/word/:word",function(req,res){
 
   let word = req.params.word;
 
-  console.log('search in cache', word);
+  console.log('/search/cache/word/', word);
 
   wordCache.get(word, function(err, searchResult ){
     if( !err ){
@@ -255,6 +257,8 @@ app.get("/search/cache/word/:word",function(req,res){
 // Search by word, only in the data files
 app.get("/search/file/word/:word",function(req,res){
   let word = req.params.word;
+
+  console.log('/search/file/word/', word);
 
   var content = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
@@ -284,7 +288,7 @@ app.get("/autocomplete/:searchedWord",function(req,res){
 
   const searchedWord =  req.params.searchedWord;
 
-  console.log(searchedWord);
+  console.log('/autocomplete/', searchedWord);
 
   let data = JDM_Entries.findData(searchedWord);
 
@@ -312,13 +316,13 @@ app.get("/autocomplete/:searchedWord",function(req,res){
 // Quick search only
 // Should handle autocompletion from an exhaustive preloaded list
 // Should handle a joker caracter such as '*', '?', '%' etc.
-app.get("/autocomplete/relation/:searchedWord",function(req,res){
+app.get("/autocomplete/relations/:searchedRelation",function(req,res){
 
-  const searchedWord =  req.params.searchedWord;
+  const searchedRelation =  req.params.searchedRelation;
 
-  console.log(searchedWord);
+  console.log('/autocomplete/relations/', searchedRelation);
 
-  let data = JDM_Relations_Entries.findData(searchedWord);
+  let data = JDM_Relations_Entries.findData(searchedRelation);
 
   if(data !== undefined && data !== null) {
 
