@@ -25,6 +25,7 @@ const clone = require('clone');
 
 let JDM_Entries = EntriesHelper.readWikipediaEntries(); //EntriesHelper.readJDMEntries();
 let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
+let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
 const http = require('http');
 
@@ -279,27 +280,45 @@ app.get("/cache/entries",function(req,res){
 // Quick search only
 // Should handle autocompletion from an exhaustive preloaded list
 // Should handle a joker caracter such as '*', '?', '%' etc.
-// TODO : this is just a dummy/stub that needs to be properly implemented
 app.get("/autocomplete/:searchedWord",function(req,res){
 
   const searchedWord =  req.params.searchedWord;
 
-  /*
-  // TODO : en attendant, on liste juste les entrées en wordCache
-  const exhaustiveTermsList = wordCache.keys();
-
-  let matches = [];
-
-  for( let match of exhaustiveTermsList ){
-    if (match.startsWith(searchedWord)){
-      matches.push(match);
-    }
-  }
-  */
-
   console.log(searchedWord);
 
   let data = JDM_Entries.findData(searchedWord);
+
+  if(data !== undefined && data !== null) {
+
+    let entries = [];
+
+    let listSize = 0;
+
+    if (data.length > 10)
+      listSize = 10;
+    else
+      listSize = data.length;
+
+    for (let index = 0; index < listSize; index++)
+      if(data[index] !== undefined)
+        entries.push(clone(data[index]['data']));
+
+    sendRes(res, JSON.stringify(entries));
+  }
+  else
+    sendRes(res, JSON.stringify([]))
+});
+
+// Quick search only
+// Should handle autocompletion from an exhaustive preloaded list
+// Should handle a joker caracter such as '*', '?', '%' etc.
+app.get("/autocomplete/relation/:searchedWord",function(req,res){
+
+  const searchedWord =  req.params.searchedWord;
+
+  console.log(searchedWord);
+
+  let data = JDM_Relations_Entries.findData(searchedWord);
 
   if(data !== undefined && data !== null) {
 

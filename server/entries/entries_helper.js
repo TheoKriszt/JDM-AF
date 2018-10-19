@@ -49,4 +49,25 @@ const FileHelper = require('../file/file_helper');
 
     return trie;
   };
+
+  module.exports.readRelationsEntry = function()
+  {
+    let relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
+
+    let trie = new RadixTrie();
+
+    console.time("entriesGeneration");
+
+    for(let wordIndex = 0; wordIndex < relations.length; wordIndex++)
+    {
+      let word = relations[wordIndex].name;
+
+      for(let caractereIndex = 1; caractereIndex < word.length; caractereIndex++)
+        trie.addWord(word.substring(0, caractereIndex), word);
+    }
+
+    console.timeEnd("entriesGeneration");
+
+    return trie;
+  };
 }());
