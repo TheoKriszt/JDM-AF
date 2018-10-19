@@ -11,7 +11,7 @@ app.use(cors());
 
 const NodeCache = require( "node-cache" );
 const wordCache = new NodeCache(); //word -> json
-const idWordCache = new NodeCache(); //idWord -> word
+const idWordCache = new NodeCache(); //idWord -> json
 
 const SearchResultHelper = require('./search/search_result_helper');
 
@@ -113,18 +113,35 @@ app.get("/search/word/:word",function(req,res){
   });
 });
 
+// Search an word, with his id
 app.get("/search/word/id/:wordId",function(req,res){
-  wordCache.get(word, function(error, searchResult)
+
+  let wordId = req.params.wordId;
+
+  idWordCache.get(wordId, function(error, word)
   {
     if (!error)
-    {
-      if (searchResult === undefined)
-      {
-      }
-    }
+      if (word !== undefined)
+        wordCache.get(word, function(error, wordValue)
+        {
+          console.log(word);
+
+          if (!error)
+            if (wordValue !== undefined)
+              sendRes(res, JSON.stringify(wordValue));
+            else
+              sendRes(res, word + ' not found in wordCache');
+          else
+            sendRes(res, JSON.stringify(error));
+        });
+      else
+        sendRes(res, wordId + ' not found in wordIdCache');
+    else
+      sendRes(res, JSON.stringify(error));
   });
 });
 
+// return all relations
 app.get("/relations/",function(req,res){
   sendRes(res, JSON.stringify(JDM_Relations));
 });
