@@ -95,7 +95,7 @@ app.get("/search/word/:word",function(req,res){
 
               idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
 
-              FileHelper.JSONObjectTofile(word, searchResult);
+              FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
 
               sendRes(res, JSON.stringify(searchResult));
             })

@@ -13,8 +13,8 @@ const fs = require('fs');
     }
   };
 
-  module.exports.JSONObjectTofile = function(word, content)
+  module.exports.JSONObjectTofile = function(fileName, content)
   {
-    fs.writeFileSync('./data/search_result/' + word + '.json', JSON.stringify(content), 'utf8');
+    fs.writeFileSync(fileName, JSON.stringify(content), 'utf8');
   }
 }());
