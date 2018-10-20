@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {WordsService} from './words.service';
+import {RelationTypes, WordsService} from './words.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent, MatIconRegistry} from '@angular/material';
 import {MatAutocompleteSelectedEvent} from '@angular/material/typings/autocomplete';
@@ -32,14 +32,16 @@ export class WordsComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   relationCtrl = new FormControl();
   relations: string[] = [];
-  allRelations: string[] = ['r_isa', 'r_aff', 'r_nota', 'r_test'];
-  filteredRelations: string[] = this.allRelations;
+  allRelations: string[] = [];
+  filteredRelations: string[];
+
+  // = this.allRelations;
 
   rIn: boolean;
   rOut: boolean;
 
 
-  @ViewChild('relationInput') fruitInput: ElementRef<HTMLInputElement>;
+  @ViewChild('relationInput') relationInput: ElementRef<HTMLInputElement>;
 
   constructor(private router: Router, private wordService: WordsService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
 
@@ -70,6 +72,17 @@ export class WordsComponent implements OnInit {
         this.loading  = false;
       }
     });
+
+    this.wordService.getRelationsTypes().subscribe( (data: RelationTypes) => {
+      console.log(data);
+
+      for (let i = 0, size =  data.types.length; i < size; i++) {
+          console.log(data.types[i]);
+          this.allRelations.push(data.types[i].name);
+      }
+    });
+
+    this.filteredRelations = this.allRelations;
   }
 
   submitWordSearch() {
@@ -121,7 +134,7 @@ export class WordsComponent implements OnInit {
     this.allRelations.splice(this.allRelations.indexOf(value), 1);
 
 
-    this.fruitInput.nativeElement.value = '';
+    this.relationInput.nativeElement.value = '';
     this.relationCtrl.setValue(null);
   }
 

@@ -37,6 +37,11 @@ export class WordsService {
 
     return this.http.post(this.baseUrl + '/search/relation/' + wordId, params , this._options);
   }
+
+  getRelationsTypes() {
+    const uri = this.baseUrl + '/relations/relationTypes';
+    return this.http.get<RelationTypes>(uri);
+  }
 }
 
 
@@ -59,4 +64,13 @@ export interface Relation {
   tid: 0;
   ted: 0;
   text: '';
+}
+
+export class Type {
+  id: 0;
+  name: string;
+}
+
+export interface RelationTypes {
+  types: Type[];
 }

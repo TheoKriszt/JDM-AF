@@ -1,1 +1,576 @@
-[{"id":"0","name":"r_associated"},{"id":"1","name":"r_raff_sem"},{"id":"2","name":"r_raff_morpho"},{"id":"3","name":"r_domain"},{"id":"4","name":"r_pos"},{"id":"5","name":"r_syn"},{"id":"6","name":"r_isa"},{"id":"7","name":"r_anto"},{"id":"8","name":"r_hypo"},{"id":"9","name":"r_has_part"},{"id":"10","name":"r_holo"},{"id":"11","name":"r_locution"},{"id":"12","name":"r_flpot"},{"id":"13","name":"r_agent"},{"id":"14","name":"r_patient"},{"id":"15","name":"r_lieu"},{"id":"16","name":"r_instr"},{"id":"17","name":"r_carac"},{"id":"18","name":"r_data"},{"id":"19","name":"r_lemma"},{"id":"20","name":"r_has_magn"},{"id":"21","name":"r_has_antimagn"},{"id":"22","name":"r_family"},{"id":"23","name":"r_carac-1"},{"id":"24","name":"r_agent-1"},{"id":"25","name":"r_instr-1"},{"id":"26","name":"r_patient-1"},{"id":"27","name":"r_domain-1"},{"id":"28","name":"r_lieu-1"},{"id":"29","name":"r_chunk_pred"},{"id":"30","name":"r_lieu_action"},{"id":"31","name":"r_action_lieu"},{"id":"32","name":"r_sentiment"},{"id":"33","name":"r_error"},{"id":"34","name":"r_manner"},{"id":"35","name":"r_meaning"},{"id":"36","name":"r_infopot"},{"id":"37","name":"r_telic_role"},{"id":"38","name":"r_agentif_role"},{"id":"39","name":"r_verbe-action"},{"id":"40","name":"r_action-verbe"},{"id":"41","name":"r_conseq"},{"id":"42","name":"r_causatif"},{"id":"43","name":"r_adj-verbe"},{"id":"44","name":"r_verbe-adj"},{"id":"45","name":"r_chunk_sujet"},{"id":"46","name":"r_chunk_objet"},{"id":"47","name":"r_chunk_loc"},{"id":"48","name":"r_chunk_instr"},{"id":"49","name":"r_time"},{"id":"50","name":"r_object>mater"},{"id":"51","name":"r_mater>object"},{"id":"52","name":"r_successeur-time"},{"id":"53","name":"r_make"},{"id":"54","name":"r_product_of"},{"id":"55","name":"r_against"},{"id":"56","name":"r_against-1"},{"id":"57","name":"r_implication"},{"id":"58","name":"r_quantificateur"},{"id":"59","name":"r_masc"},{"id":"60","name":"r_fem"},{"id":"61","name":"r_equiv"},{"id":"62","name":"r_manner-1"},{"id":"63","name":"r_agentive_implication"},{"id":"64","name":"r_has_instance"},{"id":"65","name":"r_verb_real"},{"id":"66","name":"r_chunk_head"},{"id":"67","name":"r_similar"},{"id":"68","name":"r_set>item"},{"id":"69","name":"r_item>set"},{"id":"70","name":"r_processus>agent"},{"id":"71","name":"r_variante"},{"id":"72","name":"r_syn_strict"},{"id":"73","name":"r_is_smaller_than"},{"id":"74","name":"r_is_bigger_than"},{"id":"75","name":"r_accomp"},{"id":"76","name":"r_processus>patient"},{"id":"77","name":"r_verb_ppas"},{"id":"78","name":"r_cohypo"},{"id":"79","name":"r_verb_ppre"},{"id":"99","name":"r_der_morpho"},{"id":"100","name":"r_has_auteur"},{"id":"101","name":"r_has_personnage"},{"id":"102","name":"r_can_eat"},{"id":"103","name":"r_has_actors"},{"id":"104","name":"r_deplac_mode"},{"id":"105","name":"r_has_interpret"},{"id":"106","name":"r_color"},{"id":"107","name":"r_cible"},{"id":"108","name":"r_symptomes"},{"id":"109","name":"r_predecesseur-time"},{"id":"110","name":"r_diagnostique"},{"id":"111","name":"r_predecesseur-space"},{"id":"112","name":"r_successeur-space"},{"id":"113","name":"r_social_tie"},{"id":"114","name":"r_tributary"},{"id":"115","name":"r_sentiment-1"},{"id":"116","name":"r_linked-with"},{"id":"117","name":"r_foncteur"},{"id":"118","name":"r_comparison"},{"id":"119","name":"r_but"},{"id":"120","name":"r_but-1"},{"id":"121","name":"r_own"},{"id":"122","name":"r_own-1"},{"id":"123","name":"r_verb_aux"},{"id":"124","name":"r_predecesseur-logic"},{"id":"125","name":"r_successeur-logic"},{"id":"126","name":"r_isa-incompatible"},{"id":"127","name":"r_incompatible"},{"id":"128","name":"r_node2relnode"},{"id":"129","name":"r_require"},{"id":"130","name":"r_is_instance_of"},{"id":"131","name":"r_is_concerned_by"},{"id":"149","name":"r_compl_agent"},{"id":"150","name":"r_beneficiaire"},{"id":"151","name":"r_descend_de"},{"id":"152","name":"r_domain_subst"},{"id":"153","name":"r_prop"},{"id":"154","name":"r_activ_voice"},{"id":"155","name":"r_make_use_of"},{"id":"156","name":"r_is_used_by"},{"id":"157","name":"r_adj-nomprop"},{"id":"158","name":"r_nomprop-adj"},{"id":"159","name":"r_adj-adv"},{"id":"160","name":"r_adv-adj"},{"id":"161","name":"r_homophone"},{"id":"162","name":"r_potential_confusion"},{"id":"163","name":"r_concerning"},{"id":"164","name":"r_adj>nom"},{"id":"165","name":"r_nom>adj"},{"id":"333","name":"r_translation"},{"id":"444","name":"r_link"},{"id":"555","name":"r_cooccurrence"},{"id":"666","name":"r_aki"},{"id":"777","name":"r_wiki"},{"id":"997","name":"r_annotation_exception"},{"id":"998","name":"r_annotation"},{"id":"999","name":"r_inhib"},{"id":"1000","name":"r_prev"},{"id":"1001","name":"r_succ"},{"id":"1002","name":"r_termgroup"},{"id":"2000","name":"r_raff_sem-1"},{"id":"2001","name":"r_learning_model"}]
+{
+  "types": [
+    {
+      "id": "0",
+      "name": "r_associated"
+    },
+    {
+      "id": "1",
+      "name": "r_raff_sem"
+    },
+    {
+      "id": "2",
+      "name": "r_raff_morpho"
+    },
+    {
+      "id": "3",
+      "name": "r_domain"
+    },
+    {
+      "id": "4",
+      "name": "r_pos"
+    },
+    {
+      "id": "5",
+      "name": "r_syn"
+    },
+    {
+      "id": "6",
+      "name": "r_isa"
+    },
+    {
+      "id": "7",
+      "name": "r_anto"
+    },
+    {
+      "id": "8",
+      "name": "r_hypo"
+    },
+    {
+      "id": "9",
+      "name": "r_has_part"
+    },
+    {
+      "id": "10",
+      "name": "r_holo"
+    },
+    {
+      "id": "11",
+      "name": "r_locution"
+    },
+    {
+      "id": "12",
+      "name": "r_flpot"
+    },
+    {
+      "id": "13",
+      "name": "r_agent"
+    },
+    {
+      "id": "14",
+      "name": "r_patient"
+    },
+    {
+      "id": "15",
+      "name": "r_lieu"
+    },
+    {
+      "id": "16",
+      "name": "r_instr"
+    },
+    {
+      "id": "17",
+      "name": "r_carac"
+    },
+    {
+      "id": "18",
+      "name": "r_data"
+    },
+    {
+      "id": "19",
+      "name": "r_lemma"
+    },
+    {
+      "id": "20",
+      "name": "r_has_magn"
+    },
+    {
+      "id": "21",
+      "name": "r_has_antimagn"
+    },
+    {
+      "id": "22",
+      "name": "r_family"
+    },
+    {
+      "id": "23",
+      "name": "r_carac-1"
+    },
+    {
+      "id": "24",
+      "name": "r_agent-1"
+    },
+    {
+      "id": "25",
+      "name": "r_instr-1"
+    },
+    {
+      "id": "26",
+      "name": "r_patient-1"
+    },
+    {
+      "id": "27",
+      "name": "r_domain-1"
+    },
+    {
+      "id": "28",
+      "name": "r_lieu-1"
+    },
+    {
+      "id": "29",
+      "name": "r_chunk_pred"
+    },
+    {
+      "id": "30",
+      "name": "r_lieu_action"
+    },
+    {
+      "id": "31",
+      "name": "r_action_lieu"
+    },
+    {
+      "id": "32",
+      "name": "r_sentiment"
+    },
+    {
+      "id": "33",
+      "name": "r_error"
+    },
+    {
+      "id": "34",
+      "name": "r_manner"
+    },
+    {
+      "id": "35",
+      "name": "r_meaning"
+    },
+    {
+      "id": "36",
+      "name": "r_infopot"
+    },
+    {
+      "id": "37",
+      "name": "r_telic_role"
+    },
+    {
+      "id": "38",
+      "name": "r_agentif_role"
+    },
+    {
+      "id": "39",
+      "name": "r_verbe-action"
+    },
+    {
+      "id": "40",
+      "name": "r_action-verbe"
+    },
+    {
+      "id": "41",
+      "name": "r_conseq"
+    },
+    {
+      "id": "42",
+      "name": "r_causatif"
+    },
+    {
+      "id": "43",
+      "name": "r_adj-verbe"
+    },
+    {
+      "id": "44",
+      "name": "r_verbe-adj"
+    },
+    {
+      "id": "45",
+      "name": "r_chunk_sujet"
+    },
+    {
+      "id": "46",
+      "name": "r_chunk_objet"
+    },
+    {
+      "id": "47",
+      "name": "r_chunk_loc"
+    },
+    {
+      "id": "48",
+      "name": "r_chunk_instr"
+    },
+    {
+      "id": "49",
+      "name": "r_time"
+    },
+    {
+      "id": "50",
+      "name": "r_object>mater"
+    },
+    {
+      "id": "51",
+      "name": "r_mater>object"
+    },
+    {
+      "id": "52",
+      "name": "r_successeur-time"
+    },
+    {
+      "id": "53",
+      "name": "r_make"
+    },
+    {
+      "id": "54",
+      "name": "r_product_of"
+    },
+    {
+      "id": "55",
+      "name": "r_against"
+    },
+    {
+      "id": "56",
+      "name": "r_against-1"
+    },
+    {
+      "id": "57",
+      "name": "r_implication"
+    },
+    {
+      "id": "58",
+      "name": "r_quantificateur"
+    },
+    {
+      "id": "59",
+      "name": "r_masc"
+    },
+    {
+      "id": "60",
+      "name": "r_fem"
+    },
+    {
+      "id": "61",
+      "name": "r_equiv"
+    },
+    {
+      "id": "62",
+      "name": "r_manner-1"
+    },
+    {
+      "id": "63",
+      "name": "r_agentive_implication"
+    },
+    {
+      "id": "64",
+      "name": "r_has_instance"
+    },
+    {
+      "id": "65",
+      "name": "r_verb_real"
+    },
+    {
+      "id": "66",
+      "name": "r_chunk_head"
+    },
+    {
+      "id": "67",
+      "name": "r_similar"
+    },
+    {
+      "id": "68",
+      "name": "r_set>item"
+    },
+    {
+      "id": "69",
+      "name": "r_item>set"
+    },
+    {
+      "id": "70",
+      "name": "r_processus>agent"
+    },
+    {
+      "id": "71",
+      "name": "r_variante"
+    },
+    {
+      "id": "72",
+      "name": "r_syn_strict"
+    },
+    {
+      "id": "73",
+      "name": "r_is_smaller_than"
+    },
+    {
+      "id": "74",
+      "name": "r_is_bigger_than"
+    },
+    {
+      "id": "75",
+      "name": "r_accomp"
+    },
+    {
+      "id": "76",
+      "name": "r_processus>patient"
+    },
+    {
+      "id": "77",
+      "name": "r_verb_ppas"
+    },
+    {
+      "id": "78",
+      "name": "r_cohypo"
+    },
+    {
+      "id": "79",
+      "name": "r_verb_ppre"
+    },
+    {
+      "id": "99",
+      "name": "r_der_morpho"
+    },
+    {
+      "id": "100",
+      "name": "r_has_auteur"
+    },
+    {
+      "id": "101",
+      "name": "r_has_personnage"
+    },
+    {
+      "id": "102",
+      "name": "r_can_eat"
+    },
+    {
+      "id": "103",
+      "name": "r_has_actors"
+    },
+    {
+      "id": "104",
+      "name": "r_deplac_mode"
+    },
+    {
+      "id": "105",
+      "name": "r_has_interpret"
+    },
+    {
+      "id": "106",
+      "name": "r_color"
+    },
+    {
+      "id": "107",
+      "name": "r_cible"
+    },
+    {
+      "id": "108",
+      "name": "r_symptomes"
+    },
+    {
+      "id": "109",
+      "name": "r_predecesseur-time"
+    },
+    {
+      "id": "110",
+      "name": "r_diagnostique"
+    },
+    {
+      "id": "111",
+      "name": "r_predecesseur-space"
+    },
+    {
+      "id": "112",
+      "name": "r_successeur-space"
+    },
+    {
+      "id": "113",
+      "name": "r_social_tie"
+    },
+    {
+      "id": "114",
+      "name": "r_tributary"
+    },
+    {
+      "id": "115",
+      "name": "r_sentiment-1"
+    },
+    {
+      "id": "116",
+      "name": "r_linked-with"
+    },
+    {
+      "id": "117",
+      "name": "r_foncteur"
+    },
+    {
+      "id": "118",
+      "name": "r_comparison"
+    },
+    {
+      "id": "119",
+      "name": "r_but"
+    },
+    {
+      "id": "120",
+      "name": "r_but-1"
+    },
+    {
+      "id": "121",
+      "name": "r_own"
+    },
+    {
+      "id": "122",
+      "name": "r_own-1"
+    },
+    {
+      "id": "123",
+      "name": "r_verb_aux"
+    },
+    {
+      "id": "124",
+      "name": "r_predecesseur-logic"
+    },
+    {
+      "id": "125",
+      "name": "r_successeur-logic"
+    },
+    {
+      "id": "126",
+      "name": "r_isa-incompatible"
+    },
+    {
+      "id": "127",
+      "name": "r_incompatible"
+    },
+    {
+      "id": "128",
+      "name": "r_node2relnode"
+    },
+    {
+      "id": "129",
+      "name": "r_require"
+    },
+    {
+      "id": "130",
+      "name": "r_is_instance_of"
+    },
+    {
+      "id": "131",
+      "name": "r_is_concerned_by"
+    },
+    {
+      "id": "149",
+      "name": "r_compl_agent"
+    },
+    {
+      "id": "150",
+      "name": "r_beneficiaire"
+    },
+    {
+      "id": "151",
+      "name": "r_descend_de"
+    },
+    {
+      "id": "152",
+      "name": "r_domain_subst"
+    },
+    {
+      "id": "153",
+      "name": "r_prop"
+    },
+    {
+      "id": "154",
+      "name": "r_activ_voice"
+    },
+    {
+      "id": "155",
+      "name": "r_make_use_of"
+    },
+    {
+      "id": "156",
+      "name": "r_is_used_by"
+    },
+    {
+      "id": "157",
+      "name": "r_adj-nomprop"
+    },
+    {
+      "id": "158",
+      "name": "r_nomprop-adj"
+    },
+    {
+      "id": "159",
+      "name": "r_adj-adv"
+    },
+    {
+      "id": "160",
+      "name": "r_adv-adj"
+    },
+    {
+      "id": "161",
+      "name": "r_homophone"
+    },
+    {
+      "id": "162",
+      "name": "r_potential_confusion"
+    },
+    {
+      "id": "163",
+      "name": "r_concerning"
+    },
+    {
+      "id": "164",
+      "name": "r_adj>nom"
+    },
+    {
+      "id": "165",
+      "name": "r_nom>adj"
+    },
+    {
+      "id": "333",
+      "name": "r_translation"
+    },
+    {
+      "id": "444",
+      "name": "r_link"
+    },
+    {
+      "id": "555",
+      "name": "r_cooccurrence"
+    },
+    {
+      "id": "666",
+      "name": "r_aki"
+    },
+    {
+      "id": "777",
+      "name": "r_wiki"
+    },
+    {
+      "id": "997",
+      "name": "r_annotation_exception"
+    },
+    {
+      "id": "998",
+      "name": "r_annotation"
+    },
+    {
+      "id": "999",
+      "name": "r_inhib"
+    },
+    {
+      "id": "1000",
+      "name": "r_prev"
+    },
+    {
+      "id": "1001",
+      "name": "r_succ"
+    },
+    {
+      "id": "1002",
+      "name": "r_termgroup"
+    },
+    {
+      "id": "2000",
+      "name": "r_raff_sem-1"
+    },
+    {
+      "id": "2001",
+      "name": "r_learning_model"
+    }
+  ]
+}

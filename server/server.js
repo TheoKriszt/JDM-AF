@@ -323,7 +323,7 @@ app.get("/autocomplete/relations/:searchedRelation",function(req,res){
   console.log('/autocomplete/relations/', searchedRelation);
 
   let data = JDM_Relations_Entries.findData(searchedRelation);
-
+  console.log("data : " + data);
   if(data !== undefined && data !== null) {
 
     let entries = [];
@@ -340,6 +340,20 @@ app.get("/autocomplete/relations/:searchedRelation",function(req,res){
         entries.push(clone(data[index]['data']));
 
     sendRes(res, JSON.stringify(entries));
+  }
+  else
+    sendRes(res, JSON.stringify([]))
+});
+
+//Return All types of relations.
+app.get("/relations/relationTypes", function(req, res){
+
+  let data  = JDM_Relations;
+  // console.log("data : " + data.length);
+  console.log(data);
+
+  if(data !== undefined && data !== null) {
+    sendRes(res, JSON.stringify(data));
   }
   else
     sendRes(res, JSON.stringify([]))
