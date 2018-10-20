@@ -10,6 +10,7 @@ export class WordsService {
 
 
   private _options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+  private relationsTypes;
 
   constructor(private http: HttpClient) { }
 
@@ -40,7 +41,16 @@ export class WordsService {
 
   getRelationsTypes() {
     const uri = this.baseUrl + '/relations/relationTypes';
-    return this.http.get<RelationTypes>(uri);
+
+    if (this.relationsTypes !== undefined) {
+      return this.relationsTypes;
+      console.log('J\'passe la ');
+    } else {
+      this.relationsTypes = this.http.get<RelationTypes>(uri);
+      console.log('j\'passe ici');
+      return this.relationsTypes;
+    }
+
   }
 }
 
