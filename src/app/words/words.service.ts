@@ -63,7 +63,7 @@ export interface Word {
     text: ''
   };
   'formatedWord': '';
-  'definition': '';
+  'definitions': string[];
   'relationsOut': Relation[];
   'relationsIn': Relation[];
 }
