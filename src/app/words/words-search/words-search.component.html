@@ -17,7 +17,7 @@
         <img mat-card-image src="https://loremflickr.com/500/400/{{words.formatedWord}}">
         <mat-card-content>
           <h3>Définitions : </h3>
-          <p *ngIf="words.definitions === undefined"> Aucune définition n'a été trouvé.. </p>
+          <p *ngIf="words.definitions.length === 0"> Aucune définition n'a été trouvé.. </p>
           <p *ngFor="let definition of words.definitions">{{definition}}</p>
         </mat-card-content>
         <mat-divider></mat-divider>

@@ -31,6 +31,7 @@ export class WordsSearchComponent implements OnInit {
           this.rOut = params.rOut || false;
 
           this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
+            this.words = undefined;
             this.words  = result;
             console.log(this.words.definitions);
             // console.log('Résultat de la recherche de mot: ', this.words);
