@@ -1,17 +1,40 @@
+<div class="container">
+  <div class="row align-items-center justify-content-center">
 
-  <div *ngIf="loading">
-    <mat-spinner color="warn"></mat-spinner>
+    <div *ngIf="loading">
+      <mat-spinner  color="warn"></mat-spinner>
+    </div>
+
+    <div *ngIf="!loading">
+      <!--{{words | json}}-->
+
+      <mat-card class="card">
+        <mat-card-header>
+          <img mat-card-avatar class="header-image" src="https://loremflickr.com/320/240/{{words.formatedWord}}">
+          <mat-card-title class="title"> {{words.formatedWord}} </mat-card-title>
+          <mat-card-subtitle>{{words.word.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://loremflickr.com/320/240/{{words.formatedWord}}">
+        <mat-card-content>
+          <h3>Définitions : </h3>
+          <p *ngIf="words.definition === undefined"> Aucune définition n'a été trouvé.. </p>
+          <p>{{words.definition}}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-footer>
+          <p>
+            ID : {{words.word.id}}  <br/>
+            Poids : {{words.word.weight}}  <br/>
+            Relations entrantes : {{words.relationsIn.length}}  <br/>
+            Relations sortantes : {{words.relationsOut.length}} <br/>
+          </p>
+        </mat-card-footer>
+      </mat-card>
+
+    </div>
   </div>
 
-  <p *ngIf="!loading">
-    <!--{{words | json}}-->
-    Mot formaté : {{words.formatedWord}} <br/>
-    {{words.relationsIn.length}} relations entrantes <br/>
-    {{words.relationsOut.length}} relations sortantes <br/>
-    ID : {{words.word.id}} <br/>
-    Poids : {{words.word.weight}} <br/>
-  </p>
-
-  <div *ngIf="!loading">
+  <div class="row align-items-center justify-content-center" *ngIf="!loading">
     <app-relations-search [params]="relationsParams()"></app-relations-search>
   </div>
+</div>

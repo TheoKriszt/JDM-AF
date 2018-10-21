@@ -1,0 +1,13 @@
+.card {
+  max-width: 100%;
+  color: orangered;
+}
+
+.header-image {
+  background-size: cover;
+}
+
+.title {
+  font-weight: bold;
+  font-variant: small-caps;
+}
