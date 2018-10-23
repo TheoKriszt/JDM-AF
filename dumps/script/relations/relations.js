@@ -8,32 +8,42 @@ function extractRelations()
 
   var tr = tbody.getElementsByTagName('tr');
 
-  var result = [];
+  var result = {'types' : []};
 
   for(var index = 1; index < tr.length; index++)
   {
     var id = undefined;
     var name = undefined;
+    var definition = undefined;
 
     if(tr[index].getElementsByTagName('td')[1] != undefined)
     {
-      id = tr[index].getElementsByTagName('td')[1].textContent;
+      id = tr[index].getElementsByTagName('td')[1].textContent.trim();
 
       console.log(id);
     }
 
     if(tr[index].getElementsByTagName('td')[2] != undefined)
     {
-      name = tr[index].getElementsByTagName('td')[2].textContent;
+      name = tr[index].getElementsByTagName('td')[2].textContent.trim();
 
       console.log(name);
     }
 
-    if(id != undefined && name != undefined)
+    if(tr[index].getElementsByTagName('td')[3] != undefined)
     {
-      var relation = {'id' : id, 'name' : name};
+      definition = tr[index].getElementsByTagName('td')[3].textContent;
 
-      result.push(relation);
+      console.log(name);
+    }
+    else
+      definition = '';
+
+    if(id != undefined && name != undefined && definition != undefined)
+    {
+      var relation = {'id' : id, 'name' : name, 'definition' : definition};
+
+      result.types.push(relation);
     }
   }
 

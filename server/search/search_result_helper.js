@@ -2,6 +2,8 @@ const HTMLParser = require('node-html-parser');
 
 const RelationHelper = require('./relation_helper');
 
+const DefinitionHelper = require('./definition_helper');
+
 const clone = require('clone');
 
 (function() {
@@ -39,12 +41,7 @@ const clone = require('clone');
     let definitionTag = root.querySelector('def');
 
     if(definitionTag != null)
-    {
-      let definitions = definitionTag.text.toString().split('\n');
-
-      for (let index = 1; index < definitions.length; index++)
-        searchResult.definitions.push(clone(definitions[index]));
-    }
+      searchResult.definitions = clone(DefinitionHelper.extractDefinition(definitionTag));
 
     let tagRelationOut = root.querySelector('sortant');
 
@@ -67,6 +64,6 @@ const clone = require('clone');
     }
 
     return searchResult;
-  }
+  };
 
 }());
