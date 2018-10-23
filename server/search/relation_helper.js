@@ -1,17 +1,17 @@
 const HTMLParser = require('node-html-parser');
 
 (function() {
-
-  let relation =
-  {
-    'type' : '',
-    'weight' : 0,
-    'tid' : 0,
-    'ted' : 0,
-    'text' : ''
-  };
-
   module.exports.extractRelation = function(relationTag) {
+
+    let relation =
+      {
+        'type' : '',
+        'weight' : 0,
+        'tid' : 0,
+        'ted' : 0,
+        'text' : ''
+      };
+
     let relationTagSelected = HTMLParser.parse(relationTag).querySelector('rel');
 
     if(relationTagSelected != null)

@@ -6,20 +6,20 @@ const clone = require('clone');
 
 (function() {
 
-  let searchResult = {
-    'word': {
-      'weight' : 0,
-      'id' : 0 ,
-      'type' : 0,
-      'text' : ''
-    },
-    'formatedWord': '',
-    'definitions': [],
-    'relationsOut' : [],
-    'relationsIn' : [],
-  };
-
   module.exports.extractSearchResult = function(tagCode) {
+    let searchResult = {
+      'word': {
+        'weight' : 0,
+        'id' : 0 ,
+        'type' : 0,
+        'text' : ''
+      },
+      'formatedWord': '',
+      'definitions': [],
+      'relationsOut' : [],
+      'relationsIn' : [],
+    };
+
     let root = HTMLParser.parse(tagCode);
 
     let wordTag = root.querySelector('mot');
