@@ -35,6 +35,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + Listes des résultats (retirer l'ambiguité)
     + [x]  [Autocomplete chips](https://material.angular.io/components/chips/overview) pour filtrer les types de relations
       + [opt.] donner un [Tooltip](https://material.angular.io/components/tooltip/overview) pour expliquer le rôle de la relation
+        + Afficher la signification de la relation après son nom
       + [x] Retirer une chip quand elle est déjà sélectionnée (pas 2 fois le même choix)
       + Ajouter un choix **Toutes les relations** qui désactive les autres choix
     + Activer / Désactiver indépendamment relations entrantes et sortantes via [bouton toggle](https://material.angular.io/components/button-toggle/overview)
@@ -45,7 +46,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + Affichage d'un resultat.
     + Afficher les raffinements possibles s'il y en a
     + Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
-    + Afficher les relations, mais en lazy-loaded pour pas surcharger, comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
+    + Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
     
   
   
