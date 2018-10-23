@@ -47,6 +47,8 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + Afficher les raffinements possibles s'il y en a
     + Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
     + Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
+    + Passer directement le mot (l'objet) de words-search à relations-search, pas seulement le mot (string)
+    
     
   
   
