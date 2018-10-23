@@ -27,7 +27,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
   + [x] [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
-  + Decomposer les définitions (titre + exemple), parsage sur $nombre.
+  + [x] Decomposer les définitions (titre + exemple), parsage sur $nombre.
   
   + Trier par catégorie les relations (in/out)
   
