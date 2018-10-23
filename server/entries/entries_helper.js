@@ -47,7 +47,7 @@ const FileHelper = require('../file/file_helper');
 
   module.exports.readRelationsEntry = function()
   {
-    let relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
+    let relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json.back');
 
     let trie = new RadixTrie();
 
