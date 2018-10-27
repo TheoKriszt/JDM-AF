@@ -18,8 +18,16 @@ const clone = require('clone');
       },
       'formatedWord': '',
       'definitions': [],
-      'relationsOut' : [],
-      'relationsIn' : [],
+      'relationsOut' :
+        [{
+          'relationType' : '',
+          'values' : []
+        }],
+      'relationsIn' :
+        [{
+          'relationType' : '',
+          'values' : []
+        }],
     };
 
     let root = HTMLParser.parse(tagCode);
@@ -49,21 +57,71 @@ const clone = require('clone');
     {
       let relationOutEntries = tagRelationOut.toString().split('\n');
 
-      for (let index = 0; index < relationOutEntries.length; index++) {
-        searchResult.relationsOut.push(clone(RelationHelper.extractRelation(relationOutEntries[index])));
+      for (let index = 0; index < relationOutEntries.length; index++)
+      {
+        let relationOut = clone(RelationHelper.extractRelation(relationOutEntries[index]));
+
+        if(relationOut != null)
+        {
+          let relationIndex = 0;
+          let relationExist = false;
+
+          for(relationIndex = 0; relationIndex < searchResult.relationsOut.length; relationIndex++)
+            if (searchResult.relationsOut[relationIndex].relationType === relationOut.type)
+            {
+              relationExist = true;
+
+              break;
+            }
+
+          if(relationExist) {
+            if(searchResult.relationsOut[relationIndex].values === undefined)
+              searchResult.relationsOut[relationIndex].values= [];
+
+            searchResult.relationsOut[relationIndex].values.push(clone(relationOut));
+          }
+          else
+            searchResult.relationsOut.push({'relationType': clone(relationOut.type), 'values': [clone(relationOut)]});
+        }
       }
     }
 
     let tagRelationIn = root.querySelector('entrant');
 
-    if(tagRelationIn != null) {
+    if(tagRelationIn != null)
+    {
       let relationInEntries = tagRelationIn.toString().split('\n');
 
       for (let index = 0; index < relationInEntries.length; index++)
-        searchResult.relationsIn.push(clone(RelationHelper.extractRelation(relationInEntries[index])));
+      {
+        let relationIn = clone(RelationHelper.extractRelation(relationInEntries[index]));
+
+        if(relationIn != null)
+        {
+          let relationIndex = 0;
+          let relationExist = false;
+
+          for(relationIndex = 0; relationIndex < searchResult.relationsIn.length; relationIndex++)
+            if (searchResult.relationsIn[relationIndex].relationType === relationIn.type)
+            {
+              relationExist = true;
+
+              break;
+          }
+
+          if(relationExist) {
+            if(searchResult.relationsIn[relationIndex].values === undefined)
+              searchResult.relationsIn[relationIndex].values= [];
+
+            searchResult.relationsIn[relationIndex].values.push(clone(relationIn));
+          }
+          else
+            searchResult.relationsIn.push({'relationType': clone(relationIn.type), 'values': [clone(relationIn)]});
+        }
+      }
     }
 
-    return searchResult;
+    return clone(searchResult);
   };
 
 }());
