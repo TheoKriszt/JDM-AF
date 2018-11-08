@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatCardModule} from '@angular/material/card';
 import { MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list'; // usefull later, to organise printing of search result
 
 
@@ -20,7 +21,7 @@ import {AppRoutingModule} from './app-routing.module';
   ],
   imports: [
     WordsModule, BrowserModule, BrowserAnimationsModule, RouterModule,
-    AppRoutingModule, MatCardModule, MatToolbarModule, MatDividerModule, MatGridListModule
+    AppRoutingModule, MatCardModule, MatToolbarModule, MatDividerModule, MatGridListModule, MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

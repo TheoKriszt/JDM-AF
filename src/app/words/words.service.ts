@@ -44,10 +44,10 @@ export class WordsService {
 
     if (this.relationsTypes !== undefined) {
       return this.relationsTypes;
-      console.log('J\'passe la ');
+      // console.log('J\'passe la ');
     } else {
       this.relationsTypes = this.http.get<RelationTypes>(uri);
-      console.log('j\'passe ici');
+      // console.log('j\'passe ici');
       return this.relationsTypes;
     }
 
@@ -64,8 +64,16 @@ export interface Word {
   };
   'formatedWord': '';
   'definitions': string[];
-  'relationsOut': Relation[];
-  'relationsIn': Relation[];
+  'relationsOut':
+    [{
+      'relationType': '',
+      'values': Relation[]
+    }];
+  'relationsIn':
+    [{
+      'relationType': '',
+      'values': Relation[]
+    }];
 }
 
 export interface Relation {

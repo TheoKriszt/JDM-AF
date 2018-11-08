@@ -156,8 +156,8 @@ app.post("/search/relation/:word", function(req, res) {
   let types = req.body.relationTypes;
   let rIn = req.body.wantIn;
   let rOut = req.body.wantOut;
-  let relationIn = [];
-  let relationOut = [];
+  let relationIn = [{}];
+  let relationOut = [{}];
 
   console.log(types);
 
@@ -165,70 +165,51 @@ app.post("/search/relation/:word", function(req, res) {
     if(!err ){
       if(searchResult === undefined){
         console.log(word, 'not found in cache');
-
-        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
-
-        if(searchResult !== null) {
-          console.log(word, 'found in data');
-
-          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
-
-          for(t in types){
-            if(rIn){
-              for(relation in searchResult.relationIn){
-                if(t === relation.type){
-                  relationIn.push(relation);
-                }
-              }
-            }
-            if(rOut){
-              for(relation in searchResult.relationOut){
-                if(t === relation.type){
-                  relationOut.push(relation);
-                }
-              }
-            }
-          }
-
-
-          relations = {
-            relationIn : relationIn,
-            relationOut : relationOut,
-          };
-
-          sendRes(res, JSON.stringify(relations));
-
-        }
-        else
-        {
-          console.log(word, 'not found in data');
-        }
       }
       else{
-
         console.log(word, 'found in wordCache');
-        for(t in types){
+
+        console.log("searchResult : " + searchResult.relationsIn.length);
+        for(let t in types){
           if(rIn){
-            for(relation in searchResult.relationIn){
-              if(t === relation.type){
-                relationIn.push(relation);
+            for(let relation in searchResult.relationsIn){
+              if(searchResult.relationsIn[relation] !== undefined){
+                if(types[t]  === searchResult.relationsIn[relation].relationType){
+
+                  console.log("relation : " + searchResult.relationsIn[relation].relationType);
+                  console.log(searchResult.relationsIn[relation].values.length);
+
+                  relationIn.push(searchResult.relationsIn[relation]);
+                }
               }
             }
           }
+
           if(rOut){
-            for(relation in searchResult.relationOut){
-              if(t === relation.type){
-                relationOut.push(relation);
+            for(let relation in searchResult.relationsOut){
+              if(searchResult.relationsOut[relation] !== undefined){
+                if(types[t] === searchResult.relationsOut[relation].relationType){
+
+                  console.log("relation : " + searchResult.relationsOut[relation].relationType);
+                  console.log(searchResult.relationsOut[relation].values.length);
+
+                  relationOut.push(searchResult.relationsOut[relation]);
+                }
               }
             }
           }
         }
-
 
         relations = {
           relationIn : relationIn,
           relationOut : relationOut,
         };
+
+        console.log("Relation entrante (1) : \n" + relations.relationIn);
+        console.log("Relation entrante (2) : \n" + relationIn);
+
+        console.log("Relation sortante (1): \n" + relations.relationOut);
+        console.log("Relation sortante (2): \n" + relationOut);
 
         sendRes(res, JSON.stringify(relations));
       }
@@ -350,7 +331,7 @@ app.get("/relations/relationTypes", function(req, res){
 
   let data  = JDM_Relations;
   // console.log("data : " + data.length);
-  console.log(data);
+  //console.log(data);
 
   if(data !== undefined && data !== null) {
     sendRes(res, JSON.stringify(data));

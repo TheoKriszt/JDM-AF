@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-
 import {ActivatedRoute} from '@angular/router';
 import {WordsService} from '../words.service';
 
@@ -25,6 +24,8 @@ export class RelationsSearchComponent implements OnInit {
   };
   // private loading: boolean;
 
+  step = 0;
+
   constructor(private route: ActivatedRoute, private wordService: WordsService) {
   }
 
@@ -41,10 +42,25 @@ export class RelationsSearchComponent implements OnInit {
       // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');
       this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut).subscribe(result => {
         this.relations = result;
-        // console.log('Relations trouvées : ', this.relations);
+        console.log('Relations entrante : \n', this.relations.relationIn);
+        console.log('Relations sortante : \n', this.relations.relationOut);
+
+
         // this.loading = false;
 
       });
     }
+  }
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 }
