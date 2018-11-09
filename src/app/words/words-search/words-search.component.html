@@ -22,19 +22,14 @@
         </mat-card-content>
         <mat-divider></mat-divider>
         <mat-card-footer>
-          <p>
-            ID : {{words.word.id}}  <br/>
-            Poids : {{words.word.weight}}  <br/>
-            Relations entrantes : {{words.relationsIn.length}}  <br/>
-            Relations sortantes : {{words.relationsOut.length}} <br/>
-          </p>
+          <div class="row align-items-center justify-content-center" *ngIf="!loading">
+            <app-relations-search [params]="relationsParams()"></app-relations-search>
+          </div>
         </mat-card-footer>
       </mat-card>
 
     </div>
   </div>
 
-  <div class="row align-items-center justify-content-center" *ngIf="!loading">
-    <app-relations-search [params]="relationsParams()"></app-relations-search>
-  </div>
+
 </div>

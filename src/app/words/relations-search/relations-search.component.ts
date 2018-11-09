@@ -42,6 +42,7 @@ export class RelationsSearchComponent implements OnInit {
       // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');
       this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut).subscribe(result => {
         this.relations = result;
+
         console.log('Relations entrante : \n', this.relations.relationIn);
         console.log('Relations sortante : \n', this.relations.relationOut);
 
@@ -54,13 +55,16 @@ export class RelationsSearchComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
+    console.log("step : " + this.step);
   }
 
   nextStep() {
     this.step++;
+    console.log(' step : ' + this.step);
   }
 
   prevStep() {
     this.step--;
+    console.log('step : ' + this.step);
   }
 }

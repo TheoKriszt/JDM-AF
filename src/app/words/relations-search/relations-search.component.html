@@ -1,7 +1,7 @@
 <div class="container">
 
   <h4 *ngIf="!(relations.length || relations.relationOut.length)"> La recherche n'a retourné aucune relation </h4>
-
+<!--
   <div class="row" *ngIf="rIn">
     <h2>Relations entrante : </h2>
       <div *ngFor="let relationIn of relations.relationIn">
@@ -31,44 +31,53 @@
   </div>
 </div>
 
-<!--
-<mat-accordion class="example-headers-align">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Personal data
-      </mat-panel-title>
-      <mat-panel-description>
-        Type your name and age
-        <mat-icon>account_circle</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+-->
 
-    <mat-action-row>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
-  </mat-expansion-panel>
+<div class="row">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel *ngIf="rIn">
+      <mat-expansion-panel-header>
+        Relations entrante :
+      </mat-expansion-panel-header>
 
-  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Destination
-      </mat-panel-title>
-      <mat-panel-description>
-        Type the country name
-        <mat-icon>map</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+      <mat-expansion-panel *ngFor="let relationIn of relations.relationIn; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{relationIn.relationType}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
 
-    <mat-form-field>
-      <input matInput placeholder="Country">
-    </mat-form-field>
+        <p >
+          <strong *ngFor="let value of relationIn.values"> {{value.text}} , </strong>
+        </p>
 
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
-  </mat-expansion-panel>
+        <mat-action-row>
+          <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button *ngIf="i != relations.relationIn.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-expansion-panel>
 
-</mat-accordion>
---!>
+    <mat-expansion-panel *ngIf="rOut">
+      <mat-expansion-panel-header>
+        Relations sortante :
+      </mat-expansion-panel-header>
+
+      <mat-expansion-panel *ngFor="let relationOut of relations.relationOut; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{relationOut.relationType}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p *ngFor="let value of relationOut.values"> {{value.text}}</p>
+
+        <mat-action-row>
+          <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button *ngIf="i != relations.relationOut.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
