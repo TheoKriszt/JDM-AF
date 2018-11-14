@@ -6,9 +6,10 @@ const DefinitionHelper = require('./definition_helper');
 
 const clone = require('clone');
 
-(function() {
-
-  module.exports.extractSearchResult = function(tagCode) {
+(function()
+{
+  module.exports.extractSearchResult = function(tagCode)
+  {
     let searchResult = {
       'word': {
         'weight' : 0,
@@ -18,10 +19,8 @@ const clone = require('clone');
       },
       'formatedWord': '',
       'definitions': [],
-      'relationsOut' :
-        [],
-      'relationsIn' :
-        [],
+      'relationsOut' : [],
+      'relationsIn' : [],
     };
 
     let root = HTMLParser.parse(tagCode);
@@ -109,5 +108,4 @@ const clone = require('clone');
 
     return clone(searchResult);
   };
-
 }());

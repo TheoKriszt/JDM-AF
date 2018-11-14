@@ -29,13 +29,15 @@ let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
 const http = require('http');
 
-const sendRes = function(res, json){
+const sendRes = function(res, json)
+{
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-type","application/json");
   res.end(json);
 };
 
-app.all("/*", function(req, res, next){
+app.all("/*", function(req, res, next)
+{
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
@@ -44,8 +46,8 @@ app.all("/*", function(req, res, next){
 });
 
 // Search by word
-app.get("/search/word/:word",function(req,res){
-
+app.get("/search/word/:word",function(req,res)
+{
   let word = req.params.word;
 
   console.log('/search/word/', word);
@@ -77,11 +79,13 @@ app.get("/search/word/:word",function(req,res){
           http.get(formatedURL, function(httpResult)
           {
             var data = [];
-            httpResult.on('data', function(chunk) {
+            httpResult.on('data', function(chunk)
+            {
               data.push(chunk);
             });
 
-            httpResult.on('end', function() {
+            httpResult.on('end', function()
+            {
               var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
               var encodedBody = iconv.encode(decodedBody, 'utf8').toString();
@@ -113,8 +117,8 @@ app.get("/search/word/:word",function(req,res){
 });
 
 // Search an word, with his id
-app.get("/search/word/id/:wordId",function(req,res){
-
+app.get("/search/word/id/:wordId",function(req,res)
+{
   let wordId = req.params.wordId;
 
   console.log('/search/word/id/', wordId);
@@ -143,7 +147,8 @@ app.get("/search/word/id/:wordId",function(req,res){
 });
 
 // return all relations
-app.get("/relations/",function(req,res){
+app.get("/relations/",function(req,res)
+{
   console.log('/relations/');
 
   sendRes(res, JSON.stringify(JDM_Relations));
@@ -161,11 +166,12 @@ app.post("/search/relation/:word", function(req, res) {
 
   console.log(types);
 
-  wordCache.get(word, function(err, searchResult){
-    if(!err ){
-      if(searchResult === undefined){
-        console.log(word, 'not found in cache');
-      }
+  wordCache.get(word, function(err, searchResult)
+  {
+    if(!err )
+    {
+      if(searchResult === undefined)
+        console.log(word, 'not found in wordCache');
       else{
         console.log(word, 'found in wordCache');
 
@@ -218,8 +224,8 @@ app.post("/search/relation/:word", function(req, res) {
 });
 
 // Search by word, only in the wordCache
-app.get("/search/cache/word/:word",function(req,res){
-
+app.get("/search/cache/word/:word",function(req,res)
+{
   let word = req.params.word;
 
   console.log('/search/cache/word/', word);
@@ -254,7 +260,8 @@ app.get("/search/file/word/:word",function(req,res){
 });
 
 // Return all current keys in wordCache, usefull for autocompletion
-app.get("/cache/entries",function(req,res){
+app.get("/cache/entries",function(req,res)
+{
   console.log('wordCache entries');
 
   console.log(wordCache.keys());
@@ -297,8 +304,8 @@ app.get("/autocomplete/:searchedWord",function(req,res){
 // Quick search only
 // Should handle autocompletion from an exhaustive preloaded list
 // Should handle a joker caracter such as '*', '?', '%' etc.
-app.get("/autocomplete/relations/:searchedRelation",function(req,res){
-
+app.get("/autocomplete/relations/:searchedRelation",function(req,res)
+{
   const searchedRelation =  req.params.searchedRelation;
 
   console.log('/autocomplete/relations/', searchedRelation);
