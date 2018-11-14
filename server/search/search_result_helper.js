@@ -19,15 +19,9 @@ const clone = require('clone');
       'formatedWord': '',
       'definitions': [],
       'relationsOut' :
-        [{
-          'relationType' : '',
-          'values' : []
-        }],
+        [],
       'relationsIn' :
-        [{
-          'relationType' : '',
-          'values' : []
-        }],
+        [],
     };
 
     let root = HTMLParser.parse(tagCode);
@@ -74,12 +68,8 @@ const clone = require('clone');
               break;
             }
 
-          if(relationExist) {
-            if(searchResult.relationsOut[relationIndex].values === undefined)
-              searchResult.relationsOut[relationIndex].values= [];
-
+          if(relationExist)
             searchResult.relationsOut[relationIndex].values.push(clone(relationOut));
-          }
           else
             searchResult.relationsOut.push({'relationType': clone(relationOut.type), 'values': [clone(relationOut)]});
         }
@@ -109,12 +99,8 @@ const clone = require('clone');
               break;
           }
 
-          if(relationExist) {
-            if(searchResult.relationsIn[relationIndex].values === undefined)
-              searchResult.relationsIn[relationIndex].values= [];
-
+          if(relationExist)
             searchResult.relationsIn[relationIndex].values.push(clone(relationIn));
-          }
           else
             searchResult.relationsIn.push({'relationType': clone(relationIn.type), 'values': [clone(relationIn)]});
         }
