@@ -108,4 +108,41 @@ const clone = require('clone');
 
     return clone(searchResult);
   };
+
+  module.exports.compareRelationsWeight = function compareRelation(a,b)
+  {
+    if(a.weight === undefined)
+      return -1;
+    else if(b.weight === undefined)
+      return 1;
+
+    if(a.weight > b.weight)
+      return 1;
+    else if(a.weight < b.weight)
+      return -1;
+    else
+      return 0;
+  };
+
+  module.exports.compareRelationsFrenchOrder = function compareRelation(a,b)
+  {
+    return a.text.localeCompare(b.text, 'fr', {sensitivity: 'base'});
+  };
+
+  module.exports.sortRelations = function compareRelation(searchResult, sort)
+  {
+    console.log("Sort relations");
+    console.log(JSON.stringify(searchResult));
+
+    searchResult.relationsIn.forEach(function(relations)
+    {
+      relations.values.sort(sort);
+    });
+
+    searchResult.relationsOut.forEach(function(relations)
+    {
+      relations.values.sort(sort);
+    });
+  };
+
 }());

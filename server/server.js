@@ -116,6 +116,78 @@ app.get("/search/word/:word",function(req,res)
   });
 });
 
+// Search by word
+app.get("/search/word/french-order/:word/",function(req,res) {
+  let word = req.params.word;
+
+  console.log('/search/word/sortID', word);
+
+  wordCache.get(word, function (error, searchResult) {
+    if (!error) {
+      if (searchResult === undefined) {
+        console.log(word, 'not found in cache');
+
+        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
+
+        if (searchResult !== null) {
+          console.log(word, 'found in data');
+
+          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+
+          idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
+          SearchResultHelper.sortRelations(searchResult, SearchResultHelper.compareRelationsFrenchOrder);
+
+          sendRes(res, JSON.stringify(searchResult));
+        }
+        else {
+          console.log(word, 'not found in data');
+
+          let encodedWord = iconv.encode(word, 'win1252');
+
+          let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
+
+          http.get(formatedURL, function (httpResult) {
+            var data = [];
+            httpResult.on('data', function (chunk) {
+              data.push(chunk);
+            });
+
+            httpResult.on('end', function () {
+              var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+
+              var encodedBody = iconv.encode(decodedBody, 'utf8').toString();
+
+              let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+
+              let searchResult = SearchResultHelper.extractSearchResult(tagCode);
+
+              wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+
+              idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
+              FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+
+              SearchResultHelper.sortRelations(searchResult, SearchResultHelper.compareRelationsFrenchOrder);
+
+              sendRes(res, JSON.stringify(searchResult));
+            })
+
+          }).on("error", (error) => {
+            console.log("Error : " + error.message);
+          });
+        }
+      } else {
+        console.log(word, 'found in wordCache');
+
+        SearchResultHelper.sortRelations(searchResult, SearchResultHelper.compareRelationsFrenchOrder);
+
+        sendRes(res, JSON.stringify(searchResult));
+      }
+    }
+  });
+});
+
 // Search an word, with his id
 app.get("/search/word/id/:wordId",function(req,res)
 {
