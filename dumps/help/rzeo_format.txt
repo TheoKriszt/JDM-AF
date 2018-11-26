@@ -1,0 +1,41 @@
+["<CODE>\n"," DUMP pour le terme 'manette' (eid=62676)\n\n<def>\n<br />
+\n1. (Arts) Poignée, généralement de métal, qui sert à actionner un mécanisme, un levier, un robinet, une roue.<br /> \n Je mis le moteur en mouvement, le fis tourner quelque minutes, puis je tirai sur la manette des gaz pour démarrer.    \n (Jean Mermoz, Mes Vols, p.62, Flammarion, 1937)  <br /> \n Je tirai sur la manette des gaz; le moteur répondit avec une docilité touchante, et nous voici partis à la conquête du ciel.    \n (Dieudonné Costes & Maurice Bellonte, Paris-New-York, 1930)  <br />\n2. (En particulier) (Par ellipse) Manette de jeu.<br />\n
+3. Une manette est une poignée allongée, souvent en métal ou en plastique rigide, qui sert à actionner certains organes mécaniques. Elle fonctionne suivant le principe du levier.\n</def>\n\n\n\n","
+
+les types de noeuds (Nodes Types) : nt;ntid;'ntname'\n\n
+nt;1;'n_term'\n
+nt;4;'n_pos'\n
+nt;6;'n_flpot'\n
+nt;18;'n_data'\n
+nt;36;'n_data_pot'\n
+nt;444;'n_link'\n
+nt;777;'n_wikipedia'\n\n",
+
+" les noeuds/termes (Entries) : e;eid;'name';type;w;'formated name' \n\n
+e;62676;'manette';1;192\n
+e;363041;'manette de débrayage';1;50\n
+e;363040;'manette de dérailleur';1;50\n
+e;302662;'manette des gaz';777;50\n\n",
+
+" les types de relations (Relation Types) : rt;rtid;'trname';'trgpname';'rthelp' \n\n
+rt;0;'r_associated';'idée associée';Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?\n
+rt;3;'r_domain';'domaine';Il est demandé de fournir des domaines relatifs au mot cible. Par exemple, pour 'corner', on pourra donner les domaines 'football' ou 'sport'.\n
+rt;4;'r_pos';'POS';Partie du discours (Nom, Verbe, Adjectif, Adverbe, etc.)\n
+rt;5;'r_syn';'synonyme';Il est demandé d'énumérer les synonymes ou quasi-synonymes de ce terme.\n
+rt;6;'r_isa';'générique';Il est demandé d'énumérer les GENERIQUES/hyperonymes du terme. Par exemple, 'animal' et 'mammifère' sont des génériques de 'chat'.\n\n",
+
+" les relations sortantes : r;rid;node1;node2;type;w \n\n
+r;33836703;62676;363041;0;2\n
+r;33795192;62676;363040;0;3\n
+r;32053412;62676;302662;0;6\n
+r;34680828;62676;1773481;0;7\n
+r;28766410;62676;363042;0;17\n
+r;12297287;62676;2609;0;21\n\n",
+
+" les relations entrantes : r;rid;node1;node2;type;w \n\n
+r;10655319;52660;62676;0;1\n
+r;72786475;218632;62676;0;2\n
+r;278501143;10968607;62676;0;16\n
+r;801508;46235;62676;0;21\n
+r;958727;9940;62676;0;21\n\n","
+END\n</CODE>"]
