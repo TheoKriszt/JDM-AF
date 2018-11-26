@@ -29,6 +29,12 @@ let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
 const http = require('http');
 
+const DefinitionHelper = require('./rezo_helper/definition_helper');
+const NodeTypeHelper = require('./rezo_helper/node_type_helper');
+const NodeHelper = require('./rezo_helper/node_helper');
+const RelationTypeHelper = require('./rezo_helper/relation_type_helper');
+const RelationHelper = require('./rezo_helper/relation_helper');
+
 const sendRes = function(res, json)
 {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -78,7 +84,7 @@ app.get("/search/word/:word",function(req,res)
 
           http.get(formatedURL, function(httpResult)
           {
-            var data = [];
+            let data = [];
             httpResult.on('data', function(chunk)
             {
               data.push(chunk);
@@ -86,9 +92,9 @@ app.get("/search/word/:word",function(req,res)
 
             httpResult.on('end', function()
             {
-              var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+              let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
-              var encodedBody = iconv.encode(decodedBody, 'utf8').toString();
+              let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
               let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
@@ -148,15 +154,15 @@ app.get("/search/word/french-order/:word/",function(req,res) {
           let formatedURL = 'http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&output=onlyxml';
 
           http.get(formatedURL, function (httpResult) {
-            var data = [];
+            let data = [];
             httpResult.on('data', function (chunk) {
               data.push(chunk);
             });
 
             httpResult.on('end', function () {
-              var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+              let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
-              var encodedBody = iconv.encode(decodedBody, 'utf8').toString();
+              let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
               let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
@@ -181,6 +187,105 @@ app.get("/search/word/french-order/:word/",function(req,res) {
         console.log(word, 'found in wordCache');
 
         SearchResultHelper.sortRelations(searchResult, SearchResultHelper.compareRelationsFrenchOrder);
+
+        sendRes(res, JSON.stringify(searchResult));
+      }
+    }
+  });
+});
+
+// Search by word (rezo)
+app.get("/search/rezo/word/:word/",function(req,res) {
+  let word = req.params.word;
+
+  console.log('/search/rezo/word/:word/', word);
+
+  wordCache.get(word, function (error, searchResult) {
+    if (!error) {
+      if (searchResult === undefined) {
+        console.log(word, 'not found in cache');
+
+        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
+
+        if (searchResult !== null) {
+          console.log(word, 'found in data');
+
+          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+
+          idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
+          sendRes(res, JSON.stringify(searchResult));
+        }
+        else {
+          console.log(word, 'not found in data');
+
+          let encodedWord = iconv.encode(word, 'win1252');
+
+          let formatedURL = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
+
+          http.get(formatedURL, function (httpResult) {
+            let data = [];
+            httpResult.on('data', function (chunk) {
+              data.push(chunk);
+            });
+
+            httpResult.on('end', function () {
+              let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+
+              let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
+
+              let newSearchResult = {
+                'definitions': [],
+                'nodesTypes': [],
+                'nodes': [],
+                'relationsTypes': [],
+                'relationsOut' : [],
+                'relationsIn' : [],
+              };
+
+              let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+
+              let tags = tagCode.toString().split('//');
+
+              let tagDefinitions = tags[1];
+
+              newSearchResult.definitions = clone(DefinitionHelper.extractDefinition(tagDefinitions));
+
+              let tagNodesTypes = tags[2];
+
+              newSearchResult.nodesTypes = clone(NodeTypeHelper.extractNodeTypes(tagNodesTypes));
+
+              let tagNodes = tags[3];
+
+              newSearchResult.nodes = clone(NodeHelper.extractNodes(tagNodes));
+
+              let tagRelationsTypes = tags[4];
+
+              newSearchResult.relationsTypes = RelationTypeHelper.extractRelationsType(tagRelationsTypes);
+
+              let tagRelationsOut = tags[5];
+
+              newSearchResult.relationsOut = RelationHelper.extractRelations(tagRelationsOut);
+
+              let tagRelationsIn = tags[6];
+
+              newSearchResult.relationsIn = RelationHelper.extractRelations(tagRelationsIn);
+
+              //wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+
+              //idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+
+              //FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+
+              sendRes(res, JSON.stringify(newSearchResult));
+            })
+
+          }).on("error", (error) => {
+            console.log("Error : " + error.message);
+          });
+        }
+      } else {
+        console.log(word, 'found in wordCache');
 
         sendRes(res, JSON.stringify(searchResult));
       }
