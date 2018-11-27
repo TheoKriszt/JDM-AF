@@ -6,9 +6,10 @@ const DefinitionHelper = require('./definition_helper');
 
 const clone = require('clone');
 
-(function() {
-
-  module.exports.extractSearchResult = function(tagCode) {
+(function()
+{
+  module.exports.extractSearchResult = function(tagCode)
+  {
     let searchResult = {
       'word': {
         'weight' : 0,
@@ -18,16 +19,8 @@ const clone = require('clone');
       },
       'formatedWord': '',
       'definitions': [],
-      'relationsOut' :
-        [{
-          'relationType' : '',
-          'values' : []
-        }],
-      'relationsIn' :
-        [{
-          'relationType' : '',
-          'values' : []
-        }],
+      'relationsOut' : [],
+      'relationsIn' : [],
     };
 
     let root = HTMLParser.parse(tagCode);
@@ -74,12 +67,8 @@ const clone = require('clone');
               break;
             }
 
-          if(relationExist) {
-            if(searchResult.relationsOut[relationIndex].values === undefined)
-              searchResult.relationsOut[relationIndex].values= [];
-
+          if(relationExist)
             searchResult.relationsOut[relationIndex].values.push(clone(relationOut));
-          }
           else
             searchResult.relationsOut.push({'relationType': clone(relationOut.type), 'values': [clone(relationOut)]});
         }
@@ -109,12 +98,8 @@ const clone = require('clone');
               break;
           }
 
-          if(relationExist) {
-            if(searchResult.relationsIn[relationIndex].values === undefined)
-              searchResult.relationsIn[relationIndex].values= [];
-
+          if(relationExist)
             searchResult.relationsIn[relationIndex].values.push(clone(relationIn));
-          }
           else
             searchResult.relationsIn.push({'relationType': clone(relationIn.type), 'values': [clone(relationIn)]});
         }
@@ -122,6 +107,42 @@ const clone = require('clone');
     }
 
     return clone(searchResult);
+  };
+
+  module.exports.compareRelationsWeight = function compareRelation(a,b)
+  {
+    if(a.weight === undefined)
+      return -1;
+    else if(b.weight === undefined)
+      return 1;
+
+    if(a.weight > b.weight)
+      return 1;
+    else if(a.weight < b.weight)
+      return -1;
+    else
+      return 0;
+  };
+
+  module.exports.compareRelationsFrenchOrder = function compareRelation(a,b)
+  {
+    return a.text.localeCompare(b.text, 'fr', {sensitivity: 'base'});
+  };
+
+  module.exports.sortRelations = function compareRelation(searchResult, sort)
+  {
+    console.log("Sort relations");
+    console.log(JSON.stringify(searchResult));
+
+    searchResult.relationsIn.forEach(function(relations)
+    {
+      relations.values.sort(sort);
+    });
+
+    searchResult.relationsOut.forEach(function(relations)
+    {
+      relations.values.sort(sort);
+    });
   };
 
 }());
