@@ -129,6 +129,11 @@ const clone = require('clone');
     return a.text.localeCompare(b.text, 'fr', {sensitivity: 'base'});
   };
 
+  module.exports.compareAutocompleteFrenchOrder = function compareRelation(a,b)
+  {
+    return a.localeCompare(b, 'fr', {sensitivity: 'base'});
+  };
+
   module.exports.sortRelations = function compareRelation(searchResult, sort)
   {
     console.log("Sort relations");
@@ -143,6 +148,13 @@ const clone = require('clone');
     {
       relations.values.sort(sort);
     });
+  };
+
+  module.exports.sortAutocomplete = function compareRelation(searchResult, sort)
+  {
+    console.log("Sort entries for autocomplete");
+    console.log(JSON.stringify(searchResult));
+    searchResult.sort(sort);
   };
 
 }());

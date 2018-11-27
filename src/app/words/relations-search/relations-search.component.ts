@@ -38,7 +38,7 @@ export class RelationsSearchComponent implements OnInit {
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
     this.sortChecked = this.params.sortChecked;
 
-    console.log('from relations ::: ', 'rIn', this.rIn, 'rOut', this.rOut);
+    // console.log('from relations ::: ', 'rIn', this.rIn, 'rOut', this.rOut);
 
     if (this.searchedWord) {
       // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');
@@ -56,7 +56,7 @@ export class RelationsSearchComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
-    console.log("step : " + this.step);
+    console.log('step : ' + this.step);
   }
 
   nextStep() {

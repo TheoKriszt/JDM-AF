@@ -17,7 +17,7 @@
             </mat-form-field>
           </div>
           <div class="d-flex flex-row justify-content-start">
-            <mat-slide-toggle color="warn" aria-label="tri" [checked]="checked">tri lexico ?</mat-slide-toggle>
+            <mat-slide-toggle color="warn" aria-label="tri" [checked]="checked" (change)="checked = $event.source.checked" >tri lexico ?</mat-slide-toggle>
           </div>
         </div>
       </div>
@@ -55,22 +55,22 @@
             </mat-form-field>
           </div>
           <div class="d-flex justify-content-center">
-            <mat-button-toggle-group multiple="true"  #relationsTypesgroup="matButtonToggleGroup">
-              <mat-button-toggle value="rIn" (change)="rIn = $event.source.checked">
+            <mat-button-toggle-group multiple="true" value="All"  #relationsTypesgroup="matButtonToggleGroup">
+              <mat-button-toggle value="rIn" [checked]="rIn" (change)="rIn = $event.source.checked">
                 Relations Entrantes
               </mat-button-toggle>
-              <mat-button-toggle value="rOut" (change)="rOut = $event.source.checked">
+              <mat-button-toggle value="rOut" [checked]="rOut" (change)="rOut = $event.source.checked">
                 Relations sortantes
               </mat-button-toggle>
             </mat-button-toggle-group>
 
-            {{relationsTypesgroup.value}}
+            <!--{{relationsTypesgroup.value}}-->
           </div>
           <div class="spacer"></div>
         </div>
       </div>
 
-      <div class="form-group col-md-2  col-lg-3 d-flex justify-content-center align-items-center">
+      <div class="form-group col-md-2  col-lg-3 justify-content-center align-items-center" style="text-align: center">
         <button mat-raised-button color="warn" [disabled]="loading" class="btn btn-primary">Recherche</button>
         <div *ngIf="loading">
           <mat-spinner color="warn"></mat-spinner>

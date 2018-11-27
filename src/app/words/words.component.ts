@@ -23,7 +23,7 @@ export class WordsComponent implements OnInit {
   nameControl = new FormControl();
   options: string[] = [/*'Martin', 'Mary', 'Shelley', 'Igor'*/];
   filteredOptions: Observable<string[]>;
-  checked = false;
+  checked = true;
 
 // Relations params
   visible = true;
@@ -38,8 +38,8 @@ export class WordsComponent implements OnInit {
 
   // = this.allRelations;
 
-  rIn: boolean;
-  rOut: boolean;
+  rIn = true;
+  rOut = true;
 
 
   @ViewChild('relationInput') relationInput: ElementRef<HTMLInputElement>;
@@ -69,11 +69,6 @@ export class WordsComponent implements OnInit {
       if (name.length > 0) {
 
         this.filteredOptions = this.wordService.autocomplete(name);
-        this.filteredOptions.subscribe(res => {
-          console.log('avant : ' + res);
-          this.options = this.wordService.sortByLexico(res);
-          console.log('apres : ' + this.options);
-        });
       } else {
         this.loading  = false;
       }

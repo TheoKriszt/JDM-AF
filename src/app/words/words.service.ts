@@ -21,6 +21,8 @@ export class WordsService {
    */
   autocomplete(query: String): Observable <string[]> {
     const uri = this.baseUrl + '/autocomplete/' + query;
+    // res = this.http.get(uri) as Observable <string[]>;
+
     return this.http.get(uri) as Observable <string[]>;
   }
 
@@ -77,14 +79,14 @@ export class WordsService {
   }
 */
 
-  sortByLexico(array): string[] {
-    if (array !== undefined) {
-      array.sort(function (a, b) {
-        return a.localeCompare(b);
-      });
-    }
-    return array;
-  }
+  // sortByLexico(array): string[] {
+  //   if (array !== undefined) {
+  //     array.sort(function (a, b) {
+  //       return a.localeCompare(b);
+  //     });
+  //   }
+  //   return array;
+  // }
 
   sortByWeight(relations) {
     for (const rIn in relations.relationIn) {
@@ -102,7 +104,7 @@ export class WordsService {
       }
     }
   }
-  
+
   getRelationsTypes() {
     const uri = this.baseUrl + '/relations/relationTypes';
 

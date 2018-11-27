@@ -472,6 +472,11 @@ app.get("/autocomplete/:searchedWord",function(req,res){
       if(data[index] !== undefined)
         entries.push(clone(data[index]['data']));
 
+
+    SearchResultHelper.sortAutocomplete(entries, SearchResultHelper.compareAutocompleteFrenchOrder);
+    console.log('apres tri : ', entries);
+
+
     sendRes(res, JSON.stringify(entries));
   }
   else
