@@ -18,6 +18,7 @@ export class RelationsSearchComponent implements OnInit {
   searchedRelationsTypes: any = [];
   rIn: boolean;
   rOut: boolean;
+  sortChecked: boolean;
   relations: any = {
     relationOut : [],
     relationIn : []
@@ -35,6 +36,7 @@ export class RelationsSearchComponent implements OnInit {
     this.rIn = this.params.rIn;
     this.rOut = this.params.rOut;
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
+    this.sortChecked = this.params.sortChecked;
 
     console.log('from relations ::: ', 'rIn', this.rIn, 'rOut', this.rOut);
 
@@ -46,9 +48,8 @@ export class RelationsSearchComponent implements OnInit {
         console.log('Relations entrante : \n', this.relations.relationIn);
         console.log('Relations sortante : \n', this.relations.relationOut);
 
-
+        this.wordService.sortByWeight(this.relations);
         // this.loading = false;
-
       });
     }
   }

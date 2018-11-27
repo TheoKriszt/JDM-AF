@@ -38,7 +38,71 @@ export class WordsService {
 
     return this.http.post(this.baseUrl + '/search/relation/' + wordId, params , this._options);
   }
+/*
+  sortRelation(checked, relations) {
+    console.log('On tente le tri...');
+    if (checked) { // tri par lexico
+      console.log('lexico  ! ');
+      for (const rIn in relations.relationIn) {
+        if (relations.relationIn[rIn].values !== undefined) {
+          relations.relationIn[rIn].values.sort(function (a: Relation, b: Relation) {
+            return a.ted.toString().localeCompare(b.ted.toString());
+          });
+        }
+      }
+      for (const rOut in relations.relationOut) {
+        if (relations.relationIn[rOut].values !== undefined) {
+          relations.relationOut[rOut].values.sort(function (a, b) {
+            return a.ted.localeCompare(b.ted);
+          });
+        }
+      }
+    } else { // tri par poids
+      console.log('poids ! ');
+      for (const rIn in relations.relationIn) {
+        if (relations.relationIn[rIn].values !== undefined) {
+          relations.relationIn[rIn].values.sort(function (a, b) {
+            return parseInt(a.weight, 10) - parseInt(b.weight, 10);
+          });
+        }
+      }
+      for (const rOut in relations.relationOut) {
+        if (relations.relationIn[rOut].values !== undefined) {
+          relations.relationOut[rOut].values.sort(function (a, b) {
+            return parseInt(a.weight, 10) - parseInt(b.weight, 10);
+          });
+        }
+      }
+    }
+  }
+*/
 
+  sortByLexico(array): string[] {
+    if (array !== undefined) {
+      array.sort(function (a, b) {
+        return a.localeCompare(b);
+      });
+    }
+    return array;
+  }
+
+  sortByWeight(relations) {
+    for (const rIn in relations.relationIn) {
+      if (relations.relationIn[rIn].values !== undefined) {
+        relations.relationIn[rIn].values.sort(function (a, b) {
+          return parseInt(a.weight, 10) - parseInt(b.weight, 10);
+        });
+      }
+    }
+    for (const rOut in relations.relationOut) {
+      if (relations.relationIn[rOut].values !== undefined) {
+        relations.relationOut[rOut].values.sort(function (a, b) {
+          return parseInt(a.weight, 10) - parseInt(b.weight, 10);
+        });
+      }
+    }
+  }
+  
   getRelationsTypes() {
     const uri = this.baseUrl + '/relations/relationTypes';
 
@@ -80,13 +144,14 @@ export interface Relation {
   type: '';
   weight: 0;
   tid: 0;
-  ted: 0;
+  ted: '';
   text: '';
 }
 
 export class Type {
   id: 0;
   name: string;
+  definition: string;
 }
 
 export interface RelationTypes {

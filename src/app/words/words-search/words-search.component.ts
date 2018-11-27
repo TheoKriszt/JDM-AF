@@ -14,6 +14,7 @@ export class WordsSearchComponent implements OnInit {
   searchedRelationsTypes: string[] = [];
   rIn: boolean;
   rOut: boolean;
+  sortChecked: boolean;
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
@@ -29,6 +30,8 @@ export class WordsSearchComponent implements OnInit {
           this.searchedRelationsTypes = params.types;
           this.rIn = params.rIn;
           this.rOut = params.rOut;
+          this.sortChecked = params.sortChecked;
+
           this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
             this.words = undefined;
             this.words  = result;
@@ -49,7 +52,8 @@ export class WordsSearchComponent implements OnInit {
       searchedWord : this.searchedWord,
       searchedRelationsTypes : this.searchedRelationsTypes,
       rIn : this.rIn,
-      rOut : this.rOut
+      rOut : this.rOut,
+      sortChecked : this.sortChecked
     };
   }
 }

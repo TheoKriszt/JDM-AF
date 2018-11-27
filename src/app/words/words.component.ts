@@ -1,3 +1,4 @@
+
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
@@ -7,7 +8,6 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent, MatIconRegistry} from '@angular/material';
 import {MatAutocompleteSelectedEvent} from '@angular/material/typings/autocomplete';
 import {DomSanitizer} from '@angular/platform-browser';
-import {MatButtonToggle} from '@angular/material';
 
 
 @Component({
@@ -23,6 +23,7 @@ export class WordsComponent implements OnInit {
   nameControl = new FormControl();
   options: string[] = [/*'Martin', 'Mary', 'Shelley', 'Igor'*/];
   filteredOptions: Observable<string[]>;
+  checked = false;
 
 // Relations params
   visible = true;
@@ -68,6 +69,11 @@ export class WordsComponent implements OnInit {
       if (name.length > 0) {
 
         this.filteredOptions = this.wordService.autocomplete(name);
+        this.filteredOptions.subscribe(res => {
+          console.log('avant : ' + res);
+          this.options = this.wordService.sortByLexico(res);
+          console.log('apres : ' + this.options);
+        });
       } else {
         this.loading  = false;
       }
@@ -77,7 +83,7 @@ export class WordsComponent implements OnInit {
 
       for (let i = 0, size =  data.types.length; i < size; i++) {
 
-          this.allRelations.push(data.types[i].name);
+        this.allRelations.push(data.types[i].name);
       }
     });
 
@@ -91,7 +97,8 @@ export class WordsComponent implements OnInit {
       const params = {
         types : this.relations,
         rIn : this.rIn,
-        rOut : this.rOut
+        rOut : this.rOut,
+        sortChecked : this.checked
       };
       this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
     }

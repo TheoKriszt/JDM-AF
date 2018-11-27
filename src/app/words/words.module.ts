@@ -17,7 +17,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 const routes: Routes = [
@@ -46,7 +48,7 @@ const routes: Routes = [
     CommonModule, HttpClientModule, RouterModule.forChild(routes),
     FormsModule, ReactiveFormsModule, MatButtonModule, MatAutocompleteModule,
     MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule,
-    MatDividerModule, MatButtonToggleModule, MatCardModule, MatExpansionModule
+    MatDividerModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatTooltipModule, MatRadioModule, MatSlideToggleModule
   ],
   exports: [WordsComponent, WordsSearchComponent, RelationsSearchComponent, RouterModule],
   declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent],
