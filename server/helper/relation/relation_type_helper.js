@@ -6,10 +6,10 @@
 
     let tags = clearedTag.split('\n');
 
-    let relationTypeId = '';
-    let relationTypeName = '';
-    let relationTypeGroupName = '';
-    let relationTypeHelp = '';
+    let id = '';
+    let name = '';
+    let groupName = '';
+    let help = '';
 
     let parserIndex = 0;
 
@@ -17,14 +17,23 @@
     {
       parserIndex = 3;
 
-      relationTypeId = '';
-      relationTypeName = '';
-      relationTypeGroupName = '';
-      relationTypeHelp = '';
+      id = '';
+      name = '';
+      groupName = '';
+      help = '';
 
       while(tags[relationTypeIndex].charAt(parserIndex) !== ';')
       {
-        relationTypeId += tags[relationTypeIndex].charAt(parserIndex);
+        id += tags[relationTypeIndex].charAt(parserIndex);
+
+        parserIndex++;
+      }
+
+      parserIndex += 2;
+
+      while(tags[relationTypeIndex].charAt(parserIndex) !== '\'')
+      {
+        name += tags[relationTypeIndex].charAt(parserIndex);
 
         parserIndex++;
       }
@@ -33,16 +42,7 @@
 
       while(tags[relationTypeIndex].charAt(parserIndex) !== ';')
       {
-        relationTypeName += tags[relationTypeIndex].charAt(parserIndex);
-
-        parserIndex++;
-      }
-
-      parserIndex++;
-
-      while(tags[relationTypeIndex].charAt(parserIndex) !== ';')
-      {
-        relationTypeGroupName += tags[relationTypeIndex].charAt(parserIndex);
+        groupName += tags[relationTypeIndex].charAt(parserIndex);
 
         parserIndex++;
       }
@@ -51,12 +51,12 @@
 
       while(parserIndex < tags[relationTypeIndex].length - 2)
       {
-        relationTypeHelp += tags[relationTypeIndex].charAt(parserIndex);
+        help += tags[relationTypeIndex].charAt(parserIndex);
 
         parserIndex++;
       }
 
-      relationsTypes.push({'relationTypeId': parseInt(relationTypeId), 'relationTypeName': relationTypeName, 'relationTypeGroupName': relationTypeGroupName, 'relationTypeHelp': relationTypeHelp});
+      relationsTypes.push({'id': parseInt(id), 'name': name, 'groupName': groupName, 'help': help});
     }
 
     return relationsTypes;

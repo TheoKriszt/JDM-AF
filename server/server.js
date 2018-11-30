@@ -29,11 +29,7 @@ let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
 const http = require('http');
 
-const DefinitionHelper = require('./rezo_helper/definition_helper');
-const NodeTypeHelper = require('./rezo_helper/node_type_helper');
-const NodeHelper = require('./rezo_helper/node_helper');
-const RelationTypeHelper = require('./rezo_helper/relation_type_helper');
-const RelationHelper = require('./rezo_helper/relation_helper');
+const RezoSearchResultHelper = require('./helper/search_result_helper');
 
 const sendRes = function(res, json)
 {
@@ -194,11 +190,12 @@ app.get("/search/word/french-order/:word/",function(req,res) {
   });
 });
 
-// Search by word (rezo)
-app.get("/search/rezo/word/:word/",function(req,res) {
+// Search by word
+//sort = 0, weight
+//sort = 1, french-order
+app.get("/search/word/:word/:sort",function(req,res) {
   let word = req.params.word;
-
-  console.log('/search/rezo/word/:word/', word);
+  let sort = parseInt(req.params.sort);
 
   wordCache.get(word, function (error, searchResult) {
     if (!error) {
@@ -212,7 +209,12 @@ app.get("/search/rezo/word/:word/",function(req,res) {
 
           wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-          idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
+          idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
+
+          if(sort === 0)
+            RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
+          else
+            RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
 
           sendRes(res, JSON.stringify(searchResult));
         }
@@ -221,9 +223,9 @@ app.get("/search/rezo/word/:word/",function(req,res) {
 
           let encodedWord = iconv.encode(word, 'win1252');
 
-          let formatedURL = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
+          let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
 
-          http.get(formatedURL, function (httpResult) {
+          http.get(formatedUrl, function (httpResult) {
             let data = [];
             httpResult.on('data', function (chunk) {
               data.push(chunk);
@@ -234,50 +236,25 @@ app.get("/search/rezo/word/:word/",function(req,res) {
 
               let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
-              let newSearchResult = {
-                'definitions': [],
-                'nodesTypes': [],
-                'nodes': [],
-                'relationsTypes': [],
-                'relationsOut' : [],
-                'relationsIn' : [],
-              };
-
               let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
               let tags = tagCode.toString().split('//');
 
-              let tagDefinitions = tags[1];
+              searchResult = RezoSearchResultHelper.extractSearchResult(tags);
+              searchResult.formatedWord = word;
 
-              newSearchResult.definitions = clone(DefinitionHelper.extractDefinition(tagDefinitions));
+              wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
-              let tagNodesTypes = tags[2];
+              idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
 
-              newSearchResult.nodesTypes = clone(NodeTypeHelper.extractNodeTypes(tagNodesTypes));
+              FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
 
-              let tagNodes = tags[3];
+              if(sort === 0)
+                RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
+              else
+                RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
 
-              newSearchResult.nodes = clone(NodeHelper.extractNodes(tagNodes));
-
-              let tagRelationsTypes = tags[4];
-
-              newSearchResult.relationsTypes = RelationTypeHelper.extractRelationsType(tagRelationsTypes);
-
-              let tagRelationsOut = tags[5];
-
-              newSearchResult.relationsOut = RelationHelper.extractRelations(tagRelationsOut);
-
-              let tagRelationsIn = tags[6];
-
-              newSearchResult.relationsIn = RelationHelper.extractRelations(tagRelationsIn);
-
-              //wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
-
-              //idWordCache.set(searchResult.word.id, searchResult.formatedWord, TIME_WEEK);
-
-              //FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
-
-              sendRes(res, JSON.stringify(newSearchResult));
+              sendRes(res, JSON.stringify(searchResult));
             })
 
           }).on("error", (error) => {
@@ -286,6 +263,11 @@ app.get("/search/rezo/word/:word/",function(req,res) {
         }
       } else {
         console.log(word, 'found in wordCache');
+
+        if(sort === 0)
+          RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
+        else
+          RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
 
         sendRes(res, JSON.stringify(searchResult));
       }
