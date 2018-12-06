@@ -26,8 +26,8 @@ export class WordsService {
     return this.http.get(uri) as Observable <string[]>;
   }
 
-  searchWord(word: string, sortMode: number= 0): Observable<any> {
-    const uri = this.baseUrl + '/search/word/' + word + '/' + sortMode;
+  searchWord(word: string): Observable<any> {
+    const uri = this.baseUrl + '/search/word/' + word;
     return this.http.get<Word>(uri);
   }
 

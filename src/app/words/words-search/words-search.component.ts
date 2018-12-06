@@ -32,9 +32,9 @@ export class WordsSearchComponent implements OnInit {
           this.rOut = params.rOut;
           this.sortChecked = params.sortChecked;
 
-          const sortMode = (params.sortChecked === 'true') ? 1 : 0;
+          //const sortMode = (params.sortChecked === 'true') ? 1 : 0;
 
-          this.wordService.searchWord(this.searchedWord, sortMode).subscribe((result: Word) => {
+          this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
             // this.words = undefined;
             this.words  = result;
             this.loading = false;
