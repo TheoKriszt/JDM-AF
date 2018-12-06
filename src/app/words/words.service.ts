@@ -31,11 +31,12 @@ export class WordsService {
     return this.http.get<Word>(uri);
   }
 
-  getAllRelations(wordId: string, types: string[], rIn: boolean, rOut: boolean): Observable<any> {
+  getAllRelations(wordId: string, types: string[], rIn: boolean, rOut: boolean, sortChecked: boolean): Observable<any> {
     const params = {
       relationTypes: types,
       wantIn : rIn,
       wantOut : rOut,
+      wantSort : sortChecked
     };
 
     return this.http.post(this.baseUrl + '/search/relation/' + wordId, params , this._options);

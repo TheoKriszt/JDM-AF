@@ -320,6 +320,7 @@ app.post("/search/relation/:word", function(req, res) {
   let types = req.body.relationTypes;
   let rIn = req.body.wantIn;
   let rOut = req.body.wantOut;
+  let sort = req.body.wantSort;
   let relationIn = [{}];
   let relationOut = [{}];
 
@@ -334,7 +335,12 @@ app.post("/search/relation/:word", function(req, res) {
       else{
         console.log(word, 'found in wordCache');
 
-        console.log("searchResult : " + searchResult.relationsIn.length);
+        if(sort){
+          RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
+        }
+        console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
+        console.log("rIn : " + rIn);
+
         for(let t in types){
           if(rIn){
             for(let relation in searchResult.relationsIn){
@@ -370,10 +376,10 @@ app.post("/search/relation/:word", function(req, res) {
           relationOut : relationOut,
         };
 
-        console.log("Relation entrante (1) : \n" + relations.relationIn);
+        console.log("Relation entrante (1) : \n" + JSON.stringify(relations.relationIn));
         console.log("Relation entrante (2) : \n" + relationIn);
 
-        console.log("Relation sortante (1): \n" + relations.relationOut);
+        console.log("Relation sortante (1): \n" + JSON.stringify(relations.relationOut));
         console.log("Relation sortante (2): \n" + relationOut);
 
         sendRes(res, JSON.stringify(relations));
