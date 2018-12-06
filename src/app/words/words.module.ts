@@ -20,6 +20,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {RelationsPrintComponent } from './relations-print/relations-print.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 const routes: Routes = [
@@ -48,10 +51,11 @@ const routes: Routes = [
     CommonModule, HttpClientModule, RouterModule.forChild(routes),
     FormsModule, ReactiveFormsModule, MatButtonModule, MatAutocompleteModule,
     MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatChipsModule, MatIconModule,
-    MatDividerModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatTooltipModule, MatRadioModule, MatSlideToggleModule
+    MatDividerModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatTooltipModule,
+    MatRadioModule, MatSlideToggleModule, MatTableModule, MatPaginatorModule
   ],
   exports: [WordsComponent, WordsSearchComponent, RelationsSearchComponent, RouterModule],
-  declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent],
+  declarations: [WordsComponent, WordsSearchComponent, RelationsSearchComponent, RelationsPrintComponent],
   providers: []
 })
 export class WordsModule {}

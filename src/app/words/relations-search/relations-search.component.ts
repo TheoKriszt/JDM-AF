@@ -68,4 +68,5 @@ export class RelationsSearchComponent implements OnInit {
     this.step--;
     console.log('step : ' + this.step);
   }
+
 }
