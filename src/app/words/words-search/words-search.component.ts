@@ -15,6 +15,7 @@ export class WordsSearchComponent implements OnInit {
   rIn: boolean;
   rOut: boolean;
   private sortChecked: boolean;
+  imageUrl = '';
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
@@ -25,14 +26,14 @@ export class WordsSearchComponent implements OnInit {
 
       this.searchedWord = routeParams.word;
 
+      this.imageUrl = this.wordService.getImageFor(this.searchedWord);
+
       this.route.queryParams
         .subscribe( params => {
           this.searchedRelationsTypes = params.types;
           this.rIn = params.rIn;
           this.rOut = params.rOut;
           this.sortChecked = params.sortChecked;
-
-          //const sortMode = (params.sortChecked === 'true') ? 1 : 0;
 
           this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
             // this.words = undefined;

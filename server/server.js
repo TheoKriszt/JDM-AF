@@ -2,6 +2,9 @@ console.time("serverStart");
 
 const express = require('express');
 const app = express();
+const GoogleImages = require('google-images');
+const imageClient = new GoogleImages('015223342477191193629:yv0pl5-k9zy', 'AIzaSyBq3WnEdRVaUVXv4fKo0i6ncvz-tBjUg-0');
+
 app.use(express.json());
 
 const iconv  = require('iconv-lite');
@@ -382,6 +385,43 @@ app.get("/relations/relationTypes", function(req, res){
   }
   else
     sendRes(res, JSON.stringify([]))
+});
+
+app.get("/imagesearch/:word",function(req,res){
+  let word = req.params.word;
+
+  console.log('/imagesearch/', word);
+  // var url = getFirstImageURL(word);
+  // console.log('URL : ', url);
+
+  imageClient.search(word).then(images => {
+    console.log('Image : ' + JSON.stringify(images[0]));
+
+
+    const randomIndex = Math.floor(Math.random() * Math.floor(10));
+    const imgUrl = images[randomIndex].url;
+    // const imgTxt = '<img src=""'+ imgUrl +'">';
+
+      // sendRes(res, JSON.stringify({'url' : imgUrl}));
+      // res.sendFile(imgUrl)
+    res.redirect(imgUrl);
+  }).catch(error => {
+    console.log(error);
+  });
+
+
+
+
+
+
+  // if(content === null)
+  //   console.log(word, 'not found in data');
+  // else
+  // {
+  //   console.log(word, 'found in data');
+  //
+  //   sendRes(res, JSON.stringify(content));
+  // }
 });
 
 console.timeEnd("serverStart");

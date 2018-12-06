@@ -55,6 +55,10 @@ export class WordsService {
     }
 
   }
+
+  getImageFor(searchedWord: string) {
+    return this.baseUrl + '/imagesearch/' + searchedWord;
+  }
 }
 
 export interface Word {

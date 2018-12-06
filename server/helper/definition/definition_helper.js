@@ -5,6 +5,8 @@ const clone = require('clone');
   module.exports.extractDefinition = function(definitionTag) {
     let result = [];
 
+    if (!definitionTag) return result;
+
     let splitedDefinitions = definitionTag.toString().split(/(\d+\.)/);
 
     for(let definitionIndex = 2; definitionIndex < splitedDefinitions.length; definitionIndex += 2)
