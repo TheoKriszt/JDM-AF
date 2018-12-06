@@ -10,11 +10,11 @@ import {Word, WordsService} from '../words.service';
 export class WordsSearchComponent implements OnInit {
   loading = true;
   searchedWord = '';
-  words: any = {};
+  words: any = {formatedWord : '', definitions : []};
   searchedRelationsTypes: string[] = [];
   rIn: boolean;
   rOut: boolean;
-  sortChecked: boolean;
+  private sortChecked: boolean;
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) { }
 
@@ -32,11 +32,11 @@ export class WordsSearchComponent implements OnInit {
           this.rOut = params.rOut;
           this.sortChecked = params.sortChecked;
 
-          this.wordService.searchWord(this.searchedWord).subscribe((result: Word) => {
-            this.words = undefined;
+          const sortMode = (params.sortChecked === 'true') ? 1 : 0;
+
+          this.wordService.searchWord(this.searchedWord, sortMode).subscribe((result: Word) => {
+            // this.words = undefined;
             this.words  = result;
-            console.log(this.words.definitions);
-            // console.log('Résultat de la recherche de mot: ', this.words);
             this.loading = false;
           });
         } );

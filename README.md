@@ -54,10 +54,3 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
 ### Divers
   + Trouver une appellation ou un calembour pour remplacer "f*ck" de JDM-af
-
-
-
-
-
-
-  

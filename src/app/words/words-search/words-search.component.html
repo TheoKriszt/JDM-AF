@@ -10,14 +10,17 @@
 
       <mat-card class="card">
         <mat-card-header>
+          <!--<img mat-card-avatar class="header-image" src="https://loremflickr.com/320/240/chaton">-->
           <img mat-card-avatar class="header-image" src="https://loremflickr.com/320/240/{{words.formatedWord}}">
-          <mat-card-title class="title"> {{words.formatedWord}} </mat-card-title>
-          <mat-card-subtitle>{{words.word.type}}</mat-card-subtitle>
+          <!--<mat-card-title class="title">Some title</mat-card-title>-->
+          <mat-card-title class="title"> {{words.formatedWord}}</mat-card-title>
+          <!--<mat-card-subtitle>{{words.word.type}}</mat-card-subtitle>--> <!-- words.word a été viré  -->
         </mat-card-header>
+        <!--<img mat-card-image src="https://loremflickr.com/600/300/chaton">-->
         <img mat-card-image src="https://loremflickr.com/600/300/{{words.formatedWord}}">
         <mat-card-content>
           <h3>Définitions : </h3>
-          <p *ngIf="words.definitions.length === 0"> Aucune définition n'a été trouvé.. </p>
+          <p *ngIf="!words.definitions || words.definitions.length === 0"> Aucune définition n'a été trouvée. </p>
           <span *ngFor="let definition of words.definitions">{{definition.text}}<br/></span>
         </mat-card-content>
         <mat-divider></mat-divider>
