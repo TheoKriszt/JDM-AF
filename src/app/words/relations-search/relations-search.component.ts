@@ -10,8 +10,6 @@ import {WordsService} from '../words.service';
 })
 export class RelationsSearchComponent implements OnInit {
 
-  // Le décorateur Input injecte le parametre dans l'attribut à la construction du composant
-  // ex ;<app-relations-search [searchedWord] = word ></app-relations-search>
   @Input()
     params: any;
   searchedWord: string;
@@ -23,7 +21,6 @@ export class RelationsSearchComponent implements OnInit {
     relationOut : [],
     relationIn : []
   };
-  // private loading: boolean;
 
   step = 0;
 
@@ -38,18 +35,14 @@ export class RelationsSearchComponent implements OnInit {
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
     this.sortChecked = this.params.sortChecked;
 
-    // console.log('from relations ::: ', 'rIn', this.rIn, 'rOut', this.rOut);
 
     if (this.searchedWord) {
-      // console.log('Recherche des relations liées au terme "' , this.searchedWord, '"');
       this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut).subscribe(result => {
         this.relations = result;
 
         console.log('Relations entrante : \n', this.relations.relationIn);
         console.log('Relations sortante : \n', this.relations.relationOut);
 
-        this.wordService.sortByWeight(this.relations);
-        // this.loading = false;
       });
     }
   }

@@ -21,7 +21,7 @@ export class WordsComponent implements OnInit {
   loading = false;
   // model: any;
   nameControl = new FormControl();
-  options: string[] = [/*'Martin', 'Mary', 'Shelley', 'Igor'*/];
+  options: string[] = [];
   filteredOptions: Observable<string[]>;
   checked = true;
 
@@ -35,8 +35,6 @@ export class WordsComponent implements OnInit {
   relations: string[] = [];
   allRelations: string[] = [];
   filteredRelations: string[];
-
-  // = this.allRelations;
 
   rIn = true;
   rOut = true;
@@ -102,19 +100,6 @@ export class WordsComponent implements OnInit {
   }
 
   add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-
-    // Add our relation
-    // if ((value || '').trim()) {
-    //   this.relations.push(value.trim());
-    // }
-
-    // Reset the input value
-    // if (input) {
-    //   input.value = '';
-    // }
-
     this.relationCtrl.setValue(null);
   }
 
@@ -128,9 +113,7 @@ export class WordsComponent implements OnInit {
 
   selected(event: MatAutocompleteSelectedEvent): void {
     const value: string = event.option.viewValue;
-    // if ( this.allRelations.indexOf(value) >= 0 ) { // N'ajouter que les résultats proposés
-    //
-    // }
+
     this.relations.push(value);
     this.allRelations.splice(this.allRelations.indexOf(value), 1);
 
@@ -139,18 +122,6 @@ export class WordsComponent implements OnInit {
     this.relationCtrl.setValue(null);
   }
 
-  // private _filter(value: string): string[] {
-  //   const filterValue = value.toLowerCase();
-  //
-  //   // console.log('Relation selectionnée : ', value);
-  //   // console.log('Selection actuelle: ', this.relations);
-  //
-  //   const filtered = this.allRelations.filter(relation => relation.toLowerCase().indexOf(filterValue) === 0);
-  //   // this.allRelations.splice(this.allRelations.indexOf(filterValue), 1);
-  //
-  //   // console.log('retour de relations : ', filtered);
-  //
-  //   return filtered;
-  // }
+
 
 }
