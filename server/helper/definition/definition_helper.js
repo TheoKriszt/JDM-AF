@@ -18,13 +18,28 @@ const clone = require('clone');
 
       let splitedDefinitionExamples = splitedDefinitions[definitionIndex].toString().split('\n');
 
-      definition.text = splitedDefinitionExamples[0].trim();
+      let clearedString = splitedDefinitionExamples[0].trim();
 
-      for(let exampleIndex = 1; exampleIndex < splitedDefinitionExamples.length; exampleIndex++) {
-        let example = splitedDefinitionExamples[exampleIndex].trim();
+      let endIndex = clearedString.indexOf('<br />');
 
-        if(example.length > 0)
-          definition.examples.push(example);
+      if(endIndex === -1)
+        endIndex = clearedString.length;
+
+      definition.text = clearedString.substring(0, endIndex).trim();
+
+      for(let exampleIndex = 1; exampleIndex < splitedDefinitionExamples.length; exampleIndex++)
+      {
+        clearedString = splitedDefinitionExamples[exampleIndex].trim();
+
+        endIndex = clearedString.indexOf('<br />');
+
+        if(endIndex === -1)
+          endIndex = clearedString.length;
+
+        let example = clearedString.substring(0, endIndex);
+
+        if(example.length > 0 && example !== '</def>')
+          definition.examples.push(example.trim());
       }
 
       result.push(clone(definition));
