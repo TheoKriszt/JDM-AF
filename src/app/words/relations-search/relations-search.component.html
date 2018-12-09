@@ -1,60 +1,64 @@
 <div class="container">
+    <div *ngIf="loading != true">
+      <h4 *ngIf="!(relations.length || relations.relationOut.length)"> La recherche n'a retourné aucune relation </h4>
 
-  <h4 *ngIf="!(relations.length || relations.relationOut.length)"> La recherche n'a retourné aucune relation </h4>
+      <div class="row" *ngIf="(relations.relationIn.length && relations.relationOut.length)">
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel *ngIf="rIn">
+            <mat-expansion-panel-header>
+              Relations entrante :
+            </mat-expansion-panel-header>
 
-  <div class="row" *ngIf="(relations.relationIn.length && relations.relationOut.length)">
-    <mat-accordion class="example-headers-align">
-      <mat-expansion-panel *ngIf="rIn">
-        <mat-expansion-panel-header>
-          Relations entrante :
-        </mat-expansion-panel-header>
-
-        <mat-expansion-panel *ngFor="let relationIn of relations.relationIn; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{relationIn.relationType}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+            <mat-expansion-panel *ngFor="let relationIn of relations.relationIn; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{relationIn.relationType}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
 
 
-          <app-relations-print [relations]="relationIn.values"></app-relations-print>
-          <!--
-          <p >
-            <strong *ngFor="let value of relationIn.values"> {{value.text}} , <strong color ="red">{{value.weight}}</strong> </strong>
-          </p>
-          -->
+              <app-relations-print [relations]="relationIn.values"></app-relations-print>
+              <!--
+              <p >
+                <strong *ngFor="let value of relationIn.values"> {{value.text}} , <strong color ="red">{{value.weight}}</strong> </strong>
+              </p>
+              -->
 
-          <mat-action-row>
-            <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button *ngIf="i != relations.relationIn.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      </mat-expansion-panel>
+              <mat-action-row>
+                <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
+                <button *ngIf="i != relations.relationIn.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          </mat-expansion-panel>
 
-      <mat-expansion-panel *ngIf="rOut">
-        <mat-expansion-panel-header>
-          Relations sortante :
-        </mat-expansion-panel-header>
+          <mat-expansion-panel *ngIf="rOut">
+            <mat-expansion-panel-header>
+              Relations sortante :
+            </mat-expansion-panel-header>
 
-        <mat-expansion-panel *ngFor="let relationOut of relations.relationOut; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{relationOut.relationType}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+            <mat-expansion-panel *ngFor="let relationOut of relations.relationOut; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{relationOut.relationType}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
 
-          <app-relations-print [relations]="relationOut.values"></app-relations-print>
-          <!--
-          <p *ngFor="let value of relationOut.values"> {{value.text}} <strong color ="red">{{value.weight}}</strong></p>
-          -->
+              <app-relations-print [relations]="relationOut.values"></app-relations-print>
+              <!--
+              <p *ngFor="let value of relationOut.values"> {{value.text}} <strong color ="red">{{value.weight}}</strong></p>
+              -->
 
-          <mat-action-row>
-            <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button *ngIf="i != relations.relationOut.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-        </mat-expansion-panel>
+              <mat-action-row>
+                <button *ngIf="i > 0" mat-button color="warn" (click)="prevStep()">Previous</button>
+                <button *ngIf="i != relations.relationOut.length - 1" mat-button color="primary" (click)="nextStep()">Next</button>
+              </mat-action-row>
+            </mat-expansion-panel>
 
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div *ngIf="loading == true">
+      <mat-spinner  color="warn"></mat-spinner>
+    </div>
 </div>

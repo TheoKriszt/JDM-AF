@@ -23,12 +23,13 @@ export class RelationsSearchComponent implements OnInit {
   };
 
   step = 0;
+  loading: boolean;
 
   constructor(private route: ActivatedRoute, private wordService: WordsService) {
   }
 
   ngOnInit() {
-    // this.loading = true;
+    this.loading = true;
     this.searchedWord = this.params.searchedWord;
     this.rIn = this.params.rIn;
     this.rOut = this.params.rOut;
@@ -40,9 +41,12 @@ export class RelationsSearchComponent implements OnInit {
       this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut, this.sortChecked).subscribe(result => {
         this.relations = result;
 
-        console.log('Relations entrante : \n', this.relations.relationIn);
-        console.log('Relations sortante : \n', this.relations.relationOut);
+        // delete this.relations.relationIn[0];
+        // delete this.relations.relationOut[0];
 
+        console.log('Relations entrante : \n', this.relations.relationIn[1]);
+        console.log('Relations sortante : \n', this.relations.relationOut[1]);
+        this.loading = false;
       });
     }
   }

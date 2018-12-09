@@ -241,16 +241,20 @@ app.post("/search/relation/:word", function(req, res) {
           }
         }
 
+
+        relationIn.splice(0,1);
+        relationOut.splice(0,1);
+
         relations = {
           relationIn : relationIn,
           relationOut : relationOut,
         };
 
         console.log("Relation entrante (1) : \n" + JSON.stringify(relations.relationIn));
-        console.log("Relation entrante (2) : \n" + relationIn);
+        console.log("Relation entrante (2) : \n" + JSON.stringify(relationIn));
 
         console.log("Relation sortante (1): \n" + JSON.stringify(relations.relationOut));
-        console.log("Relation sortante (2): \n" + relationOut);
+        console.log("Relation sortante (2): \n" + JSON.stringify(relationOut));
 
         sendRes(res, JSON.stringify(relations));
       }

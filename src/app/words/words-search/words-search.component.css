@@ -10,6 +10,8 @@
   max-width: 80%;
 }
 
+mat-spinner.small-spinner svg { width: 40px !important; height: 40px !important; }
+
 .header-image {
   background-size: cover;
 }
