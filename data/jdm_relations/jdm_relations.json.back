@@ -1,6 +1,10 @@
 {
   "types": [
     {
+      "id": "-1",
+      "name": "Toutes"
+    },
+    {
       "id": "0",
       "name": "r_associated"
     },

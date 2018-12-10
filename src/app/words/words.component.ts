@@ -73,9 +73,7 @@ export class WordsComponent implements OnInit {
     });
 
     this.wordService.getRelationsTypes().subscribe( (data: RelationTypes) => {
-
       for (let i = 0, size =  data.types.length; i < size; i++) {
-
         this.allRelations.push(data.types[i].name);
       }
     });

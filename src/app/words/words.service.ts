@@ -47,10 +47,8 @@ export class WordsService {
 
     if (this.relationsTypes !== undefined) {
       return this.relationsTypes;
-      // console.log('J\'passe la ');
     } else {
       this.relationsTypes = this.http.get<RelationTypes>(uri);
-      // console.log('j\'passe ici');
       return this.relationsTypes;
     }
 

@@ -194,7 +194,19 @@ app.post("/search/relation/:word", function(req, res) {
 
   console.log('/search/relation/' + word);
 
-  console.log(types);
+  if (types.indexOf('Toutes') !== -1){
+    // console.log('devrait ajouter toutes les rels');
+    types = [];
+    for (var relType of JDM_Relations.types){
+      if (relType.id !== "-1"){
+        types.push(relType.name);
+        // console.log('\t ajout du type ' + JSON.stringify(relType.name))
+      }
+    }
+    
+  }
+
+  // console.log(types);
 
   wordCache.get(word, function(err, searchResult)
   {
@@ -380,9 +392,16 @@ app.get("/autocomplete/relations/:searchedRelation",function(req,res)
 //Return All types of relations.
 app.get("/relations/relationTypes", function(req, res){
 
+  console.log('GET /relations/relationTypes');
+  // let data = ['toutes'];
+  // for (relType of JDM_Relations){
+  //   data.push(relType);
+  //   console.log('adding ' + JSON.stringify(relType));
+  // }
   let data  = JDM_Relations;
+  
   // console.log("data : " + data.length);
-  //console.log(data);
+  // console.log(JSON.stringify(data.types));
 
   if(data !== undefined && data !== null) {
     sendRes(res, JSON.stringify(data));
