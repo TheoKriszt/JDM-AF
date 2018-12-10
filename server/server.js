@@ -53,8 +53,11 @@ app.all("/*", function(req, res, next)
 // Search by word
 //sort = 0, weight
 //sort = 1, french-order
-app.get("/search/word/:word",function(req,res) {
+app.get("/search/word/:word",function(req,res)
+{
   let word = req.params.word;
+
+  console.log('/search/word/' + word);
 
   let minimalSearchResult = {
     'formatedWord': '',
@@ -146,9 +149,9 @@ app.get("/search/word/:word",function(req,res) {
 // Search an word, with his id
 app.get("/search/word/id/:wordId",function(req,res)
 {
-  let wordId = req.params.wordId;
-
   console.log('/search/word/id/', wordId);
+
+  let wordId = req.params.wordId;
 
   idWordCache.get(wordId, function(error, word)
   {
@@ -191,6 +194,8 @@ app.post("/search/relation/:word", function(req, res) {
   let sort = req.body.wantSort;
   let relationIn = [{}];
   let relationOut = [{}];
+
+  console.log('/search/relation/' + word);
 
   console.log(types);
 
