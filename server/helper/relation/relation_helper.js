@@ -100,7 +100,8 @@ const clone = require('clone');
 
       for(let relationTypeIndex = 0; relationTypeIndex < relationsType.length; relationTypeIndex++)
       {
-        if (relations[relationIndex].type === relationsType[relationTypeIndex].id) {
+        if (relations[relationIndex].type === relationsType[relationTypeIndex].id)
+        {
           type = relationsType[relationTypeIndex].name;
           break;
         }
@@ -120,8 +121,7 @@ const clone = require('clone');
             break;
           }
         }
-        else
-          {
+        else {
           if (relations[relationIndex].node1 === nodes[nodeIndex].id)
           {
             if(nodes[nodeIndex].formatedName !== undefined)

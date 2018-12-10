@@ -35,12 +35,15 @@
 
       parserIndex += 2;
 
-      while(tags[nodeIndex].charAt(parserIndex) !== '\'')
+      while(
+        tags[nodeIndex].charAt(parserIndex) !== ';')
       {
         name += tags[nodeIndex].charAt(parserIndex);
 
         parserIndex++;
       }
+
+      name = name.substring(0, name.length - 1);
 
       parserIndex += 2;
 

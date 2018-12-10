@@ -217,7 +217,7 @@ app.post("/search/relation/:word", function(req, res) {
       else{
         console.log(word, 'found in wordCache');
 
-        if(sort){
+        if(m){
           RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
         }
         console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));

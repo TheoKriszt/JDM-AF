@@ -7,7 +7,8 @@ const RelationTypeHelper = require('./relation/relation_type_helper');
 const RelationHelper = require('./relation/relation_helper');
 
 (function() {
-  module.exports.extractSearchResult = function(tags) {
+  module.exports.extractSearchResult = function(tags)
+  {
     let tagDefinitions = tags[1];
 
     let definitions = clone(DefinitionHelper.extractDefinition(tagDefinitions));
