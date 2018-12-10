@@ -8,7 +8,6 @@ const RelationHelper = require('./relation/relation_helper');
 
 (function() {
   module.exports.extractSearchResult = function(tags) {
-
     let tagDefinitions = tags[1];
 
     let definitions = clone(DefinitionHelper.extractDefinition(tagDefinitions));
@@ -41,7 +40,10 @@ const RelationHelper = require('./relation/relation_helper');
       'relationsIn' : [],
     };
 
-    searchResult.id = nodes[0].id;
+    if(nodes.length > 0)
+      searchResult.id = nodes[0].id;
+    else
+      searchResult.id = -1;
 
     searchResult.definitions = definitions;
 

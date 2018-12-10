@@ -56,7 +56,13 @@ app.all("/*", function(req, res, next)
 app.get("/search/word/:word",function(req,res) {
   let word = req.params.word;
 
-  wordCache.get(word, function (error, searchResult) {
+  let minimalSearchResult = {
+    'formatedWord': '',
+    'definitions': [],
+  };
+
+  wordCache.get(word, function (error, searchResult)
+  {
     if (!error) {
       if (searchResult === undefined) {
         console.log(word, 'not found in cache');
@@ -70,11 +76,6 @@ app.get("/search/word/:word",function(req,res) {
 
           idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
 
-          let minimalSearchResult = {
-            'formatedWord': '',
-            'definitions': [],
-          };
-
           minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
           minimalSearchResult.definitions = clone(searchResult.definitions);
 
@@ -83,10 +84,14 @@ app.get("/search/word/:word",function(req,res) {
         else {
           console.log(word, 'not found in data');
 
-          let encodedWord = iconv.encode(word, 'win1252');
-          encodedWord = encodeURIComponent(encodedWord);
+          //let encodedWord = iconv.encode(word, 'win1252');
+          //let encodedWord = encodeURIComponent(encodedWord);
+
+          let encodedWord = word;
 
           let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
+
+          console.log(formatedUrl);
 
           http.get(formatedUrl, function (httpResult) {
             let data = [];
@@ -94,7 +99,8 @@ app.get("/search/word/:word",function(req,res) {
               data.push(chunk);
             });
 
-            httpResult.on('end', function () {
+            httpResult.on('end', function ()
+            {
               let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
               let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
@@ -104,20 +110,16 @@ app.get("/search/word/:word",function(req,res) {
               let tags = tagCode.toString().split('//');
 
               searchResult = RezoSearchResultHelper.extractSearchResult(tags);
+
               searchResult.formatedWord = word;
+
+              RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
 
               wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
 
               idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
 
-              RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
-
               FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
-
-              let minimalSearchResult = {
-                'formatedWord': '',
-                'definitions': [],
-              };
 
               minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
               minimalSearchResult.definitions = clone(searchResult.definitions);
@@ -131,11 +133,6 @@ app.get("/search/word/:word",function(req,res) {
         }
       } else {
         console.log(word, 'found in wordCache');
-
-        let minimalSearchResult = {
-          'formatedWord': '',
-          'definitions': [],
-        };
 
         minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
         minimalSearchResult.definitions = clone(searchResult.definitions);
