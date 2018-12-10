@@ -2,10 +2,10 @@ console.time("serverStart");
 
 const express = require('express');
 const app = express();
+app.use(express.json());
+
 const GoogleImages = require('google-images');
 const imageClient = new GoogleImages('015223342477191193629:yv0pl5-k9zy', 'AIzaSyBq3WnEdRVaUVXv4fKo0i6ncvz-tBjUg-0');
-
-app.use(express.json());
 
 const iconv  = require('iconv-lite');
 
@@ -50,9 +50,6 @@ app.all("/*", function(req, res, next)
   next();
 });
 
-// Search by word
-//sort = 0, weight
-//sort = 1, french-order
 app.get("/search/word/:word",function(req,res)
 {
   let word = req.params.word;
