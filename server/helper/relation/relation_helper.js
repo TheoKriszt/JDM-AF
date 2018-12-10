@@ -5,6 +5,8 @@ const clone = require('clone');
   {
     let relations = [];
 
+    if (!tagRelations) return relations;
+
     let clearedTag = tagRelations.substring(tagRelations.indexOf('\n\n') + 2, tagRelations.length);
 
     let tags = clearedTag.split('\n');

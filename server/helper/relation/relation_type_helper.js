@@ -2,6 +2,8 @@
   module.exports.extractRelationsType = function(tagrelationsTypes) {
     let relationsTypes = [];
 
+    if (!tagrelationsTypes) return relationsTypes;
+
     let clearedTag = tagrelationsTypes.substring(tagrelationsTypes.indexOf('\n\n') + 2, tagrelationsTypes.length);
 
     let tags = clearedTag.split('\n');

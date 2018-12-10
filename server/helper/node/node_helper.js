@@ -2,6 +2,8 @@
   module.exports.extractNodes = function(tagNodes) {
     let nodes = [];
 
+    if (!tagNodes) return nodes;
+
     let clearedTag = tagNodes.substring(tagNodes.indexOf('\n\n') + 2, tagNodes.length);
 
     let tags = clearedTag.split('\n');

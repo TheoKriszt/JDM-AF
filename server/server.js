@@ -84,6 +84,7 @@ app.get("/search/word/:word",function(req,res) {
           console.log(word, 'not found in data');
 
           let encodedWord = iconv.encode(word, 'win1252');
+          encodedWord = encodeURIComponent(encodedWord);
 
           let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
 
