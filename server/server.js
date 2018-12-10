@@ -194,7 +194,7 @@ app.post("/search/relation/:word", function(req, res) {
 
   console.log('/search/relation/' + word);
 
-  if (types.indexOf('Toutes') !== -1){
+  if (types && types.indexOf('Toutes') !== -1){
     // console.log('devrait ajouter toutes les rels');
     types = [];
     for (var relType of JDM_Relations.types){
@@ -217,7 +217,8 @@ app.post("/search/relation/:word", function(req, res) {
       else{
         console.log(word, 'found in wordCache');
 
-        if(m){
+        console.log('Sort mode : ' , JSON.stringify(sort));
+        if(sort === "true"){
           RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
         }
         console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
