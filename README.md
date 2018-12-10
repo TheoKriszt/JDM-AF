@@ -13,44 +13,41 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
       + [x] (ou juste trouver un package NodeJS qui le fait)
   
   + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?)
-  + Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
-    + Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
+  + [ ] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
+    + [ ] Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
   + [x] Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
   
      
   + Scripts de batch 
-    + Màj du cache (entrées expirées, Lafourcade vide ~= 1 mois de TTL)
-    + DL des mots les plus fréquents du français
-    + [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
+    + [ ] Màj du cache (entrées expirées, Lafourcade vide ~= 1 mois de TTL)
+    + [ ] DL des mots les plus fréquents du français
+    + [ ] [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + [x] [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
-    + Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
+    + [ ] Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
   + [x] [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
   + [x] Decomposer les définitions (titre + exemple), parsage sur $nombre.
   
-  + Trier par catégorie les relations (in/out)
+  + [x] Trier par catégorie les relations (in/out)
   
 ### Composants angular : 
   + Listes des résultats (retirer l'ambiguité)
     + [x]  [Autocomplete chips](https://material.angular.io/components/chips/overview) pour filtrer les types de relations
-      + [opt.] donner un [Tooltip](https://material.angular.io/components/tooltip/overview) pour expliquer le rôle de la relation
-        + Afficher la signification de la relation après son nom
+      + [ ] [opt.] donner un [Tooltip](https://material.angular.io/components/tooltip/overview) pour expliquer le rôle de la relation
+        + [ ] Afficher la signification de la relation après son nom
       + [x] Retirer une chip quand elle est déjà sélectionnée (pas 2 fois le même choix)
-      + Ajouter un choix **Toutes les relations** qui désactive les autres choix
-    + Activer / Désactiver indépendamment relations entrantes et sortantes via [bouton toggle](https://material.angular.io/components/button-toggle/overview)
+      + [x] Ajouter un choix **Toutes les relations** qui désactive les autres choix
+    + [x] Activer / Désactiver indépendamment relations entrantes et sortantes via [bouton toggle](https://material.angular.io/components/button-toggle/overview)
     + [opt.] Afficher les options de filtre avancées (s'il y en a), planquées dans un [accordéon](https://material.angular.io/components/expansion/examples)
      
-  + Updates du composant recherche (recherche avec paramètres spéciaux : filtre, tri et type relation)
+  + [ ] Updates du composant recherche (recherche avec paramètres spéciaux : filtre, tri et type relation)
   
-  + Affichage d'un resultat.
-    + Afficher les raffinements possibles s'il y en a
-    + Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
-    + Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
-    + Passer directement le mot (l'objet) de words-search à relations-search, pas seulement le mot (string)
+  + [ ] Affichage d'un resultat.
+    + [ ] Afficher les raffinements possibles s'il y en a
+    + [ ] Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
+    + [ ] Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
+    + [x] Passer directement le mot (l'objet) de words-search à relations-search, pas seulement le mot (string)
     
-    
-  
-  
 ### Divers
-  + Trouver une appellation ou un calembour pour remplacer "f*ck" de JDM-af
+  + [ ] Trouver une appellation ou un calembour pour remplacer "f*ck" de JDM-af
