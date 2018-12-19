@@ -7,7 +7,7 @@ import {Relation} from '../words.service';
   templateUrl: './relations-print.component.html',
   styleUrls: ['./relations-print.component.scss']
 })
-export class RelationsPrintComponent implements OnInit, OnChanges {
+export class RelationsPrintComponent implements OnInit {
 
   @Input()
   relations: MatTableDataSource<Relation>;
@@ -20,21 +20,19 @@ export class RelationsPrintComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.relations.paginator = this.paginator;
+    //console.log('Page size : ' + this.relations.paginator.pageSize);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.relations.sortingDataAccessor = (item, property) => {
-      switch (property) {
-        case('nom') :
-          console.log(item.text.toLocaleLowerCase());
-          return item.text.toLocaleLowerCase();
-        default: return item[property];
-      }
-    };
-
-    this.relations.sort = this.sort;
-    this.relations.paginator = this.paginator;
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.relations.sortingDataAccessor = (item, property) => {
+  //     switch (property) {
+  //       case('nom') :
+  //         console.log(item.text.toLocaleLowerCase());
+  //         return item.text.toLocaleLowerCase();
+  //       default: return item[property];
+  //     }
+  //   };
+  // }
 
 
 }
