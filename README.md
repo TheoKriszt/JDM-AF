@@ -13,7 +13,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
       + [x] (ou juste trouver un package NodeJS qui le fait)
   
   + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?)
-  + [ ] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } )
+  + ~~ [ ] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } ) ~~
     + [ ] Ajouter une entrée _raffinements_ avec les noms courts et IDs des raffinements disponibles ?
   + [x] Charger les tips des relations via [detail relations](http://www.jeuxdemots.org/jdm-about-detail-relations.php)
   
@@ -30,6 +30,10 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + [x] Decomposer les définitions (titre + exemple), parsage sur $nombre.
   
   + [x] Trier par catégorie les relations (in/out)
+  
+  + [ ] MAJ automatique des fichiers dans le cache (disque dur)
+  
+  + [ ] Ajouter les mots recherchés dans le Patricia Tree (Et dans les entries)
   
 ### Composants angular : 
   + Listes des résultats (retirer l'ambiguité)
