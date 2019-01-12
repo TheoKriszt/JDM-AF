@@ -10,9 +10,9 @@ const http = require('http');
 const RezoSearchResultHelper = require('./helper/search_result_helper');
 const FileHelper = require('./file/file_helper');
 
-const TIME_WEEK = 604800;
+const EXPIRATION_TIME = 604800;
 
-const DAYS = TIME_WEEK / 86400;
+const DAYS = EXPIRATION_TIME / 86400;
 
 function run()
 {

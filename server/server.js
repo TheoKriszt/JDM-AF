@@ -22,7 +22,7 @@ const FileHelper = require('./file/file_helper');
 
 const EntriesHelper = require('./entries/entries_helper');
 
-const TIME_WEEK = 604800;
+const EXPIRATION_TIME = 604800;
 
 const clone = require('clone');
 
@@ -74,9 +74,9 @@ app.get("/search/word/:word",function(req,res)
         if (searchResult !== null) {
           console.log(word, 'found in data');
 
-          wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+          wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
 
-          idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
+          idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
 
           minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
           minimalSearchResult.definitions = clone(searchResult.definitions);
@@ -127,9 +127,9 @@ app.get("/search/word/:word",function(req,res)
 
               RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
 
-              wordCache.set(searchResult.formatedWord, searchResult, TIME_WEEK);
+              wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
 
-              idWordCache.set(searchResult.id, searchResult.formatedWord, TIME_WEEK);
+              idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
 
               FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
 
