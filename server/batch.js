@@ -10,9 +10,7 @@ const http = require('http');
 const RezoSearchResultHelper = require('./helper/search_result_helper');
 const FileHelper = require('./file/file_helper');
 
-const EXPIRATION_TIME = 604800;
-
-const DAYS = EXPIRATION_TIME / 86400;
+const EXPIRATION_DAYS = 7;
 
 function run()
 {
@@ -32,7 +30,7 @@ function run()
       let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
       console.log('Difference : ' + daysDifference);
 
-      if(daysDifference > DAYS) {
+      if(daysDifference > EXPIRATION_DAYS) {
         let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + word + '&rel=';
 
         console.log(formatedUrl);
