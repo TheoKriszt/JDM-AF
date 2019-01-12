@@ -4,34 +4,11 @@ var fs = require('fs');
 
 const FileHelper = require('../file/file_helper');
 
-(function() {
-
-  module.exports.readJDMEntries = function()
+(function()
+{
+  module.exports.readEntries = function(fileName)
   {
-    let data = fs.readFileSync('./data/entries/jdm_entries/jdm_entries_light.txt').toString().split("\n");
-
-    let trie = new RadixTrie();
-
-    console.time("wordEntriesGeneration");
-
-    for(let lineIndex = 0; lineIndex < data.length; lineIndex++)
-    {
-      let separatorIndex = data[lineIndex].indexOf(';');
-
-      let word = data[lineIndex].substring(separatorIndex + 1, data[lineIndex].length - 1);
-
-      for(let caractereIndex = 1; caractereIndex < word.length; caractereIndex++)
-        trie.addWord(word.substring(0, caractereIndex), word);
-    }
-
-    console.timeEnd("wordEntriesGeneration");
-
-    return trie;
-  };
-
-  module.exports.readWikipediaEntries = function()
-  {
-    let words = FileHelper.fileToJSONObject('./data/entries/wikipedia_entries/wikipedia_entries.json');
+    let words = FileHelper.fileToJSONObject(fileName);
 
     let trie = new RadixTrie();
 

@@ -26,7 +26,9 @@ const TIME_WEEK = 604800;
 
 const clone = require('clone');
 
-let JDM_Entries = EntriesHelper.readWikipediaEntries(); //EntriesHelper.readJDMEntries();
+let JDM_Entries = EntriesHelper.readEntries('./data/entries/wikipedia_entries/wikipedia_entries.json');
+//let JDM_Entries = EntriesHelper.readEntries('./data/entries/jdm_entries/jdm_entries.json');
+
 let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json.back');
 let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
@@ -79,6 +81,8 @@ app.get("/search/word/:word",function(req,res)
           minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
           minimalSearchResult.definitions = clone(searchResult.definitions);
 
+          JDM_Entries.addWord(word, word);
+
           sendRes(res, JSON.stringify(minimalSearchResult));
         }
         else {
@@ -105,7 +109,15 @@ app.get("/search/word/:word",function(req,res)
 
               let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
-              let tagCode = encodedBody.substring(encodedBody.indexOf('<CODE>'), encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+              let tagCodeIndex = encodedBody.indexOf('<CODE>');
+
+              if(tagCodeIndex === -1)
+              {
+                sendRes(res, "Mot non trouvé");
+                return;
+              }
+
+              let tagCode = encodedBody.substring(tagCodeIndex, encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
               let tags = tagCode.toString().split('//');
 
@@ -124,6 +136,8 @@ app.get("/search/word/:word",function(req,res)
               minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
               minimalSearchResult.definitions = clone(searchResult.definitions);
 
+              JDM_Entries.addWord(word, word);
+
               sendRes(res, JSON.stringify(minimalSearchResult));
             })
 
@@ -136,6 +150,8 @@ app.get("/search/word/:word",function(req,res)
 
         minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
         minimalSearchResult.definitions = clone(searchResult.definitions);
+
+        JDM_Entries.addWord(word, word);
 
         sendRes(res, JSON.stringify(minimalSearchResult));
       }
@@ -347,10 +363,8 @@ app.get("/autocomplete/:searchedWord",function(req,res){
       if(data[index] !== undefined)
         entries.push(clone(data[index]['data']));
 
-
     SearchResultHelper.sortAutocomplete(entries, SearchResultHelper.compareAutocompleteFrenchOrder);
     console.log('apres tri : ', entries);
-
 
     sendRes(res, JSON.stringify(entries));
   }

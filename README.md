@@ -11,6 +11,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + Autocompletion (lecture du fichier, caractère joker (sufix))
     + [x] Implémenter un __Patricia Tree__ (Arbre radix) pour la recherche
       + [x] (ou juste trouver un package NodeJS qui le fait)
+      + [x] Entrées de JDM ou de Wikipedia
   
   + [x] fixe l'encodage ( retester pour le json, encodage  CP1252 ?)
   + ~~ [ ] Extraire à la volée les raffinements ( Orange = { Agrume | Télécom | couleur } ) ~~
@@ -31,9 +32,9 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
   + [x] Trier par catégorie les relations (in/out)
   
-  + [ ] MAJ automatique des fichiers dans le cache (disque dur)
+  + [x] MAJ "automatique" des fichiers dans le cache (disque dur) (batch.js)
   
-  + [ ] Ajouter les mots recherchés dans le Patricia Tree (Et dans les entries)
+  + [x] Ajouter les mots recherchés dans le Patricia Tree (Et dans les entries)
   
 ### Composants angular : 
   + Listes des résultats (retirer l'ambiguité)
