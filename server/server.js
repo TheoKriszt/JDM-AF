@@ -29,7 +29,7 @@ const clone = require('clone');
 let JDM_Entries = EntriesHelper.readEntries('./data/entries/wikipedia_entries/wikipedia_entries.json');
 //let JDM_Entries = EntriesHelper.readEntries('./data/entries/jdm_entries/jdm_entries.json');
 
-let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json.back');
+let JDM_Relations = FileHelper.fileToJSONObject('./data/jdm_relations/jdm_relations.json');
 let JDM_Relations_Entries = EntriesHelper.readRelationsEntry();
 
 const http = require('http');

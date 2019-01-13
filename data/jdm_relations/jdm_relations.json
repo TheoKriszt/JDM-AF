@@ -1,6 +1,11 @@
 {
   "types": [
     {
+      "id": "-1",
+      "name": "Tous type de relation",
+      "definition": "Attention, cela représente un très grand nombre de relations (le traitement peut être plus long)"
+    },
+    {
       "id": "0",
       "name": "r_associated",
       "definition": "Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?"

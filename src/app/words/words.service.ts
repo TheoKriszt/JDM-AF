@@ -51,7 +51,6 @@ export class WordsService {
       this.relationsTypes = this.http.get<RelationTypes>(uri);
       return this.relationsTypes;
     }
-
   }
 
   getImageFor(searchedWord: string) {

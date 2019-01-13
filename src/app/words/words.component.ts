@@ -3,7 +3,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {RelationTypes, WordsService} from './words.service';
+import {RelationTypes, Type, WordsService} from './words.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent, MatIconRegistry} from '@angular/material';
 import {MatAutocompleteSelectedEvent} from '@angular/material/typings/autocomplete';
@@ -32,9 +32,10 @@ export class WordsComponent implements OnInit {
   addOnBlur = false;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   relationCtrl = new FormControl();
-  relations: string[] = [];
-  allRelations: string[] = [];
-  filteredRelations: string[];
+  sendRelations: string[] = [];
+  relations: Type[] = [];
+  allRelations: Type[] = [];
+  filteredRelations: Type[];
 
   rIn = true;
   rOut = true;
@@ -47,7 +48,7 @@ export class WordsComponent implements OnInit {
     this.relationCtrl.valueChanges.subscribe(value => {
       if (value) {
         this.filteredRelations = this.allRelations.filter(term => {
-          return term.indexOf(value) >= 0;
+          return term.name.indexOf(value) >= 0;
         });
       } else {
         this.filteredRelations = this.allRelations;
@@ -74,7 +75,7 @@ export class WordsComponent implements OnInit {
 
     this.wordService.getRelationsTypes().subscribe( (data: RelationTypes) => {
       for (let i = 0, size =  data.types.length; i < size; i++) {
-        this.allRelations.push(data.types[i].name);
+        this.allRelations.push(data.types[i]);
       }
     });
 
@@ -86,7 +87,7 @@ export class WordsComponent implements OnInit {
 
     if (this.nameControl.value) {
       const params = {
-        types : this.relations,
+        types : this.sendRelations,
         rIn : this.rIn,
         rOut : this.rOut,
         sortChecked : this.checked
@@ -101,7 +102,7 @@ export class WordsComponent implements OnInit {
     this.relationCtrl.setValue(null);
   }
 
-  remove(relation: string): void {
+  remove(relation: Type): void {
     const index = this.relations.indexOf(relation);
     if (index >= 0) {
       this.relations.splice(index, 1);
@@ -110,12 +111,15 @@ export class WordsComponent implements OnInit {
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    const value: string = event.option.viewValue;
+    const value: Type = this.allRelations.filter(function(relation) {
+      return relation.name === event.option.viewValue;
+    })[0];
 
     this.relations.push(value);
+    this.sendRelations.push(value.name);
     this.allRelations.splice(this.allRelations.indexOf(value), 1);
 
-
+    console.log(value);
     this.relationInput.nativeElement.value = '';
     this.relationCtrl.setValue(null);
   }
