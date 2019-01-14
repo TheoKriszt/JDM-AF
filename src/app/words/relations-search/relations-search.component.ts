@@ -36,9 +36,24 @@ export class RelationsSearchComponent implements OnInit {
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
     this.sortChecked = this.params.sortChecked;
 
+    this.route.queryParams.subscribe(params => {
+      console.log('relations-search : params changed');
+      console.log(params);
+      this.searchWord();
+    });
 
+
+
+  }
+
+  searchWord() {
     if (this.searchedWord) {
-      this.wordService.getAllRelations(this.searchedWord, this.searchedRelationsTypes, this.rIn, this.rOut, this.sortChecked).subscribe(result => {
+      this.wordService.getAllRelations(
+        this.searchedWord,
+        this.searchedRelationsTypes,
+        this.rIn,
+        this.rOut,
+        this.sortChecked).subscribe(result => {
         this.relations = result;
 
         // delete this.relations.relationIn[0];

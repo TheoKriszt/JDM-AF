@@ -17,7 +17,12 @@ export class WordsSearchComponent implements OnInit {
   private sortChecked: boolean;
   imageUrl = '';
 
-  constructor(private route: ActivatedRoute, private wordService: WordsService) { }
+  constructor(private route: ActivatedRoute, private wordService: WordsService) {
+    route.queryParams.subscribe(params => {
+      console.log('word-search-component : params changed');
+      console.log(JSON.stringify(params));
+    });
+  }
 
   ngOnInit() {
 

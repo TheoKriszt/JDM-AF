@@ -234,12 +234,13 @@ app.post("/search/relation/:word", function(req, res) {
         console.log(word, 'found in wordCache');
 
         console.log('Sort mode : ' , JSON.stringify(sort));
+        console.log("rIn : " + rIn);
+        console.log("rOut : " + rOut);
         if(sort === "true"){
           RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
         }
         console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
-        console.log("rIn : " + rIn);
-        console.log("rOut : " + rOut);
+
 
         // On s'attend à un tableau
         if ( typeof types === 'string'){
