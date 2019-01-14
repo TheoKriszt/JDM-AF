@@ -210,10 +210,10 @@ app.post("/search/relation/:word", function(req, res) {
 
   console.log('/search/relation/' + word);
 
-  if (types && types.indexOf('Toutes') !== -1){
+  if (types && types.indexOf('r_') === -1){
     // console.log('devrait ajouter toutes les rels');
     types = [];
-    for (var relType of JDM_Relations.types){
+    for (let relType of JDM_Relations.types){
       if (relType.id !== "-1"){
         types.push(relType.name);
         // console.log('\t ajout du type ' + JSON.stringify(relType.name))
@@ -263,7 +263,7 @@ app.post("/search/relation/:word", function(req, res) {
                 if(searchAll || types[t]  === searchResult.relationsIn[relation].relationType){
 
                   // console.log("relation : " + searchResult.relationsIn[relation].relationType);
-                  console.log(searchResult.relationsIn[relation].values.length);
+                  // console.log(searchResult.relationsIn[relation].values.length);
 
                   relationIn.push(searchResult.relationsIn[relation]);
                 }
@@ -276,8 +276,8 @@ app.post("/search/relation/:word", function(req, res) {
               if(searchResult.relationsOut[relation] !== undefined){
                 if(searchAll || types[t] === searchResult.relationsOut[relation].relationType){
 
-                  console.log("relation : " + searchResult.relationsOut[relation].relationType);
-                  console.log(searchResult.relationsOut[relation].values.length);
+                  // console.log("relation : " + searchResult.relationsOut[relation].relationType);
+                  // console.log(searchResult.relationsOut[relation].values.length);
 
                   relationOut.push(searchResult.relationsOut[relation]);
                 }
