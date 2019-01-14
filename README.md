@@ -53,6 +53,8 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + [ ] Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
     + [ ] Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples)
     + [x] Passer directement le mot (l'objet) de words-search à relations-search, pas seulement le mot (string)
+    + [ ] Avertir d'un timeout quand jeuxDeMots lag à mort
+    + [ ] Donner la source du retour (cache, JDM-rezo)
     
 ### Divers
   + [ ] Trouver une appellation ou un calembour pour remplacer "f*ck" de JDM-af

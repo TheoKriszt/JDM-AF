@@ -44,8 +44,8 @@ export class RelationsSearchComponent implements OnInit {
         // delete this.relations.relationIn[0];
         // delete this.relations.relationOut[0];
 
-        console.log('Relations entrante : \n', this.relations.relationIn[1]);
-        console.log('Relations sortante : \n', this.relations.relationOut[1]);
+        console.log('Relations entrantes : \n', this.relations.relationIn[1]);
+        console.log('Relations sortantes : \n', this.relations.relationOut[1]);
         this.loading = false;
       });
     }
