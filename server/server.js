@@ -239,14 +239,30 @@ app.post("/search/relation/:word", function(req, res) {
         }
         console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
         console.log("rIn : " + rIn);
+        console.log("rOut : " + rOut);
+
+        // On s'attend à un tableau
+        if ( typeof types === 'string'){
+          types = [types];
+        }
+
+        // flag true si recherche de tous les types
+        let searchAll = false;
+        for (let t of types){
+          if (t.indexOf('r_') < 0 && t.indexOf('ous') >= 0){ // 'r_' absent et 'Tous' présent
+            searchAll = true;
+            break;
+          }
+        }
 
         for(let t in types){
           if(rIn){
             for(let relation in searchResult.relationsIn){
+              // console.log('relation : ' + JSON.stringify(searchResult.relationsIn[relation]));
               if(searchResult.relationsIn[relation] !== undefined){
-                if(types[t]  === searchResult.relationsIn[relation].relationType){
+                if(searchAll || types[t]  === searchResult.relationsIn[relation].relationType){
 
-                  console.log("relation : " + searchResult.relationsIn[relation].relationType);
+                  // console.log("relation : " + searchResult.relationsIn[relation].relationType);
                   console.log(searchResult.relationsIn[relation].values.length);
 
                   relationIn.push(searchResult.relationsIn[relation]);
@@ -258,7 +274,7 @@ app.post("/search/relation/:word", function(req, res) {
           if(rOut){
             for(let relation in searchResult.relationsOut){
               if(searchResult.relationsOut[relation] !== undefined){
-                if(types[t] === searchResult.relationsOut[relation].relationType){
+                if(searchAll || types[t] === searchResult.relationsOut[relation].relationType){
 
                   console.log("relation : " + searchResult.relationsOut[relation].relationType);
                   console.log(searchResult.relationsOut[relation].values.length);
@@ -433,8 +449,7 @@ app.get("/imagesearch/:word",function(req,res){
   // console.log('URL : ', url);
 
   imageClient.search(word).then(images => {
-    console.log('Image : ' + JSON.stringify(images[0]));
-
+    // console.log('Image : ' + JSON.stringify(images[0]));
 
     const randomIndex = Math.floor(Math.random() * Math.floor(10));
     const imgUrl = images[randomIndex].url;
