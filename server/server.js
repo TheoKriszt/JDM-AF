@@ -23,6 +23,7 @@ const FileHelper = require('./file/file_helper');
 const EntriesHelper = require('./entries/entries_helper');
 
 const EXPIRATION_TIME = 604800;
+const HTTP_REQUEST_TIMEOUT = 7000;
 
 const clone = require('clone');
 
@@ -58,105 +59,129 @@ app.get("/search/word/:word",function(req,res)
 
   console.log('/search/word/' + word);
 
+  let searchResult = wordCache.get(word);
+
   let minimalSearchResult = {
     'formatedWord': '',
     'definitions': [],
   };
 
-  wordCache.get(word, function (error, searchResult)
+  if(searchResult !== undefined)
   {
-    if (!error) {
-      if (searchResult === undefined) {
-        console.log(word, 'not found in cache');
+    console.log(word, 'found in wordCache');
 
-        searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
+    minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
+    minimalSearchResult.definitions = clone(searchResult.definitions);
 
-        if (searchResult !== null) {
-          console.log(word, 'found in data');
+    JDM_Entries.addWord(word, word);
 
-          wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
+    sendRes(res, JSON.stringify(minimalSearchResult));
 
-          idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
+    return;
+  }
 
-          minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
-          minimalSearchResult.definitions = clone(searchResult.definitions);
+  console.log(word, 'not found in wordCache');
 
-          JDM_Entries.addWord(word, word);
+  searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
-          sendRes(res, JSON.stringify(minimalSearchResult));
-        }
-        else {
-          console.log(word, 'not found in data');
+  if (searchResult !== null)
+  {
+    console.log(word, 'found in data');
 
-          //let encodedWord = iconv.encode(word, 'win1252');
-          //let encodedWord = encodeURIComponent(encodedWord);
+    wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
 
-          let encodedWord = word;
+    idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
 
-          let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
+    minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
+    minimalSearchResult.definitions = clone(searchResult.definitions);
 
-          console.log(formatedUrl);
+    JDM_Entries.addWord(word, word);
 
-          http.get(formatedUrl, function (httpResult) {
-            let data = [];
-            httpResult.on('data', function (chunk) {
-              data.push(chunk);
-            });
+    sendRes(res, JSON.stringify(minimalSearchResult));
 
-            httpResult.on('end', function ()
-            {
-              let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+    return;
+  }
 
-              let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
+  console.log(word, 'not found in data');
 
-              let tagCodeIndex = encodedBody.indexOf('<CODE>');
+  //let encodedWord = iconv.encode(word, 'win1252');
+  //let encodedWord = encodeURIComponent(encodedWord);
 
-              if(tagCodeIndex === -1)
-              {
-                sendRes(res, "Mot non trouvé");
-                return;
-              }
+  let encodedWord = word;
 
-              let tagCode = encodedBody.substring(tagCodeIndex, encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+  let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
 
-              let tags = tagCode.toString().split('//');
+  console.log(formatedUrl);
 
-              searchResult = RezoSearchResultHelper.extractSearchResult(tags);
+  let httpRequest = http.get(formatedUrl, function (httpResult) {
+    let data = [];
+    httpResult.on('data', function (chunk)
+    {
+      data.push(chunk);
+    });
 
-              searchResult.formatedWord = word;
+    httpResult.setTimeout(HTTP_REQUEST_TIMEOUT, function()
+    {
+      console.log('JDM API timeout');
+      sendRes(res, 'JDM API timeout');
 
-              RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
+      return;
+    });
 
-              wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
+    httpResult.on('end', function ()
+    {
+      let decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
 
-              idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
+      let encodedBody = iconv.encode(decodedBody, 'utf8').toString();
 
-              FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+      let tagCodeIndex = encodedBody.indexOf('<CODE>');
 
-              minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
-              minimalSearchResult.definitions = clone(searchResult.definitions);
-
-              JDM_Entries.addWord(word, word);
-
-              sendRes(res, JSON.stringify(minimalSearchResult));
-            })
-
-          }).on("error", (error) => {
-            console.log("Error : " + error.message);
-          });
-        }
-      } else {
-        console.log(word, 'found in wordCache');
-
-        minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
-        minimalSearchResult.definitions = clone(searchResult.definitions);
-
-        JDM_Entries.addWord(word, word);
-
-        sendRes(res, JSON.stringify(minimalSearchResult));
+      if (tagCodeIndex === -1) {
+        sendRes(res, "Word not found");
+        return;
       }
-    }
+
+      let tagCode = encodedBody.substring(tagCodeIndex, encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
+
+      let tags = tagCode.toString().split('//');
+
+      searchResult = RezoSearchResultHelper.extractSearchResult(tags);
+
+      searchResult.formatedWord = word;
+
+      RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsWeight);
+
+      wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
+
+      idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
+
+      FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+
+      minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
+      minimalSearchResult.definitions = clone(searchResult.definitions);
+
+      JDM_Entries.addWord(word, word);
+
+      sendRes(res, JSON.stringify(minimalSearchResult));
+    })
   });
+
+  httpRequest.on('error', (error) =>
+  {
+    console.log('Error : ' + error.message, error.code);
+
+    if(error.code !== 'ECONNRESET')
+      sendRes(res, 'Error : ' + error.message);
+  });
+
+  httpRequest.setTimeout( HTTP_REQUEST_TIMEOUT, function() {
+    console.log('JDM API timeout');
+
+    httpRequest.abort();
+
+    sendRes(res, 'JDM API timeout');
+  });
+
 });
 
 // Search an word, with his id
@@ -219,7 +244,7 @@ app.post("/search/relation/:word", function(req, res) {
         // console.log('\t ajout du type ' + JSON.stringify(relType.name))
       }
     }
-    
+
   }
 
   // console.log(types);
@@ -431,7 +456,7 @@ app.get("/relations/relationTypes", function(req, res){
   //   console.log('adding ' + JSON.stringify(relType));
   // }
   let data  = JDM_Relations;
-  
+
   // console.log("data : " + data.length);
   // console.log(JSON.stringify(data.types));
 

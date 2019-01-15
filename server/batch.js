@@ -11,6 +11,7 @@ const RezoSearchResultHelper = require('./helper/search_result_helper');
 const FileHelper = require('./file/file_helper');
 
 const EXPIRATION_DAYS = 7;
+const HTTP_REQUEST_TIMEOUT = 7000;
 
 function run()
 {
@@ -61,6 +62,8 @@ function run()
 
         }).on("error", (error) => {
           console.log("Error : " + error.message);
+        }).setTimeout( HTTP_REQUEST_TIMEOUT, function( ) {
+          console.log('JDM API timeout');
         });
       }
     });
