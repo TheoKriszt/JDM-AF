@@ -31,6 +31,7 @@
     "csvtojson": "^2.0.8",
     "first-image-search-load": "^0.4.0",
     "google-images": "^2.1.0",
+    "html-entities": "^1.2.1",
     "iconv-lite": "^0.4.24",
     "legacy-encoding": "^3.0.0",
     "node-cache": "^4.2.0",

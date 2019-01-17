@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngIf="loading != true">
+    <div *ngIf="!loading">
       <h4 *ngIf="!(relations.relationIn.length || relations.relationOut.length)"> Aucune relation a afficher </h4>
 
       <div class="row" *ngIf="(relations.relationIn.length && relations.relationOut.length)">

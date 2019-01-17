@@ -44,8 +44,9 @@ export class RelationsSearchComponent implements OnInit {
       this.sortChecked = this.params.sortChecked;
 
       if (this.searchedRelationsTypes && (this.rIn || this.rOut) ) {
-        this.searchWord();
+        this.searchRelations();
       } else {
+        console.log('pas de relations à afficher');
         this.loading = false;
       }
     });
@@ -54,8 +55,9 @@ export class RelationsSearchComponent implements OnInit {
 
   }
 
-  searchWord() {
+  searchRelations() {
     if (this.searchedWord) {
+      // console.log('recherche des relations pour ' + this.searchedWord);
       this.wordService.getAllRelations(
         this.searchedWord,
         this.searchedRelationsTypes,
@@ -63,6 +65,7 @@ export class RelationsSearchComponent implements OnInit {
         this.rOut,
         this.sortChecked).subscribe(result => {
         this.relations = result;
+        console.log('relations retournées : ', JSON.stringify(this.relations));
         // delete this.relations.relationIn[0];
         // delete this.relations.relationOut[0];
         // console.log('relations totales IN: ', JSON.stringify(this.relations));

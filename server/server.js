@@ -39,8 +39,15 @@ const RezoSearchResultHelper = require('./helper/search_result_helper');
 
 const sendRes = function(res, json)
 {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Content-type","application/json");
+  try {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Content-type","application/json");
+  } catch (e) {
+    console.error(e);
+    // arrive avec un timeout de JDM/rezo-dump
+    // Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+  }
+
   res.end(json);
 };
 
@@ -406,9 +413,17 @@ app.get("/autocomplete/:searchedWord",function(req,res){
     else
       listSize = data.length;
 
-    for (let index = 0; index < listSize; index++)
-      if(data[index] !== undefined)
-        entries.push(clone(data[index]['data']));
+    for (let index = 0; index < listSize; index++){
+      if(data[index] !== undefined) {
+        const pushed = clone(data[index]['data']);
+        if(entries.indexOf(pushed) === -1){
+          // console.log('pushing ' + pushed);
+          entries.push(pushed);
+        }
+
+      }
+    }
+
 
     SearchResultHelper.sortAutocomplete(entries, SearchResultHelper.compareAutocompleteFrenchOrder);
     console.log('apres tri : ', entries);
