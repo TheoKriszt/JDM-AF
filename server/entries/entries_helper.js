@@ -13,7 +13,7 @@ const FileHelper = require('../file/file_helper');
     let trie = new RadixTrie();
 
     console.time("wordEntriesGeneration");
-
+    if (words)
     for(let wordIndex = 0; wordIndex < words.length; wordIndex++)
       trie.addWord(words[wordIndex], words[wordIndex]);
 
