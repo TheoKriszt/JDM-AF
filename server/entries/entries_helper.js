@@ -14,8 +14,8 @@ const FileHelper = require('../file/file_helper');
 
     console.time("wordEntriesGeneration");
     if (words)
-    for(let wordIndex = 0; wordIndex < words.length; wordIndex++)
-      trie.addWord(words[wordIndex], words[wordIndex]);
+      for(let wordIndex = 0; wordIndex < words.length; wordIndex++)
+        trie.addWord(words[wordIndex], words[wordIndex]);
 
     console.timeEnd("wordEntriesGeneration");
 
@@ -30,8 +30,9 @@ const FileHelper = require('../file/file_helper');
 
     console.time("relationsEntriesGeneration");
 
-    for(let wordIndex = 0; wordIndex < relations.length; wordIndex++)
-      trie.addWord(relations[wordIndex].name, relations[wordIndex].name);
+    if (relations)
+      for(let wordIndex = 0; wordIndex < relations.length; wordIndex++)
+        trie.addWord(relations[wordIndex].name, relations[wordIndex].name);
 
     console.timeEnd("relationsEntriesGeneration");
 
