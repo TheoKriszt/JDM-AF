@@ -13,7 +13,7 @@ const FileHelper = require('./file/file_helper');
 const EXPIRATION_DAYS = 7;
 const HTTP_REQUEST_TIMEOUT = 7000;
 const DOWNLOAD_FROM_WIKIPEDIA_ENTRIES_IF_BELOW = 100; // Si moins de X entries en HDD
-const MAX_ENTRIES_TO_GET_FROM_WIKIPEDIA = 100; // Télécharger au plus Y entries depuis wikipedia_entries (en random)
+const MAX_ENTRIES_TO_GET_FROM_WIKIPEDIA = 10; // Télécharger au plus Y entries depuis wikipedia_entries (en random)
 
 function downloadWord(word, entriesPath) {
 
@@ -49,7 +49,6 @@ function downloadWord(word, entriesPath) {
   }).on("error", (error) => {
     console.log("Error : " + error.message);
   }).setTimeout( HTTP_REQUEST_TIMEOUT, () => {
-    request.abort();
     console.log('JDM API timeout');
   });
 
