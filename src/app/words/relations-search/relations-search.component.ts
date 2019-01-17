@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {WordsService} from '../words.service';
+import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 
 @Component({
@@ -31,15 +32,22 @@ export class RelationsSearchComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.searchedWord = this.params.searchedWord;
-    this.rIn = this.params.rIn;
-    this.rOut = this.params.rOut;
+
     this.searchedRelationsTypes = this.params.searchedRelationsTypes;
-    this.sortChecked = this.params.sortChecked;
 
     this.route.queryParams.subscribe(params => {
       console.log('relations-search : params changed');
       console.log(params);
-      this.searchWord();
+
+      this.rIn = this.params.rIn;
+      this.rOut = this.params.rOut;
+      this.sortChecked = this.params.sortChecked;
+
+      if (this.searchedRelationsTypes && (this.rIn || this.rOut) ) {
+        this.searchWord();
+      } else {
+        this.loading = false;
+      }
     });
 
 
@@ -55,12 +63,18 @@ export class RelationsSearchComponent implements OnInit {
         this.rOut,
         this.sortChecked).subscribe(result => {
         this.relations = result;
-
         // delete this.relations.relationIn[0];
         // delete this.relations.relationOut[0];
+        // console.log('relations totales IN: ', JSON.stringify(this.relations));
+        //
+        // if (this.relations.relationIn.length[0]) {
+        //   console.log('Au moins', this.relations.relationIn.length[0].length + ' relations entrantes');
+        // }
+        //
+        // if (this.relations.relationOut.length[0]) {
+        //   console.log('Au moins ', this.relations.relationOut.length[0].length + ' relations sortantes');
+        // }
 
-        console.log('Relations entrantes : \n', this.relations.relationIn[1]);
-        console.log('Relations sortantes : \n', this.relations.relationOut[1]);
         this.loading = false;
       });
     }
@@ -68,17 +82,17 @@ export class RelationsSearchComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
-    console.log('step : ' + this.step);
+    // console.log('step : ' + this.step);
   }
 
   nextStep() {
     this.step++;
-    console.log(' step : ' + this.step);
+    // console.log(' step : ' + this.step);
   }
 
   prevStep() {
     this.step--;
-    console.log('step : ' + this.step);
+    // console.log('step : ' + this.step);
   }
 
 }

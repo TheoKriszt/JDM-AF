@@ -123,6 +123,7 @@ app.get("/search/word/:word",function(req,res)
     httpResult.setTimeout(HTTP_REQUEST_TIMEOUT, function()
     {
       console.log('JDM API timeout');
+      res.status(503); // service unavailable
       sendRes(res, 'JDM API timeout');
 
       return;
@@ -178,7 +179,7 @@ app.get("/search/word/:word",function(req,res)
     console.log('JDM API timeout');
 
     httpRequest.abort();
-
+    res.status(503); // service unavailable
     sendRes(res, 'JDM API timeout');
   });
 
@@ -227,9 +228,9 @@ app.post("/search/relation/:word", function(req, res) {
 
   let word = req.params.word;
   let types = req.body.relationTypes;
-  let rIn = req.body.wantIn;
-  let rOut = req.body.wantOut;
-  let sort = req.body.wantSort;
+  let rIn = req.body.wantIn === 'true';
+  let rOut = req.body.wantOut === 'true';
+  let sort = req.body.wantSort === 'true';
   let relationIn = [{}];
   let relationOut = [{}];
 
@@ -258,13 +259,13 @@ app.post("/search/relation/:word", function(req, res) {
       else{
         console.log(word, 'found in wordCache');
 
-        console.log('Sort mode : ' , JSON.stringify(sort));
-        console.log("rIn : " + rIn);
-        console.log("rOut : " + rOut);
-        if(sort === "true"){
+        // console.log('Sort mode : ' , JSON.stringify(sort));
+        // console.log("rIn : " + JSON.stringify(rIn));
+        // console.log("rOut : " + JSON.stringify(rOut));
+        if(sort){
           RezoSearchResultHelper.sortRelations(searchResult, RezoSearchResultHelper.compareRelationsFrenchOrder);
         }
-        console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
+        // console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
 
 
         // On s'attend à un tableau
@@ -274,12 +275,16 @@ app.post("/search/relation/:word", function(req, res) {
 
         // flag true si recherche de tous les types
         let searchAll = false;
-        for (let t of types){
-          if (t.indexOf('r_') < 0 && t.indexOf('ous') >= 0){ // 'r_' absent et 'Tous' présent
-            searchAll = true;
-            break;
+        console.log('types: ', JSON.stringify(types));
+        if (types){
+          for (let t of types){
+            if (t.indexOf('r_') < 0 && t.indexOf('ous') >= 0){ // 'r_' absent et 'Tous' présent
+              searchAll = true;
+              break;
+            }
           }
         }
+
 
         for(let t in types){
           if(rIn){

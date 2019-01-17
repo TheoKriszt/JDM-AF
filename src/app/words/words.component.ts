@@ -1,6 +1,6 @@
 
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {RelationTypes, Type, WordsService} from './words.service';
@@ -43,7 +43,12 @@ export class WordsComponent implements OnInit {
 
   @ViewChild('relationInput') relationInput: ElementRef<HTMLInputElement>;
 
-  constructor(private router: Router, private wordService: WordsService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private wordService: WordsService,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer) {
 
     this.relationCtrl.valueChanges.subscribe(value => {
       if (value) {
