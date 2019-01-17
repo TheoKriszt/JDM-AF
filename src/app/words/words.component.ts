@@ -69,6 +69,7 @@ export class WordsComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log('WordComponent :: init');
     this.nameControl.valueChanges.subscribe(name => {
       if (name.length > 0) {
 
@@ -79,8 +80,11 @@ export class WordsComponent implements OnInit {
     });
 
     this.wordService.getRelationsTypes().subscribe( (data: RelationTypes) => {
+      // console.log('RelationTypes : ', JSON.stringify(data));
+      // this.allRelations = [];
       for (let i = 0, size =  data.types.length; i < size; i++) {
         this.allRelations.push(data.types[i]);
+        // console.log('allRelations : ' , JSON.stringify(data));
       }
     });
 
@@ -97,6 +101,7 @@ export class WordsComponent implements OnInit {
         rOut : this.rOut,
         sortChecked : this.checked
       };
+      console.log('relations cherchées : ', JSON.stringify(this.sendRelations));
       this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
     }
     this.loading = false;
@@ -111,8 +116,13 @@ export class WordsComponent implements OnInit {
     const index = this.relations.indexOf(relation);
     if (index >= 0) {
       this.relations.splice(index, 1);
-      this.allRelations.push(relation);
+      let insertAt = 0;
+      while (this.allRelations[insertAt].id < relation.id) {
+        insertAt++;
+      }
+      this.allRelations.splice(insertAt, 0, relation);
     }
+    console.log('apres suppression : ' , JSON.stringify(this.relations));
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {

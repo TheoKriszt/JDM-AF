@@ -11,11 +11,6 @@
       "definition": "Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?"
     },
     {
-      "id": "0",
-      "name": "r_associated",
-      "definition": "Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?"
-    },
-    {
       "id": "1",
       "name": "r_raff_sem",
       "definition": "Raffinement sémantique vers un usage particulier du terme source"

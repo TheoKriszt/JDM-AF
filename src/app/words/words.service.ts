@@ -42,7 +42,7 @@ export class WordsService {
     return this.http.post(this.baseUrl + '/search/relation/' + wordId, params , this._options);
   }
 
-  getRelationsTypes() {
+  getRelationsTypes(): Observable<RelationTypes> {
     const uri = this.baseUrl + '/relations/relationTypes';
 
     if (this.relationsTypes !== undefined) {
