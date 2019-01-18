@@ -6,8 +6,8 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: 'words',
-    loadChildren: () => WordsModule
-    // loadChildren: './words/words.module#WordsModule'
+    // loadChildren: () => WordsModule
+    loadChildren: './words/words.module#WordsModule'
   }
 ];
 

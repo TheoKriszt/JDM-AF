@@ -25,6 +25,7 @@ export class WordsSearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('WordSearch :: init');
 
     this.route.params.subscribe(routeParams => {
       this.loading = true;
