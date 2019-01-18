@@ -23,7 +23,8 @@ const FileHelper = require('./file/file_helper');
 const EntriesHelper = require('./entries/entries_helper');
 
 const EXPIRATION_TIME = 604800;
-const HTTP_REQUEST_TIMEOUT = 7000;
+const HTTP_REQUEST_TIMEOUT = 8000; // Milisecond
+const LIMITE_DISK_SPACE = 20; // Mo
 
 const clone = require('clone');
 
@@ -129,8 +130,9 @@ app.get("/search/word/:word",function(req,res)
 
     httpResult.setTimeout(HTTP_REQUEST_TIMEOUT, function()
     {
-      console.log('JDM API timeout');
+      console.error('JDM API timeout');
       res.status(503); // service unavailable
+
       sendRes(res, 'JDM API timeout');
 
       return;
@@ -163,7 +165,10 @@ app.get("/search/word/:word",function(req,res)
 
       idWordCache.set(searchResult.id, searchResult.formatedWord, EXPIRATION_TIME);
 
-      FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+      if(FileHelper.checkAvailableSpace(LIMITE_DISK_SPACE))
+        FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
+      else
+        console.error('Limited disk space depassed');
 
       minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
       minimalSearchResult.definitions = clone(searchResult.definitions);
@@ -176,14 +181,16 @@ app.get("/search/word/:word",function(req,res)
 
   httpRequest.on('error', (error) =>
   {
-    console.log('Error : ' + error.message, error.code);
+    console.error('Error : ' + error.message, error.code);
+
+    console.error('ERROR : ' + error);
 
     if(error.code !== 'ECONNRESET')
       sendRes(res, 'Error : ' + error.message);
   });
 
   httpRequest.setTimeout( HTTP_REQUEST_TIMEOUT, function() {
-    console.log('JDM API timeout');
+    console.error('JDM API timeout');
 
     httpRequest.abort();
     res.status(503); // service unavailable

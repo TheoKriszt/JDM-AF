@@ -20,6 +20,29 @@ const htmlEntities = require('html-entities').XmlEntities;
   {
     const safeFilename = htmlEntities.encode(fileName);
     fs.writeFileSync(safeFilename, JSON.stringify(content), 'utf8');
-    // fs.writeFileSync(fileName, JSON.stringify(content), 'utf8');
+  };
+
+  module.exports.checkAvailableSpace = function(limitSpace)
+  {
+    let totalFilesSpace = 0;
+
+    const cwd = __dirname.split('\\').join('/');
+    let dir = cwd.substring(0, cwd.lastIndexOf('server'));
+
+    if (!dir.endsWith('/'))
+      dir += '/'; //add trailing slash
+
+    const entriesPath = dir + 'data/search_result';
+
+    let files = fs.readdirSync(entriesPath);
+
+    files.forEach(file =>
+    {
+      let fileSize = fs.statSync(entriesPath + '/' + file).size / 1000000; // Convert bytes to Mo
+
+      totalFilesSpace += fileSize;
+    });
+
+    return totalFilesSpace < limitSpace;
   };
 }());

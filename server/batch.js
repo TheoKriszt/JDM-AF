@@ -15,6 +15,8 @@ const HTTP_REQUEST_TIMEOUT = 7000;
 const DOWNLOAD_FROM_WIKIPEDIA_ENTRIES_IF_BELOW = 100; // Si moins de X entries en HDD
 const MAX_ENTRIES_TO_GET_FROM_WIKIPEDIA = 10; // Télécharger au plus Y entries depuis wikipedia_entries (en random)
 
+const DISK_SPACE_LIMIT = 20; //Mo
+
 function downloadWord(word, entriesPath) {
 
   let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + word + '&rel=';
@@ -51,7 +53,6 @@ function downloadWord(word, entriesPath) {
   }).setTimeout( HTTP_REQUEST_TIMEOUT, () => {
     console.log('JDM API timeout');
   });
-
 }
 
 function downloadIfExpired(word, entriesPath) {
@@ -128,10 +129,7 @@ function run()
           console.error(e)
         }
       }
-
-
     }
-
   });
 }
 
