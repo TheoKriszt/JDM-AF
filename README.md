@@ -21,7 +21,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
      
   + Scripts de batch 
     + [x] Màj du cache (entrées expirées, Lafourcade vide ~= 1 mois de TTL)
-    + [ ] DL des mots les plus fréquents du français
+    + [x] DL des mots les plus fréquents du français
     + [ ] [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + [x] [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
