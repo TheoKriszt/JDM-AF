@@ -22,10 +22,10 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   + Scripts de batch 
     + [x] Màj du cache (entrées expirées, Lafourcade vide ~= 1 mois de TTL)
     + [x] DL des mots les plus fréquents du français
-    + [ ] [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
+    + [x] [Optionnel] Gérer l'espace disque de la persistence (limiter à X Go)
     
   + [x] [Si le nouveau parsing ne met pas types de relations directement dans le mot] Autocompletion des types de relations (r_isa, r_aff, ...)
-    + [ ] Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
+    + [x] Brancher le service pour servir les types de relation OU extraire depuis le dump du mot
   + [x] [opt.] Donner run timer pour le démarrage du serveur (a chargé les mots en X secondes, démarrage en Y secondes) 
   
   + [x] Decomposer les définitions (titre + exemple), parsage sur $nombre.
