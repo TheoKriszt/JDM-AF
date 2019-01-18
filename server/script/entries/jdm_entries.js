@@ -1,4 +1,4 @@
-const FileHelper = require('../../../server/file/file_helper');
+const FileHelper = require('../../file/file_helper');
 const clone = require('clone');
 
 let entries = [];

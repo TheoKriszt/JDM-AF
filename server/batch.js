@@ -65,13 +65,10 @@ function downloadIfExpired(word, entriesPath) {
   if (daysDifference > EXPIRATION_DAYS) {
     downloadWord(word, entriesPath);
   }
-
-
 }
 
 function run()
 {
-
   const cwd = __dirname.split('\\').join('/');
   let dir = cwd.substring(0, cwd.lastIndexOf('server'));
   if (!dir.endsWith('/')) dir += '/'; //add trailing slash
