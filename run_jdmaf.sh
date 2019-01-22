@@ -22,5 +22,5 @@ echo "          ░                                      "
 echo ""
 
 echo ""
-ng serve --host=0.0.0.0 --disable-host-check --port 4200
+ng serve --host=0.0.0.0 --disable-host-check --port 4200 --prod
 
