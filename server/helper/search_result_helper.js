@@ -90,8 +90,6 @@ const RelationHelper = require('./relation/relation_helper');
 
   module.exports.sortAutocomplete = function compareRelation(searchResult, sort)
   {
-    console.log("Sort entries for autocomplete");
-    console.log(JSON.stringify(searchResult));
     searchResult.sort(sort);
   };
 

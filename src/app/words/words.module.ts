@@ -27,12 +27,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [
   // {
-  //   path: 'words-search/:word/relation',
+  //   path: 'word-search/:word/relation',
   //   component: RelationsSearchComponent,
   //   outlet: 'relations',
   // },
   {
-    path: 'words-search/:word',
+    path: 'word-search/:word',
     component: WordsSearchComponent,
     // children: [
     //   {

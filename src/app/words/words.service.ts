@@ -28,10 +28,12 @@ export class WordsService {
 
   searchWord(word: string): Observable<any> {
     const uri = this.baseUrl + '/search/word/' + word;
-    return this.http.get<Word>(uri);
+    return this.http.get(uri);
   }
 
   getAllRelations(wordId: string, types: string[], rIn: boolean, rOut: boolean, sortChecked: boolean): Observable<any> {
+    // console.log('types', JSON.stringify(types));
+    // console.log('rIn, rOut : ', JSON.stringify(rIn), JSON.stringify(rOut));
     const params = {
       relationTypes: types,
       wantIn : rIn,

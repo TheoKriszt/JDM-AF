@@ -1,6 +1,5 @@
-
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router, RouterEvent} from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {RelationTypes, Type, WordsService} from './words.service';
@@ -23,7 +22,7 @@ export class WordsComponent implements OnInit {
   nameControl = new FormControl();
   options: string[] = [];
   filteredOptions: Observable<string[]>;
-  checked = true;
+  checked = false;
 
 // Relations params
   visible = true;
@@ -69,7 +68,24 @@ export class WordsComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('WordComponent :: init');
+    this.router.events.subscribe((value) => {
+      if ( value instanceof RouterEvent) {
+        // console.log('value : ', value.url);
+        let url: string = decodeURI(value.url);
+        // console.log('url decoded : ', url);
+        url = url.substring(url.lastIndexOf('/') + 1);
+        const lastIndex = url.indexOf('?');
+        if ( lastIndex > 0 ) {
+          url = url.substring(0, (lastIndex ));
+        }
+        // console.log('terme : ', url);
+        // console.log('encoded : ', encodeURIComponent(url));
+        // console.log('decoded : ', decodeURIComponent(url));
+        this.nameControl.setValue(decodeURIComponent(url));
+      }
+    });
+
+
     this.nameControl.valueChanges.subscribe(name => {
       if (name.length > 0) {
 
@@ -84,8 +100,8 @@ export class WordsComponent implements OnInit {
       // this.allRelations = [];
       for (let i = 0, size =  data.types.length; i < size; i++) {
         this.allRelations.push(data.types[i]);
-        // console.log('allRelations : ' , JSON.stringify(data));
       }
+      // console.log('allRelations : ' , JSON.stringify(data));
     });
 
     this.filteredRelations = this.allRelations;
@@ -101,8 +117,7 @@ export class WordsComponent implements OnInit {
         rOut : this.rOut,
         sortChecked : this.checked
       };
-      console.log('relations cherchées : ', JSON.stringify(this.sendRelations));
-      this.router.navigate(['/words', 'words-search', this.nameControl.value], {queryParams: params});
+      this.router.navigate(['/word', 'word-search', this.nameControl.value], {queryParams: params});
     }
     this.loading = false;
 
@@ -122,7 +137,10 @@ export class WordsComponent implements OnInit {
       }
       this.allRelations.splice(insertAt, 0, relation);
     }
-    console.log('apres suppression : ' , JSON.stringify(this.relations));
+    this.sendRelations = [];
+    for (const type of this.relations) {
+      this.sendRelations.push(type.name);
+    }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
@@ -134,11 +152,8 @@ export class WordsComponent implements OnInit {
     this.sendRelations.push(value.name);
     this.allRelations.splice(this.allRelations.indexOf(value), 1);
 
-    console.log(value);
     this.relationInput.nativeElement.value = '';
     this.relationCtrl.setValue(null);
   }
-
-
 
 }

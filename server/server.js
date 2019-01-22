@@ -6,6 +6,7 @@ app.use(express.json());
 
 const GoogleImages = require('google-images');
 const imageClient = new GoogleImages('015223342477191193629:yv0pl5-k9zy', 'AIzaSyBq3WnEdRVaUVXv4fKo0i6ncvz-tBjUg-0');
+// const imageClient = new GoogleImages('015223342477191193629:yv0pl5-k9zy', 'AIzaSyBq3WnEdRVaUVXv4fKo0i6ncvz-tBjUg-0');
 
 const iconv  = require('iconv-lite');
 
@@ -24,7 +25,7 @@ const EntriesHelper = require('./entries/entries_helper');
 
 const EXPIRATION_TIME = 604800;
 const HTTP_REQUEST_TIMEOUT = 8000; // Milisecond
-const LIMITE_DISK_SPACE = 20; // Mo
+const LIMITE_DISK_SPACE = 200; // Mo
 
 const clone = require('clone');
 
@@ -92,9 +93,8 @@ app.get("/search/word/:word",function(req,res)
 
   searchResult = FileHelper.fileToJSONObject('./data/search_result/' + word + '.json');
 
-  if (searchResult !== null)
+  if (searchResult !== null && searchResult.id != null)
   {
-    console.log(word, 'found in data');
 
     wordCache.set(searchResult.formatedWord, searchResult, EXPIRATION_TIME);
 
@@ -112,9 +112,6 @@ app.get("/search/word/:word",function(req,res)
 
   console.log(word, 'not found in data');
 
-  //let encodedWord = iconv.encode(word, 'win1252');
-  //let encodedWord = encodeURIComponent(encodedWord);
-
   let encodedWord = word;
 
   let formatedUrl = 'http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel=' + encodedWord + '&rel=';
@@ -131,9 +128,12 @@ app.get("/search/word/:word",function(req,res)
     httpResult.setTimeout(HTTP_REQUEST_TIMEOUT, function()
     {
       console.error('JDM API timeout');
-      res.status(503); // service unavailable
+      // res.status(503); // service unavailable
 
-      sendRes(res, 'JDM API timeout');
+      let response = {};
+      response.message = 'JDM API timeout';
+      response.statusCode = 503;
+      sendRes(res, JSON.stringify(response));
 
       return;
     });
@@ -147,13 +147,16 @@ app.get("/search/word/:word",function(req,res)
       let tagCodeIndex = encodedBody.indexOf('<CODE>');
 
       if (tagCodeIndex === -1) {
-        sendRes(res, "Word not found");
+        let response = {};
+        response.message = 'Word not found';
+        response.statusCode = 404;
+        sendRes(res, JSON.stringify(response));
         return;
       }
 
       let tagCode = encodedBody.substring(tagCodeIndex, encodedBody.indexOf('</CODE>') + 7); //+7 to add '</code>' into the result
 
-      let tags = tagCode.toString().split('//');
+      let tags = tagCode.toString().split('// ');
 
       searchResult = RezoSearchResultHelper.extractSearchResult(tags);
 
@@ -167,8 +170,9 @@ app.get("/search/word/:word",function(req,res)
 
       if(FileHelper.checkAvailableSpace(LIMITE_DISK_SPACE))
         FileHelper.JSONObjectTofile('./data/search_result/' + word + '.json', searchResult);
-      else
+      else {
         console.error('Limited disk space depassed');
+      }
 
       minimalSearchResult.formatedWord = clone(searchResult.formatedWord);
       minimalSearchResult.definitions = clone(searchResult.definitions);
@@ -212,7 +216,7 @@ app.get("/search/word/id/:wordId",function(req,res)
       if (word !== undefined)
         wordCache.get(word, function(error, wordValue)
         {
-          console.log(word);
+          // console.log(word);
 
           if (!error)
             if (wordValue !== undefined)
@@ -240,23 +244,30 @@ app.get("/relations/",function(req,res)
 // return relations for a word and for some type relations
 app.post("/search/relation/:word", function(req, res) {
 
+  // console.log('Request params body : ', req.body);
+  // console.log(typeof req.body.wantIn, typeof req.body.wantOut, typeof req.body.wantSort);
+
   let word = req.params.word;
   let types = req.body.relationTypes;
-  let rIn = req.body.wantIn === 'true';
-  let rOut = req.body.wantOut === 'true';
-  let sort = req.body.wantSort === 'true';
+  let rIn = req.body.wantIn;
+  let rOut = req.body.wantOut;
+  let sort = req.body.wantSort;
   let relationIn = [{}];
   let relationOut = [{}];
 
   console.log('/search/relation/' + word);
 
-  if (types && types.indexOf('r_') === -1){
-    // console.log('devrait ajouter toutes les rels');
+  // On s'attend à un tableau
+  if ( typeof types === 'string'){
+    types = [];
+    types.push(types);
+  }
+
+  if (types && types.indexOf('Tous types de relation') >= 0){ // Todo : remplacer la chaîne en dur par une recherche dans JDM_relations
     types = [];
     for (let relType of JDM_Relations.types){
       if (relType.id !== "-1"){
         types.push(relType.name);
-        // console.log('\t ajout du type ' + JSON.stringify(relType.name))
       }
     }
 
@@ -268,9 +279,25 @@ app.post("/search/relation/:word", function(req, res) {
   {
     if(!err )
     {
-      if(searchResult === undefined)
-        console.log(word, 'not found in wordCache');
-      else{
+      if(searchResult === undefined){
+        console.log(word, 'not found in wordCache  :waiting a little');
+        let response = {
+          message: 'relations are not ready yet',
+          statusCode: 423 // Locked - la ressource est indispo
+        };
+
+        new Promise(resolve => {
+          setTimeout(resolve, 1000);
+          return;
+          // sendRes(res, JSON.stringify(response));
+        }).then(() => {
+          sendRes(res, JSON.stringify(response));
+          }
+        ).catch(reason => console.error(reason));
+        
+
+
+      } else{
         console.log(word, 'found in wordCache');
 
         // console.log('Sort mode : ' , JSON.stringify(sort));
@@ -282,14 +309,11 @@ app.post("/search/relation/:word", function(req, res) {
         // console.log("searchResult : " + JSON.stringify(searchResult.relationsIn));
 
 
-        // On s'attend à un tableau
-        if ( typeof types === 'string'){
-          types = [types];
-        }
+
 
         // flag true si recherche de tous les types
         let searchAll = false;
-        console.log('types: ', JSON.stringify(types));
+        // console.log('types: ', JSON.stringify(types));
         if (types){
           for (let t of types){
             if (t.indexOf('r_') < 0 && t.indexOf('ous') >= 0){ // 'r_' absent et 'Tous' présent
@@ -308,8 +332,9 @@ app.post("/search/relation/:word", function(req, res) {
                 if(searchAll || types[t]  === searchResult.relationsIn[relation].relationType){
 
                   // console.log("relation : " + searchResult.relationsIn[relation].relationType);
-                  // console.log(searchResult.relationsIn[relation].values.length);
+                  // console.log(searchResult.relationsIn[relation].values.pageLength);
 
+                  // console.log('pushing ', searchResult.relationsIn[relation]);
                   relationIn.push(searchResult.relationsIn[relation]);
                 }
               }
@@ -322,7 +347,7 @@ app.post("/search/relation/:word", function(req, res) {
                 if(searchAll || types[t] === searchResult.relationsOut[relation].relationType){
 
                   // console.log("relation : " + searchResult.relationsOut[relation].relationType);
-                  // console.log(searchResult.relationsOut[relation].values.length);
+                  // console.log(searchResult.relationsOut[relation].values.pageLength);
 
                   relationOut.push(searchResult.relationsOut[relation]);
                 }
@@ -340,11 +365,11 @@ app.post("/search/relation/:word", function(req, res) {
           relationOut : relationOut,
         };
 
-        console.log("Relation entrante (1) : \n" + JSON.stringify(relations.relationIn));
-        console.log("Relation entrante (2) : \n" + JSON.stringify(relationIn));
+        console.log("Relations entrantes (1) : \n" + JSON.stringify(relations.relationIn));
+        console.log("Relations entrantes (2) : \n" + JSON.stringify(relationIn.length));
 
-        console.log("Relation sortante (1): \n" + JSON.stringify(relations.relationOut));
-        console.log("Relation sortante (2): \n" + JSON.stringify(relationOut));
+        console.log("Relations sortantes (1): \n" + JSON.stringify(relations.relationOut.length));
+        console.log("Relations sortantes (2): \n" + JSON.stringify(relationOut.length));
 
         sendRes(res, JSON.stringify(relations));
       }
@@ -484,7 +509,7 @@ app.get("/relations/relationTypes", function(req, res){
   // }
   let data  = JDM_Relations;
 
-  // console.log("data : " + data.length);
+  // console.log("data : " + data.pageLength);
   // console.log(JSON.stringify(data.types));
 
   if(data !== undefined && data !== null) {
@@ -497,7 +522,7 @@ app.get("/relations/relationTypes", function(req, res){
 app.get("/imagesearch/:word",function(req,res){
   let word = req.params.word;
 
-  console.log('/imagesearch/', word);
+  console.log('/imagesearch/' + word);
   // var url = getFirstImageURL(word);
   // console.log('URL : ', url);
 
@@ -505,14 +530,14 @@ app.get("/imagesearch/:word",function(req,res){
     // console.log('Image : ' + JSON.stringify(images[0]));
 
     const randomIndex = Math.floor(Math.random() * Math.floor(10));
-    const imgUrl = images[randomIndex].url;
-    // const imgTxt = '<img src=""'+ imgUrl +'">';
-
-      // sendRes(res, JSON.stringify({'url' : imgUrl}));
-      // res.sendFile(imgUrl)
+    const image = images[randomIndex];
+    const imgUrl = image.url;
+    console.log('img URL : ' + imgUrl);
     res.redirect(imgUrl);
   }).catch(error => {
     console.log(error);
+    res.redirect('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pas_d%27image_disponible.svg/300px-Pas_d%27image_disponible.svg.png');
+
   });
 
 

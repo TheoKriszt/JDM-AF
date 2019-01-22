@@ -14,14 +14,25 @@ import {MatGridListModule} from '@angular/material/grid-list'; // usefull later,
 
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
+import {MatSortModule, MatTableModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    WordsModule, BrowserModule, BrowserAnimationsModule, RouterModule,
-    AppRoutingModule, MatCardModule, MatToolbarModule, MatDividerModule, MatGridListModule, MatExpansionModule
+    WordsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    AppRoutingModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatSortModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,7 +19,12 @@ const htmlEntities = require('html-entities').XmlEntities;
   module.exports.JSONObjectTofile = function(fileName, content)
   {
     const safeFilename = htmlEntities.encode(fileName);
-    fs.writeFileSync(safeFilename, JSON.stringify(content), 'utf8');
+
+    try {
+      fs.writeFileSync(safeFilename, JSON.stringify(content), 'utf8');
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   module.exports.checkAvailableSpace = function(limitSpace)
@@ -43,6 +48,10 @@ const htmlEntities = require('html-entities').XmlEntities;
       totalFilesSpace += fileSize;
     });
 
+    if (totalFilesSpace > limitSpace) {
+      console.log('totalFilesSpace :' , totalFilesSpace, 'Mo' );
+      console.log('limitSpace :' , limitSpace , 'Mo' );
+    }
     return totalFilesSpace < limitSpace;
   };
 }());

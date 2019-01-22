@@ -6,24 +6,33 @@
     </div>
 
     <div *ngIf="!loading">
-      <!--{{words | json}}-->
+      <!--{{word | json}}-->
 
       <mat-card class="card">
         <mat-card-header>
-          <img mat-card-avatar class="header-image" src="{{ imageUrl }}" height="auto" width="auto">
-          <mat-card-title class="title"> {{words.formatedWord}}</mat-card-title>
-          <!--<mat-card-subtitle>{{words.word.type}}</mat-card-subtitle>--> <!-- words.word a été viré  -->
+          <img mat-card-avatar class="header-image" src="{{ imageUrl }}" height="auto" width="auto" *ngIf="!loading && relationsParams.wordExists">
+          <mat-card-title *ngIf="!loading" class="title">{{word.formatedWord}}</mat-card-title>
+          <mat-card-title *ngIf="loading" class="title">Chargement ...</mat-card-title>
+          <!--<mat-card-subtitle>{{word.word.type}}</mat-card-subtitle>--> <!-- word.word a été viré  -->
         </mat-card-header>
-        <img mat-card-image src="{{ imageUrl }}" max-width="400" max-height="400" height="auto">
-        <mat-card-content>
-          <h3>Définitions : </h3>
-          <p *ngIf="!words.definitions || words.definitions.length === 0"> Aucune définition n'a été trouvée. </p>
-          <span *ngFor="let definition of words.definitions">{{definition.text}}<br/></span>
+        <img *ngIf="relationsParams.wordExists" mat-card-image src="{{ imageUrl }}" max-width="400" max-height="400" height="auto">
+        <mat-card-content *ngIf="!relationsParams.wordExists">
+          Le mot recherché est introuvable sur <a href="http://www.jeuxdemots.org/rezo-dump.php?gotermsubmit=Chercher&gotermrel={{word.formatedWord}}&rel=">JeuxDeMots.org</a>
         </mat-card-content>
-        <mat-divider></mat-divider>
-        <mat-card-footer>
+        <mat-card-content *ngIf="relationsParams.wordExists">
+          <h3>Définitions : </h3>
+          <p *ngIf="!word.definitions || word.definitions.length === 0"> Aucune définition n'a été trouvée. </p>
+          <ul>
+            <li *ngFor="let definition of word.definitions" matTooltip="{{definition.examples[0]}}">
+              {{definition.text}}
+            </li>
+          </ul>
+          <!--<span *ngFor="let definition of word.definitions">{{definition.text}}<br/></span>-->
+        </mat-card-content>
+        <mat-divider *ngIf="relationsParams.wordExists"></mat-divider>
+        <mat-card-footer *ngIf="relationsParams.wordExists">
           <div class="row align-items-center justify-content-center" *ngIf="!loading">
-            <app-relations-search [params]="relationsParams()"></app-relations-search>
+            <app-relations-search [params]="relationsParams"></app-relations-search>
           </div>
         </mat-card-footer>
       </mat-card>

@@ -20,7 +20,7 @@ function extractRelations()
     {
       id = tr[index].getElementsByTagName('td')[1].textContent.trim();
 
-      console.log(id);
+      // console.log(id);
     }
 
     if(tr[index].getElementsByTagName('td')[2] != undefined)

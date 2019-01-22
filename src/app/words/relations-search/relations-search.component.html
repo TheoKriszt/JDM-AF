@@ -11,13 +11,13 @@
 
             <mat-expansion-panel *ngFor="let relationIn of relations.relationIn; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
               <mat-expansion-panel-header>
-                <mat-panel-title>
+                <mat-panel-title matTooltip="{{this.getRelationTypedefinition(relationIn.relationType)}}">
                   {{relationIn.relationType}}
                 </mat-panel-title>
               </mat-expansion-panel-header>
 
 
-              <app-relations-print [relations]="relationIn.values"></app-relations-print>
+              <app-relations-print [allRelations]="relationIn.values"></app-relations-print>
               <!--
               <p >
                 <strong *ngFor="let value of relationIn.values"> {{value.text}} , <strong color ="red">{{value.weight}}</strong> </strong>
@@ -38,12 +38,12 @@
 
             <mat-expansion-panel *ngFor="let relationOut of relations.relationOut; let i = index" [expanded]="step === i" (opened)="setStep(i)" hideToggle>
               <mat-expansion-panel-header>
-                <mat-panel-title>
+                <mat-panel-title matTooltip="{{getRelationTypedefinition(relationOut.relationType)}}">
                   {{relationOut.relationType}}
                 </mat-panel-title>
               </mat-expansion-panel-header>
 
-              <app-relations-print [relations]="relationOut.values"></app-relations-print>
+              <app-relations-print [allRelations]="relationOut.values"></app-relations-print>
               <!--
               <p *ngFor="let value of relationOut.values"> {{value.text}} <strong color ="red">{{value.weight}}</strong></p>
               -->
@@ -58,7 +58,7 @@
         </mat-accordion>
       </div>
     </div>
-    <div *ngIf="loading == true">
+    <div *ngIf="loading">
       <mat-spinner  color="warn"></mat-spinner>
     </div>
 </div>

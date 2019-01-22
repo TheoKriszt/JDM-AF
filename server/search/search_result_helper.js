@@ -136,8 +136,8 @@ const clone = require('clone');
 
   module.exports.sortRelations = function compareRelation(searchResult, sort)
   {
-    console.log("Sort relations");
-    console.log(JSON.stringify(searchResult));
+    // console.log("Sort relations");
+    // console.log(JSON.stringify(searchResult));
 
     searchResult.relationsIn.forEach(function(relations)
     {
@@ -152,8 +152,8 @@ const clone = require('clone');
 
   module.exports.sortAutocomplete = function compareRelation(searchResult, sort)
   {
-    console.log("Sort entries for autocomplete");
-    console.log(JSON.stringify(searchResult));
+    // console.log("Sort entries for autocomplete");
+    // console.log(JSON.stringify(searchResult));
     searchResult.sort(sort);
   };
 

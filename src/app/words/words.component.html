@@ -30,7 +30,7 @@
           <div class="d-flex flex-row">
             <mat-form-field class="example-chip-list">
               <input
-                placeholder="Types de relations.. "
+                placeholder="Types de relations "
                 #relationInput
                 [formControl]="relationCtrl"
                 [matAutocomplete]="relationAuto"
@@ -45,6 +45,7 @@
                   [selectable]="selectable"
                   [removable]="removable"
                   (removed)="remove(relation)"
+                  (removed)="remove(relation)"
                   matTooltip="{{relation.definition}}">
                   {{relation.name}}
                   <mat-icon matChipRemove svgIcon="cancel" *ngIf="removable">cancel</mat-icon>
@@ -52,7 +53,7 @@
               </mat-chip-list>
 
               <mat-autocomplete #relationAuto="matAutocomplete" (optionSelected)="selected($event)">
-                <mat-option *ngFor="let relation of filteredRelations" [value]="relation">
+                <mat-option *ngFor="let relation of filteredRelations" [value]="relation" matTooltip="{{relation.definition}}">
                   {{relation.name}}
                 </mat-option>
               </mat-autocomplete>

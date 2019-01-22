@@ -57,7 +57,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
     + [ ] Donner la source du retour (cache, JDM-rezo)
     
   + [ ] Fonctions de navigation (on fait un genre de navigateur de mots après tout, cf. sujet du partiel)
-    + [ ] Donner lien cliquable dans les relations
+    + [x] Donner lien cliquable dans les relations
         --> ex : en cherchant "chat" => r_aff_sem => chat>poisson doit mener vers words-search/chat>poisson
     + [ ] Afficher en tête les affinements sémantiques
 ### Divers
@@ -65,6 +65,7 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
 ### To fix :
 + [x] Le server ne peut pas écrire un fichier du type chat>mammifère.json (caractère '>' interdit).
-+ [ ] Quand une entrée est fraîchement téléchargée, les relations ne s'affichent pas (Dans mon cas => affiche toutes les relations)
-+ [ ] Quand la page recharge (on change de terme) : nettoyer le résultat en attendant que le nouveau mot charge
-    ==> ex je cherche "chat", OK. Puis je cherche "poisson" mais pendant que ça charge j'ai encore "chat" de marqué 
++ [x] Quand une entrée est fraîchement téléchargée, les relations ne s'affichent pas (Dans mon cas => affiche toutes les relations)
++ [x] Quand la page recharge (on change de terme) : nettoyer le résultat en attendant que le nouveau mot charge
+    ==> ex je cherche "chat", OK. Puis je cherche "poisson" mais pendant que ça charge j'ai encore "chat" de marqué
++ [ ] Parfois JDM trouve des définitions et pas nous 

@@ -1,28 +1,23 @@
 import {NgModule} from '@angular/core';
 import {WordsModule} from './words/words.module';
-import {RouterModule, Routes} from '@angular/router';
+import {LoadChildren, RouterModule, Routes} from '@angular/router';
 import {environment} from '../environments/environment';
 
-
-let routes: Routes;
+let loadChildren: LoadChildren;
 
 if (environment.production) {
-  routes = [
-      {
-        path: 'words',
-        // loadChildren: () => WordsModule
-        loadChildren: './words/words.module#WordsModule'
-      }
-    ];
+  loadChildren = './word/word.module#WordsModule';
 } else {
-  routes = [
+  loadChildren = () => WordsModule;
+}
+
+const routes: Routes = [
     {
-      path: 'words',
-      loadChildren: () => WordsModule
-      // loadChildren: './words/words.module#WordsModule'
+      path: 'word',
+      loadChildren: loadChildren
+      // loadChildren: './word/word.module#WordsModule'
     }
   ];
-}
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,

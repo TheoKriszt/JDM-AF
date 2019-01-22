@@ -84,7 +84,9 @@
           parserIndex++;
         }
 
-      nodes.push({'id': parseInt(id), 'name': name, 'type': parseInt(type), 'weight': parseInt(weight), 'formatedName': formatedName});
+      const node = {'id': parseInt(id), 'name': name, 'type': parseInt(type), 'weight': parseInt(weight), 'formatedName': formatedName};
+
+      nodes.push(node);
     }
 
     return nodes;

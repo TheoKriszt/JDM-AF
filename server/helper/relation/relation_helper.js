@@ -89,12 +89,15 @@ const clone = require('clone');
     let tid = 0;
     let text = '';
 
+    // console.log('nodes : ', nodes);
+
     for(let relationIndex = 0; relationIndex < relations.length; relationIndex++)
     {
       type = '';
       weight = 0;
       tid = 0;
       text = '';
+
 
       weight = relations[relationIndex].weight;
 
@@ -145,10 +148,12 @@ const clone = require('clone');
           break;
         }
 
-      if(relationExist)
+      if(relationExist) {
         formatedRelations[checkRelationIndex].values.push(clone({'type': type, 'weight': weight, 'text': text}));
-      else
+      } else {
         formatedRelations.push({'relationType': type, 'values': [clone({'type': type, 'weight': weight, 'text': text})]});
+      }
+
     }
 
     return clone(formatedRelations);

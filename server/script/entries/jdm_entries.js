@@ -7,6 +7,6 @@ require('fs').readFileSync('../../../data/entries/jdm_entries/jdm_entries.txt', 
   entries.push(line);
 });
 
-console.log(entries);
+// console.log(entries);
 
 FileHelper.JSONObjectTofile('../../../data/entries/jdm_entries/jdm_entries.json', entries);
