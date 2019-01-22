@@ -2,9 +2,9 @@
     <div *ngIf="!loading">
       <h4 *ngIf="!(relations.relationIn.length || relations.relationOut.length)"> Aucune relation a afficher </h4>
 
-      <div class="row" *ngIf="(relations.relationIn.length && relations.relationOut.length)">
+      <div class="row" *ngIf="(relations.relationIn.length || relations.relationOut.length)">
         <mat-accordion class="example-headers-align">
-          <mat-expansion-panel *ngIf="rIn">
+          <mat-expansion-panel *ngIf="rIn && relations.relationIn.length">
             <mat-expansion-panel-header>
               Relations entrantes :
             </mat-expansion-panel-header>
@@ -31,7 +31,7 @@
             </mat-expansion-panel>
           </mat-expansion-panel>
 
-          <mat-expansion-panel *ngIf="rOut">
+          <mat-expansion-panel *ngIf="rOut && relations.relationOut.length">
             <mat-expansion-panel-header>
               Relations sortantes :
             </mat-expansion-panel-header>

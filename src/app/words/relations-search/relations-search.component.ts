@@ -1,7 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {RelationTypes, Type, WordsService} from '../words.service';
-import {isDefined} from '@angular/compiler/src/util';
+import {Type, WordsService} from '../words.service';
 import {first} from 'rxjs/operators';
 
 
@@ -85,7 +84,7 @@ export class RelationsSearchComponent implements OnInit, OnChanges {
     // console.log('recherche des relations pour le mot' , this.searchedWord);
     if (this.searchedWord) {
       this.loading = true;
-      console.log('recherche des relations pour ' + this.searchedWord);
+      // console.log('recherche des relations pour ' + this.searchedWord);
       // if (!this.searchingRelations) {
       RelationsSearchComponent.searchingRelations = true;
 
@@ -95,7 +94,7 @@ export class RelationsSearchComponent implements OnInit, OnChanges {
           this.rIn,
           this.rOut,
           this.sortChecked).pipe(first()).subscribe(result => {
-          console.log('relations retournées : ', result);
+          // console.log('relations retournées : ', result);
           RelationsSearchComponent.searchingRelations = false;
 
           if ( result.statusCode && result.statusCode === 423 ) { // ressource locked, try again
@@ -123,7 +122,7 @@ export class RelationsSearchComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     const params: Params = changes.params;
 
-    if (isDefined(params.currentValue.wordExists)) {
+    if (params.currentValue && params.currentValue.wordExists) {
       this.wordExists = params.currentValue.wordExists;
     }
 

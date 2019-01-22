@@ -547,7 +547,7 @@ app.get("/imagesearch/:word",function(req,res){
 
   // if(content === null)
   //   console.log(word, 'not found in data');
-  // else
+  // elseOnView
   // {
   //   console.log(word, 'found in data');
   //

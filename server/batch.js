@@ -12,10 +12,10 @@ const FileHelper = require('./file/file_helper');
 
 const EXPIRATION_DAYS = 7;
 const HTTP_REQUEST_TIMEOUT = 7000;
-const DOWNLOAD_FROM_WIKIPEDIA_ENTRIES_IF_BELOW = 100; // Si moins de X entries en HDD
-const MAX_ENTRIES_TO_GET_FROM_WIKIPEDIA = 10; // Télécharger au plus Y entries depuis wikipedia_entries (en random)
+const DOWNLOAD_FROM_WIKIPEDIA_ENTRIES_IF_BELOW = 1000; // Si moins de X entries en HDD
+const MAX_ENTRIES_TO_GET_FROM_WIKIPEDIA = 3; // Télécharger au plus Y entries depuis wikipedia_entries (en random)
 
-const DISK_SPACE_LIMIT = 20; //Mo
+const DISK_SPACE_LIMIT = 200; //Mo
 
 function downloadWord(word, entriesPath) {
 

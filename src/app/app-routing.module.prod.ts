@@ -27,8 +27,8 @@ import {environment} from '../environments/environment';
   imports: [RouterModule.forRoot([
       {
         path: 'word',
-        loadChildren: () => WordsModule// environment.loadChildren
-        // loadChildren: './words/words.module#WordsModule'
+        // loadChildren: () => WordsModule// environment.loadChildren
+        loadChildren: './words/words.module#WordsModule'
       }
     ],
     {onSameUrlNavigation: 'reload'}

@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {ActivatedRoute, Router, RouterEvent} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router, RouterEvent} from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {RelationTypes, Type, WordsService} from './words.service';
@@ -70,6 +70,7 @@ export class WordsComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((value) => {
       if ( value instanceof RouterEvent) {
+        // console.log(value);
         // console.log('value : ', value.url);
         let url: string = decodeURI(value.url);
         // console.log('url decoded : ', url);
@@ -78,10 +79,19 @@ export class WordsComponent implements OnInit {
         if ( lastIndex > 0 ) {
           url = url.substring(0, (lastIndex ));
         }
-        // console.log('terme : ', url);
-        // console.log('encoded : ', encodeURIComponent(url));
-        // console.log('decoded : ', decodeURIComponent(url));
         this.nameControl.setValue(decodeURIComponent(url));
+      }
+    });
+
+    this.route.queryParams.subscribe(params => {
+      // console.log('pipe params : ', params);
+      if ( !params.types ) {
+        // console.log('params types', params.types);
+        console.log('relations', this.relations);
+        for (let i = this.relations.length; i > 0; i--) {
+          // console.error('index :: ' + (i - 1));
+          this.remove(this.relations[i - 1]);
+        }
       }
     });
 
@@ -128,6 +138,7 @@ export class WordsComponent implements OnInit {
   }
 
   remove(relation: Type): void {
+    // console.log('removing ', JSON.stringify(relation));
     const index = this.relations.indexOf(relation);
     if (index >= 0) {
       this.relations.splice(index, 1);

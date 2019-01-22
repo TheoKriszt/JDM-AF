@@ -52,17 +52,17 @@ export class WordsSearchComponent implements OnInit, HttpInterceptor {
           this.sortChecked = params.sortChecked;
           this.loading = true;
 
-          console.log('searchWord(' + this.searchedWord + ')');
+          // console.log('searchWord(' + this.searchedWord + ')');
           this.wordService.searchWord(this.searchedWord).pipe(first()).subscribe((result) => {
             if (result.statusCode && result.statusCode === 404) { // not found
                 // this.word.definitions = [];
                 this.word.formatedWord = this.searchedWord;
               this.relationsParams.wordExists = false;
             } else if (result.statusCode && result.statusCode === 503) { // timeout
-              console.log('503');
+              // console.log('503');
             } else {
               if (result.formatedWord === this.searchedWord) {
-                console.log('word search result : ', result);
+                // console.log('word search result : ', result);
                 this.word  = result;
                 this.relationsParams.wordExists = true;
               }
@@ -77,7 +77,7 @@ export class WordsSearchComponent implements OnInit, HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Intercepting error : ', req, next);
+    // console.log('Intercepting error : ', req, next);
     return undefined;
   }
 }
