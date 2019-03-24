@@ -1,12 +1,5 @@
 # Jdmaf
 
-## URL
-http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=onlyxml
-
-<!---
-  Check for detect encoding : https://code.google.com/archive/p/juniversalchardet/
--->
-
 ### Serveur : 
   + Autocompletion (lecture du fichier, caractère joker (sufix))
     + [x] Implémenter un __Patricia Tree__ (Arbre radix) pour la recherche
@@ -50,22 +43,12 @@ http://www.jeuxdemots.org/rezo-xml.php?gotermsubmit=Chercher&gotermrel=&output=o
   
   + [ ] Affichage d'un resultat.
     + [ ] Afficher les raffinements possibles s'il y en a
-    + [ ] Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php), mais en propre
+    + [ ] Présenter le résultat de la recherche comme le fait [Diko](http://www.jeuxdemots.org/diko.php)
     + [x] Afficher les relations, mais en ~~lazy-loaded pour pas surcharger,~~ comme avec [Tree with dynamic data](https://material.angular.io/components/tree/examples) ==> paginateur
     + [x] Passer directement le mot (l'objet) de words-search à relations-search, pas seulement le mot (string)
-    + [ ] Avertir d'un timeout quand jeuxDeMots lag à mort
-    + [ ] Donner la source du retour (cache, JDM-rezo)
+    + [x] Avertir d'un timeout quand jeuxDeMots lag à mort
     
   + [ ] Fonctions de navigation (on fait un genre de navigateur de mots après tout, cf. sujet du partiel)
     + [x] Donner lien cliquable dans les relations
         --> ex : en cherchant "chat" => r_aff_sem => chat>poisson doit mener vers words-search/chat>poisson
-    + [ ] Afficher en tête les affinements sémantiques
-### Divers
-  + [x] Trouver une appellation ou un calembour pour remplacer "f*ck" de JDM-af ==> fuck it
-  
-### To fix :
-+ [x] Le server ne peut pas écrire un fichier du type chat>mammifère.json (caractère '>' interdit).
-+ [x] Quand une entrée est fraîchement téléchargée, les relations ne s'affichent pas (Dans mon cas => affiche toutes les relations)
-+ [x] Quand la page recharge (on change de terme) : nettoyer le résultat en attendant que le nouveau mot charge
-    ==> ex je cherche "chat", OK. Puis je cherche "poisson" mais pendant que ça charge j'ai encore "chat" de marqué
-+ [ ] Parfois JDM trouve des définitions et pas nous 
+ 
